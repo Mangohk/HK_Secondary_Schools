@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T18:31:40Z",
+  "syncedAt": "2026-10-10T18:38:04Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -2476,6 +2476,408 @@
       "keyPoints": "",
       "notes": "資助；取自官網校曆「中一自行收生面試日(13/3)」，同曆列中一派位放榜(6/7)與註冊(8-9/7)，對應2027年自行分配周期。學位申請選單目前僅見插班生；未見獨立2027/28自行分配專頁，請稍後再核對。",
       "sourceUrl": "https://www.newman.edu.hk"
+    },
+    {
+      "id": "ev-145",
+      "title": "2026葵青及荃灣中學博覽會",
+      "type": "其他",
+      "status": "已過",
+      "schools": [],
+      "isDateTime": true,
+      "dateStart": "2026-10-10T02:00:00.000Z",
+      "dateEnd": "2026-10-10T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "葵青區家長教師會聯會主辦",
+      "notes": "地點：佛教林金殿紀念小學（葵芳邨第五期，葵芳港鐵站D出口）；對象小五／小六學生及家長。荃灣葵涌及青衣區中學校長會協辦。",
+      "sourceUrl": "https://www.lkt.edu.hk/tc/latest_new/2026%E8%8D%83%E7%81%A3%E5%8F%8A%E8%91%B5%E9%9D%92%E4%B8%AD%E5%AD%B8%E5%8D%9A%E8%A6%BD%E6%9C%83%E5%8F%8A%E5%8D%87%E4%B8%AD%E8%AC%9B%E5%BA%A7"
+    },
+    {
+      "id": "ev-146",
+      "title": "升中講座2026 - 聽誰的？（葵青區家長教師會聯會）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [],
+      "isDateTime": true,
+      "dateStart": "2026-11-13T11:00:00.000Z",
+      "dateEnd": "2026-11-13T13:00:00.000Z",
+      "keyDateStart": "2026-11-13T10:30:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "18:30開始入座",
+      "notes": "地點：佛教林金殿紀念小學；與葵青及荃灣中學博覽會同系列活動。查詢 WhatsApp 葵青區家教會聯會 61467500。",
+      "sourceUrl": "https://www.lkt.edu.hk/tc/latest_new/2026%E8%8D%83%E7%81%A3%E5%8F%8A%E8%91%B5%E9%9D%92%E4%B8%AD%E5%AD%B8%E5%8D%9A%E8%A6%BD%E6%9C%83%E5%8F%8A%E5%8D%87%E4%B8%AD%E8%AC%9B%E5%BA%A7"
+    },
+    {
+      "id": "ev-147",
+      "title": "荃葵青升中博覽2026（愉景新城）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [],
+      "isDateTime": true,
+      "dateStart": "2026-11-07T01:00:00.000Z",
+      "dateEnd": "2026-11-07T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "地點：愉景新城",
+      "notes": "見天主教母佑會蕭明中學官網「申請2027年9月中一入學的重要日程」海報所列；與10月葵青及荃灣中學博覽會為不同活動。",
+      "sourceUrl": "https://www.dmhcsm.edu.hk/sites/default/files/S1%20Admission/2627/Important%20Dates.jpeg"
+    },
+    {
+      "id": "ev-148",
+      "title": "李惠利中學 學校資訊日（2027/28升中）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "李惠利中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-24T05:30:00.000Z",
+      "dateEnd": "2026-10-24T10:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "現正接受報名",
+      "notes": "內容：學校介紹、校園巡遊、自由體驗（氣槍射擊、英語美食教室、獨木舟陸上體驗等）。報名：https://forms.gle/TrJT76eQmdaFNVjS6。官網中一自行收生頁仍顯示2026年9月入學舊日程。",
+      "sourceUrl": "https://www.lwlc.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=63&pageId=112&nnnid=194"
+    },
+    {
+      "id": "ev-149",
+      "title": "保祿六世書院 開放日暨中一入學申請簡介會（2027/28）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "保祿六世書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-15T05:00:00.000Z",
+      "dateEnd": "2026-11-15T06:30:00.000Z",
+      "keyDateStart": "2026-11-15T04:40:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "簡介會12:40開始登記進場；現正接受報名",
+      "notes": "簡介會地點：本校禮堂；下午1時至2時30分。開放日另設小學辯論邀請賽、攤位遊戲、校園導賞、學生成果展示及英語音樂劇。中一自行分配學位申請（2027年9月入讀）頁面標示「即將公布／稍後上載」。",
+      "sourceUrl": "https://www.ppaulvi.edu.hk/en/latest_new/%E4%BF%9D%E7%A5%BF%E5%85%AD%E4%B8%96%E6%9B%B8%E9%99%A2%E9%96%8B%E6%94%BE%E6%97%A5%E6%9A%A8%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E7%B0%A1%E4%BB%8B%E6%9C%83-%E2%80%94-%E7%8F%BE%E6%AD%A3%E6%8E%A5%E5%8F%97%E5%A0%B1%E5%90%8D-pope-paul-vi-college-open-day-and-s1-admission-talk-%E2%80%94"
+    },
+    {
+      "id": "ev-150",
+      "title": "皇仁舊生會中學 升中簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "皇仁舊生會中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-21T06:30:00.000Z",
+      "dateEnd": "2026-11-21T08:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Google Form報名連結稍後上載",
+      "notes": "14:30–15:30校舍參觀；15:30–16:30中學生體驗活動（小五／小六，STEAM／數學／體育，須穿運動服）及家長升中講座（校長分享、學務及英語教學、校風及成長支援）。地點：青衣長安邨第一期。",
+      "sourceUrl": "https://www.qcobass.edu.hk/tc/content.php?wid=197"
+    },
+    {
+      "id": "ev-151",
+      "title": "樂善堂顧超文中學 中一入學資訊日暨入學講座（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "樂善堂顧超文中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-22",
+      "dateEnd": "2026-11-22",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "兩場：10:00–10:45；13:45–14:30",
+      "notes": "官網新聞（2026-10-07刊登）：S1 Information Day 2026 Admission Talk；地點新界葵盛圍301號。2027年入讀中一頁顯示自行分配學位申請安排將於11月公布。",
+      "sourceUrl": "https://www.lstkcmss.edu.hk/tc/news_details.php?id=389&wid=724"
+    },
+    {
+      "id": "ev-152",
+      "title": "天主教母佑會蕭明中學 中一入學資訊日暨小五小六家長講座（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "天主教母佑會蕭明中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-28",
+      "dateEnd": "2026-11-28",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "展覽11:00–17:00；講座10:30–11:30／14:00–15:00；須網上登記",
+      "notes": "Important Dates for S1 Admission in September 2027（官網海報）。地點本校及禮堂。申請表格可於2026-10-10至2027-01-18下載／索取。",
+      "sourceUrl": "https://www.dmhcsm.edu.hk/en/s1-admission-0"
+    },
+    {
+      "id": "ev-153",
+      "title": "天主教母佑會蕭明中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "天主教母佑會蕭明中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-10-10",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請表2026-10-10起可下載／索取",
+      "notes": "接受申請：本校／網上申請。正取通知2027-03-31；派位結果2027-07-06；註冊2027-07-08至09。",
+      "sourceUrl": "https://www.dmhcsm.edu.hk/en/s1-admission-0"
+    },
+    {
+      "id": "ev-154",
+      "title": "天主教母佑會蕭明中學 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "天主教母佑會蕭明中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": "2027-03-06",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "星期六；本校",
+      "notes": "見官網Important Dates海報。",
+      "sourceUrl": "https://www.dmhcsm.edu.hk/sites/default/files/S1%20Admission/2627/Important%20Dates.jpeg"
+    },
+    {
+      "id": "ev-155",
+      "title": "香港道教聯合會圓玄學院第一中學 學校資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港道教聯合會圓玄學院第一中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-28T02:00:00.000Z",
+      "dateEnd": "2026-11-28T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "歡迎小學生預先報名，費用全免，額滿即止",
+      "notes": "來源：CHSC學校自行登記開放日；地點本校（葵涌和宜合道42號）。報名：https://s.yy1.edu.hk/openday",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?id=5170&lang_id=2"
+    },
+    {
+      "id": "ev-156",
+      "title": "香港道教聯合會圓玄學院第一中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港道教聯合會圓玄學院第一中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "自行分配學額40名；表格即日起可索取／下載",
+      "notes": "2027年9月入學。面試日期容後／信件通知；正取2027-03-31書面及電話通知。官網內文有「2026至2027」字樣與「2027年9月入學」並存，日程以2027年1月遞交窗為準。",
+      "sourceUrl": "https://www.yy1.edu.hk/%E5%85%A5%E8%AE%80%E4%B8%AD%E4%B8%80"
+    },
+    {
+      "id": "ev-157",
+      "title": "葵涌蘇浙公學 中一自行分配學位入學簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "葵涌蘇浙公學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-28",
+      "dateEnd": "2026-11-28",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "S1 DP Admission Talk",
+      "notes": "見官網中一學位申請日程PDF（2027年9月入學）。時間細節PDF未列，請留意校方後續公布。",
+      "sourceUrl": "https://www.kcckc.edu.hk/wp-content/uploads/2026/09/2026-2027SASO-hk.pdf"
+    },
+    {
+      "id": "ev-158",
+      "title": "葵涌蘇浙公學 索取中一自行分配學位申請表（2027/28）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "葵涌蘇浙公學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-02",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Distribution of S1 DP Application Form",
+      "notes": "遞交申請另見2027-01-04至01-18。",
+      "sourceUrl": "https://www.kcckc.edu.hk/wp-content/uploads/2026/09/2026-2027SASO-hk.pdf"
+    },
+    {
+      "id": "ev-159",
+      "title": "葵涌蘇浙公學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "葵涌蘇浙公學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-11-02",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請表2026-11-02起可索取",
+      "notes": "面試通知2027-03-05寄出；面試2027-03-13；正取通知2027-03-31；派位結果2027-07-06；候補申請2027-07-06；候補面試2027-07-07至08；註冊2027-07-08至09。",
+      "sourceUrl": "https://www.kcckc.edu.hk/index.php/schdule-of-application/"
+    },
+    {
+      "id": "ev-160",
+      "title": "葵涌蘇浙公學 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "葵涌蘇浙公學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-13",
+      "dateEnd": "2027-03-13",
+      "keyDateStart": "2027-03-05",
+      "keyDateIsDateTime": false,
+      "keyPoints": "面試通知書約2027-03-05寄出",
+      "notes": "見官網申請日程PDF。",
+      "sourceUrl": "https://www.kcckc.edu.hk/wp-content/uploads/2026/09/2026-2027SASO-hk.pdf"
+    },
+    {
+      "id": "ev-161",
+      "title": "裘錦秋中學(葵涌) 索取中一自行分配學位申請表（2027/28）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "裘錦秋中學(葵涌)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校務處索取；公眾假期休息",
+      "notes": "一至五08:30–17:00；六09:00–12:00。亦可下載申請表。",
+      "sourceUrl": "https://www.jccsskc.edu.hk/zh_tw/site/view?name=27-28%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B"
+    },
+    {
+      "id": "ev-162",
+      "title": "裘錦秋中學(葵涌) 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "裘錦秋中學(葵涌)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-12-04",
+      "keyDateIsDateTime": false,
+      "keyPoints": "eSSPA或親臨遞交；申請表12月4日起可索取",
+      "notes": "所有申請者均獲面試（2027-03-06下午）；正取通知2027-03-31；派位結果2027-07-06。設體藝專才計劃（填申請表第二頁）。",
+      "sourceUrl": "https://www.jccsskc.edu.hk/zh_tw/site/view?name=27-28%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B"
+    },
+    {
+      "id": "ev-163",
+      "title": "裘錦秋中學(葵涌) 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "裘錦秋中學(葵涌)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": "2027-03-06",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "星期六下午；所有申請者均獲面試；2月下旬至3月上旬電話通知時間",
+      "notes": "見校方27-28中一自行分配學位申請頁。",
+      "sourceUrl": "https://www.jccsskc.edu.hk/zh_tw/site/view?name=27-28%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B"
+    },
+    {
+      "id": "ev-164",
+      "title": "中華傳道會安柱中學 中一入學資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "中華傳道會安柱中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T01:30:00.000Z",
+      "dateEnd": "2026-12-05T08:30:00.000Z",
+      "keyDateStart": "2026-11-22",
+      "keyDateIsDateTime": false,
+      "keyPoints": "登記至2026-11-22 18:00；登記已於10月1日中午開始",
+      "notes": "地點：葵涌梨貝街6號。Google Form報名見活動頁。Admission頁另列2027-28自行分配學位申請須知／申請表連結（下載到的申請表檔頭仍見2026-27字樣，請以校方最新公布為準）。",
+      "sourceUrl": "https://www.cneccc.edu.hk/event-details/f-1-admission-information-day-2027-28-zhong-yi-ru-xue-zi-xun-ri-2027-28"
+    },
+    {
+      "id": "ev-165",
+      "title": "葵涌循道中學 葵循資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "葵涌循道中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-29",
+      "dateEnd": "2026-11-29",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "官網專頁標示2026-11-29；時段細節待補充",
+      "notes": "專頁https://www.kcmc.edu.hk/tc/node/1045目前內容較簡。入學申請須知頁仍見2026-2027註冊／叩門舊文件為主。",
+      "sourceUrl": "https://www.kcmc.edu.hk/tc/node/1045"
+    },
+    {
+      "id": "ev-166",
+      "title": "保良局羅傑承(一九八三)中學 小學生學校講座 School Talk（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "保良局羅傑承(一九八三)中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": "2026-12-05",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校曆：School Talk for Primary Pupils (5/12)",
+      "notes": "取自2026/2027學生校曆PDF。官網General Procedures仍為2026/27（2026年9月入學）舊自行分配說明；校曆另列S1 Discretionary Places Application 2027-01-04至01-18。",
+      "sourceUrl": "https://www.plk83.edu.hk/uploads/files/School%20Calendar%202627%20--%20Student%20%28E%29%20%28Version%203%29.pdf"
+    },
+    {
+      "id": "ev-167",
+      "title": "保良局羅傑承(一九八三)中學 中一自行分配學位申請窗（2027/28｜校曆）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "保良局羅傑承(一九八三)中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "見2026/27學生校曆；收生細則待官網更新",
+      "notes": "校曆標示S1 Discretionary Places Application (4/1-18/1)。現行「一般申請流程」網頁仍為2026/27年度舊文，確切準則／面試日請稍後再查官網。",
+      "sourceUrl": "https://www.plk83.edu.hk/uploads/files/School%20Calendar%202627%20--%20Student%20%28E%29%20%28Version%203%29.pdf"
+    },
+    {
+      "id": "ev-168",
+      "title": "天主教慈幼會伍少梅中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "天主教慈幼會伍少梅中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請者均獲面試；面試確實日期容後公布（約2027年3月）",
+      "notes": "2027年9月1日入學。甄選：學業15%／操行30%／課外活動及服務40%／面試15%。正取2027-03-31書面及電話通知。英文版有一處誤寫Interview in March 2026，中文為2027年3月。",
+      "sourceUrl": "https://www.sdbnsm.edu.hk/s1-application"
     }
   ]
 }
