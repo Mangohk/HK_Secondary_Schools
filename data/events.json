@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T19:56:19Z",
+  "syncedAt": "2026-10-10T20:08:45Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -5817,6 +5817,346 @@
       "keyPoints": "Mid-December：繳付訂金及不可退還資本徵費以確認學位",
       "notes": "確切截止日以取錄信為準；此條用「月中」代表日。",
       "sourceUrl": "https://www.esf.edu.hk/admissions/how-to-apply/"
+    },
+    {
+      "id": "ev-345",
+      "title": "聖類斯中學 中一入學資訊講座暨校園參觀（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "聖類斯中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-31T01:00:00.000Z",
+      "dateEnd": "2026-10-31T05:30:00.000Z",
+      "keyDateStart": "2026-10-24",
+      "keyDateIsDateTime": false,
+      "keyPoints": "網上登記截止 2026-10-24；惡劣天氣改期 2026-11-21",
+      "notes": "Official Application Schedule PDF（2026-10-01 ver）：09:00–09:30 登記、09:30–10:30 入學講座（粵語為主）、10:30–13:30 校園參觀；禮堂先到先得，滿座另設直播場。登記 https://forms.gle/p7vK9NvK5GYsVZ3c9 。",
+      "sourceUrl": "https://www.stlouis.edu.hk/en/2027-2028-s1-admission"
+    },
+    {
+      "id": "ev-346",
+      "title": "聖類斯中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "聖類斯中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-10-31",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請表 2026-10-31 至 2027-01-18 可親臨或網上下載",
+      "notes": "可經 eSSPA 或親臨遞交；辦公時間一至五 09:00–12:00／14:00–16:00、六 09:00–12:00。文件：教育局申請表、身份證明正本、小五全年及小六上學期成績表副本、洗禮證明（如適用）。短列約200人於 2027-03-05 電郵通知面試安排。",
+      "sourceUrl": "https://www.stlouis.edu.hk/sites/default/files/files/2728_s1_dp_application_schedule_20261001_ver.pdf"
+    },
+    {
+      "id": "ev-347",
+      "title": "聖類斯中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "聖類斯中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-03-15T04:30:00.000Z",
+      "dateEnd": "2027-03-15T09:15:00.000Z",
+      "keyDateStart": "2027-03-05",
+      "keyDateIsDateTime": false,
+      "keyPoints": "約200名入圍；2027-03-05 電郵通知安排；面試以英語進行",
+      "notes": "時段 12:30–17:15。",
+      "sourceUrl": "https://www.stlouis.edu.hk/sites/default/files/files/2728_s1_dp_application_schedule_20261001_ver.pdf"
+    },
+    {
+      "id": "ev-348",
+      "title": "聖類斯中學 自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "聖類斯中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "電郵及電話通知正取家長；候補／落選不另行通知",
+      "notes": "正式派位結果 2027-07-06；註冊 2027-07-08 至 07-09；Pre-S1 HKAT 2027-07-13。",
+      "sourceUrl": "https://www.stlouis.edu.hk/sites/default/files/files/2728_s1_dp_application_schedule_20261001_ver.pdf"
+    },
+    {
+      "id": "ev-349",
+      "title": "英華女學校 中一入學資訊講座（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "英華女學校"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T03:00:00.000Z",
+      "dateEnd": "2026-12-05T07:30:00.000Z",
+      "keyDateStart": "2026-11-02T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上登記 2026-11-02 09:00 至 2026-11-20；兩場：11:00–12:15／14:15–15:30",
+      "notes": "內容：辦學理念、收生程序、答問；每家最多三席，先到先得；3 個工作天內 SMS 確認。登記見 www.ywgs.edu.hk 。",
+      "sourceUrl": "https://www.ywgs.edu.hk/s1-admission"
+    },
+    {
+      "id": "ev-350",
+      "title": "英華女學校 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "英華女學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-12-07",
+      "keyDateIsDateTime": false,
+      "keyPoints": "校方申請表派發／下載期 2026-12-07 至 2027-01-18；自行學額 51",
+      "notes": "親臨（羅便臣道校舍入口；一至五 09:00–17:00、六 09:00–12:00）或 eSSPA。文件：教育局表＋校方表＋小五全年／小六上學期成績表副本＋學生身份證副本；不需推薦信或獎狀。準則：學業50%／面試30%／課外15%／操行5%。",
+      "sourceUrl": "https://www.ywgs.edu.hk/s1-admission"
+    },
+    {
+      "id": "ev-351",
+      "title": "英華女學校 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "英華女學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "全體申請者獲邀；細節稍後公布",
+      "notes": "缺席面試者不會納入候補名單。",
+      "sourceUrl": "https://www.ywgs.edu.hk/s1-admission"
+    },
+    {
+      "id": "ev-352",
+      "title": "英華女學校 自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "英華女學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取家長",
+      "notes": "正式結果與統一派位同步於 2027-07-06 公布。",
+      "sourceUrl": "https://www.ywgs.edu.hk/s1-admission"
+    },
+    {
+      "id": "ev-353",
+      "title": "聖若瑟書院 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "聖若瑟書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-11-23",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請表 2026-11-23 起可網上下載或親臨索取；自行學額 54",
+      "notes": "只接受親臨或 eSSPA（不接受郵遞／傳真／電郵）。辦公時間一至五 09:00–16:30、六 09:00–12:00。文件：身份證副本、教育局表、校方表、小五全年及小六上學期成績表副本；不需推薦信。聖若瑟小學部另按小學指示。",
+      "sourceUrl": "https://www.sjc.edu.hk/admission"
+    },
+    {
+      "id": "ev-354",
+      "title": "聖若瑟書院 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "聖若瑟書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "全體申請者獲邀",
+      "notes": "準則：小學表現（學業及成績次第25%／課外及獎項15%／操行10%）合共50%；面試50%；優秀／良好操行為必要條件。",
+      "sourceUrl": "https://www.sjc.edu.hk/admission"
+    },
+    {
+      "id": "ev-355",
+      "title": "聖若瑟書院 自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "聖若瑟書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "電郵及電話通知正取家長",
+      "notes": "統一派位結果 2027-07-06。",
+      "sourceUrl": "https://www.sjc.edu.hk/admission"
+    },
+    {
+      "id": "ev-356",
+      "title": "高主教書院 S1 Information Day（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "高主教書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-28T02:00:00.000Z",
+      "dateEnd": "2026-11-28T04:00:00.000Z",
+      "keyDateStart": "2026-11-01",
+      "keyDateIsDateTime": false,
+      "keyPoints": "網上登記約 2026 年 11 月初於官網公布",
+      "notes": "海報：介紹辦學使命、學與教、學生支援及中一收生程序。校曆亦列 2026-11-28 S.1 Information Day（翌日 11-30 為資訊日後假期）。來源：官網彈出海報＋2026-2027 三年校曆 PDF。",
+      "sourceUrl": "https://www.raimondi.edu.hk/"
+    },
+    {
+      "id": "ev-357",
+      "title": "高主教書院 中一自行分配學位面試（2027/28｜校曆）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "高主教書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校曆列 S1 Discretionary Place Interview（6/3）",
+      "notes": "取自官網 3_year_calendar_2026-2027 PDF；申請窗細節自行分配專頁仍見舊文，請稍後再核。註冊日校曆列 2027-07-08 至 07-09。",
+      "sourceUrl": "https://www.raimondi.edu.hk/sites/default/files/notice/3_year_calendar_2026-2027_18-8-26_v7.pdf"
+    },
+    {
+      "id": "ev-358",
+      "title": "英皇書院 中一自行分配學位面試（2027/28｜校曆）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "英皇書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校曆列 S1 Admission Interview（27/2）",
+      "notes": "取自官網 School Calendar 2026-2027 PDF。現行「申請時間表」PDF 仍為 2026/27 周期（資訊講座 2025-11-29 等），2027/28 交表窗待更新；面試日已見於新校曆。",
+      "sourceUrl": "https://www.kings.edu.hk/sites/default/files/download/School%20Calendar%2026-27%202026-08-03.pdf"
+    },
+    {
+      "id": "ev-359",
+      "title": "英皇書院 開放日（2027｜校曆）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "英皇書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-12",
+      "dateEnd": "2027-03-13",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校曆列 Open Days（12–13/3）；時段未列",
+      "notes": "取自 School Calendar 2026-2027。官網另有百周年 Open Days 專頁（曾列 2026-03-13–14 場）。註冊日校曆列 2027-07-08 至 07-09。",
+      "sourceUrl": "https://www.kings.edu.hk/sites/default/files/download/School%20Calendar%2026-27%202026-08-03.pdf"
+    },
+    {
+      "id": "ev-360",
+      "title": "聖士提反堂中學 中學校園新體驗／升中選校資訊日（2026-10-13）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反堂中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-13T01:20:00.000Z",
+      "dateEnd": "2026-10-13T02:40:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "須網上報名（Google Form）；可實地觀看學生上課",
+      "notes": "官網橫額列出到校參觀日期（星期二）；查詢 2546 6111 廖仲翩副校長。報名 https://docs.google.com/forms/d/e/1FAIpQLSftLJHldYtOQXXFpdfRYOSYwm1v_1-tm8-m90QQ2Eps1HXsPA/viewform",
+      "sourceUrl": "https://www.sscc.edu.hk/"
+    },
+    {
+      "id": "ev-361",
+      "title": "聖士提反堂中學 中學校園新體驗／升中選校資訊日（2026-12-03）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反堂中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-03T00:10:00.000Z",
+      "dateEnd": "2026-12-03T01:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "須網上報名（Google Form）；可實地觀看學生上課",
+      "notes": "官網橫額列出到校參觀日期（星期四）；查詢 2546 6111 廖仲翩副校長。報名 https://docs.google.com/forms/d/e/1FAIpQLSftLJHldYtOQXXFpdfRYOSYwm1v_1-tm8-m90QQ2Eps1HXsPA/viewform",
+      "sourceUrl": "https://www.sscc.edu.hk/"
+    },
+    {
+      "id": "ev-362",
+      "title": "聖士提反堂中學 中學校園新體驗／升中選校資訊日（2026-12-08）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反堂中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-08T01:20:00.000Z",
+      "dateEnd": "2026-12-08T02:40:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "須網上報名（Google Form）；可實地觀看學生上課",
+      "notes": "官網橫額列出到校參觀日期（星期二）；查詢 2546 6111 廖仲翩副校長。報名 https://docs.google.com/forms/d/e/1FAIpQLSftLJHldYtOQXXFpdfRYOSYwm1v_1-tm8-m90QQ2Eps1HXsPA/viewform",
+      "sourceUrl": "https://www.sscc.edu.hk/"
+    },
+    {
+      "id": "ev-363",
+      "title": "聖士提反堂中學 中學校園新體驗／升中選校資訊日（2026-12-15）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反堂中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-15T01:20:00.000Z",
+      "dateEnd": "2026-12-15T02:40:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "須網上報名（Google Form）；可實地觀看學生上課",
+      "notes": "官網橫額列出到校參觀日期（星期二）；查詢 2546 6111 廖仲翩副校長。報名 https://docs.google.com/forms/d/e/1FAIpQLSftLJHldYtOQXXFpdfRYOSYwm1v_1-tm8-m90QQ2Eps1HXsPA/viewform",
+      "sourceUrl": "https://www.sscc.edu.hk/"
+    },
+    {
+      "id": "ev-364",
+      "title": "聖保羅書院 中一入學簡介會網上登記開始",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "聖保羅書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-12",
+      "dateEnd": null,
+      "keyDateStart": "2026-10-12",
+      "keyDateIsDateTime": false,
+      "keyPoints": "簡介會網上登記由 2026-10-12 起；簡介會確實日期／時段頁面未列完整文句",
+      "notes": "來源：https://app.spc.edu.hk/admissions/ （頁面標題仍寫 F.1 Admissions 2026-2027）。以登記開始日 timing（2026-10 中）推斷屬下一輪收生周期，惟官網標題未改；curl 對 app.spc.edu.hk／www.spc.edu.hk 出現 SSL／逾時，內容僅能經 WebFetch 取得上述一句。請稍後再核簡介會日時及 2027/28 申請窗。",
+      "sourceUrl": "https://app.spc.edu.hk/admissions/"
     }
   ]
 }
