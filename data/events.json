@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T18:53:58Z",
+  "syncedAt": "2026-10-10T19:11:43Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -3507,6 +3507,686 @@
       "keyPoints": "自行名額40；全體面試2027-03-13；正取通知2027-03-31；準則學業50%／操行15%／課外15%／面試20%",
       "notes": "官網中一自行分配頁已列2027年9月入學。另有小六英數呈分試備考課程附件。CHSC曾列2026-05-17開放日（已過）。",
       "sourceUrl": "https://yotcwsf.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=97&pageId=165&nnnid=61"
+    },
+    {
+      "id": "ev-209",
+      "title": "中華基督教會方潤華中學 家長教育工作坊（升中輔導）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會方潤華中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-17T06:00:00.000Z",
+      "dateEnd": "2026-10-17T07:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "與QSIP合辦；內容含有效親子溝通、生涯規劃與升中輔導、尖子訪談；需網上報名",
+      "notes": "主講：中大胡翠珊博士、吳潔容校長。報名 https://forms.gle/53ahWCbVrHqDApXv8",
+      "sourceUrl": "https://www.fywss.edu.hk/news-feed/parenting-workshop-20261017/"
+    },
+    {
+      "id": "ev-210",
+      "title": "中華基督教會方潤華中學 「來當一天中學生」開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會方潤華中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-07T02:00:00.000Z",
+      "dateEnd": "2026-11-07T04:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "高小（小四至小六）學生及家長；跨學科體驗、校園導賞、升中講座；需報名",
+      "notes": "報名 https://forms.gle/ekrXMMH4NpE7iPzN6",
+      "sourceUrl": "https://www.fywss.edu.hk/news-feed/secondary-school-experience-2026/"
+    },
+    {
+      "id": "ev-211",
+      "title": "中華基督教會方潤華中學 升中模擬面試及升中講座",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會方潤華中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T06:00:00.000Z",
+      "dateEnd": "2026-12-12T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "模擬面試、升中專題講座、校園參觀；對象高小學生及家長",
+      "notes": "詳見「來當一天中學生」開放日頁內其他活動預告",
+      "sourceUrl": "https://www.fywss.edu.hk/news-feed/secondary-school-experience-2026/"
+    },
+    {
+      "id": "ev-212",
+      "title": "中華基督教會方潤華中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會方潤華中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請截止；學額40；紙本或電子平台擇一",
+      "notes": "收生：學業30%、面試30%、品行25%、均衡發展10%、與本校聯繫5%。辦公時間一至五 9:00–17:30、六 9:00–12:00。2026-10-09上載。",
+      "sourceUrl": "https://www.fywss.edu.hk/news-feed/2027-28%e5%ad%b8%e5%b9%b4%e3%80%8c%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e3%80%8d/"
+    },
+    {
+      "id": "ev-213",
+      "title": "中華基督教會方潤華中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會方潤華中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-30",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "全部申請者面試；家長與學生須同時出席；時間另函通知",
+      "notes": "內容：時事、道德價值、學科知識及個人生活",
+      "sourceUrl": "https://www.fywss.edu.hk/news-feed/2027-28%e5%ad%b8%e5%b9%b4%e3%80%8c%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e3%80%8d/"
+    },
+    {
+      "id": "ev-214",
+      "title": "中華基督教會方潤華中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會方潤華中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取家長",
+      "notes": "正式派位結果另於2027年7月由教育局公布",
+      "sourceUrl": "https://www.fywss.edu.hk/news-feed/2027-28%e5%ad%b8%e5%b9%b4%e3%80%8c%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e3%80%8d/"
+    },
+    {
+      "id": "ev-215",
+      "title": "中華基督教會基朗中學 校園導賞暨入學簡介會",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會基朗中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-29T06:00:00.000Z",
+      "dateEnd": "2026-11-29T08:45:00.000Z",
+      "keyDateStart": "2026-11-22T15:59:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "簡介會14:00–15:00；校園導賞15:00–16:45；對象小五小六及家長；報名截止2026-11-22 23:59",
+      "notes": "英文頁公布（Campus Tour and School Admission Briefing 2026）。含學校發展概覽、答問、師生交流。",
+      "sourceUrl": "https://www.keilong.edu.hk/en/news_details.php?wid=25&id=688&page="
+    },
+    {
+      "id": "ev-216",
+      "title": "金巴崙長老會耀道中學 學校資訊日及中一自行收生簡介會",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "金巴崙長老會耀道中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T06:00:00.000Z",
+      "dateEnd": "2026-12-05T09:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "需網上報名",
+      "notes": "報名 http://www.cpcydss.edu.hk/infodayinfo/",
+      "sourceUrl": "https://www.cpcydss.edu.hk/news_detail.php?id=6000&tp=3"
+    },
+    {
+      "id": "ev-217",
+      "title": "佛教茂峰法師紀念中學 多元潛能建構課程暨學校簡介會",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "佛教茂峰法師紀念中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-01T02:00:00.000Z",
+      "dateEnd": "2026-11-01T05:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "小四至小六及家長；學校簡介、英語模擬面試、活動初探、校園導賞及攤位",
+      "notes": "另介紹11–12月多元潛能體驗課程。報名見官網海報QR／連結。",
+      "sourceUrl": "https://www.bmf.edu.hk/article/480"
+    },
+    {
+      "id": "ev-218",
+      "title": "可道中學(嗇色園主辦) 升中資訊：學習及成長支援",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "可道中學(嗇色園主辦)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-07T06:00:00.000Z",
+      "dateEnd": "2026-11-07T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "課程簡介、中一成長支援、英語學習、棒球體驗、校園導賞；需預約",
+      "notes": "升中資訊活動系列之一。報名見官網QR／連結。",
+      "sourceUrl": "https://www.hodao.edu.hk/article/179"
+    },
+    {
+      "id": "ev-219",
+      "title": "可道中學(嗇色園主辦) 升中面試技巧工作坊暨模擬面試",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "可道中學(嗇色園主辦)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T02:30:00.000Z",
+      "dateEnd": "2026-12-05T04:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "需預先報名",
+      "notes": "升中資訊活動系列之二。",
+      "sourceUrl": "https://www.hodao.edu.hk/article/179"
+    },
+    {
+      "id": "ev-220",
+      "title": "可道中學(嗇色園主辦) 選校策略與未來學習挑戰（上午場）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "可道中學(嗇色園主辦)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-19T02:30:00.000Z",
+      "dateEnd": "2026-12-19T04:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "家長講座、專題分享、課堂體驗、學校特色及表演；需預約",
+      "notes": "同日下午另有開放日（免報名）。",
+      "sourceUrl": "https://www.hodao.edu.hk/article/179"
+    },
+    {
+      "id": "ev-221",
+      "title": "可道中學(嗇色園主辦) 開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "可道中學(嗇色園主辦)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-19T04:00:00.000Z",
+      "dateEnd": "2026-12-19T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "攤位遊戲、學習成果展示、互動體驗、表演；不用報名",
+      "notes": "升中資訊活動系列×開放日官方海報確認。",
+      "sourceUrl": "https://www.hodao.edu.hk/article/179"
+    },
+    {
+      "id": "ev-222",
+      "title": "天水圍循道衞理中學 升中簡介會（兩場）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "天水圍循道衞理中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-24T01:30:00.000Z",
+      "dateEnd": "2026-10-24T04:00:00.000Z",
+      "keyDateStart": "2026-10-24T01:30:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "第一場09:30–10:30；第二場11:00–12:00；設升中講座、面試攻略工作坊、學術展覽、學科體驗攤位、參觀天循亞運展；需報名",
+      "notes": "日期見官網升中簡介會2026海報。",
+      "sourceUrl": "https://www.tswmc.edu.hk/article/2195"
+    },
+    {
+      "id": "ev-223",
+      "title": "香港管理專業協會羅桂祥中學 Information Day 2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港管理專業協會羅桂祥中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T01:00:00.000Z",
+      "dateEnd": "2026-12-05T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "免費入場；含學校生活講座、面試工作坊、校園導賞、Maker Faire、攤位遊戲；報名即將開放",
+      "notes": "官方海報（2027/2028 Admission）。",
+      "sourceUrl": "https://www.hkmakslo.edu.hk/admission-information/2027-2028-admission/information-day-2026/"
+    },
+    {
+      "id": "ev-224",
+      "title": "順德聯誼總會翁祐中學 升中資訊及活動體驗日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "順德聯誼總會翁祐中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-31T01:30:00.000Z",
+      "dateEnd": "2026-10-31T05:00:00.000Z",
+      "keyDateStart": "2026-10-23",
+      "keyDateIsDateTime": false,
+      "keyPoints": "截止報名2026-10-23；設模擬升中面試及即時回饋、多元體驗活動、校園導賞",
+      "notes": "流程：09:30登記；09:45–11:00學校簡介及管弦樂表演；11:00起模擬面試／導賞／體驗。報名 Google Form。",
+      "sourceUrl": "https://www.stfa-yyc.edu.hk/"
+    },
+    {
+      "id": "ev-225",
+      "title": "賽馬會萬鈞毅智書院 升中簡介系列（二）：英語沉浸互動體驗",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-16T06:00:00.000Z",
+      "dateEnd": "2026-10-16T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "由外籍老師帶領 Interactive English Speaking Immersion；需報名",
+      "notes": "升中簡介系列共六場；系列一（10/3）已過。",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=43"
+    },
+    {
+      "id": "ev-226",
+      "title": "賽馬會萬鈞毅智書院 學校開放日暨STEAM×體藝比賽頒獎典禮",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-27T06:15:00.000Z",
+      "dateEnd": "2026-11-28T04:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "11/27（五）14:15–16:15；11/28（六）10:00–12:00；需報名",
+      "notes": "升中簡介系列（三）。",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=43"
+    },
+    {
+      "id": "ev-227",
+      "title": "賽馬會萬鈞毅智書院 中英文AI面試工作坊及學校簡介",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-01-09T06:00:00.000Z",
+      "dateEnd": "2027-01-09T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "升中簡介系列（四）；需報名",
+      "notes": "",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=43"
+    },
+    {
+      "id": "ev-228",
+      "title": "賽馬會萬鈞毅智書院 傳藝揚芳成果匯演及學校簡介",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-02-20T02:00:00.000Z",
+      "dateEnd": "2027-02-20T05:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "升中簡介系列（五）；需報名",
+      "notes": "",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=43"
+    },
+    {
+      "id": "ev-229",
+      "title": "賽馬會萬鈞毅智書院 科學實驗探索之旅",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-03-20T02:00:00.000Z",
+      "dateEnd": "2027-03-20T04:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "升中簡介系列（六）；需報名",
+      "notes": "",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=43"
+    },
+    {
+      "id": "ev-230",
+      "title": "賽馬會萬鈞毅智書院 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額40；收表一至五 8:30–17:00、六 9:00–12:00",
+      "notes": "準則：成績45%、面試25%、課外活動／服務／獎項20%、操行10%。交表領面試證。",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=45"
+    },
+    {
+      "id": "ev-231",
+      "title": "賽馬會萬鈞毅智書院 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請人均有面試；個人／小組面試",
+      "notes": "須攜面試證到校。",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=45"
+    },
+    {
+      "id": "ev-232",
+      "title": "賽馬會萬鈞毅智書院 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會萬鈞毅智書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "電話及郵遞通知正取家長",
+      "notes": "",
+      "sourceUrl": "https://www.jcmkec.edu.hk/tc/content.php?wid=45"
+    },
+    {
+      "id": "ev-233",
+      "title": "萬鈞伯裘書院 升中簡介會（一）：課程簡介暨校園導賞",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "萬鈞伯裘書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-17T03:00:00.000Z",
+      "dateEnd": "2026-10-17T05:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "介紹教育理念、課程特色及中一成長照顧；即場校園導賞；需網上報名",
+      "notes": "官網中／英頁。查詢2448 2960。",
+      "sourceUrl": "https://www.mkpc.edu.hk/information-day-for-s1-admissions/"
+    },
+    {
+      "id": "ev-234",
+      "title": "萬鈞伯裘書院 升中簡介會（二）：英文班課程簡介及親子體驗",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "萬鈞伯裘書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-14T01:00:00.000Z",
+      "dateEnd": "2026-11-14T03:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "英文班及IAL國際課程特色；親子英文活動體驗；需報名",
+      "notes": "",
+      "sourceUrl": "https://www.mkpc.edu.hk/information-day-for-s1-admissions/"
+    },
+    {
+      "id": "ev-235",
+      "title": "萬鈞伯裘書院 升中簡介會（三）：學校開放日暨親子多元活動體驗",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "萬鈞伯裘書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-04T06:00:00.000Z",
+      "dateEnd": "2026-12-05T07:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "12/4（五）14:00–15:30；12/5（六）10:15–11:35及14:00–15:30；親子STEAM／體育／藝術；需報名",
+      "notes": "",
+      "sourceUrl": "https://www.mkpc.edu.hk/information-day-for-s1-admissions/"
+    },
+    {
+      "id": "ev-236",
+      "title": "萬鈞伯裘書院 升中簡介會（四）：中一面試技巧工作坊",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "萬鈞伯裘書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-01-09T01:00:00.000Z",
+      "dateEnd": "2027-01-09T04:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "預發面試教學影片；當日模擬面試；個人及小組技巧；需報名",
+      "notes": "",
+      "sourceUrl": "https://www.mkpc.edu.hk/information-day-for-s1-admissions/"
+    },
+    {
+      "id": "ev-237",
+      "title": "基督教香港信義會宏信書院 Year 7 入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "基督教香港信義會宏信書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-21",
+      "dateEnd": "2026-11-13",
+      "keyDateStart": "2026-11-13",
+      "keyDateIsDateTime": false,
+      "keyPoints": "截止當日下午4時；網上申請 http://admissions.luac.edu.hk/ ；申請費$50",
+      "notes": "直資IB；重要日期表另有筆誤寫「13 September」，以正文「13 November」為準。",
+      "sourceUrl": "https://www.luac.edu.hk/admissions/"
+    },
+    {
+      "id": "ev-238",
+      "title": "基督教香港信義會宏信書院 Year 7 入學簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "基督教香港信義會宏信書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-24T02:00:00.000Z",
+      "dateEnd": "2026-10-24T03:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "10:00開始；需網上登記",
+      "notes": "結束時間未列，暫記一小時時段。",
+      "sourceUrl": "https://www.luac.edu.hk/admissions/"
+    },
+    {
+      "id": "ev-239",
+      "title": "香港青年協會李兆基書院 中一入學簡介會（Presentation Day）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港青年協會李兆基書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-15T02:00:00.000Z",
+      "dateEnd": "2026-11-15T05:00:00.000Z",
+      "keyDateStart": "2026-10-23T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "兩節：10:00–11:00及12:00–13:00；實體先到先得＋網上模式；英語進行；每生限一位家長；實體報名僅10/23 09:00–17:00一天",
+      "notes": "11/3 15:00電郵確認座位。網上模式無需登記，11/15 09:00於網頁公布。",
+      "sourceUrl": "https://www.hlc.edu.hk/pre-s1-admission"
+    },
+    {
+      "id": "ev-240",
+      "title": "香港青年協會李兆基書院 中一網上入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港青年協會李兆基書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-30T06:00:00.000Z",
+      "dateEnd": "2026-12-14T02:00:00.000Z",
+      "keyDateStart": "2026-12-14T02:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "2026-10-30 14:00開放；2026-12-14 10:00截止",
+      "notes": "直資；詳見 Pre-S1 Admission 頁。",
+      "sourceUrl": "https://www.hlc.edu.hk/pre-s1-admission"
+    },
+    {
+      "id": "ev-241",
+      "title": "香港青年協會李兆基書院 中一面試日",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港青年協會李兆基書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-19",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Interview Day",
+      "notes": "",
+      "sourceUrl": "https://www.hlc.edu.hk/pre-s1-admission"
+    },
+    {
+      "id": "ev-242",
+      "title": "香港青年協會李兆基書院 面試結果公布（電郵）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "香港青年協會李兆基書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-01-20T07:00:00.000Z",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027-01-20 15:00後以電郵公布面試結果",
+      "notes": "結束時間未列。",
+      "sourceUrl": "https://www.hlc.edu.hk/pre-s1-admission"
+    },
+    {
+      "id": "ev-243",
+      "title": "香港青年協會李兆基書院 取錄結果通知（最後一日）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "香港青年協會李兆基書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-04-30",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Announcement of Admission Results (Last Day)",
+      "notes": "",
+      "sourceUrl": "https://www.hlc.edu.hk/pre-s1-admission"
+    },
+    {
+      "id": "ev-244",
+      "title": "天水圍官立中學 中一入學資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "天水圍官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-06",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "S1 Admission Talk；時間未於日程PDF詳列",
+      "notes": "官方《2027/2028學年中一自行分配學位申請日程》PDF。申請表派發2026-11-24至2027-01-18。",
+      "sourceUrl": "https://www.tswgss.edu.hk/sites/default/files/Schedule%20of%20Application%20and%20Admission%20for%20S1%20DP_2728.pdf"
+    },
+    {
+      "id": "ev-245",
+      "title": "天水圍官立中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "天水圍官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "遞交申請表截止",
+      "notes": "面試安排將於2027-01-27至2027-02-03以書面及電話通知。",
+      "sourceUrl": "https://www.tswgss.edu.hk/sites/default/files/Schedule%20of%20Application%20and%20Admission%20for%20S1%20DP_2728.pdf"
+    },
+    {
+      "id": "ev-246",
+      "title": "天水圍官立中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "天水圍官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Interview of DP Application",
+      "notes": "",
+      "sourceUrl": "https://www.tswgss.edu.hk/sites/default/files/Schedule%20of%20Application%20and%20Admission%20for%20S1%20DP_2728.pdf"
+    },
+    {
+      "id": "ev-247",
+      "title": "天水圍官立中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "天水圍官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取學生",
+      "notes": "SSPA結果2027-07-06；其後候補／註冊／學科測驗見同一PDF。",
+      "sourceUrl": "https://www.tswgss.edu.hk/sites/default/files/Schedule%20of%20Application%20and%20Admission%20for%20S1%20DP_2728.pdf"
+    },
+    {
+      "id": "ev-248",
+      "title": "元朗公立中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "元朗公立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027年9月入讀中一；申請期已於中一收生頁公布",
+      "notes": "官網暫未列面試日期等細節；叩門／註冊須知仍標2026/2027。",
+      "sourceUrl": "https://www.ylpss.edu.hk/zh/s1-admission-post"
     }
   ]
 }
