@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T19:30:18Z",
+  "syncedAt": "2026-10-10T19:48:34Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -4882,6 +4882,686 @@
       "keyPoints": "不參加統一派位；網上申請；提交後約兩星期內獲邀面試；筆試（中英數）+面試",
       "notes": "滾動收生，官網未列截止日。dateStart 為本批掃描日（頁面寫 is now open）。學費等見 how to apply 頁。",
       "sourceUrl": "https://tkhc.edu.hk/admission_application/"
+    },
+    {
+      "id": "ev-290",
+      "title": "保良局羅氏基金中學 入學講座暨開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "保良局羅氏基金中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-07T02:00:00.000Z",
+      "dateEnd": "2026-11-07T08:30:00.000Z",
+      "keyDateStart": "2026-11-07T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "攤位及表演 10:00–16:30；三場中一入學講座（內容相同）：09:00–10:30／11:00–12:30／13:00–14:30；09:00入場僅供第一節講座家長",
+      "notes": "直資；須網上報名 https://www.plklfc.edu.hk/openday_2026/?page=register",
+      "sourceUrl": "https://www.plklfc.edu.hk/en/admission-talk-and-open%C2%A0day-2026"
+    },
+    {
+      "id": "ev-291",
+      "title": "保良局羅氏基金中學 中一入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "保良局羅氏基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-22",
+      "dateEnd": "2026-12-04",
+      "keyDateStart": "2026-12-04",
+      "keyDateIsDateTime": false,
+      "keyPoints": "網上申請後須親臨校務處交費及文件；截止當日 16:00；報名費$75現金",
+      "notes": "直資；小六上學期成績表可於第一次面試前補交。詳見官網 Form 1 Admission 2027/28。",
+      "sourceUrl": "https://www.plklfc.edu.hk/en/application-form-1-admission-academic-year-202728"
+    },
+    {
+      "id": "ev-292",
+      "title": "保良局羅氏基金中學 中一第一次入學面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "保良局羅氏基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-09",
+      "dateEnd": "2027-01-10",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請者獲邀；詳情於2027-01-04前電郵通知；後備日1月16–17日",
+      "notes": "直資。",
+      "sourceUrl": "https://www.plklfc.edu.hk/en/application-form-1-admission-academic-year-202728"
+    },
+    {
+      "id": "ev-293",
+      "title": "保良局羅氏基金中學 中一第二次入學面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "保良局羅氏基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "獲選申請者；2027-02-19電郵通知；後備日2月28日；家長面試如需為3月7日",
+      "notes": "取錄結果預計3月中至4月初分多輪以電郵公布。",
+      "sourceUrl": "https://www.plklfc.edu.hk/en/application-form-1-admission-academic-year-202728"
+    },
+    {
+      "id": "ev-294",
+      "title": "優才(楊殷有娣)書院 G7入學簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "優才(楊殷有娣)書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-17T06:00:00.000Z",
+      "dateEnd": "2026-10-17T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "家長講座與課堂體驗同期進行；體驗課先到先得",
+      "notes": "直資；預約期2026-09-17至10-05（掃描時已截止）。報名見簡介會 PDF／Google Form。",
+      "sourceUrl": "https://www.gtcollege.edu.hk/2027-2028-g7-admission/"
+    },
+    {
+      "id": "ev-295",
+      "title": "優才(楊殷有娣)書院 G7入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "優才(楊殷有娣)書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-21",
+      "dateEnd": "2026-11-17",
+      "keyDateStart": "2026-11-17",
+      "keyDateIsDateTime": false,
+      "keyPoints": "接受 G7（2027-2028）申請至11月17日",
+      "notes": "直資。第一次面試12月5–6日；第二次12月19日；結果約1月4日後電郵；註冊1月9日上午。",
+      "sourceUrl": "https://www.gtcollege.edu.hk/2027-2028-g7-admission/"
+    },
+    {
+      "id": "ev-296",
+      "title": "優才(楊殷有娣)書院 G7第一次入學面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "優才(楊殷有娣)書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": "2026-12-06",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "第一次面試",
+      "notes": "第二次面試2026-12-19；12月11日後電郵通知第二次面試。",
+      "sourceUrl": "https://www.gtcollege.edu.hk/2027-2028-g7-admission/"
+    },
+    {
+      "id": "ev-297",
+      "title": "優才(楊殷有娣)書院 G7註冊（2027/28）",
+      "type": "註冊",
+      "status": "官方確認",
+      "schools": [
+        "優才(楊殷有娣)書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-09",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "上午；取錄結果約2027-01-04後電郵通知",
+      "notes": "直資。",
+      "sourceUrl": "https://www.gtcollege.edu.hk/2027-2028-g7-admission/"
+    },
+    {
+      "id": "ev-298",
+      "title": "啓思中學 開放日 2026",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "啓思中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-31T03:00:00.000Z",
+      "dateEnd": "2026-10-31T07:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "主題 World of Possibilities；含入學講座及校園體驗；優先予2027/28申請家庭；坑口港鐵A出口穿梭巴士約10:30起每15分鐘",
+      "notes": "直資；網上報名 https://forms.gle/MQuNHZMUzFHDcW2W6",
+      "sourceUrl": "https://www.css.edu.hk/css-open-day-2026"
+    },
+    {
+      "id": "ev-299",
+      "title": "啓思中學 中一第一階段入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "啓思中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-11",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "第一階段現已開放；網上申請；約兩個月內未獲面試通知視為不成功",
+      "notes": "直資。官網申請期以圖片顯示具體起迄，掃描時未能可靠讀出文字日期；dateStart為本批掃描日。詳見 https://www.css.edu.hk/admission-to-secondary-1",
+      "sourceUrl": "https://www.css.edu.hk/admission-to-secondary-1"
+    },
+    {
+      "id": "ev-300",
+      "title": "將軍澳官立中學 升中資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "將軍澳官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-11",
+      "dateEnd": "2026-12-12",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "日程表列 11–12/12/2026",
+      "notes": "官立；詳見官網「2027/2028學年中一學位申請日程及入學安排」PDF。",
+      "sourceUrl": "https://www.tkogss.edu.hk/sites/default/files/2728xue_nian_zhong_yi_xue_wei_shen_qing_ri_cheng_ji_ru_xue_an_pai_.pdf"
+    },
+    {
+      "id": "ev-301",
+      "title": "將軍澳官立中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "將軍澳官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額43；親臨或中一派位電子平台；辦公時間一至五08:30–17:00、六09:00–12:00；無需小學推薦信",
+      "notes": "表格派發期12月11日至1月18日。收生比重：名次40%／小五六成績10%／課外10%／獎項10%／面試30%；操行平均B或以上為先決。",
+      "sourceUrl": "https://www.tkogss.edu.hk/sites/default/files/shen_qing_xu_zhi_2728_s1dp.pdf"
+    },
+    {
+      "id": "ev-302",
+      "title": "將軍澳官立中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "將軍澳官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "3月6日（六）；若2月26日前未收書面通知可致電查詢",
+      "notes": "正取於2027-03-31書面及電話通知。",
+      "sourceUrl": "https://www.tkogss.edu.hk/sites/default/files/2728xue_nian_zhong_yi_xue_wei_shen_qing_ri_cheng_ji_ru_xue_an_pai_.pdf"
+    },
+    {
+      "id": "ev-303",
+      "title": "將軍澳官立中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "將軍澳官立中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取家長",
+      "notes": "統一派位結果2027-07-06；註冊7月8–9日。",
+      "sourceUrl": "https://www.tkogss.edu.hk/sites/default/files/2728xue_nian_zhong_yi_xue_wei_shen_qing_ri_cheng_ji_ru_xue_an_pai_.pdf"
+    },
+    {
+      "id": "ev-304",
+      "title": "仁濟醫院靚次伯紀念中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "仁濟醫院靚次伯紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額30；親臨校務處或電子平台；一至五08:00–17:30、六08:30–12:30",
+      "notes": "比重：學業30%／課外25%／面試25%／操行20%。申請須知PDF已上載。",
+      "sourceUrl": "https://www.lcp.edu.hk/attachment/upload/files/F1/2027%E8%87%B32028%E5%B9%B4%E5%BA%A6%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E4%B8%AD%E4%B8%80%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5.pdf"
+    },
+    {
+      "id": "ev-305",
+      "title": "仁濟醫院靚次伯紀念中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "仁濟醫院靚次伯紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-01",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027年2月開始；每位申請者皆獲面試；時間另行通知",
+      "notes": "正取通知2027-03-31。dateStart取二月起計，確切日子待校方通知。",
+      "sourceUrl": "https://www.lcp.edu.hk/attachment/upload/files/F1/2027%E8%87%B32028%E5%B9%B4%E5%BA%A6%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E4%B8%AD%E4%B8%80%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5.pdf"
+    },
+    {
+      "id": "ev-306",
+      "title": "仁濟醫院靚次伯紀念中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "仁濟醫院靚次伯紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取",
+      "notes": "學位分配結果2027-07-06公布。",
+      "sourceUrl": "https://www.lcp.edu.hk/attachment/upload/files/F1/2027%E8%87%B32028%E5%B9%B4%E5%BA%A6%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E4%B8%AD%E4%B8%80%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5.pdf"
+    },
+    {
+      "id": "ev-307",
+      "title": "香海正覺蓮社佛教正覺中學 資訊日（2026-2027）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香海正覺蓮社佛教正覺中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "官網文章標題「2026 - 2027 資訊日」；時段未列",
+      "notes": "詳見 https://www.bckss.edu.hk/article/661",
+      "sourceUrl": "https://www.bckss.edu.hk/article/661"
+    },
+    {
+      "id": "ev-308",
+      "title": "香海正覺蓮社佛教正覺中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香海正覺蓮社佛教正覺中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額30；截止當日下午四時前遞交／郵寄；無需小學推薦信",
+      "notes": "比重：小五六成績45%／操行25%／課外及服務10%／面試20%。正取3月31日書面及電話通知。申請表2026年9月已上載。",
+      "sourceUrl": "https://www.bckss.edu.hk/upload/2026/09/f49bb07ca139ff653c0ac9f67939e6b2.pdf"
+    },
+    {
+      "id": "ev-309",
+      "title": "東華三院呂潤財紀念中學 資訊日暨升中模擬面試",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "東華三院呂潤財紀念中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-28T05:30:00.000Z",
+      "dateEnd": "2026-11-28T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "兩節：13:30–14:30／15:00–16:00；每家庭一位成員參加資訊講座（座位有限）；9月18日起接受報名",
+      "notes": "另有「呂中體驗課」11月21日及12月12日（抽籤）。報名見官網最新消息連結。",
+      "sourceUrl": "https://www.lycmc.edu.hk/tc/latest_new/%E3%80%8C%E5%91%82%E4%B8%AD%E8%B3%87%E8%A8%8A%E6%97%A5%E6%9A%A8%E5%8D%87%E4%B8%AD%E6%A8%A1%E6%93%AC%E9%9D%A2%E8%A9%A62026%E3%80%8D%E5%8F%8A%E3%80%8C%E5%91%82%E4%B8%AD%E9%AB%94%E9%A9%97%E8%AA%B22026%E3%80%8D"
+    },
+    {
+      "id": "ev-310",
+      "title": "東華三院呂潤財紀念中學 呂中體驗課（11月場）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "東華三院呂潤財紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-21",
+      "dateEnd": null,
+      "keyDateStart": "2026-10-29",
+      "keyDateIsDateTime": false,
+      "keyPoints": "報名截止10月29日；抽籤；WhatsApp／電話通知獲選者",
+      "notes": "第二節時段頁面列11:15–12:45。天氣不穩則改室內場地。",
+      "sourceUrl": "https://www.lycmc.edu.hk/tc/latest_new/%E3%80%8C%E5%91%82%E4%B8%AD%E8%B3%87%E8%A8%8A%E6%97%A5%E6%9A%A8%E5%8D%87%E4%B8%AD%E6%A8%A1%E6%93%AC%E9%9D%A2%E8%A9%A62026%E3%80%8D%E5%8F%8A%E3%80%8C%E5%91%82%E4%B8%AD%E9%AB%94%E9%A9%97%E8%AA%B22026%E3%80%8D"
+    },
+    {
+      "id": "ev-311",
+      "title": "東華三院呂潤財紀念中學 呂中體驗課（12月場）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "東華三院呂潤財紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-12",
+      "dateEnd": null,
+      "keyDateStart": "2026-11-28",
+      "keyDateIsDateTime": false,
+      "keyPoints": "報名截止11月28日；抽籤",
+      "notes": "與資訊日同篇通告。",
+      "sourceUrl": "https://www.lycmc.edu.hk/tc/latest_new/%E3%80%8C%E5%91%82%E4%B8%AD%E8%B3%87%E8%A8%8A%E6%97%A5%E6%9A%A8%E5%8D%87%E4%B8%AD%E6%A8%A1%E6%93%AC%E9%9D%A2%E8%A9%A62026%E3%80%8D%E5%8F%8A%E3%80%8C%E5%91%82%E4%B8%AD%E9%AB%94%E9%A9%97%E8%AA%B22026%E3%80%8D"
+    },
+    {
+      "id": "ev-312",
+      "title": "香港華人基督教聯會真道書院 中一（拓階四）新生申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港華人基督教聯會真道書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-13T01:00:00.000Z",
+      "dateEnd": "2026-11-12T01:00:00.000Z",
+      "keyDateStart": "2026-11-12T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "報名費$75（PayPal／信用卡）；只處理已繳費申請；學費現時中一全年$32,300",
+      "notes": "直資一條龍；網上申請 admission.logos.edu.hk。同期間亦接受2026-27中一插班（1月入學）。",
+      "sourceUrl": "https://www.logosacademy.edu.hk/tc/secondary-1-ds4"
+    },
+    {
+      "id": "ev-313",
+      "title": "香港華人基督教聯會真道書院 中一新生面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港華人基督教聯會真道書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-21",
+      "dateEnd": "2026-11-28",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "經遴選後面試：11月21日或28日；結果12月下旬公布；註冊2027年1月",
+      "notes": "插班生另有11月21日筆試、11月28日面試。",
+      "sourceUrl": "https://www.logosacademy.edu.hk/tc/secondary-1-ds4"
+    },
+    {
+      "id": "ev-314",
+      "title": "香港華人基督教聯會真道書院 中一插班申請（2027年1月入學）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港華人基督教聯會真道書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-13T01:00:00.000Z",
+      "dateEnd": "2026-11-12T01:00:00.000Z",
+      "keyDateStart": "2026-11-12T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "筆試11月21日；面試11月28日；結果12月下旬；註冊／入學2027年1月",
+      "notes": "2026-2027 中一（拓階四）插班。",
+      "sourceUrl": "https://www.logosacademy.edu.hk/tc/secondary-1-ds4"
+    },
+    {
+      "id": "ev-315",
+      "title": "播道書院 中一網上入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "播道書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-27T06:00:00.000Z",
+      "dateEnd": "2026-11-20T08:00:00.000Z",
+      "keyDateStart": "2026-11-20T08:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上申請：10月27日14:00至11月20日16:00；入學日期2027年9月",
+      "notes": "直資；官網另有「入學講座系列」影片。來源頁：admission2627_s1_admission.html（標題為2027-2028申請事宜）。",
+      "sourceUrl": "https://www.evangel.edu.hk/admission2627_s1_admission.html"
+    },
+    {
+      "id": "ev-316",
+      "title": "將軍澳香島中學 中一學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "將軍澳香島中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-19",
+      "dateEnd": "2026-11-19",
+      "keyDateStart": "2026-11-19",
+      "keyDateIsDateTime": false,
+      "keyPoints": "不參加統一派位；全部中一自行取錄；網上報名；額滿即止；報名費$75",
+      "notes": "直資。操行須B或以上。比重：學業50%／操行及面試30%／課外與獎項20%。",
+      "sourceUrl": "https://www.tko.heungto.net/tc/content.php?wid=201"
+    },
+    {
+      "id": "ev-317",
+      "title": "將軍澳香島中學 中一面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "將軍澳香島中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-21",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "11月21日（六）；父或母須陪同；不接受改期；合資格者收電郵通知",
+      "notes": "面試當日須帶證件正本及副本。",
+      "sourceUrl": "https://www.tko.heungto.net/tc/content.php?wid=201"
+    },
+    {
+      "id": "ev-318",
+      "title": "萬鈞匯知中學 開放日暨學校資訊日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "萬鈞匯知中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-29",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "體驗課（STEAM／戲劇／外籍英語等）、直資介紹及中一入學簡介會、攤位、小學足球及STEAM比賽",
+      "notes": "直資；地點：將軍澳勤學里二號。報名 https://forms.cloud.microsoft/r/yxyW902wfK 。（schools.json 原網址 qualiedcollege.edu.hk 回403，實際官網為 mkqc.edu.hk）",
+      "sourceUrl": "https://www.mkqc.edu.hk/tc/school_album/open-day-cum-school-info-day"
+    },
+    {
+      "id": "ev-319",
+      "title": "萬鈞匯知中學 精英匯萃–中一專才優先取錄計劃申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "萬鈞匯知中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-01",
+      "dateEnd": "2026-10-30",
+      "keyDateStart": "2026-10-30",
+      "keyDateIsDateTime": false,
+      "keyPoints": "名額不多於10；涵蓋STEAM／體／音／視藝／表演；親臨校務處交表；逾期或不全不受理",
+      "notes": "11月初遴選通知；11月底第二階段；12月中註冊。未入選自動轉一般中一收生程序。",
+      "sourceUrl": "https://www.mkqc.edu.hk/en/elite-convergence-%E2%80%93-s1-talent-direct-admission-scheme"
+    },
+    {
+      "id": "ev-320",
+      "title": "馬錦明慈善基金馬陳端喜紀念中學 簡介會暨升中特色體驗日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "馬錦明慈善基金馬陳端喜紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-28",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請須知歡迎家長於是日後瀏覽校網上載資料；時段未列於申請表PDF",
+      "notes": "資助；與2027/28自行分配申請須知同份文件。",
+      "sourceUrl": "https://www.mcdhmc.edu.hk/sites/default/files/files/zhong_yi_ru_xue_shen_qing_biao_09.30.pdf"
+    },
+    {
+      "id": "ev-321",
+      "title": "馬錦明慈善基金馬陳端喜紀念中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "馬錦明慈善基金馬陳端喜紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額20；親臨或電子平台；一至五07:30–17:45、六09:00–13:00；無需推薦信",
+      "notes": "比重：面試50%／學業30%／非學術20%。2月上旬發信通知面試安排。",
+      "sourceUrl": "https://www.mcdhmc.edu.hk/sites/default/files/files/zhong_yi_ru_xue_shen_qing_biao_09.30.pdf"
+    },
+    {
+      "id": "ev-322",
+      "title": "馬錦明慈善基金馬陳端喜紀念中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "馬錦明慈善基金馬陳端喜紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-01",
+      "dateEnd": "2027-03-31",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027年3月其中一個周六；個人介紹形式；惡劣天氣順延下一周六",
+      "notes": "正取2027-03-31書面及電話通知。dateStart/End標示三月區間，確切周六待通知。",
+      "sourceUrl": "https://www.mcdhmc.edu.hk/sites/default/files/files/zhong_yi_ru_xue_shen_qing_biao_09.30.pdf"
+    },
+    {
+      "id": "ev-323",
+      "title": "馬錦明慈善基金馬陳端喜紀念中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "馬錦明慈善基金馬陳端喜紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面（信件或電郵）及電話通知正取",
+      "notes": "派位結果2027-07-06與統一派位一併公布。",
+      "sourceUrl": "https://www.mcdhmc.edu.hk/sites/default/files/files/zhong_yi_ru_xue_shen_qing_biao_09.30.pdf"
+    },
+    {
+      "id": "ev-324",
+      "title": "景嶺書院 中一至中三插班申請（2027年1月入學）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "景嶺書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-28",
+      "dateEnd": "2026-10-30",
+      "keyDateStart": "2026-10-30",
+      "keyDateIsDateTime": false,
+      "keyPoints": "親臨校務處；不接受郵寄／電郵；一至五09:00–12:00及13:00–16:30、六09:00–11:30",
+      "notes": "資助。11月10日網頁公布第一輪筆試資格；筆試11月21日10:00–11:00（中英數）。",
+      "sourceUrl": "https://www.kingling.edu.hk/sites/default/files/pdf/Application_Guidelines_%E5%A0%B1%E5%90%8D%E9%A0%88%E7%9F%A5.pdf"
+    },
+    {
+      "id": "ev-325",
+      "title": "景嶺書院 插班第一輪筆試（2027年1月入學）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "景嶺書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-21T02:00:00.000Z",
+      "dateEnd": "2026-11-21T03:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "中英數；禮堂；須帶身份證及申請收據",
+      "notes": "資格名單2026-11-10於校網以申請編號公布。",
+      "sourceUrl": "https://www.kingling.edu.hk/sites/default/files/pdf/Application_Guidelines_%E5%A0%B1%E5%90%8D%E9%A0%88%E7%9F%A5.pdf"
+    },
+    {
+      "id": "ev-326",
+      "title": "香港道教聯合會圓玄學院第三中學 開放日及社區服務日（一）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "香港道教聯合會圓玄學院第三中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-28",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "取自2026-2027校曆表（11月28日）；時段未列",
+      "notes": "校曆另列2027-04-16至17開放日及社區服務日（二）。",
+      "sourceUrl": "https://www.hktayy3.edu.hk/CustomPage/90/School_Calendar2627.pdf"
+    },
+    {
+      "id": "ev-327",
+      "title": "香港道教聯合會圓玄學院第三中學 開放日及社區服務日（二）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "香港道教聯合會圓玄學院第三中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-04-16",
+      "dateEnd": "2027-04-17",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "取自校曆；時段未列",
+      "notes": "入學申請頁仍掛2026-2027自行分配（1月2–16日）資料，未見2027/28新自行分配日程。",
+      "sourceUrl": "https://www.hktayy3.edu.hk/CustomPage/90/School_Calendar2627.pdf"
+    },
+    {
+      "id": "ev-328",
+      "title": "香港復臨學校 2026-2027 入學申請現已開放",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港復臨學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-11",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Applications NOW OPEN；電郵／親交；約2–3星期後安排面試（教師面試＋網上評估＋校長會見家長）",
+      "notes": "私立。官網 Open Day 登記頁未列確切開放日日期（tinyurl「202611」導向之Drive檔為11月9日Teddy Bear Picnic，對象3–7歲，非中學開放日）。dateStart為本批掃描日。",
+      "sourceUrl": "https://www.hkaa.edu.hk/admission-procedure"
+    },
+    {
+      "id": "ev-329",
+      "title": "樹宏學校 入學申請（滾動）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "樹宏學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-11",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "網上eAdmission；約一星期內獲邀面試；面試後兩星期內結果；申請費$2,000不退還",
+      "notes": "私立華德福；官網未列截止日。dateStart為本批掃描日。",
+      "sourceUrl": "https://foresthouse.edu.hk/application"
     }
   ]
 }
