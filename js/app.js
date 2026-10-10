@@ -127,7 +127,9 @@ class App {
       districtSelect: document.getElementById("district-select"),
       resultCount: document.getElementById("result-count"),
       schoolList: document.getElementById("school-list"),
+      listEmpty: document.getElementById("list-empty"),
       eventsList: document.getElementById("events-list"),
+      eventsEmpty: document.getElementById("events-empty"),
       eventsTitle: document.getElementById("events-title"),
       eventsMeta: document.getElementById("events-meta"),
       eventsFilters: document.querySelector(".events-filters"),
@@ -135,8 +137,14 @@ class App {
       eventsSchoolSelect: document.getElementById("events-school-select"),
       map: document.getElementById("map"),
       mapHint: document.getElementById("map-hint"),
+      mapFilterBar: document.getElementById("map-filter-bar"),
+      mapFilterChips: document.getElementById("map-filter-chips"),
+      mapEmpty: document.getElementById("map-empty"),
       selectedPoint: document.getElementById("selected-point"),
+      selectedPointPrimary: document.getElementById("selected-point-primary"),
+      selectedPointCoords: document.getElementById("selected-point-coords"),
       distanceList: document.getElementById("distance-list"),
+      distanceEmpty: document.getElementById("distance-empty"),
       clearPoint: document.getElementById("clear-point"),
       cardTemplate: document.getElementById("school-card-template"),
     };
@@ -147,6 +155,11 @@ class App {
     this.bindListControls();
     this.bindEventFilters();
     this.els.clearPoint.addEventListener("click", () => this.clearSelectedPoint());
+    document.getElementById("list-empty-clear")?.addEventListener("click", () => this.clearAllFilters());
+    document.getElementById("map-clear-filters")?.addEventListener("click", () => this.clearAllFilters());
+    document.getElementById("map-empty-clear")?.addEventListener("click", () => this.clearAllFilters());
+    document.getElementById("distance-empty-clear")?.addEventListener("click", () => this.clearAllFilters());
+    document.getElementById("events-empty-clear")?.addEventListener("click", () => this.clearEventFilters());
 
     // Prefer territory-wide global; keep legacy SHATIN_SCHOOLS as fallback.
     const schools = window.HK_SECONDARY_SCHOOLS || window.SHATIN_SCHOOLS;
@@ -223,8 +236,6 @@ class App {
       if (this.els.eventsTitle && payload.title) {
         this.els.eventsTitle.textContent = payload.title;
       }
-      this.els.eventsMeta.textContent =
-        `data/events.json · 共 ${payload.events.length} 項（現有項目偏重沙田區來源；請以學校／教育局官網核實）`;
       this.populateEventSchoolFilter();
       this.renderEvents();
     } catch (err) {
@@ -319,9 +330,7 @@ class App {
         const btn = e.target.closest("[data-event-status]");
         if (!btn) return;
         this.eventStatus = btn.dataset.eventStatus;
-        this.els.eventsFilters.querySelectorAll(".chip").forEach((chip) => {
-          chip.classList.toggle("is-active", chip === btn);
-        });
+        this.syncChipGroup(this.els.eventsFilters, "eventStatus", this.eventStatus);
         this.renderEvents();
       });
     }
@@ -330,9 +339,7 @@ class App {
         const btn = e.target.closest("[data-event-band]");
         if (!btn) return;
         this.eventBand = btn.dataset.eventBand;
-        this.els.eventsBandFilters.querySelectorAll(".chip").forEach((chip) => {
-          chip.classList.toggle("is-active", chip === btn);
-        });
+        this.syncChipGroup(this.els.eventsBandFilters, "eventBand", this.eventBand);
         this.renderEvents();
       });
     }
@@ -367,8 +374,19 @@ class App {
     });
   }
 
+  clearEventFilters() {
+    this.eventStatus = "all";
+    this.eventBand = "all";
+    this.eventSchool = "all";
+    this.syncChipGroup(this.els.eventsFilters, "eventStatus", "all");
+    this.syncChipGroup(this.els.eventsBandFilters, "eventBand", "all");
+    if (this.els.eventsSchoolSelect) this.els.eventsSchoolSelect.value = "all";
+    this.renderEvents();
+  }
+
   renderEvents() {
     if (!this.eventsPayload?.events) return;
+    const total = this.eventsPayload.events.length;
     const list = this.eventsPayload.events.filter((ev) => {
       if (this.eventStatus !== "all" && ev.status !== this.eventStatus) {
         return false;
@@ -377,11 +395,14 @@ class App {
       return this.eventMatchesSchoolFilter(ev);
     });
 
-    this.els.eventsList.replaceChildren();
-    if (!list.length) {
-      this.els.eventsList.innerHTML = `<p class="sources">此篩選條件下沒有項目。</p>`;
-      return;
+    if (this.els.eventsMeta) {
+      this.els.eventsMeta.textContent = `顯示 ${list.length} / ${total} 項`;
     }
+
+    this.els.eventsList.replaceChildren();
+    const isEmpty = list.length === 0;
+    if (this.els.eventsEmpty) this.els.eventsEmpty.hidden = !isEmpty;
+    if (isEmpty) return;
 
     for (const ev of list) {
       const card = document.createElement("article");
@@ -441,11 +462,98 @@ class App {
 
   onListFiltersChanged() {
     this.renderList();
+    this.renderMapChrome();
     if (this.mapReady) {
       this.addSchoolMarkers({ refit: true });
       if (this.selectedLatLng) {
         this.renderDistances();
       }
+    }
+  }
+
+  syncChipGroup(container, datasetKey, value) {
+    if (!container) return;
+    container.querySelectorAll(".chip").forEach((chip) => {
+      chip.classList.toggle("is-active", chip.dataset[datasetKey] === value);
+    });
+  }
+
+  /** Reset school-list filters. Map reads the same state via onListFiltersChanged. */
+  clearAllFilters() {
+    this.filterDistrict = "all";
+    this.filterType = "all";
+    this.filterBand = "all";
+    this.query = "";
+    if (this.els.districtSelect) this.els.districtSelect.value = "all";
+    if (this.els.search) this.els.search.value = "";
+    this.syncChipGroup(this.els.filters, "type", "all");
+    this.syncChipGroup(this.els.bandFilters, "band", "all");
+    this.onListFiltersChanged();
+  }
+
+  removeListFilter(key) {
+    if (key === "district") {
+      this.filterDistrict = "all";
+      if (this.els.districtSelect) this.els.districtSelect.value = "all";
+    } else if (key === "type") {
+      this.filterType = "all";
+      this.syncChipGroup(this.els.filters, "type", "all");
+    } else if (key === "band") {
+      this.filterBand = "all";
+      this.syncChipGroup(this.els.bandFilters, "band", "all");
+    } else if (key === "query") {
+      this.query = "";
+      if (this.els.search) this.els.search.value = "";
+    } else {
+      return;
+    }
+    this.onListFiltersChanged();
+  }
+
+  activeListFilters() {
+    const items = [];
+    if (this.filterDistrict !== "all") {
+      items.push({ key: "district", label: `分區：${this.filterDistrict}` });
+    }
+    if (this.filterType !== "all") {
+      items.push({ key: "type", label: `類型：${this.filterType}` });
+    }
+    if (this.filterBand !== "all") {
+      const bandText = this.filterBand === "未知"
+        ? "未知／不適用"
+        : this.bandLabel(this.filterBand);
+      items.push({ key: "band", label: `民間組別：${bandText}` });
+    }
+    if (this.query) {
+      items.push({ key: "query", label: `搜尋：${this.query}` });
+    }
+    return items;
+  }
+
+  renderMapChrome() {
+    const chips = this.activeListFilters();
+    const bar = this.els.mapFilterBar;
+    const host = this.els.mapFilterChips;
+    if (bar && host) {
+      host.replaceChildren();
+      bar.hidden = chips.length === 0;
+      for (const item of chips) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chip map-active-chip";
+        btn.dataset.filterKey = item.key;
+        btn.textContent = item.label;
+        btn.setAttribute("aria-label", `移除篩選：${item.label}`);
+        btn.addEventListener("click", () => this.removeListFilter(item.key));
+        host.append(btn);
+      }
+    }
+
+    const none = this.schools.length > 0 && this.filteredSchools().length === 0;
+    if (this.els.mapEmpty) this.els.mapEmpty.hidden = !none;
+    if (this.els.mapHint) {
+      const hideHint = none || Boolean(this.selectedLatLng);
+      this.els.mapHint.classList.toggle("is-hidden", hideHint);
     }
   }
 
@@ -459,9 +567,7 @@ class App {
       const btn = e.target.closest("[data-type]");
       if (!btn) return;
       this.filterType = btn.dataset.type;
-      this.els.filters.querySelectorAll(".chip").forEach((chip) => {
-        chip.classList.toggle("is-active", chip === btn);
-      });
+      this.syncChipGroup(this.els.filters, "type", this.filterType);
       this.onListFiltersChanged();
     });
 
@@ -470,9 +576,7 @@ class App {
         const btn = e.target.closest("[data-band]");
         if (!btn) return;
         this.filterBand = btn.dataset.band;
-        this.els.bandFilters.querySelectorAll(".chip").forEach((chip) => {
-          chip.classList.toggle("is-active", chip === btn);
-        });
+        this.syncChipGroup(this.els.bandFilters, "band", this.filterBand);
         this.onListFiltersChanged();
       });
     }
@@ -486,7 +590,7 @@ class App {
   }
 
   bandLabel(band) {
-    if (band === "1" || band === "2" || band === "3") return `Band ${band}`;
+    if (band === "1" || band === "2" || band === "3") return `民間 Band ${band}`;
     return "未知／不適用";
   }
 
@@ -510,6 +614,8 @@ class App {
         s.gender,
         s.bandNote || "",
         this.bandLabel(band),
+        // Keep the shorter alias searchable after the 民間 prefix.
+        band === "1" || band === "2" || band === "3" ? `Band ${band}` : "",
         s.phone,
       ]
         .join(" ")
@@ -531,7 +637,10 @@ class App {
       this.filterDistrict === "all" ? "" : ` · ${this.filterDistrict}`;
     this.els.resultCount.textContent =
       `顯示 ${list.length} / ${this.schools.length} 所中學${districtNote}`;
+    const isEmpty = list.length === 0;
+    if (this.els.listEmpty) this.els.listEmpty.hidden = !isEmpty;
     this.els.schoolList.replaceChildren();
+    if (isEmpty) return;
 
     for (const school of list) {
       const node = this.els.cardTemplate.content.cloneNode(true);
@@ -605,7 +714,9 @@ class App {
       return;
     }
     if (typeof L === "undefined") {
-      this.els.selectedPoint.textContent = "地圖程式庫載入失敗，請檢查網路連線後重新整理。";
+      if (this.els.selectedPointPrimary) {
+        this.els.selectedPointPrimary.textContent = "地圖程式庫載入失敗，請檢查網路連線後重新整理。";
+      }
       return;
     }
 
@@ -618,7 +729,9 @@ class App {
       if (this._mapInitRetries++ < 40) {
         requestAnimationFrame(() => this.ensureMap());
       } else {
-        this.els.selectedPoint.textContent = "地圖容器尚未就緒，請再按一次「地圖與距離」。";
+        if (this.els.selectedPointPrimary) {
+          this.els.selectedPointPrimary.textContent = "地圖容器尚未就緒，請再按一次「地圖與距離」。";
+        }
       }
       return;
     }
@@ -789,7 +902,14 @@ class App {
     this.selectedLatLng = { lat, lng };
     this.els.mapHint.classList.add("is-hidden");
     this.els.clearPoint.hidden = false;
-    this.els.selectedPoint.textContent = `選取座標：${lat.toFixed(5)}, ${lng.toFixed(5)}（直線距離 · Haversine）`;
+    this.els.selectedPoint.classList.add("is-set");
+    if (this.els.selectedPointPrimary) {
+      this.els.selectedPointPrimary.textContent = "已選參考點";
+    }
+    if (this.els.selectedPointCoords) {
+      this.els.selectedPointCoords.hidden = false;
+      this.els.selectedPointCoords.textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+    }
 
     if (this.userMarker) {
       this.userMarker.setLatLng([lat, lng]);
@@ -799,7 +919,7 @@ class App {
         zIndexOffset: 1000,
         title: "選取位置",
       }).addTo(this.map);
-      this.userMarker.bindPopup("你選取的參考點").openPopup();
+      this.userMarker.bindPopup("已選參考點").openPopup();
     }
 
     this.renderDistances();
@@ -812,9 +932,19 @@ class App {
       this.userMarker = null;
     }
     this.els.clearPoint.hidden = true;
-    this.els.mapHint.classList.remove("is-hidden");
-    this.els.selectedPoint.textContent = "尚未選點。請在地圖上點選參考位置。";
+    this.els.selectedPoint.classList.remove("is-set");
+    if (this.els.selectedPointPrimary) {
+      this.els.selectedPointPrimary.textContent = "尚未選點。請在地圖上點選參考位置。";
+    }
+    if (this.els.selectedPointCoords) {
+      this.els.selectedPointCoords.hidden = true;
+      this.els.selectedPointCoords.textContent = "";
+    }
+    if (this.els.distanceEmpty) this.els.distanceEmpty.hidden = true;
+    if (this.els.distanceList) this.els.distanceList.hidden = false;
     this.els.distanceList.replaceChildren();
+    const noSchools = this.schools.length > 0 && this.filteredSchools().length === 0;
+    this.els.mapHint.classList.toggle("is-hidden", noSchools);
     for (const [id, marker] of this.markers) {
       const school = this.markerMeta.get(id);
       if (school) {
@@ -840,11 +970,12 @@ class App {
     this.els.distanceList.replaceChildren();
 
     if (!ranked.length) {
-      const empty = document.createElement("li");
-      empty.textContent = "目前篩選下沒有學校可比較距離。";
-      this.els.distanceList.append(empty);
+      if (this.els.distanceEmpty) this.els.distanceEmpty.hidden = false;
+      this.els.distanceList.hidden = true;
       return;
     }
+    if (this.els.distanceEmpty) this.els.distanceEmpty.hidden = true;
+    this.els.distanceList.hidden = false;
 
     shown.forEach((item, index) => {
       const li = document.createElement("li");
@@ -892,19 +1023,7 @@ class App {
 
     // If the school is filtered out, clear filters so the marker exists.
     if (!this.filteredSchools().some((s) => s.id === schoolId)) {
-      this.filterDistrict = "all";
-      this.filterType = "all";
-      this.filterBand = "all";
-      this.query = "";
-      if (this.els.districtSelect) this.els.districtSelect.value = "all";
-      if (this.els.search) this.els.search.value = "";
-      this.els.filters?.querySelectorAll(".chip").forEach((chip) => {
-        chip.classList.toggle("is-active", chip.dataset.type === "all");
-      });
-      this.els.bandFilters?.querySelectorAll(".chip").forEach((chip) => {
-        chip.classList.toggle("is-active", chip.dataset.band === "all");
-      });
-      this.renderList();
+      this.clearAllFilters();
     }
 
     // Activate tab first; ensureMap waits for non-zero container size.
