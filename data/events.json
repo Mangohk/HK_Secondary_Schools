@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T19:23:07Z",
+  "syncedAt": "2026-10-10T19:30:18Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -4559,6 +4559,329 @@
       "keyPoints": "",
       "notes": "取自官網 2026-2027 中文校曆 PDF（12月12日）；時段未列。校曆同月另列 11月28日北區中學聯校展覽。",
       "sourceUrl": "https://www.caswcmc.edu.hk/wp-content/uploads/2026/09/c26-27_chin.pdf"
+    },
+    {
+      "id": "ev-271",
+      "title": "羅定邦中學 中一入學資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-14T02:30:00.000Z",
+      "dateEnd": "2026-11-15T08:30:00.000Z",
+      "keyDateStart": "2026-11-14T04:30:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "兩日均 10:30–16:30；入學講座 12:30–13:30",
+      "notes": "直資；不參加統一派位。詳見官網 S1 Admissions & Info Days。",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-272",
+      "title": "羅定邦中學 中一入學申請第一輪（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-20",
+      "dateEnd": "2026-12-02",
+      "keyDateStart": "2026-12-02",
+      "keyDateIsDateTime": false,
+      "keyPoints": "親臨遞交；申請費 HK$75（不退還）；表格可於校務處或網上下載",
+      "notes": "辦公時間：一至五 09:00–17:00；六 09:00–13:00。直資全港收生。",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-273",
+      "title": "羅定邦中學 中一入學申請第二輪（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-07",
+      "dateEnd": "2027-01-16",
+      "keyDateStart": "2027-01-16",
+      "keyDateIsDateTime": false,
+      "keyPoints": "第二輪申請截止 2027-01-16",
+      "notes": "申請程序同第一輪。",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-274",
+      "title": "羅定邦中學 中一面試第一輪（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-12",
+      "dateEnd": "2026-12-19",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "12/12（六）及 12/19（六）；全部申請者獲邀；約一週前電郵通知",
+      "notes": "亦可於官網以英文全名及申請編號查詢詳情。",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-275",
+      "title": "羅定邦中學 中一面試第二輪（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027-02-27（六）；約一週前電郵通知",
+      "notes": "",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-276",
+      "title": "羅定邦中學 中一取錄結果第一輪（分批）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-15",
+      "dateEnd": "2027-03-07",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "約2027年1月中旬至3月初分批電郵及網頁公布",
+      "notes": "取錄後須簽署承諾書並呈繳小六學生資料表正本。日期為官網「1月中旬至3月初」之約略區間，非單一固定日。",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-277",
+      "title": "羅定邦中學 中一取錄結果第二輪（分批）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "羅定邦中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-15",
+      "dateEnd": "2027-04-30",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "約2027年3月中旬至4月底分批公布",
+      "notes": "日期為官網「3月中旬至4月底」之約略區間。",
+      "sourceUrl": "https://www.ltpss.edu.hk/en/s1-admissions-info-days-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E5%8F%8A%E8%B3%87%E8%A8%8A%E6%97%A5"
+    },
+    {
+      "id": "ev-278",
+      "title": "恩主教書院 家長資訊日暨開放日／升中講座及面試攻略（2026）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "恩主教書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-21T01:00:00.000Z",
+      "dateEnd": "2026-11-21T07:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "升中講座：9:00–10:15／13:00–14:15；面試攻略：11:15–11:45／14:30–15:00；須網上報名",
+      "notes": "地點：二樓恩理覺禮堂。報名表：https://forms.gle/7EExarCfpV5dxrhT7 。惡劣天氣或改網上進行。官網標題「P6 Information Day cum Open Day」。",
+      "sourceUrl": "https://www.valtorta.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=86&pageId=193&nnnid=118"
+    },
+    {
+      "id": "ev-279",
+      "title": "大埔三育中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "大埔三育中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "直資英文中學；參加中央派位；紙本交校務處或經電子平台；學費約$20,000/年（待局審批）",
+      "notes": "辦公時間一至五 08:00–17:30。須一併遞交教育局自行分配申請表。學額100。",
+      "sourceUrl": "https://www.tpsy.edu.hk/Admission/S1_Discretionary_Place.pdf"
+    },
+    {
+      "id": "ev-280",
+      "title": "大埔三育中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "大埔三育中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-07",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027-03-07（日）；全部申請者面試；書面通知時間",
+      "notes": "面試評中英文能力、禮貌、溝通及解難。",
+      "sourceUrl": "https://www.tpsy.edu.hk/Admission/S1_Discretionary_Place.pdf"
+    },
+    {
+      "id": "ev-281",
+      "title": "大埔三育中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "大埔三育中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "電話及書信通知正取學生；自行分配學額100",
+      "notes": "",
+      "sourceUrl": "https://www.tpsy.edu.hk/Admission/S1_Discretionary_Place.pdf"
+    },
+    {
+      "id": "ev-282",
+      "title": "靈糧堂劉梅軒中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "靈糧堂劉梅軒中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "自行分配學額40；親臨校務處或電子平台；須備小五小六成績表副本及回郵信封",
+      "notes": "辦公：一至五 09:00–13:00、14:00–17:00；六 09:00–13:00。無需小學推薦信。",
+      "sourceUrl": "https://www.llcmhlau.edu.hk/tc/content.php?wid=136"
+    },
+    {
+      "id": "ev-283",
+      "title": "靈糧堂劉梅軒中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "靈糧堂劉梅軒中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取學生家長",
+      "notes": "學校會為部份申請人安排面試（甄選準則見官網）。",
+      "sourceUrl": "https://www.llcmhlau.edu.hk/tc/content.php?wid=136"
+    },
+    {
+      "id": "ev-284",
+      "title": "香港教師會李興貴中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港教師會李興貴中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額30；紙本或電子平台；可下載27-28申請表",
+      "notes": "辦公：一至五 08:00–17:30；六 08:00–13:00。無需小學推薦信。",
+      "sourceUrl": "https://www.hktalhk.edu.hk/%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e7%94%b3%e8%ab%8b/"
+    },
+    {
+      "id": "ev-285",
+      "title": "香港教師會李興貴中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港教師會李興貴中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-01",
+      "dateEnd": "2027-03-31",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "約見全部申請者；面見通知書將於2027年3月寄出（官網未列確切面試日）",
+      "notes": "比重：面試30%、學業20%、EDB次第20%、課外活動及服務20%、操行10%。",
+      "sourceUrl": "https://www.hktalhk.edu.hk/%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e7%94%b3%e8%ab%8b/"
+    },
+    {
+      "id": "ev-286",
+      "title": "香港教師會李興貴中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "香港教師會李興貴中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取學生家長",
+      "notes": "",
+      "sourceUrl": "https://www.hktalhk.edu.hk/%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e7%94%b3%e8%ab%8b/"
+    },
+    {
+      "id": "ev-287",
+      "title": "香港紅卍字會大埔卍慈中學 升中家長講座（2026）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "香港紅卍字會大埔卍慈中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "主題：『工具求快，學習求遠：AI時代的「卍跑者」精神』；官網未列時間／報名方式",
+      "notes": "見中一入學申請專頁列出之2026-12-05場次。",
+      "sourceUrl": "https://www.hkrsstpss.edu.hk/admission/"
+    },
+    {
+      "id": "ev-288",
+      "title": "救恩書院 75周年開放日暨視覺藝術展覽",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "救恩書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-12",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校曆標「KYC 75th Anniversary Open Day and Visual Arts Exhibition」；翌日14/12為Holiday after Open Day",
+      "notes": "官網校曆確認日期；活動時間／升中簡介會細節官網暫未另文詳列。",
+      "sourceUrl": "https://www.kyc.edu.hk/en/calendar.php"
+    },
+    {
+      "id": "ev-289",
+      "title": "大光德萃書院 2027/28 入學申請現已開放",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "大光德萃書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-11",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "不參加統一派位；網上申請；提交後約兩星期內獲邀面試；筆試（中英數）+面試",
+      "notes": "滾動收生，官網未列截止日。dateStart 為本批掃描日（頁面寫 is now open）。學費等見 how to apply 頁。",
+      "sourceUrl": "https://tkhc.edu.hk/admission_application/"
     }
   ]
 }
