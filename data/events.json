@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T20:08:45Z",
+  "syncedAt": "2026-10-10T20:18:41Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -6157,6 +6157,329 @@
       "keyPoints": "簡介會網上登記由 2026-10-12 起；簡介會確實日期／時段頁面未列完整文句",
       "notes": "來源：https://app.spc.edu.hk/admissions/ （頁面標題仍寫 F.1 Admissions 2026-2027）。以登記開始日 timing（2026-10 中）推斷屬下一輪收生周期，惟官網標題未改；curl 對 app.spc.edu.hk／www.spc.edu.hk 出現 SSL／逾時，內容僅能經 WebFetch 取得上述一句。請稍後再核簡介會日時及 2027/28 申請窗。",
       "sourceUrl": "https://app.spc.edu.hk/admissions/"
-    }
+    },
+      {
+        "id": "ev-365",
+        "title": "聖公會鄧肇堅中學 中一入學資訊日 2026",
+        "type": "資訊日",
+        "status": "官方確認",
+        "schools": [
+          "聖公會鄧肇堅中學"
+        ],
+        "isDateTime": true,
+        "dateStart": "2026-11-07T01:00:00.000Z",
+        "dateEnd": "2026-11-07T05:00:00.000Z",
+        "keyDateStart": "2026-10-26T01:00:00.000Z",
+        "keyDateIsDateTime": true,
+        "keyPoints": "個別家長網上報名 2026-10-26 09:00 至 10-30 午夜（先到先得）；經小學預留座位者毋須再報",
+        "notes": "兩節內容相同：第一節 09:00–11:00（08:30 登記入座）、第二節 11:00–13:00（10:30 登記）；含辦學理念、校友分享、中一課程／課外活動／報名辦法講座、答問及校園參觀。地點灣仔愛群道9號。來源：校方海報（官網 F.1 Information Day 2026 專頁）。",
+        "sourceUrl": "https://www.tsk.edu.hk/f1-information-day-2026"
+      },
+      {
+        "id": "ev-366",
+        "title": "聖公會鄧肇堅中學 中一自行分配學位申請（2027/28）",
+        "type": "報名／申請",
+        "status": "官方確認",
+        "schools": [
+          "聖公會鄧肇堅中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-01-04",
+        "dateEnd": "2027-01-18",
+        "keyDateStart": "2027-01-18",
+        "keyDateIsDateTime": false,
+        "keyPoints": "交表截止",
+        "notes": "官網 F.1 Admission 日程表（2027–2028）。可親身或經 eSSPA 遞交。",
+        "sourceUrl": "https://www.tsk.edu.hk/f1-admission"
+      },
+      {
+        "id": "ev-367",
+        "title": "聖公會鄧肇堅中學 自行分配學位面試（2027/28）",
+        "type": "面試",
+        "status": "官方確認",
+        "schools": [
+          "聖公會鄧肇堅中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-02-27",
+        "dateEnd": null,
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "",
+        "notes": "官網日程：2027-02-27 Interview。時段另通知。",
+        "sourceUrl": "https://www.tsk.edu.hk/f1-admission"
+      },
+      {
+        "id": "ev-368",
+        "title": "聖公會鄧肇堅中學 自行分配學位正取通知（2027/28）",
+        "type": "放榜／結果",
+        "status": "官方確認",
+        "schools": [
+          "聖公會鄧肇堅中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-03-31",
+        "dateEnd": null,
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "",
+        "notes": "官網：Notification of successful application 2027-03-31。統一派位結果 2027-07-06；註冊 2027-07-08 至 07-09。",
+        "sourceUrl": "https://www.tsk.edu.hk/f1-admission"
+      },
+      {
+        "id": "ev-369",
+        "title": "香港真光中學 真光園遊－中一自行分配學位暨學校簡介會（Round Trip @ True Light）",
+        "type": "資訊日",
+        "status": "官方確認",
+        "schools": [
+          "香港真光中學"
+        ],
+        "isDateTime": true,
+        "dateStart": "2026-11-14T01:00:00.000Z",
+        "dateEnd": "2026-11-14T06:15:00.000Z",
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "須網上預約；額滿即止；成功報名以電郵確認",
+        "notes": "官網海報：2026-11-14（六）09:00–14:15；歡迎小五小六學生及家長；含中一自行分配學位暨學校簡介會、翱遊真光及真光之航體驗。導賞須預先下載 Zello 並帶耳筒。當日若有餘額可即場報名。新聞 2026-10-02 刊出。",
+        "sourceUrl": "https://www.tlmshk.edu.hk/news/6420/"
+      },
+      {
+        "id": "ev-370",
+        "title": "香港真光中學 中一自行分配學位申請（2027/28）",
+        "type": "報名／申請",
+        "status": "官方確認",
+        "schools": [
+          "香港真光中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-01-04",
+        "dateEnd": "2027-01-18",
+        "keyDateStart": "2027-01-18",
+        "keyDateIsDateTime": false,
+        "keyPoints": "交表截止（電子平台至 23:59）",
+        "notes": "自行名額40；一至五 09:00–17:00、六 09:00–12:00 親臨教導處；或 eSSPA。準則：學業55%／操行課外服務獎項25%／面試20%。申請表已上載官網。",
+        "sourceUrl": "https://www.tlmshk.edu.hk/wp-content/uploads/2026/09/2027-28-Application-for-Admission-to-Secondary-One-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E8%A1%A8.pdf"
+      },
+      {
+        "id": "ev-371",
+        "title": "香港真光中學 自行分配學位面試（2027/28）",
+        "type": "面試",
+        "status": "官方確認",
+        "schools": [
+          "香港真光中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-03-06",
+        "dateEnd": null,
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "每位申請學生皆獲面試；書面通知時段；缺席不獲分配自行學位",
+        "notes": "見 2027-28 家長注意事項／申請表附件。",
+        "sourceUrl": "https://www.tlmshk.edu.hk/wp-content/uploads/2026/09/2027-28-Application-for-Admission-to-Secondary-One-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E8%A1%A8.pdf"
+      },
+      {
+        "id": "ev-372",
+        "title": "香港真光中學 自行分配學位正取通知（2027/28）",
+        "type": "放榜／結果",
+        "status": "官方確認",
+        "schools": [
+          "香港真光中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-03-31",
+        "dateEnd": null,
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "書面及電話通知正取家長",
+        "notes": "",
+        "sourceUrl": "https://www.tlmshk.edu.hk/wp-content/uploads/2026/09/2027-28-Application-for-Admission-to-Secondary-One-%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B%E8%A1%A8.pdf"
+      },
+      {
+        "id": "ev-373",
+        "title": "瑪利曼中學 中一入學資訊日（2027/28）",
+        "type": "資訊日",
+        "status": "官方確認",
+        "schools": [
+          "瑪利曼中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2026-11-28",
+        "dateEnd": null,
+        "keyDateStart": "2026-11-01",
+        "keyDateIsDateTime": false,
+        "keyPoints": "登記表格及其他詳情料 2026-11-01 或前公布",
+        "notes": "官網 S1 DP Application（Academic Year 2027-2028）：Information Day for S1 Admission 28 November 2026 (Saturday)。時段待公布。自行名額 43。",
+        "sourceUrl": "https://mss.edu.hk/en/content.php?wid=39"
+      },
+      {
+        "id": "ev-374",
+        "title": "瑪利曼中學 中一自行分配學位申請（2027/28）",
+        "type": "報名／申請",
+        "status": "官方確認",
+        "schools": [
+          "瑪利曼中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-01-04",
+        "dateEnd": "2027-01-18",
+        "keyDateStart": "2027-01-18",
+        "keyDateIsDateTime": false,
+        "keyPoints": "交表截止；一至五 08:00–17:00、六 09:00–12:00",
+        "notes": "43 個自行學位；可親身或 eSSPA（智方便+）。",
+        "sourceUrl": "https://mss.edu.hk/en/content.php?wid=39"
+      },
+      {
+        "id": "ev-375",
+        "title": "瑪利曼中學 自行分配學位面試（2027/28）",
+        "type": "面試",
+        "status": "官方確認",
+        "schools": [
+          "瑪利曼中學"
+        ],
+        "isDateTime": true,
+        "dateStart": "2027-03-13T01:00:00.000Z",
+        "dateEnd": null,
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "所有非直屬小學申請人均獲安排面試；上午 9:00 起",
+        "notes": "官網：13 March 2027 (Saturday) 9:00 am；Interview for Discretionary Places which will be arranged for ALL non-feeder school applicants。",
+        "sourceUrl": "https://mss.edu.hk/en/content.php?wid=39"
+      },
+      {
+        "id": "ev-376",
+        "title": "瑪利曼中學 自行分配學位正取通知（2027/28）",
+        "type": "放榜／結果",
+        "status": "官方確認",
+        "schools": [
+          "瑪利曼中學"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-03-31",
+        "dateEnd": null,
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "電話及書面通知",
+        "notes": "",
+        "sourceUrl": "https://mss.edu.hk/en/content.php?wid=39"
+      },
+      {
+        "id": "ev-377",
+        "title": "香港鄧鏡波書院 小六升中學校資訊日 2026",
+        "type": "資訊日",
+        "status": "官方確認",
+        "schools": [
+          "香港鄧鏡波書院"
+        ],
+        "isDateTime": true,
+        "dateStart": "2026-12-12T02:00:00.000Z",
+        "dateEnd": "2026-12-12T07:30:00.000Z",
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "兩場：10:00–11:30 及 14:00–15:30；海報設報名 QR",
+        "notes": "官網首頁最新消息列 12/12/2026 小六升中學校資訊日；專頁海報 INFODAY_Poster.jpg。地點灣仔堅尼地道25及27號。自行分配學位 PDF 暫仍為 2026/27 周期（申請 2026-01-02 至 01-16），2027/28 細節待更新。",
+        "sourceUrl": "https://hktkpc.edu.hk/tc/information-day"
+      },
+      {
+        "id": "ev-378",
+        "title": "中華基督教會公理書院 開放日暨入學簡介會（上學期）",
+        "type": "開放日",
+        "status": "官方確認",
+        "schools": [
+          "中華基督教會公理書院"
+        ],
+        "isDateTime": false,
+        "dateStart": "2026-12-05",
+        "dateEnd": null,
+        "keyDateStart": "2026-12-04",
+        "keyDateIsDateTime": false,
+        "keyPoints": "網上報名截止 2026-12-04；查詢 2577 5778／klc@cccklc.edu.hk",
+        "notes": "直資；不參加 SSPA。來源：中華基督教會香港區會《升中活動簡介 2026-2027》及校曆（5/12 Open Day）。地點銅鑼灣大坑徑17號。內容含高小比賽攤位及入學簡介會；時段區會簡介未列。校曆另列翌日 7/12 為 Open Day 翌日假期。",
+        "sourceUrl": "https://cccklc.edu.hk/uploads/files/School%20Calendar%20(2026-2027)_%E8%8B%B1%EF%BC%88%E4%B8%AD%E4%B8%80%E8%87%B3%E4%B8%AD%E4%BA%94%EF%BC%89.pdf"
+      },
+      {
+        "id": "ev-379",
+        "title": "中華基督教會公理書院 開放日暨入學簡介會（下學期）",
+        "type": "開放日",
+        "status": "官方確認",
+        "schools": [
+          "中華基督教會公理書院"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-04-17",
+        "dateEnd": null,
+        "keyDateStart": "2027-04-16",
+        "keyDateIsDateTime": false,
+        "keyPoints": "網上報名截止 2027-04-16",
+        "notes": "直資；來源：中華基督教會香港區會《升中活動簡介 2026-2027》及校曆（17/4 Open Day）。地點銅鑼灣大坑徑17號。",
+        "sourceUrl": "https://kws-new.schoolteam.hk/uploads/files/26%E5%8D%87%E4%B8%AD/%E5%8D%80%E6%9C%83%E4%B8%AD%E5%AD%B8%E5%8D%87%E4%B8%AD%E6%B4%BB%E5%8B%95%E7%B0%A1%E4%BB%8B2026-2027.pdf"
+      },
+      {
+        "id": "ev-380",
+        "title": "聖保祿學校 中一資訊日暨 STEM 展示會（2027/28）",
+        "type": "資訊日",
+        "status": "已過",
+        "schools": [
+          "聖保祿學校"
+        ],
+        "isDateTime": true,
+        "dateStart": "2026-10-10T05:00:00.000Z",
+        "dateEnd": "2026-10-10T08:00:00.000Z",
+        "keyDateStart": "2026-10-06T09:00:00.000Z",
+        "keyDateIsDateTime": true,
+        "keyPoints": "網上登記已於 2026-10-06 17:00 截止",
+        "notes": "直資；不參加 SSPA。STEM 展示會 13:00 起（有蓋操場）；入學申請簡介會 14:30 禮堂。官網 2026-09-21 公布。",
+        "sourceUrl": "https://spcs.edu.hk/w/2026/09/21/%e4%b8%ad%e4%b8%80%e5%85%a5%e5%ad%b8%e7%94%b3%e8%ab%8b2027-2028%e5%b9%b4/"
+      },
+      {
+        "id": "ev-381",
+        "title": "聖保祿學校 中一入學申請（2027/28）",
+        "type": "報名／申請",
+        "status": "官方確認",
+        "schools": [
+          "聖保祿學校"
+        ],
+        "isDateTime": true,
+        "dateStart": "2026-10-10T00:00:00.000Z",
+        "dateEnd": "2026-12-01T09:00:00.000Z",
+        "keyDateStart": "2026-12-01T09:00:00.000Z",
+        "keyDateIsDateTime": true,
+        "keyPoints": "網上申請截止 2026-12-01 下午5時；須填表並上載成績表等文件",
+        "notes": "直資；擬定學費約每年$32,500（待教育局批核）。準則：學術30%／非學術及品行20%／面試50%。詳見注意事項 PDF。",
+        "sourceUrl": "https://spcs.edu.hk/w/2026/10/10/%e4%b8%ad%e4%b8%80%e5%85%a5%e5%ad%b8%e7%94%b3%e8%ab%8b2027-2028%e5%b9%b4-2/"
+      },
+      {
+        "id": "ev-382",
+        "title": "聖保祿學校 中一第一次面試（2027/28）",
+        "type": "面試",
+        "status": "官方確認",
+        "schools": [
+          "聖保祿學校"
+        ],
+        "isDateTime": false,
+        "dateStart": "2026-12-19",
+        "dateEnd": null,
+        "keyDateStart": "2026-12-15",
+        "keyDateIsDateTime": false,
+        "keyPoints": "面試証下載連結約 2026-12-15 或前電郵；當日須帶身份證、面試証、兩本英／中文書及讀書報告",
+        "notes": "見《申請中一學位注意事項（2027-2028）》；指定時間另於面試証列明。",
+        "sourceUrl": "https://spcs.edu.hk/w/wp-content/uploads/2026/10/2027-28_Notes_on_Application_Chinese.pdf"
+      },
+      {
+        "id": "ev-383",
+        "title": "聖保祿學校 中一第二次面試（2027/28）",
+        "type": "面試",
+        "status": "官方確認",
+        "schools": [
+          "聖保祿學校"
+        ],
+        "isDateTime": false,
+        "dateStart": "2027-03-01",
+        "dateEnd": "2027-03-20",
+        "keyDateStart": null,
+        "keyDateIsDateTime": false,
+        "keyPoints": "約 2027 年 3 月中旬；部分申請人及家長獲邀",
+        "notes": "成功申請者於第二次面試後獲通知，約 2027 年 3 月下旬到校註冊。精確日待電郵／書面通知。",
+        "sourceUrl": "https://spcs.edu.hk/w/wp-content/uploads/2026/10/2027-28_Notes_on_Application_Chinese.pdf"
+      }
   ]
 }
