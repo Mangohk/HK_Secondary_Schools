@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -57,9 +61,9 @@
           <span class="filter-label">民間組別</span>
           <div class="band-filters" role="group" aria-label="民間參考組別篩選">
             <button class="chip is-active" data-band="all">全部</button>
-            <button class="chip" data-band="1">Band 1</button>
-            <button class="chip" data-band="2">Band 2</button>
-            <button class="chip" data-band="3">Band 3</button>
+            <button class="chip" data-band="1">民間 Band 1</button>
+            <button class="chip" data-band="2">民間 Band 2</button>
+            <button class="chip" data-band="3">民間 Band 3</button>
             <button class="chip" data-band="未知">未知／不適用</button>
           </div>
         </div>
@@ -71,7 +75,12 @@
         <p class="empty-state-body">試試放寬分區、類型、民間組別或搜尋字詞。</p>
         <button type="button" id="list-empty-clear" class="btn btn-primary">清除全部</button>
       </div>
+      <p class="list-window-status" id="list-window-status" hidden></p>
       <div id="school-list" class="school-list"></div>
+      <div class="list-window-footer" id="list-window-footer" hidden>
+        <button type="button" id="load-more" class="btn btn-secondary">載入更多</button>
+        <p class="list-window-done" id="list-window-done" hidden>已顯示全部</p>
+      </div>
       <aside class="sources">
         <h2>資料來源與說明</h2>
         <ul>
@@ -107,9 +116,9 @@
             <span class="filter-label">民間組別</span>
             <div class="events-band-filters" role="group" aria-label="民間參考組別篩選">
               <button class="chip is-active" data-event-band="all">全部</button>
-              <button class="chip" data-event-band="1">Band 1</button>
-              <button class="chip" data-event-band="2">Band 2</button>
-              <button class="chip" data-event-band="3">Band 3</button>
+              <button class="chip" data-event-band="1">民間 Band 1</button>
+              <button class="chip" data-event-band="2">民間 Band 2</button>
+              <button class="chip" data-event-band="3">民間 Band 3</button>
               <button class="chip" data-event-band="未知">未知／不適用</button>
             </div>
           </div>
@@ -133,12 +142,16 @@
       <div id="events-list" class="events-list"></div>
       <aside class="sources">
         <h2>升中項目說明</h2>
-        <ul>
-          <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
-          <li>現有項目多來自前身沙田區清單，並非全港完整日程；歡迎按 schema 自行擴充其他分區。</li>
-          <li>可用狀態、組別、學校篩選；三者以 AND 併用。組別依 <code>schools</code> 對應「學校資料」的民間參考 Band；多校事件只要其中一校符合即顯示。全港／教育局項目（空 <code>schools</code>）僅在組別為「全部」時出現。</li>
-          <li>事件日期以學校／教育局官網為準；標示「暫定（坊間）」者未經官方確認。時間顯示為香港時間（UTC+8）。</li>
-        </ul>
+        <p>日期以學校或教育局最新公布為準。標示「暫定（坊間）」的日子未經官方確認。</p>
+        <details class="tech-fold">
+          <summary>技術說明</summary>
+          <ul>
+            <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
+            <li>現有項目多來自前身沙田區清單，並非全港完整日程；歡迎按 schema 自行擴充其他分區。</li>
+            <li>可用狀態、組別、學校篩選；三者以 AND 併用。組別依 <code>schools</code> 對應「學校資料」的民間參考 Band；多校事件只要其中一校符合即顯示。全港／教育局項目（空 <code>schools</code>）僅在組別為「全部」時出現。</li>
+            <li>時間顯示為香港時間（UTC+8）。可用網址開啟本分頁，例如 <code>?tab=events&amp;status=官方確認&amp;band=1&amp;school=校名</code>。參數會還原 <code>+</code> 與百分號編碼（含再編碼一次的連結）。</li>
+          </ul>
+        </details>
       </aside>
     </section>
 
@@ -155,7 +168,7 @@
       <div class="map-layout">
         <div class="map-stage">
           <div id="map" role="application" aria-label="香港全港中學地圖"></div>
-          <p class="map-hint" id="map-hint">點擊或輕觸地圖任一位置，即可計算與各校的直線距離（非交通時間／非行車路線），由近至遠排列。地圖標記與「學校資料」的篩選同步。</p>
+          <p class="map-hint" id="map-hint">點地圖空白處設參考點，睇直線距離。</p>
         </div>
         <aside class="distance-panel" aria-live="polite">
           <div class="distance-header">
@@ -197,6 +210,8 @@
   </template>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
+    integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin=""></script>
   <script src="data/schools-data.js"></script>
   <script src="js/app.js"></script>
 </body>
