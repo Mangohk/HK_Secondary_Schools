@@ -1,5 +1,29 @@
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
+/** Official 18-district display order (Hong Kong Island → Kowloon → New Territories). */
+const DISTRICT_ORDER = [
+  "中西區",
+  "灣仔區",
+  "東區",
+  "南區",
+  "油尖旺區",
+  "深水埗區",
+  "九龍城區",
+  "黃大仙區",
+  "觀塘區",
+  "葵青區",
+  "荃灣區",
+  "屯門區",
+  "元朗區",
+  "北區",
+  "大埔區",
+  "沙田區",
+  "西貢區",
+  "離島區",
+];
+
+const DISTANCE_LIST_LIMIT = 40;
+
 /** Haversine great-circle distance in metres */
 function haversineMeters(lat1, lon1, lat2, lon2) {
   const R = 6371000;
@@ -42,6 +66,11 @@ function ensureUrl(url) {
   return `https://${url}`;
 }
 
+function districtSortIndex(district) {
+  const i = DISTRICT_ORDER.indexOf(district);
+  return i === -1 ? DISTRICT_ORDER.length : i;
+}
+
 function formatHongKongDateRange(start, end, isDateTime) {
   if (!start) return "日期待定";
   const optsDate = { timeZone: "Asia/Hong_Kong", year: "numeric", month: "numeric", day: "numeric" };
@@ -71,6 +100,7 @@ class App {
     this.eventsPayload = null;
     this.filterType = "all";
     this.filterBand = "all";
+    this.filterDistrict = "all";
     this.eventStatus = "all";
     this.eventBand = "all";
     this.eventSchool = "all";
@@ -94,6 +124,7 @@ class App {
       search: document.getElementById("search"),
       filters: document.querySelector(".filters"),
       bandFilters: document.querySelector(".band-filters"),
+      districtSelect: document.getElementById("district-select"),
       resultCount: document.getElementById("result-count"),
       schoolList: document.getElementById("school-list"),
       eventsList: document.getElementById("events-list"),
@@ -117,7 +148,8 @@ class App {
     this.bindEventFilters();
     this.els.clearPoint.addEventListener("click", () => this.clearSelectedPoint());
 
-    const schools = window.SHATIN_SCHOOLS;
+    // Prefer territory-wide global; keep legacy SHATIN_SCHOOLS as fallback.
+    const schools = window.HK_SECONDARY_SCHOOLS || window.SHATIN_SCHOOLS;
     if (!Array.isArray(schools) || !schools.length) {
       this.els.schoolList.innerHTML =
         `<p class="sources">載入失敗：找不到內嵌學校資料。請確認已載入 <code>data/schools-data.js</code>。</p>`;
@@ -126,10 +158,44 @@ class App {
       this.schoolBandByName = new Map(
         schools.map((s) => [s.nameZh, s.band || "未知"])
       );
+      this.populateDistrictFilter();
       this.renderList();
     }
 
     this.loadEvents();
+  }
+
+  populateDistrictFilter() {
+    const select = this.els.districtSelect;
+    if (!select) return;
+
+    const present = new Set(
+      this.schools.map((s) => s.district).filter(Boolean)
+    );
+    const ordered = DISTRICT_ORDER.filter((d) => present.has(d));
+    for (const d of present) {
+      if (!DISTRICT_ORDER.includes(d)) ordered.push(d);
+    }
+
+    const previous = this.filterDistrict;
+    select.replaceChildren();
+
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "全部十八區";
+    select.append(allOpt);
+
+    for (const district of ordered) {
+      const count = this.schools.filter((s) => s.district === district).length;
+      const opt = document.createElement("option");
+      opt.value = district;
+      opt.textContent = `${district}（${count}）`;
+      select.append(opt);
+    }
+
+    this.filterDistrict =
+      previous === "all" || present.has(previous) ? previous : "all";
+    select.value = this.filterDistrict;
   }
 
   eventsJsonUrl() {
@@ -158,7 +224,7 @@ class App {
         this.els.eventsTitle.textContent = payload.title;
       }
       this.els.eventsMeta.textContent =
-        `data/events.json · 共 ${payload.events.length} 項（請以學校／教育局官網核實）`;
+        `data/events.json · 共 ${payload.events.length} 項（現有項目偏重沙田區來源；請以學校／教育局官網核實）`;
       this.populateEventSchoolFilter();
       this.renderEvents();
     } catch (err) {
@@ -166,7 +232,7 @@ class App {
     }
   }
 
-  /** Unique school names from loaded events, plus 全部 / 全區／教育局. */
+  /** Unique school names from loaded events, plus 全部 / 全港／教育局. */
   populateEventSchoolFilter() {
     const select = this.els.eventsSchoolSelect;
     if (!select || !this.eventsPayload?.events) return;
@@ -187,10 +253,10 @@ class App {
     allOpt.textContent = "全部";
     select.append(allOpt);
 
-    const districtOpt = document.createElement("option");
-    districtOpt.value = "__district__";
-    districtOpt.textContent = "全區／教育局";
-    select.append(districtOpt);
+    const territoryOpt = document.createElement("option");
+    territoryOpt.value = "__territory__";
+    territoryOpt.textContent = "全港／教育局";
+    select.append(territoryOpt);
 
     for (const name of sorted) {
       const opt = document.createElement("option");
@@ -201,9 +267,11 @@ class App {
 
     const stillValid =
       previous === "all" ||
+      previous === "__territory__" ||
       previous === "__district__" ||
       names.has(previous);
-    this.eventSchool = stillValid ? previous : "all";
+    this.eventSchool =
+      previous === "__district__" ? "__territory__" : stillValid ? previous : "all";
     select.value = this.eventSchool;
   }
 
@@ -279,7 +347,10 @@ class App {
   eventMatchesSchoolFilter(ev) {
     if (this.eventSchool === "all") return true;
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
-    if (this.eventSchool === "__district__") {
+    if (
+      this.eventSchool === "__territory__" ||
+      this.eventSchool === "__district__"
+    ) {
       return schools.length === 0;
     }
     return schools.includes(this.eventSchool);
@@ -368,10 +439,20 @@ class App {
     }
   }
 
+  onListFiltersChanged() {
+    this.renderList();
+    if (this.mapReady) {
+      this.addSchoolMarkers({ refit: true });
+      if (this.selectedLatLng) {
+        this.renderDistances();
+      }
+    }
+  }
+
   bindListControls() {
     this.els.search.addEventListener("input", (e) => {
       this.query = e.target.value.trim().toLowerCase();
-      this.renderList();
+      this.onListFiltersChanged();
     });
 
     this.els.filters.addEventListener("click", (e) => {
@@ -381,7 +462,7 @@ class App {
       this.els.filters.querySelectorAll(".chip").forEach((chip) => {
         chip.classList.toggle("is-active", chip === btn);
       });
-      this.renderList();
+      this.onListFiltersChanged();
     });
 
     if (this.els.bandFilters) {
@@ -392,7 +473,14 @@ class App {
         this.els.bandFilters.querySelectorAll(".chip").forEach((chip) => {
           chip.classList.toggle("is-active", chip === btn);
         });
-        this.renderList();
+        this.onListFiltersChanged();
+      });
+    }
+
+    if (this.els.districtSelect) {
+      this.els.districtSelect.addEventListener("change", () => {
+        this.filterDistrict = this.els.districtSelect.value || "all";
+        this.onListFiltersChanged();
       });
     }
   }
@@ -404,6 +492,9 @@ class App {
 
   filteredSchools() {
     return this.schools.filter((s) => {
+      if (this.filterDistrict !== "all" && s.district !== this.filterDistrict) {
+        return false;
+      }
       if (this.filterType !== "all" && s.type !== this.filterType) return false;
       const band = s.band || "未知";
       if (this.filterBand !== "all" && band !== this.filterBand) return false;
@@ -411,6 +502,7 @@ class App {
       const hay = [
         s.nameZh,
         s.nameEn,
+        s.district || "",
         s.addressZh,
         s.addressEn,
         s.type,
@@ -427,16 +519,18 @@ class App {
   }
 
   renderList() {
-    const bandOrder = { "1": 0, "2": 1, "3": 2, "未知": 3 };
     const list = this.filteredSchools().slice().sort((a, b) => {
-      const bi = (bandOrder[a.band] ?? 9) - (bandOrder[b.band] ?? 9);
-      if (bi !== 0) return bi;
+      const di = districtSortIndex(a.district) - districtSortIndex(b.district);
+      if (di !== 0) return di;
       const ti = TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type);
       if (ti !== 0) return ti;
       return a.nameZh.localeCompare(b.nameZh, "zh-Hant");
     });
 
-    this.els.resultCount.textContent = `顯示 ${list.length} / ${this.schools.length} 所中學`;
+    const districtNote =
+      this.filterDistrict === "all" ? "" : ` · ${this.filterDistrict}`;
+    this.els.resultCount.textContent =
+      `顯示 ${list.length} / ${this.schools.length} 所中學${districtNote}`;
     this.els.schoolList.replaceChildren();
 
     for (const school of list) {
@@ -451,6 +545,13 @@ class App {
       bandPill.classList.add(`band-${band}`);
 
       const badges = card.querySelector(".badges");
+      if (school.district) {
+        const d = document.createElement("span");
+        d.className = "badge";
+        d.textContent = school.district;
+        badges.append(d);
+      }
+
       const typeBadge = document.createElement("span");
       typeBadge.className = `badge type-${school.type}`;
       typeBadge.textContent = school.type;
@@ -472,6 +573,7 @@ class App {
 
       const meta = card.querySelector(".school-meta");
       const rows = [
+        ["分區", school.district || "—"],
         ["組別", `<strong title="民間參考組別，非官方評級">${escapeHtml(this.bandLabel(band))}</strong>`],
         ["地址", school.addressZh],
         ["電話", school.phone
@@ -522,10 +624,11 @@ class App {
     }
     this._mapInitRetries = 0;
 
+    // Hong Kong territory overview; fitBounds to visible schools follows.
     this.map = L.map(this.els.map, {
       zoomControl: true,
       attributionControl: true,
-    }).setView([22.39, 114.20], 12);
+    }).setView([22.35, 114.15], 11);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
@@ -533,7 +636,7 @@ class App {
     }).addTo(this.map);
 
     this.markerLayer = L.layerGroup().addTo(this.map);
-    this.addSchoolMarkers();
+    this.addSchoolMarkers({ refit: true });
 
     this.map.on("click", (e) => {
       this.setSelectedPoint(e.latlng.lat, e.latlng.lng);
@@ -636,13 +739,16 @@ class App {
     img.addEventListener("error", dropLogo, { once: true });
   }
 
-  addSchoolMarkers() {
+  addSchoolMarkers({ refit = true } = {}) {
+    if (!this.markerLayer || !this.map) return;
     this.markerLayer.clearLayers();
     this.markers.clear();
     this.markerMeta.clear();
     const bounds = [];
+    const visible = this.filteredSchools();
 
-    for (const school of this.schools) {
+    for (const school of visible) {
+      if (school.lat == null || school.lng == null) continue;
       const marker = L.marker([school.lat, school.lng], {
         icon: this.schoolIcon(school, false),
         title: school.nameZh,
@@ -656,9 +762,10 @@ class App {
         className: "school-tooltip",
         sticky: false,
       });
+      const districtBit = school.district ? `${escapeHtml(school.district)} · ` : "";
       marker.bindPopup(
         `<p class="popup-title">${escapeHtml(school.nameZh)}</p>
-         <p class="popup-meta">${escapeHtml(this.bandLabel(school.band || "未知"))} · ${escapeHtml(school.type)} · ${escapeHtml(school.addressZh)}</p>`,
+         <p class="popup-meta">${districtBit}${escapeHtml(this.bandLabel(school.band || "未知"))} · ${escapeHtml(school.type)} · ${escapeHtml(school.addressZh)}</p>`,
         { maxWidth: 260 }
       );
       // Touch: first tap shows name tooltip; second opens popup via Leaflet defaults
@@ -673,8 +780,8 @@ class App {
       bounds.push([school.lat, school.lng]);
     }
 
-    if (bounds.length) {
-      this.map.fitBounds(bounds, { padding: [28, 28], animate: false });
+    if (refit && bounds.length) {
+      this.map.fitBounds(bounds, { padding: [28, 28], animate: false, maxZoom: 14 });
     }
   }
 
@@ -708,9 +815,6 @@ class App {
     this.els.mapHint.classList.remove("is-hidden");
     this.els.selectedPoint.textContent = "尚未選點。請在地圖上點選參考位置。";
     this.els.distanceList.replaceChildren();
-    for (const marker of this.markers.values()) {
-      // leave icons; refresh below in renderDistances when point set
-    }
     for (const [id, marker] of this.markers) {
       const school = this.markerMeta.get(id);
       if (school) {
@@ -723,22 +827,35 @@ class App {
   renderDistances() {
     if (!this.selectedLatLng) return;
     const { lat, lng } = this.selectedLatLng;
+    const pool = this.filteredSchools();
 
-    const ranked = this.schools
+    const ranked = pool
       .map((s) => ({
         school: s,
         meters: haversineMeters(lat, lng, s.lat, s.lng),
       }))
       .sort((a, b) => a.meters - b.meters);
 
+    const shown = ranked.slice(0, DISTANCE_LIST_LIMIT);
     this.els.distanceList.replaceChildren();
-    ranked.forEach((item, index) => {
+
+    if (!ranked.length) {
+      const empty = document.createElement("li");
+      empty.textContent = "目前篩選下沒有學校可比較距離。";
+      this.els.distanceList.append(empty);
+      return;
+    }
+
+    shown.forEach((item, index) => {
       const li = document.createElement("li");
+      const districtBit = item.school.district
+        ? `${escapeHtml(item.school.district)} · `
+        : "";
       li.innerHTML = `
         <span class="distance-rank">${index + 1}</span>
         <span>
           <span class="distance-name">${escapeHtml(item.school.nameZh)}</span>
-          <span class="distance-meta">${escapeHtml(this.bandLabel(item.school.band || "未知"))} · ${escapeHtml(item.school.type)} · ${escapeHtml(item.school.addressZh)}</span>
+          <span class="distance-meta">${districtBit}${escapeHtml(this.bandLabel(item.school.band || "未知"))} · ${escapeHtml(item.school.type)}</span>
         </span>
         <span class="distance-value">${formatDistance(item.meters)}</span>
       `;
@@ -751,6 +868,13 @@ class App {
       });
       this.els.distanceList.append(li);
     });
+
+    if (ranked.length > DISTANCE_LIST_LIMIT) {
+      const more = document.createElement("li");
+      more.className = "distance-more";
+      more.textContent = `僅顯示最近 ${DISTANCE_LIST_LIMIT} 所（篩選後共 ${ranked.length} 所）。可改分區篩選收窄範圍。`;
+      this.els.distanceList.append(more);
+    }
 
     const nearestId = ranked[0]?.school.id;
     for (const [id, marker] of this.markers) {
@@ -766,6 +890,23 @@ class App {
     const school = this.schools.find((s) => s.id === schoolId);
     if (!school) return;
 
+    // If the school is filtered out, clear filters so the marker exists.
+    if (!this.filteredSchools().some((s) => s.id === schoolId)) {
+      this.filterDistrict = "all";
+      this.filterType = "all";
+      this.filterBand = "all";
+      this.query = "";
+      if (this.els.districtSelect) this.els.districtSelect.value = "all";
+      if (this.els.search) this.els.search.value = "";
+      this.els.filters?.querySelectorAll(".chip").forEach((chip) => {
+        chip.classList.toggle("is-active", chip.dataset.type === "all");
+      });
+      this.els.bandFilters?.querySelectorAll(".chip").forEach((chip) => {
+        chip.classList.toggle("is-active", chip.dataset.band === "all");
+      });
+      this.renderList();
+    }
+
     // Activate tab first; ensureMap waits for non-zero container size.
     this.els.tabMap.click();
     this.ensureMap();
@@ -774,6 +915,9 @@ class App {
       if (!this.mapReady) {
         requestAnimationFrame(open);
         return;
+      }
+      if (!this.markers.has(schoolId)) {
+        this.addSchoolMarkers({ refit: false });
       }
       this.refreshMapLayout({ refit: false });
       const marker = this.markers.get(schoolId);

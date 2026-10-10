@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="沙田區中學資料、地圖位置與距離查詢工具" />
-  <title>沙田區中學 · 資料與地圖</title>
+  <meta name="description" content="香港全港日間中學公開資料、升中項目與地圖距離查詢（教育局開放數據）" />
+  <title>香港升中資訊網 · 全港中學資料與地圖</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
@@ -16,9 +16,9 @@
 
   <header class="site-header">
     <div class="brand-block">
-      <p class="brand-kicker">香港新界 · Sha Tin</p>
-      <h1 class="brand">沙田區中學</h1>
-      <p class="brand-sub">學校資料 · 升中項目 · 地圖距離</p>
+      <p class="brand-kicker">Hong Kong · 十八區</p>
+      <h1 class="brand">香港升中資訊網</h1>
+      <p class="brand-sub">全港日間中學資料 · 升中項目 · 地圖距離</p>
     </div>
     <nav class="tabs" role="tablist" aria-label="主要分頁">
       <button class="tab is-active" role="tab" id="tab-list" aria-selected="true" aria-controls="panel-list" data-tab="list">學校資料</button>
@@ -32,8 +32,17 @@
       <div class="toolbar">
         <label class="search-wrap">
           <span class="sr-only">搜尋學校</span>
-          <input id="search" type="search" placeholder="搜尋校名、地址、類型…" autocomplete="off" />
+          <input id="search" type="search" placeholder="搜尋校名、分區、地址、類型…" autocomplete="off" />
         </label>
+        <div class="filter-row">
+          <span class="filter-label">分區</span>
+          <div class="district-filter">
+            <label class="sr-only" for="district-select">行政區篩選</label>
+            <select id="district-select" aria-label="行政區篩選">
+              <option value="all" selected>全部十八區</option>
+            </select>
+          </div>
+        </div>
         <div class="filter-row">
           <span class="filter-label">類型</span>
           <div class="filters" role="group" aria-label="學校類型篩選">
@@ -60,9 +69,9 @@
       <aside class="sources">
         <h2>資料來源與說明</h2>
         <ul>
-          <li>學校名單、地址、電話、網址主要參考教育局分區學校名單及《中學學位分配辦法》沙田區手冊（公開資料）。</li>
-          <li>「民間參考組別」僅供參考，並非官方評級；收生組別每年不同，請自行向學校／教育局核實。</li>
-          <li>地圖座標取自 OpenStreetMap／Photon 公開地理資料，精確至社區／鄰里層級，可能與校門實際位置略有偏差。</li>
+          <li>學校名單、地址、電話、網址、分區與座標主要參考教育局「學校位置及資料」開放數據（日間本地中學；不含特殊、國際、英基及夜校）。</li>
+          <li>「民間參考組別」僅供參考，並非官方評級；目前僅部分學校有資料，其餘顯示「未知／不適用」。收生組別每年不同，請自行向學校／教育局核實。</li>
+          <li>地圖座標取自教育局公開地理資料，精確至社區／鄰里層級，可能與校門實際位置略有偏差。</li>
           <li>地圖使用 Leaflet + OpenStreetMap 圖磚，無需付費 API 金鑰。</li>
         </ul>
       </aside>
@@ -71,7 +80,7 @@
     <section id="panel-events" class="panel" role="tabpanel" aria-labelledby="tab-events" hidden>
       <div class="events-intro">
         <div>
-          <h2 class="events-title" id="events-title">沙田升中事件清單</h2>
+          <h2 class="events-title" id="events-title">升中項目清單</h2>
           <p class="events-meta" id="events-meta">載入中…</p>
         </div>
         <div class="events-filter-stack">
@@ -100,7 +109,7 @@
               <label class="sr-only" for="events-school-select">學校篩選</label>
               <select id="events-school-select" aria-label="學校篩選">
                 <option value="all" selected>全部</option>
-                <option value="__district__">全區／教育局</option>
+                <option value="__territory__">全港／教育局</option>
               </select>
             </div>
           </div>
@@ -111,7 +120,8 @@
         <h2>升中項目說明</h2>
         <ul>
           <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
-          <li>可用狀態、組別、學校篩選；三者以 AND 併用。組別依 <code>schools</code> 對應「學校資料」的民間參考 Band；多校事件只要其中一校符合即顯示。全區／教育局項目（空 <code>schools</code>）僅在組別為「全部」時出現。</li>
+          <li>現有項目多來自前身沙田區清單，並非全港完整日程；歡迎按 schema 自行擴充其他分區。</li>
+          <li>可用狀態、組別、學校篩選；三者以 AND 併用。組別依 <code>schools</code> 對應「學校資料」的民間參考 Band；多校事件只要其中一校符合即顯示。全港／教育局項目（空 <code>schools</code>）僅在組別為「全部」時出現。</li>
           <li>事件日期以學校／教育局官網為準；標示「暫定（坊間）」者未經官方確認。時間顯示為香港時間（UTC+8）。</li>
         </ul>
       </aside>
@@ -120,8 +130,8 @@
     <section id="panel-map" class="panel" role="tabpanel" aria-labelledby="tab-map" hidden>
       <div class="map-layout">
         <div class="map-stage">
-          <div id="map" role="application" aria-label="沙田區中學地圖"></div>
-          <p class="map-hint" id="map-hint">點擊或輕觸地圖任一位置，即可計算與各校距離（由近至遠）。</p>
+          <div id="map" role="application" aria-label="香港全港中學地圖"></div>
+          <p class="map-hint" id="map-hint">點擊或輕觸地圖任一位置，即可計算與各校距離（由近至遠）。地圖標記隨「學校資料」分區／類型／組別／搜尋篩選同步。</p>
         </div>
         <aside class="distance-panel" aria-live="polite">
           <div class="distance-header">
