@@ -124,9 +124,14 @@ body {
   color: var(--ink-soft);
   font: inherit;
   font-weight: 500;
+  min-height: 44px;
+  min-width: 44px;
   padding: 0.55rem 1.05rem;
   border-radius: 999px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
@@ -156,13 +161,22 @@ main {
 }
 
 .panel.is-active {
-  animation: fade-slide 0.35s ease both;
+  animation: fade-slide 0.35s ease;
 }
 
 .toolbar {
   display: grid;
   gap: 0.85rem;
   margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 0.55rem 0.35rem 0.7rem;
+  margin-left: -0.35rem;
+  margin-right: -0.35rem;
+  background: rgba(243, 239, 230, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(20, 35, 31, 0.06);
 }
 
 .search-wrap input {
@@ -170,6 +184,7 @@ main {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.72);
   border-radius: 12px;
+  min-height: 44px;
   padding: 0.85rem 1rem;
   font: inherit;
   color: var(--ink);
@@ -265,9 +280,14 @@ main {
   color: var(--ink-soft);
   font: inherit;
   font-size: 0.9rem;
-  padding: 0.35rem 0.8rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.4rem 0.9rem;
   border-radius: 999px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -282,6 +302,29 @@ main {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.9rem;
+}
+
+.list-window-status,
+.list-window-done {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.list-window-status {
+  margin: 0 0 0.65rem;
+}
+
+.list-window-footer {
+  display: flex;
+  justify-content: center;
+  margin: 0.95rem 0 0.15rem;
+}
+
+.list-window-done {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .band-disclaimer {
@@ -306,7 +349,12 @@ main {
 .empty-state[hidden],
 .map-filter-bar[hidden],
 .distance-list[hidden],
-.selected-point-coords[hidden] {
+.selected-point-coords[hidden],
+.list-window-status[hidden],
+.list-window-footer[hidden],
+.list-window-done[hidden],
+.btn[hidden],
+.linkish[hidden] {
   display: none !important;
 }
 
@@ -420,11 +468,16 @@ main {
   appearance: none;
   border: 0;
   border-radius: 999px;
-  padding: 0.45rem 0.9rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.45rem 0.95rem;
   font: inherit;
   font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.15s ease, background 0.2s ease;
 }
 
@@ -466,6 +519,39 @@ main {
   margin-top: 0.35rem;
 }
 
+.sources > p {
+  margin: 0;
+}
+
+.tech-fold {
+  margin-top: 0.45rem;
+}
+
+.tech-fold summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tech-fold summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.tech-fold ul,
+.events-error-tech {
+  margin-top: 0.35rem;
+}
+
+.events-error-tech {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
 .map-filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -473,6 +559,18 @@ main {
   justify-content: space-between;
   gap: 0.5rem 0.75rem;
   margin-bottom: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 0.45rem 0.15rem;
+  background: rgba(243, 239, 230, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+/* Empty states already offer 清除全部, so the bar does not repeat it. */
+#panel-map:has(#map-empty:not([hidden])) #map-clear-filters,
+#panel-map:has(#map-empty:not([hidden])) #distance-empty-clear {
+  display: none;
 }
 
 .map-filter-chips {
@@ -519,9 +617,10 @@ main {
 .map-hint {
   position: absolute;
   left: 0.75rem;
-  right: 0.75rem;
+  right: auto;
   bottom: 0.75rem;
   z-index: 500;
+  max-width: min(22rem, calc(100% - 9.5rem));
   margin: 0;
   padding: 0.65rem 0.8rem;
   border-radius: 12px;
@@ -574,6 +673,12 @@ main {
   font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -614,7 +719,8 @@ main {
   display: grid;
   grid-template-columns: 2.1rem 1fr auto;
   gap: 0.55rem;
-  align-items: start;
+  align-items: center;
+  min-height: 44px;
   padding: 0.55rem 0;
   border-top: 1px solid var(--line);
   cursor: pointer;
@@ -646,12 +752,15 @@ main {
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   color: var(--ink);
+  text-align: right;
+  line-height: 1.25;
   white-space: nowrap;
 }
 
 .distance-list li.distance-more {
   display: block;
   grid-template-columns: none;
+  min-height: 0;
   color: var(--ink-soft);
   font-size: 0.85rem;
   cursor: default;
@@ -708,6 +817,12 @@ main {
 .events-filter-stack {
   display: grid;
   gap: 0.65rem;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 0.45rem 0.15rem 0.55rem;
+  background: rgba(243, 239, 230, 0.94);
+  backdrop-filter: blur(10px);
 }
 
 .events-filters,
@@ -730,6 +845,7 @@ main {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.72);
   border-radius: 12px;
+  min-height: 44px;
   padding: 0.5rem 0.75rem;
   font: inherit;
   font-size: 0.9rem;
@@ -975,6 +1091,30 @@ main {
   color: #445;
 }
 
+.leaflet-popup.school-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+}
+
+.leaflet-popup.school-popup .leaflet-popup-content {
+  margin: 12px 14px;
+  line-height: 1.45;
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: rgba(15, 107, 92, 0.32);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: rgba(15, 107, 92, 0.88);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
@@ -1031,6 +1171,79 @@ main {
   #map {
     min-height: 360px;
     height: 55vh;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .map-stage {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    min-height: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .map-hint {
+    position: static;
+    order: -1;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: auto;
+    margin: 0 0 0.55rem;
+    animation: none;
+  }
+
+  .map-hint.is-hidden {
+    display: none;
+  }
+
+  .toolbar,
+  .events-filter-stack {
+    max-height: 42vh;
+    overflow: auto;
+  }
+
+  .distance-list li {
+    grid-template-columns: 2.1rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .distance-value {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+    white-space: normal;
+    margin-top: 0.1rem;
+  }
+
+  .leaflet-popup.school-popup .leaflet-popup-content-wrapper {
+    max-width: calc(100vw - 2.5rem);
+  }
+
+  .leaflet-popup.school-popup .leaflet-popup-content {
+    margin: 12px 12px 12px 14px;
+    width: auto !important;
+    min-width: min(200px, calc(100vw - 5.5rem)) !important;
+    max-width: calc(100vw - 5rem) !important;
+  }
+
+  .leaflet-popup.school-popup .leaflet-popup-close-button {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    line-height: 44px;
+    padding: 0;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  .leaflet-popup.school-popup .popup-title {
+    padding-right: 1.6rem;
   }
 
   .school-meta div {

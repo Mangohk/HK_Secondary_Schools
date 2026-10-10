@@ -23,6 +23,7 @@ const DISTRICT_ORDER = [
 ];
 
 const DISTANCE_LIST_LIMIT = 40;
+const LIST_PAGE_SIZE = 24;
 
 /** Haversine great-circle distance in metres */
 function haversineMeters(lat1, lon1, lat2, lon2) {
@@ -39,13 +40,14 @@ function haversineMeters(lat1, lon1, lat2, lon2) {
 }
 
 function formatDistance(meters) {
+  const join = (value, unit) => `${value}\u00A0${unit}`;
   if (meters < 1000) {
-    return `${Math.round(meters)} 米`;
+    return join(Math.round(meters), "米");
   }
   if (meters < 10000) {
-    return `${(meters / 1000).toFixed(2)} 公里`;
+    return join((meters / 1000).toFixed(2), "公里");
   }
-  return `${(meters / 1000).toFixed(1)} 公里`;
+  return join((meters / 1000).toFixed(1), "公里");
 }
 
 function escapeHtml(str) {
@@ -64,6 +66,101 @@ function ensureUrl(url) {
   if (!url) return "";
   if (/^https?:\/\//i.test(url)) return url;
   return `https://${url}`;
+}
+
+/**
+ * Decode one application/x-www-form-urlencoded component.
+ * `+` is a space. Percent-encoding is applied up to twice so a double-encoded
+ * 升中 link (for example `%25E6%25B2%2599`) still becomes the original text.
+ * Malformed sequences are left as-is instead of throwing.
+ */
+function decodeUrlParam(raw) {
+  if (raw == null) return "";
+  let text = String(raw).replace(/\+/g, " ");
+  for (let i = 0; i < 2; i += 1) {
+    if (!/%[0-9A-Fa-f]{2}/.test(text)) break;
+    try {
+      const next = decodeURIComponent(text);
+      if (next === text) break;
+      text = next;
+    } catch {
+      break;
+    }
+  }
+  return text.normalize("NFC").trim();
+}
+
+function readQueryPairs(queryString) {
+  const q = String(queryString || "").replace(/^\?/, "");
+  if (!q) return [];
+  const pairs = [];
+  for (const part of q.split("&")) {
+    if (!part) continue;
+    const eq = part.indexOf("=");
+    const rawKey = eq === -1 ? part : part.slice(0, eq);
+    const rawVal = eq === -1 ? "" : part.slice(eq + 1);
+    pairs.push([decodeUrlParam(rawKey).toLowerCase(), decodeUrlParam(rawVal)]);
+  }
+  return pairs;
+}
+
+function canonicalTab(value) {
+  const text = decodeUrlParam(value).toLowerCase();
+  if (!text) return null;
+  if (text === "events" || text === "event" || text === "升中" || text === "升中項目") return "events";
+  if (text === "map" || text === "地圖" || text === "地圖與距離") return "map";
+  if (text === "list" || text === "schools" || text === "school" || text === "學校" || text === "學校資料") return "list";
+  return null;
+}
+
+function canonicalStatus(value) {
+  const text = decodeUrlParam(value).replace(/\(/g, "（").replace(/\)/g, "）");
+  if (!text) return null;
+  if (text === "all" || text === "全部") return "all";
+  if (text === "官方確認" || text === "暫定（坊間）" || text === "已過") return text;
+  return null;
+}
+
+function canonicalBand(value) {
+  const text = decodeUrlParam(value).replace(/^民間\s*/i, "").trim();
+  if (!text) return null;
+  if (text === "all" || text === "全部") return "all";
+  if (text === "未知" || text === "未知／不適用" || text === "未知/不適用") return "未知";
+  const band = text.match(/^band\s*([123])$/i);
+  if (band) return band[1];
+  if (text === "1" || text === "2" || text === "3") return text;
+  return null;
+}
+
+/** Query and hash deep link. Search params win over the hash when both set a key. */
+function readDeepLink() {
+  const pairs = readQueryPairs(window.location.search);
+  const hashRaw = window.location.hash.replace(/^#/, "");
+  let hashTab = "";
+  if (hashRaw) {
+    const q = hashRaw.indexOf("?");
+    if (q >= 0) {
+      hashTab = decodeUrlParam(hashRaw.slice(0, q));
+      pairs.push(...readQueryPairs(hashRaw.slice(q + 1)).map(([k, v]) => [k, v]));
+    } else if (hashRaw.includes("=")) {
+      pairs.push(...readQueryPairs(hashRaw));
+    } else {
+      hashTab = decodeUrlParam(hashRaw);
+    }
+  }
+  const map = new Map();
+  for (const [key, value] of pairs) {
+    if (!map.has(key)) map.set(key, value);
+  }
+  // Hash-only keys were appended after search, so search still wins via Map.has.
+  const school = map.get("school") || map.get("eventschool") || "";
+  return {
+    tab: canonicalTab(map.get("tab") || map.get("panel") || map.get("view") || hashTab),
+    status: canonicalStatus(map.get("status") || map.get("eventstatus")),
+    band: canonicalBand(map.get("band") || map.get("eventband")),
+    school,
+    eventsApplied: false,
+  };
 }
 
 function districtSortIndex(district) {
@@ -106,6 +203,10 @@ class App {
     this.eventSchool = "all";
     this.schoolBandByName = new Map();
     this.query = "";
+    this.pageSize = LIST_PAGE_SIZE;
+    this.visibleCount = LIST_PAGE_SIZE;
+    this.deepLink = null;
+    this.failedLogoDomains = new Set();
     this.map = null;
     this.markers = new Map();
     this.markerMeta = new Map();
@@ -127,6 +228,10 @@ class App {
       districtSelect: document.getElementById("district-select"),
       resultCount: document.getElementById("result-count"),
       schoolList: document.getElementById("school-list"),
+      listWindowStatus: document.getElementById("list-window-status"),
+      listWindowFooter: document.getElementById("list-window-footer"),
+      loadMore: document.getElementById("load-more"),
+      listWindowDone: document.getElementById("list-window-done"),
       listEmpty: document.getElementById("list-empty"),
       eventsList: document.getElementById("events-list"),
       eventsEmpty: document.getElementById("events-empty"),
@@ -151,9 +256,11 @@ class App {
   }
 
   init() {
+    this.deepLink = readDeepLink();
     this.bindTabs();
     this.bindListControls();
     this.bindEventFilters();
+    this.els.loadMore?.addEventListener("click", () => this.loadMoreSchools());
     this.els.clearPoint.addEventListener("click", () => this.clearSelectedPoint());
     document.getElementById("list-empty-clear")?.addEventListener("click", () => this.clearAllFilters());
     document.getElementById("map-clear-filters")?.addEventListener("click", () => this.clearAllFilters());
@@ -176,6 +283,53 @@ class App {
     }
 
     this.loadEvents();
+    this.applyDeepLinkTab();
+  }
+
+  applyDeepLinkTab() {
+    const link = this.deepLink;
+    if (!link) return;
+    const tab = link.tab || (link.status || link.band || link.school ? "events" : null);
+    if (tab === "events") this.els.tabEvents.click();
+    else if (tab === "map") this.els.tabMap.click();
+  }
+
+  applyEventDeepLink() {
+    const link = this.deepLink;
+    if (!link || link.eventsApplied) return;
+    link.eventsApplied = true;
+    if (link.status) {
+      this.eventStatus = link.status;
+      this.syncChipGroup(this.els.eventsFilters, "eventStatus", this.eventStatus);
+    }
+    if (link.band) {
+      this.eventBand = link.band;
+      this.syncChipGroup(this.els.eventsBandFilters, "eventBand", this.eventBand);
+    }
+    if (link.school) {
+      const resolved = this.resolveEventSchool(link.school);
+      if (resolved) this.eventSchool = resolved;
+    }
+  }
+
+  /** Match a decoded 升中 school param to a loaded event school, or the territory bucket. */
+  resolveEventSchool(raw) {
+    const name = decodeUrlParam(raw);
+    if (!name || name === "all" || name === "全部") return "all";
+    if (name === "__territory__" || name === "全港／教育局" || name === "全港/教育局") {
+      return "__territory__";
+    }
+    const names = new Set();
+    for (const ev of this.eventsPayload?.events || []) {
+      for (const school of ev.schools || []) {
+        if (school) names.add(school);
+      }
+    }
+    if (names.has(name)) return name;
+    for (const school of names) {
+      if (school.normalize("NFC") === name) return school;
+    }
+    return null;
   }
 
   populateDistrictFilter() {
@@ -219,7 +373,11 @@ class App {
     this.eventsPayload = null;
     this.els.eventsMeta.textContent = "載入失敗";
     this.els.eventsList.innerHTML =
-      `<p class="events-error" role="alert">無法載入升中項目（<code>data/events.json</code>）。請用 HTTP 開啟本站（GitHub Pages 或本機靜態伺服器）；直接雙擊 <code>index.html</code> 時，瀏覽器在 file:// 下通常無法讀取本地 JSON。</p>`;
+      `<p class="events-error" role="alert">無法載入升中項目。請用網頁方式開啟本站，再重新整理。</p>
+       <details class="tech-fold">
+         <summary>技術說明</summary>
+         <p class="events-error-tech">讀取 <code>data/events.json</code> 失敗。請用 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code>（file://）時，瀏覽器通常無法讀取本地 JSON。</p>
+       </details>`;
   }
 
   async loadEvents() {
@@ -236,6 +394,7 @@ class App {
       if (this.els.eventsTitle && payload.title) {
         this.els.eventsTitle.textContent = payload.title;
       }
+      this.applyEventDeepLink();
       this.populateEventSchoolFilter();
       this.renderEvents();
     } catch (err) {
@@ -401,7 +560,16 @@ class App {
 
     this.els.eventsList.replaceChildren();
     const isEmpty = list.length === 0;
-    if (this.els.eventsEmpty) this.els.eventsEmpty.hidden = !isEmpty;
+    if (this.els.eventsEmpty) {
+      this.els.eventsEmpty.hidden = !isEmpty;
+      const body = this.els.eventsEmpty.querySelector(".empty-state-body");
+      if (body) {
+        const phrase = this.activeFilterPhrase(this.eventFilterItems());
+        body.textContent = phrase
+          ? `目前篩選：${phrase}。沒有符合的升中項目，可清除篩選再看已收錄的活動。`
+          : "現階段主要收錄沙田區的活動。可以清除篩選，查看已收錄的全部項目。";
+      }
+    }
     if (isEmpty) return;
 
     for (const ev of list) {
@@ -461,10 +629,16 @@ class App {
   }
 
   onListFiltersChanged() {
+    this.visibleCount = this.pageSize;
     this.renderList();
     this.renderMapChrome();
     if (this.mapReady) {
-      this.addSchoolMarkers({ refit: true });
+      const sized = this.mapContainerSize();
+      const onScreen = sized.w >= 32 && sized.h >= 32;
+      // fitBounds while the map tab is display:none produces a bad zoom, and
+      // MarkerCluster will not draw children until the next real moveend.
+      this._refitWhenShown = !onScreen;
+      this.addSchoolMarkers({ refit: onScreen });
       if (this.selectedLatLng) {
         this.renderDistances();
       }
@@ -510,6 +684,25 @@ class App {
     this.onListFiltersChanged();
   }
 
+  activeFilterPhrase(items) {
+    return items.map((item) => item.label).join("、");
+  }
+
+  eventFilterItems() {
+    const items = [];
+    if (this.eventStatus !== "all") items.push({ label: `狀態：${this.eventStatus}` });
+    if (this.eventBand !== "all") {
+      const bandText = this.eventBand === "未知" ? "未知／不適用" : this.bandLabel(this.eventBand);
+      items.push({ label: `民間組別：${bandText}` });
+    }
+    if (this.eventSchool === "__territory__" || this.eventSchool === "__district__") {
+      items.push({ label: "學校：全港／教育局" });
+    } else if (this.eventSchool !== "all") {
+      items.push({ label: `學校：${this.eventSchool}` });
+    }
+    return items;
+  }
+
   activeListFilters() {
     const items = [];
     if (this.filterDistrict !== "all") {
@@ -550,7 +743,16 @@ class App {
     }
 
     const none = this.schools.length > 0 && this.filteredSchools().length === 0;
-    if (this.els.mapEmpty) this.els.mapEmpty.hidden = !none;
+    if (this.els.mapEmpty) {
+      this.els.mapEmpty.hidden = !none;
+      const body = this.els.mapEmpty.querySelector(".empty-state-body");
+      if (body) {
+        const phrase = this.activeFilterPhrase(chips);
+        body.textContent = phrase
+          ? `目前篩選：${phrase}。地圖上沒有學校，清除篩選後可再點選位置量度直線距離。`
+          : "地圖上目前沒有學校。清除篩選後可查看全部學校，再點選位置量度直線距離。";
+      }
+    }
     if (this.els.mapHint) {
       const hideHint = none || Boolean(this.selectedLatLng);
       this.els.mapHint.classList.toggle("is-hidden", hideHint);
@@ -624,25 +826,65 @@ class App {
     });
   }
 
-  renderList() {
-    const list = this.filteredSchools().slice().sort((a, b) => {
+  sortedFilteredSchools() {
+    return this.filteredSchools().slice().sort((a, b) => {
       const di = districtSortIndex(a.district) - districtSortIndex(b.district);
       if (di !== 0) return di;
       const ti = TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type);
       if (ti !== 0) return ti;
       return a.nameZh.localeCompare(b.nameZh, "zh-Hant");
     });
+  }
+
+  loadMoreSchools() {
+    this.visibleCount += this.pageSize;
+    this.renderList();
+  }
+
+  updateListWindow(shownCount, total) {
+    const status = this.els.listWindowStatus;
+    const footer = this.els.listWindowFooter;
+    const more = this.els.loadMore;
+    const done = this.els.listWindowDone;
+    if (!status || !footer) return;
+    if (total <= 0) {
+      status.hidden = true;
+      status.textContent = "";
+      footer.hidden = true;
+      return;
+    }
+    status.hidden = false;
+    status.textContent = `已載入 ${shownCount} / 符合 ${total}`;
+    footer.hidden = false;
+    const allShown = shownCount >= total;
+    if (more) more.hidden = allShown;
+    if (done) done.hidden = !allShown;
+  }
+
+  renderList() {
+    const list = this.sortedFilteredSchools();
+    const visible = list.slice(0, this.visibleCount);
 
     const districtNote =
       this.filterDistrict === "all" ? "" : ` · ${this.filterDistrict}`;
     this.els.resultCount.textContent =
       `顯示 ${list.length} / ${this.schools.length} 所中學${districtNote}`;
     const isEmpty = list.length === 0;
-    if (this.els.listEmpty) this.els.listEmpty.hidden = !isEmpty;
+    if (this.els.listEmpty) {
+      this.els.listEmpty.hidden = !isEmpty;
+      const body = this.els.listEmpty.querySelector(".empty-state-body");
+      if (body) {
+        const phrase = this.activeFilterPhrase(this.activeListFilters());
+        body.textContent = phrase
+          ? `目前篩選：${phrase}。沒有符合的學校，可清除篩選或改選條件。`
+          : "試試放寬分區、類型、民間組別或搜尋字詞。";
+      }
+    }
+    this.updateListWindow(visible.length, list.length);
     this.els.schoolList.replaceChildren();
     if (isEmpty) return;
 
-    for (const school of list) {
+    for (const school of visible) {
       const node = this.els.cardTemplate.content.cloneNode(true);
       const card = node.querySelector(".school-card");
       card.querySelector(".school-name").textContent = school.nameZh;
@@ -708,9 +950,30 @@ class App {
     }
   }
 
+  whenMapHasSize(done) {
+    const attempt = (left = 40) => {
+      const { w, h } = this.mapContainerSize();
+      if (w < 32 || h < 32) {
+        if (left > 0) requestAnimationFrame(() => attempt(left - 1));
+        return;
+      }
+      done();
+    };
+    requestAnimationFrame(() => attempt());
+  }
+
   ensureMap() {
     if (this.mapReady) {
-      this.refreshMapLayout({ refit: false });
+      this.whenMapHasSize(() => {
+        if (!this.map) return;
+        this.map.invalidateSize({ animate: false });
+        if (this._refitWhenShown && this.markers.size) {
+          this._refitWhenShown = false;
+          this.refreshMapLayout({ refit: true });
+        }
+        // Cluster children are only attached inside the last shown bounds.
+        this.map.fire("moveend");
+      });
       return;
     }
     if (typeof L === "undefined") {
@@ -748,7 +1011,7 @@ class App {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(this.map);
 
-    this.markerLayer = L.layerGroup().addTo(this.map);
+    this.markerLayer = this.createMarkerLayer().addTo(this.map);
     this.addSchoolMarkers({ refit: true });
 
     this.map.on("click", (e) => {
@@ -774,6 +1037,59 @@ class App {
     }
   }
 
+  createMarkerLayer() {
+    if (typeof L.markerClusterGroup === "function") {
+      const group = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        zoomToBoundsOnClick: true,
+      });
+      group.on("clusterclick", (event) => {
+        if (event.originalEvent) L.DomEvent.stopPropagation(event.originalEvent);
+      });
+      return group;
+    }
+    return L.layerGroup();
+  }
+
+  popupOptions() {
+    const narrow = window.matchMedia("(max-width: 640px)").matches;
+    return {
+      maxWidth: narrow ? 220 : 260,
+      minWidth: narrow ? 140 : 180,
+      className: "school-popup",
+      autoPan: true,
+      keepInView: true,
+      closeButton: true,
+      autoPanPaddingTopLeft: [12, 12],
+      autoPanPaddingBottomRight: [12, 28],
+    };
+  }
+
+  refreshClusterIcons() {
+    if (this.markerLayer && typeof this.markerLayer.refreshClusters === "function") {
+      this.markerLayer.refreshClusters();
+    }
+  }
+
+  /** Open a school marker, unclustering via zoomToShowLayer when the plugin is present. */
+  focusSchoolMarker(schoolId) {
+    const school = this.markerMeta.get(schoolId) || this.schools.find((s) => s.id === schoolId);
+    const marker = this.markers.get(schoolId);
+    if (!this.map || !school) return;
+    const open = () => {
+      if (!marker) return;
+      this.wireMarkerLogo(marker, school);
+      marker.openPopup();
+    };
+    if (marker && this.markerLayer && typeof this.markerLayer.zoomToShowLayer === "function") {
+      this.markerLayer.zoomToShowLayer(marker, open);
+      return;
+    }
+    this.map.setView([school.lat, school.lng], 16, { animate: true });
+    open();
+  }
+
   refreshMapLayout({ refit = false } = {}) {
     if (!this.map) return;
     this.map.invalidateSize({ animate: false });
@@ -795,7 +1111,7 @@ class App {
     // Always paint a coloured initials badge first so markers stay visible
     // even when favicons are blocked, slow, or blank. Logo is optional overlay.
     let logo = "";
-    if (school.logoDomain) {
+    if (school.logoDomain && !this.failedLogoDomains.has(school.logoDomain)) {
       const favicon = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(school.logoDomain)}&sz=64`;
       logo = `<img class="marker-logo" src="${escapeHtml(favicon)}" alt="" decoding="async" referrerpolicy="no-referrer" hidden />`;
     }
@@ -826,22 +1142,31 @@ class App {
     });
   }
 
-  wireMarkerLogo(marker) {
+  wireMarkerLogo(marker, school) {
     const el = marker.getElement();
-    if (!el) return;
+    if (!el || !school?.logoDomain) return;
     const img = el.querySelector("img.marker-logo");
-    if (!img) return;
+    if (!img || img.dataset.logoWired === "1") return;
+    img.dataset.logoWired = "1";
+    const dropLogo = () => {
+      this.failedLogoDomains.add(school.logoDomain);
+      img.removeAttribute("src");
+      img.remove();
+      const nearest = Boolean(el.querySelector(".marker-badge")?.classList.contains("is-nearest"));
+      // Rebuild without the image so cluster redraws do not request it again.
+      requestAnimationFrame(() => {
+        if (!this.markers.has(school.id) || !this.failedLogoDomains.has(school.logoDomain)) return;
+        marker.setIcon(this.schoolIcon(school, nearest));
+      });
+    };
     const showLogo = () => {
       // Tiny / broken placeholders stay hidden so initials remain visible.
       if (!img.naturalWidth || img.naturalWidth < 12) {
-        img.remove();
+        dropLogo();
         return;
       }
       img.hidden = false;
       el.querySelector(".marker-badge")?.classList.add("has-logo");
-    };
-    const dropLogo = () => {
-      img.remove();
     };
     if (img.complete) {
       if (img.naturalWidth === 0) dropLogo();
@@ -879,14 +1204,14 @@ class App {
       marker.bindPopup(
         `<p class="popup-title">${escapeHtml(school.nameZh)}</p>
          <p class="popup-meta">${districtBit}${escapeHtml(this.bandLabel(school.band || "未知"))} · ${escapeHtml(school.type)} · ${escapeHtml(school.addressZh)}</p>`,
-        { maxWidth: 260 }
+        this.popupOptions()
       );
       // Touch: first tap shows name tooltip; second opens popup via Leaflet defaults
       marker.on("click", (e) => {
         L.DomEvent.stopPropagation(e);
         marker.openTooltip();
       });
-      marker.on("add", () => this.wireMarkerLogo(marker));
+      marker.on("add", () => this.wireMarkerLogo(marker, school));
       marker.addTo(this.markerLayer);
       this.markers.set(school.id, marker);
       this.markerMeta.set(school.id, school);
@@ -919,7 +1244,7 @@ class App {
         zIndexOffset: 1000,
         title: "選取位置",
       }).addTo(this.map);
-      this.userMarker.bindPopup("已選參考點").openPopup();
+      this.userMarker.bindPopup("已選參考點", this.popupOptions()).openPopup();
     }
 
     this.renderDistances();
@@ -949,9 +1274,10 @@ class App {
       const school = this.markerMeta.get(id);
       if (school) {
         marker.setIcon(this.schoolIcon(school, false));
-        this.wireMarkerLogo(marker);
+        this.wireMarkerLogo(marker, school);
       }
     }
+    this.refreshClusterIcons();
   }
 
   renderDistances() {
@@ -970,7 +1296,16 @@ class App {
     this.els.distanceList.replaceChildren();
 
     if (!ranked.length) {
-      if (this.els.distanceEmpty) this.els.distanceEmpty.hidden = false;
+      if (this.els.distanceEmpty) {
+        this.els.distanceEmpty.hidden = false;
+        const body = this.els.distanceEmpty.querySelector(".empty-state-body");
+        if (body) {
+          const phrase = this.activeFilterPhrase(this.activeListFilters());
+          body.textContent = phrase
+            ? `目前篩選：${phrase}。沒有學校可比較直線距離。`
+            : "目前沒有學校。清除篩選後可再看直線距離（非交通時間／非行車路線）。";
+        }
+      }
       this.els.distanceList.hidden = true;
       return;
     }
@@ -991,11 +1326,7 @@ class App {
         <span class="distance-value">${formatDistance(item.meters)}</span>
       `;
       li.addEventListener("click", () => {
-        const marker = this.markers.get(item.school.id);
-        if (marker) {
-          this.map.panTo(marker.getLatLng());
-          marker.openPopup();
-        }
+        this.focusSchoolMarker(item.school.id);
       });
       this.els.distanceList.append(li);
     });
@@ -1012,9 +1343,10 @@ class App {
       const school = this.markerMeta.get(id);
       if (school) {
         marker.setIcon(this.schoolIcon(school, id === nearestId));
-        this.wireMarkerLogo(marker);
+        this.wireMarkerLogo(marker, school);
       }
     }
+    this.refreshClusterIcons();
   }
 
   showSchoolOnMap(schoolId) {
@@ -1026,6 +1358,8 @@ class App {
       this.clearAllFilters();
     }
 
+    // A deferred overview fit would undo zoomToShowLayer after the tab opens.
+    this._refitWhenShown = false;
     // Activate tab first; ensureMap waits for non-zero container size.
     this.els.tabMap.click();
     this.ensureMap();
@@ -1035,16 +1369,13 @@ class App {
         requestAnimationFrame(open);
         return;
       }
-      if (!this.markers.has(schoolId)) {
-        this.addSchoolMarkers({ refit: false });
-      }
-      this.refreshMapLayout({ refit: false });
-      const marker = this.markers.get(schoolId);
-      this.map.setView([school.lat, school.lng], 16, { animate: true });
-      if (marker) {
-        this.wireMarkerLogo(marker);
-        marker.openPopup();
-      }
+      this.whenMapHasSize(() => {
+        if (!this.markers.has(schoolId)) {
+          this.addSchoolMarkers({ refit: false });
+        }
+        this.refreshMapLayout({ refit: false });
+        this.focusSchoolMarker(schoolId);
+      });
     };
     open();
   }
