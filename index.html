@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="沙田區中學資料、地圖位置與距離查詢工具" />
+  <title>沙田區中學 · 資料與地圖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand-block">
+      <p class="brand-kicker">香港新界 · Sha Tin</p>
+      <h1 class="brand">沙田區中學</h1>
+      <p class="brand-sub">學校資料 · 升中項目 · 地圖距離</p>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="主要分頁">
+      <button class="tab is-active" role="tab" id="tab-list" aria-selected="true" aria-controls="panel-list" data-tab="list">學校資料</button>
+      <button class="tab" role="tab" id="tab-events" aria-selected="false" aria-controls="panel-events" data-tab="events">升中項目</button>
+      <button class="tab" role="tab" id="tab-map" aria-selected="false" aria-controls="panel-map" data-tab="map">地圖與距離</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="panel-list" class="panel is-active" role="tabpanel" aria-labelledby="tab-list">
+      <div class="toolbar">
+        <label class="search-wrap">
+          <span class="sr-only">搜尋學校</span>
+          <input id="search" type="search" placeholder="搜尋校名、地址、類型…" autocomplete="off" />
+        </label>
+        <div class="filter-row">
+          <span class="filter-label">類型</span>
+          <div class="filters" role="group" aria-label="學校類型篩選">
+            <button class="chip is-active" data-type="all">全部</button>
+            <button class="chip" data-type="官立">官立</button>
+            <button class="chip" data-type="資助">資助</button>
+            <button class="chip" data-type="直資">直資</button>
+            <button class="chip" data-type="私立">私立</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">組別</span>
+          <div class="band-filters" role="group" aria-label="民間參考組別篩選">
+            <button class="chip is-active" data-band="all">全部</button>
+            <button class="chip" data-band="1">Band 1</button>
+            <button class="chip" data-band="2">Band 2</button>
+            <button class="chip" data-band="3">Band 3</button>
+            <button class="chip" data-band="未知">未知／不適用</button>
+          </div>
+        </div>
+        <p class="result-count" id="result-count"></p>
+      </div>
+      <div id="school-list" class="school-list"></div>
+      <aside class="sources">
+        <h2>資料來源與說明</h2>
+        <ul>
+          <li>學校名單、地址、電話、網址主要參考教育局分區學校名單及《中學學位分配辦法》沙田區手冊（公開資料）。</li>
+          <li>「民間參考組別」僅供參考，並非官方評級；收生組別每年不同，請自行向學校／教育局核實。</li>
+          <li>地圖座標取自 OpenStreetMap／Photon 公開地理資料，精確至社區／鄰里層級，可能與校門實際位置略有偏差。</li>
+          <li>地圖使用 Leaflet + OpenStreetMap 圖磚，無需付費 API 金鑰。</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="panel-events" class="panel" role="tabpanel" aria-labelledby="tab-events" hidden>
+      <div class="events-intro">
+        <div>
+          <h2 class="events-title" id="events-title">沙田升中事件清單</h2>
+          <p class="events-meta" id="events-meta">載入中…</p>
+        </div>
+        <div class="events-filter-stack">
+          <div class="filter-row">
+            <span class="filter-label">狀態</span>
+            <div class="events-filters" role="group" aria-label="狀態篩選">
+              <button class="chip is-active" data-event-status="all">全部</button>
+              <button class="chip" data-event-status="官方確認">官方確認</button>
+              <button class="chip" data-event-status="暫定（坊間）">暫定（坊間）</button>
+              <button class="chip" data-event-status="已過">已過</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">組別</span>
+            <div class="events-band-filters" role="group" aria-label="民間參考組別篩選">
+              <button class="chip is-active" data-event-band="all">全部</button>
+              <button class="chip" data-event-band="1">Band 1</button>
+              <button class="chip" data-event-band="2">Band 2</button>
+              <button class="chip" data-event-band="3">Band 3</button>
+              <button class="chip" data-event-band="未知">未知／不適用</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">學校</span>
+            <div class="events-school-filter">
+              <label class="sr-only" for="events-school-select">學校篩選</label>
+              <select id="events-school-select" aria-label="學校篩選">
+                <option value="all" selected>全部</option>
+                <option value="__district__">全區／教育局</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="events-list" class="events-list"></div>
+      <aside class="sources">
+        <h2>升中項目說明</h2>
+        <ul>
+          <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
+          <li>可用狀態、組別、學校篩選；三者以 AND 併用。組別依 <code>schools</code> 對應「學校資料」的民間參考 Band；多校事件只要其中一校符合即顯示。全區／教育局項目（空 <code>schools</code>）僅在組別為「全部」時出現。</li>
+          <li>事件日期以學校／教育局官網為準；標示「暫定（坊間）」者未經官方確認。時間顯示為香港時間（UTC+8）。</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="panel-map" class="panel" role="tabpanel" aria-labelledby="tab-map" hidden>
+      <div class="map-layout">
+        <div class="map-stage">
+          <div id="map" role="application" aria-label="沙田區中學地圖"></div>
+          <p class="map-hint" id="map-hint">點擊或輕觸地圖任一位置，即可計算與各校距離（由近至遠）。</p>
+        </div>
+        <aside class="distance-panel" aria-live="polite">
+          <div class="distance-header">
+            <h2>距離結果</h2>
+            <button type="button" id="clear-point" class="linkish" hidden>清除選點</button>
+          </div>
+          <p id="selected-point" class="selected-point">尚未選點。請在地圖上點選參考位置。</p>
+          <ol id="distance-list" class="distance-list"></ol>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>靜態示範網頁 · 非正式教育局產品 · 資料僅供選校參考</p>
+  </footer>
+
+  <template id="school-card-template">
+    <article class="school-card">
+      <header class="school-card-head">
+        <div class="school-card-title-row">
+          <h3 class="school-name"></h3>
+          <span class="band-pill" title="民間參考組別，非官方評級"></span>
+        </div>
+        <p class="school-name-en"></p>
+        <div class="badges"></div>
+      </header>
+      <dl class="school-meta"></dl>
+      <div class="school-actions"></div>
+    </article>
+  </template>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data/schools-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

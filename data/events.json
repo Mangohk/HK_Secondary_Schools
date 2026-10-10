@@ -1,0 +1,485 @@
+{
+  "title": "沙田升中事件清單",
+  "timezone": "Asia/Hong_Kong",
+  "syncedAt": "2026-10-07T01:56:01Z",
+  "source": {
+    "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
+    "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
+    "note": "一次性手動同步；靜態站不即時連 Notion。"
+  },
+  "schema": {
+    "description": "升中項目的唯一資料來源。頁面以 fetch() 讀取本檔。內容可由 Notion「沙田升中事件清單」手動匯出覆寫；站內不連線 Notion API。",
+    "event": {
+      "id": "字串，唯一識別（例如 ev-10）",
+      "notionPageId": "可選；對應 Notion 列頁面 ID（手動同步用，站內不顯示）",
+      "title": "顯示標題",
+      "type": "類型標籤：開放日｜資訊日｜入學講座｜報名／申請｜截止｜面試｜放榜／結果｜註冊｜其他（可自訂，會顯示為徽章）",
+      "status": "官方確認｜暫定（坊間）｜已過（須與分頁篩選按鈕完全一致）",
+      "schools": "校名陣列；全港／教育局項目可用空陣列 []",
+      "isDateTime": "true：dateStart／dateEnd 為 ISO 8601 UTC（結尾 Z），頁面轉香港時間顯示。false：僅日期，格式 YYYY-MM-DD，以香港日曆日解讀。",
+      "dateStart": "必填。時段開始（ISO UTC）或日期（YYYY-MM-DD）",
+      "dateEnd": "可選／null。同日或同場結束；全日活動可省略",
+      "keyDateStart": "可選／null。關鍵節點（截止、派票開始等），格式規則同 isDateTime 對應的 keyDateIsDateTime",
+      "keyDateIsDateTime": "keyDateStart 是否含時刻",
+      "keyPoints": "可選短註，顯示於日期欄「關鍵：…」",
+      "notes": "說明／場地／預約等",
+      "sourceUrl": "來源網址"
+    }
+  },
+  "events": [
+    {
+      "id": "ev-01",
+      "notionPageId": "3e91b69134c18126832dfb1fd6168fad",
+      "title": "香港神託會培基書院 中一入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港神託會培基書院"
+      ],
+      "dateStart": "2026-10-20",
+      "dateEnd": "2026-12-10",
+      "isDateTime": false,
+      "keyDateStart": "2026-12-10",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請截止",
+      "notes": "直資；面試約2027年1月（獲選申請人）；詳情見 https://www.spkc.edu.hk/s1-admission%e4%b8%ad%e4%b8%80%e5%85%a5%e5%ad%b8%e7%94%b3%e8%ab%8b-2027/",
+      "sourceUrl": "https://www.spkc.edu.hk/s1-admission-cover-2027"
+    },
+    {
+      "id": "ev-02",
+      "notionPageId": "3e91b69134c181da92dbe0d533287032",
+      "title": "青年會書院 升中資訊日2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "青年會書院"
+      ],
+      "dateStart": "2026-10-24T02:00:00.000Z",
+      "dateEnd": "2026-10-24T08:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": "2026-10-22",
+      "keyDateIsDateTime": false,
+      "keyPoints": "網上登記截止（須預先登記先可入場）",
+      "notes": "官網海報：2026-10-24（六）10:00–16:00；10:00–11:45 校園開放參觀（第一節）、12:00–13:00 升中簡介會、13:30–16:00 參觀（第二節）。須於2026-10-22前網上登記，憑登記入場；禮堂滿座會喺校內其他地方直播。",
+      "sourceUrl": "https://www.cymcac.edu.hk/26infoday/"
+    },
+    {
+      "id": "ev-03",
+      "notionPageId": "3e91b69134c181788f24e98d5df182d8",
+      "title": "聖公會曾肇添中學 中一入學簡介（Orientation for F.1 Admission）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖公會曾肇添中學"
+      ],
+      "dateStart": "2026-11-07",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校2026-2027校曆（官網 /school-calendar/）：2026-11-07「Orientation for F.1 Admission」；時間官網未公布。同一校曆亦列 2027-03-06 F.1 DP Oral。",
+      "sourceUrl": "https://www.skhtst.edu.hk/download/school_calendar/26-27/2026-2027_School-Calendar_A4.pdf"
+    },
+    {
+      "id": "ev-04",
+      "notionPageId": "3e91b69134c181c8b258ef4b4cedf2ec",
+      "title": "浸信會呂明才中學 2026/27 呂中資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "浸信會呂明才中學"
+      ],
+      "dateStart": "2026-11-14T04:00:00.000Z",
+      "dateEnd": "2026-11-14T09:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": "2026-11-14T04:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "第一場講座派門票開始",
+      "notes": "入學講座 13:00–14:15、15:00–16:15（禮堂及演藝廳）；第一場門票 12:00、第二場 14:00 起喺地下乒乓球室派發；官網未見需預約，詳情將稍後公布",
+      "sourceUrl": "https://www.blmcss.edu.hk/main/zh_tw/site/view?name=S1+Admission+2026%2F27"
+    },
+    {
+      "id": "ev-05",
+      "notionPageId": "3e91b69134c181af8769e3649e40a83b",
+      "title": "教育局 中一派位電子平台登記",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2026-11-15",
+      "dateEnd": "2026-11-30",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "教育局2025/2027周期簡介：2026年11月中旬登記「中一派位電子平台」；精確起迄日未列，日期欄暫以11月中下旬表示。平台：https://esspa.edb.gov.hk",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/index.html"
+    },
+    {
+      "id": "ev-06",
+      "notionPageId": "3f01b69134c181239b15dca776938e89",
+      "title": "沙田官立中學 中一入學（自行分配學位）講座",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "沙田官立中學"
+      ],
+      "dateStart": "2026-11-21",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校 2026-27 校曆（Talk on S1 Admissions (Discretionary Places)，星期六）；時間及報名方法未公布。2026-10-05 監察加入。",
+      "sourceUrl": "https://www.stgss.edu.hk/wp-content/uploads/2026/09/035Sa-School-Calendar-26-27-v6-Student-Version.pdf"
+    },
+    {
+      "id": "ev-07",
+      "notionPageId": "3e91b69134c181b79e44f1f986a73726",
+      "title": "香港中文大學校友會聯會陳震夏中學 中一收生簡介會暨學習展示日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港中文大學校友會聯會陳震夏中學"
+      ],
+      "dateStart": "2026-11-21",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校2026-27校曆（學生版）：2026-11-21「中一收生簡介會暨學習展示日」；時間官網未公布。同一校曆亦列 2027-03-06 中一自行收生面試。",
+      "sourceUrl": "https://www.cch.edu.hk/cch-school-calendar/"
+    },
+    {
+      "id": "ev-08",
+      "notionPageId": "3e91b69134c1811fa411c8651d89f110",
+      "title": "香港神託會培基書院 中一入學簡介日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港神託會培基書院"
+      ],
+      "dateStart": "2026-11-21",
+      "dateEnd": "2026-11-22",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "詳情約11月初公佈",
+      "notes": "含簡介會、校園參觀、中一學習體驗；直資獨立申請",
+      "sourceUrl": "https://www.spkc.edu.hk/s1-admission-cover-2027"
+    },
+    {
+      "id": "ev-09",
+      "notionPageId": "3e91b69134c1811d959ff24c5b522853",
+      "title": "五旬節林漢光中學 開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "五旬節林漢光中學"
+      ],
+      "dateStart": "2026-11-28",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": "2026-10-20",
+      "keyDateIsDateTime": false,
+      "keyPoints": "報名連結預計10月下旬發佈",
+      "notes": "官網2026-09-14公布（標題「2026-2027五旬節林漢光中學開放日」）；活動報名連結將於2026年10月下旬發佈；時段官網未公布。",
+      "sourceUrl": "https://www.plhks.edu.hk/tc/plan_detail.php?cid=19&id=657"
+    },
+    {
+      "id": "ev-10",
+      "notionPageId": "3f01b69134c1811ab613ed2fdb8b000a",
+      "title": "沙田循道衞理中學 小六輔導日（P.6 Guidance Day）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "沙田循道衞理中學"
+      ],
+      "dateStart": "2026-12-05",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校 2026-27 校曆（星期六；12-07 為補假）；時間及報名方法未公布。2026-10-05 監察加入。",
+      "sourceUrl": "https://www.stmc.edu.hk/attachment/upload/files/School%20Calendar/2026-2027_School_Calendar_.pdf"
+    },
+    {
+      "id": "ev-11",
+      "notionPageId": "3e91b69134c181a2b285cbb7f65d44a8",
+      "title": "保良局胡忠中學 升中資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "保良局胡忠中學"
+      ],
+      "dateStart": "2026-12-05",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官網首頁「School Calendar」連結喺2026-2027校曆表（Google Drive檔）：2026-12-05升中資訊日；時間及登記安排官網未公布。",
+      "sourceUrl": "https://www.plkwcc.edu.hk/"
+    },
+    {
+      "id": "ev-12",
+      "notionPageId": "3e91b69134c181f6983fc00564b410ad",
+      "title": "馬鞍山崇真中學 資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "馬鞍山崇真中學"
+      ],
+      "dateStart": "2026-12-12",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校2026-27校曆（官網 calendar.php?wid=13）：2026-12-12資訊日，12-14為資訊日後假期；時間及登記安排官網未公布。",
+      "sourceUrl": "https://www.mosttss.edu.hk/attachment/calendar/1787188400rS7cC.pdf"
+    },
+    {
+      "id": "ev-13",
+      "notionPageId": "3e91b69134c1810ebc9de1ce1d194c30",
+      "title": "沙田崇真中學 小六升中講座",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "沙田崇真中學"
+      ],
+      "dateStart": "2027-01-01",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官網校曆頁嵌入喺2026-2027校曆（Google Drive）：2027-01-01「小六升中講座 Talk for Prospective S1 Students」；時間官網未公布。",
+      "sourceUrl": "https://sttss.edu.hk/hk/school/school-calendar"
+    },
+    {
+      "id": "ev-14",
+      "notionPageId": "3ea1b69134c181e48a91cba7581e3105",
+      "title": "東莞工商總會劉百樂中學 中一自行分配學位申請（2027-2028）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "東莞工商總會劉百樂中學"
+      ],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "交表截止",
+      "notes": "學額40；收生比重：教育局成績次第30%／面試35%／中英語文能力15%／操行15%／學業以外表現5%；可親身或經中一派位電子平台交表；所有申請人有面試",
+      "sourceUrl": "https://lplss.edu.hk/tc/%E7%94%B3%E8%AB%8B2027%E5%B9%B4%E8%87%B32028%E5%B9%B4%E5%BA%A6%E4%B8%AD%E4%B8%80%E5%AD%B8%E4%BD%8D"
+    },
+    {
+      "id": "ev-15",
+      "notionPageId": "3e91b69134c181d68af6fa16e5e7e0bb",
+      "title": "台山商會中學 中一自行分配學位申請（2027-2028）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "台山商會中學"
+      ],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "交表截止",
+      "notes": "2026年12月起可索取／下載表格；學額40；收生比重學業40%／操行20%／面試20%／課外活動服務獎項20%；可經校務處或中一派位電子平台交表",
+      "sourceUrl": "https://www.tsac.edu.hk/admission"
+    },
+    {
+      "id": "ev-16",
+      "notionPageId": "3e91b69134c181b68839ecc055999589",
+      "title": "教育局 2027 自行分配學位申請期",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請截止",
+      "notes": "每名學生最多向兩間參加中學申請；直資學校另行直接報名，不屬此機制",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/index.html"
+    },
+    {
+      "id": "ev-17",
+      "notionPageId": "3f01b69134c181a7ac3fe64432a8f555",
+      "title": "沙田循道衞理中學 小六面試（P6 Interview）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "沙田循道衞理中學"
+      ],
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校 2026-27 校曆（星期六）。2026-10-05 監察加入。",
+      "sourceUrl": "https://www.stmc.edu.hk/attachment/upload/files/School%20Calendar/2026-2027_School_Calendar_.pdf"
+    },
+    {
+      "id": "ev-18",
+      "notionPageId": "3f01b69134c1814b819dc186f938c69d",
+      "title": "聖公會曾肇添中學 中一自行分配學位面試（DP Oral Assessment）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "聖公會曾肇添中學"
+      ],
+      "dateStart": "2027-03-06",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校 2026-27 校曆（F.1 Discretionary Places (DP) Oral Assessment，星期六）。2026-10-05 監察加入。",
+      "sourceUrl": "https://www.skhtst.edu.hk/download/school_calendar/26-27/2026-2027_School-Calendar_A4.pdf"
+    },
+    {
+      "id": "ev-19",
+      "notionPageId": "3ea1b69134c181a29526e884bb24c581",
+      "title": "東莞工商總會劉百樂中學 中一自行分配學位面試",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "東莞工商總會劉百樂中學"
+      ],
+      "dateStart": "2027-03-06",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面通知面試時間",
+      "notes": "所有申請人都有面試機會；正取於2027-03-31書面及電話通知",
+      "sourceUrl": "https://lplss.edu.hk/tc/%E7%94%B3%E8%AB%8B2027%E5%B9%B4%E8%87%B32028%E5%B9%B4%E5%BA%A6%E4%B8%AD%E4%B8%80%E5%AD%B8%E4%BD%8D"
+    },
+    {
+      "id": "ev-20",
+      "notionPageId": "3f01b69134c181b195cdf8e20abeaa7f",
+      "title": "沙田官立中學 中一自行分配學位面試",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "沙田官立中學"
+      ],
+      "dateStart": "2027-03-13",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "學校 2026-27 校曆（S1 Admissions (Discretionary Places) Interview，星期六）。2026-10-05 監察加入。",
+      "sourceUrl": "https://www.stgss.edu.hk/wp-content/uploads/2026/09/035Sa-School-Calendar-26-27-v6-Student-Version.pdf"
+    },
+    {
+      "id": "ev-21",
+      "notionPageId": "3e91b69134c18160acb3c42b199a4eda",
+      "title": "台山商會中學 中一自行分配學位面試",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "台山商會中學"
+      ],
+      "dateStart": "2027-03-13",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "電話通知面試時間",
+      "notes": "合資格則約見；正取於2027-03-31書面及電話通知",
+      "sourceUrl": "https://www.tsac.edu.hk/admission"
+    },
+    {
+      "id": "ev-22",
+      "notionPageId": "3e91b69134c181f49f90f2f1b483eea4",
+      "title": "教育局 自行分配學位結果（學校通知獲取錄學生）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "教育局頁：參加中學學位分配辦法嘅中學會於 2027-03-31 以書面及電話通知自行分配學位正取學生家長",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/index.html"
+    },
+    {
+      "id": "ev-23",
+      "notionPageId": "3e91b69134c18151b63af2627846b2b0",
+      "title": "教育局 統一派位選校期",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2027-04-01",
+      "dateEnd": "2027-05-10",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "5月上旬交選校表（確實日期待教育局公布）",
+      "notes": "教育局只寫「2027年4月上旬至5月上旬」經電子平台選校；日期欄04-01至05-10只係代表「上旬」範圍，唔係確實日期。",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/index.html"
+    },
+    {
+      "id": "ev-24",
+      "notionPageId": "3e91b69134c1814e89f4feda1c2fef4e",
+      "title": "教育局 統一派位結果公布",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2027-07-06",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "教育局頁：2027-07-06 公布自行分配學位及統一派位結果",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/index.html"
+    },
+    {
+      "id": "ev-25",
+      "notionPageId": "3e91b69134c1818aba8cc1a8648aaaad",
+      "title": "中一註冊",
+      "type": "註冊",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2027-07-08",
+      "dateEnd": "2027-07-09",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "教育局頁：2027-07-08 及 09 辦理中一註冊",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/index.html"
+    },
+    {
+      "id": "ev-26",
+      "notionPageId": "3e91b69134c1816aa155f35c0e45f1b2",
+      "title": "教育局 中一入學前香港學科測驗",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [],
+      "dateStart": "2027-07-13",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "教育局（2025/2027周期；通函第101/2026號）：2027-07-13（暫定）中一入學前香港學科測驗。",
+      "sourceUrl": "https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/secondary-spa/general-info/Pre-S1-HKAT.html"
+    }
+  ]
+}
