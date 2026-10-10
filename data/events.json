@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T18:15:16Z",
+  "syncedAt": "2026-10-10T18:31:40Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -2119,6 +2119,363 @@
       "keyPoints": "",
       "notes": "私立；簡介會之一；時段待報名確認。",
       "sourceUrl": "https://secondary.bloom.edu.hk/admissions/meet-us"
+    },
+    {
+      "id": "ev-124",
+      "title": "拔萃女書院 中一入學簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "已過",
+      "schools": [
+        "拔萃女書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-09-23T09:30:00.000Z",
+      "dateEnd": "2026-09-23T11:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "直資；2026-09-23（三）17:30–19:30 禮堂；官網提供簡介會簡報下載。申請期已結束。",
+      "sourceUrl": "https://www.dgs.edu.hk/admissions"
+    },
+    {
+      "id": "ev-125",
+      "title": "拔萃女書院 中一入學申請第一階段（2027/28）",
+      "type": "報名／申請",
+      "status": "已過",
+      "schools": [
+        "拔萃女書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-24",
+      "dateEnd": "2026-10-03",
+      "keyDateStart": "2026-10-03",
+      "keyDateIsDateTime": false,
+      "keyPoints": "第一階段截止（官網標示申請期已結束）",
+      "notes": "直資；網上申請 https://admission.dgs.edu.hk（須 Gmail）；申請費$75；文件親臨／掛號／快遞交校務處；甄選：個人資料概覽50%＋面試及技能測試50%。",
+      "sourceUrl": "https://www.dgs.edu.hk/admissions"
+    },
+    {
+      "id": "ev-126",
+      "title": "拔萃女書院 中一面見老師（第二階段）（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "拔萃女書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-14",
+      "dateEnd": "2026-11-14",
+      "keyDateStart": "2026-11-03",
+      "keyDateIsDateTime": false,
+      "keyPoints": "第二階段文件須於11月3日或之前遞交；入圍約11月上旬通知",
+      "notes": "直資；如遇停課改至2026-12-05。",
+      "sourceUrl": "https://www.dgs.edu.hk/admissions"
+    },
+    {
+      "id": "ev-127",
+      "title": "拔萃女書院 體育技能測試／音樂試演（2027/28）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "拔萃女書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-21",
+      "dateEnd": "2026-11-21",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "直資；個別邀請體育／音樂傑出申請者；如遇停課改至2026-12-05。",
+      "sourceUrl": "https://www.dgs.edu.hk/admissions"
+    },
+    {
+      "id": "ev-128",
+      "title": "拔萃女書院 中一面見校長（第三階段）（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "拔萃女書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-01",
+      "dateEnd": "2027-02-28",
+      "keyDateStart": "2027-01-01",
+      "keyDateIsDateTime": false,
+      "keyPoints": "約2027年1月上旬通知入圍",
+      "notes": "直資；面見校長安排於2027年1月或2月。",
+      "sourceUrl": "https://www.dgs.edu.hk/admissions"
+    },
+    {
+      "id": "ev-129",
+      "title": "拔萃女書院 中一收生結果（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "拔萃女書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-01",
+      "dateEnd": "2027-03-15",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "約2027年3月上旬通知",
+      "notes": "直資；成功者須填網上回條、簽承諾書並交小六學生資料表。獎學金考試／分班試約2027-05-08（後備05-22）；音樂獎學金評估約04-17（後備04-24）。",
+      "sourceUrl": "https://www.dgs.edu.hk/admissions"
+    },
+    {
+      "id": "ev-130",
+      "title": "香港管理專業協會李國寶中學 中一入學申請（2027/28 第一階段）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港管理專業協會李國寶中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-01",
+      "dateEnd": "2026-12-11",
+      "keyDateStart": "2026-12-11",
+      "keyDateIsDateTime": false,
+      "keyPoints": "第一階段申請截止",
+      "notes": "直資；不參加 SSPA；申請連結稍後公布；查詢 2626 9100。",
+      "sourceUrl": "https://www.hkmadavidli.edu.hk/admission/s1_admission/"
+    },
+    {
+      "id": "ev-131",
+      "title": "香港管理專業協會李國寶中學 中一首輪面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港管理專業協會李國寶中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-19",
+      "dateEnd": "2026-12-19",
+      "keyDateStart": "2026-12-25",
+      "keyDateIsDateTime": false,
+      "keyPoints": "次輪面試名單於2026-12-25公布",
+      "notes": "直資；第一階段申請期內遞交後安排。",
+      "sourceUrl": "https://www.hkmadavidli.edu.hk/admission/s1_admission/"
+    },
+    {
+      "id": "ev-132",
+      "title": "香港管理專業協會李國寶中學 中一次輪面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港管理專業協會李國寶中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-09",
+      "dateEnd": "2027-01-09",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "直資。",
+      "sourceUrl": "https://www.hkmadavidli.edu.hk/admission/s1_admission/"
+    },
+    {
+      "id": "ev-133",
+      "title": "伊利沙伯中學 中一入學資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "伊利沙伯中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": "2026-12-05",
+      "keyDateStart": "2026-10-29T02:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上登記開始（2026-10-29 上午10時；詳情稍後公布）",
+      "notes": "官立；日程表標示星期六上午；校曆亦列 (5/12) S.1 Information Day。登記程序見稍後官網更新。來源：s1_schedule.pdf（2027/28）及校曆。",
+      "sourceUrl": "https://www.qes.edu.hk/Menu/admission/s1_admission/27-28/s1_schedule.pdf"
+    },
+    {
+      "id": "ev-134",
+      "title": "伊利沙伯中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "伊利沙伯中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-11-23",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請表格約2026-11-23起可於官網下載至2027-01-18",
+      "notes": "官立；遞交期與教育局自行分配學位同步（2027-01-04至01-18）。",
+      "sourceUrl": "https://www.qes.edu.hk/Menu/admission/s1_admission/27-28/s1_schedule.pdf"
+    },
+    {
+      "id": "ev-135",
+      "title": "伊利沙伯中學 自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "伊利沙伯中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": "2027-03-06",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官立；被挑選申請同學；校曆亦列 (6/3) S.1 Discretionary Places Interview。",
+      "sourceUrl": "https://www.qes.edu.hk/Menu/admission/s1_admission/27-28/s1_schedule.pdf"
+    },
+    {
+      "id": "ev-136",
+      "title": "伊利沙伯中學 自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "伊利沙伯中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": "2027-03-31",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官立；通知正取學生納入自行分配學位正取名單。統一派位結果2027-07-06；中一註冊2027-07-08至07-09。",
+      "sourceUrl": "https://www.qes.edu.hk/Menu/admission/s1_admission/27-28/s1_schedule.pdf"
+    },
+    {
+      "id": "ev-137",
+      "title": "真光女書院 學校資訊日2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "真光女書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-21T02:00:00.000Z",
+      "dateEnd": "2026-11-21T08:30:00.000Z",
+      "keyDateStart": "2026-10-27T02:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上登記開始（2026-10-27 上午10時；額滿即止）",
+      "notes": "資助；兩場相同內容：上午10:00–12:30、下午14:00–16:30；校務處於2026-11-18或之前電郵確認報名。介紹最新消息及中一入學申請須知。",
+      "sourceUrl": "https://tlgc.edu.hk/school-information-day-online-application/"
+    },
+    {
+      "id": "ev-138",
+      "title": "華仁書院(九龍) 中一資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "華仁書院(九龍)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-07",
+      "dateEnd": "2026-11-07",
+      "keyDateStart": "2026-10-23T04:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "登記開始（2026-10-23 星期五中午12時；免費先到先得）",
+      "notes": "資助；官網未列當日具體時段；登記連結見收生頁（click here for registration）。",
+      "sourceUrl": "https://wyk.edu.hk/academic/admission/s1-admissions-0/"
+    },
+    {
+      "id": "ev-139",
+      "title": "華仁書院(九龍) 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "華仁書院(九龍)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "資助；申請期首尾兩日包括在內。統一派位結果2027-07-06；中一註冊2027-07-08及07-09。",
+      "sourceUrl": "https://wyk.edu.hk/academic/admission/s1-admissions-0/"
+    },
+    {
+      "id": "ev-140",
+      "title": "華仁書院(九龍) 自行分配學位第一次面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "華仁書院(九龍)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-13",
+      "dateEnd": "2027-03-13",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "資助；日期暫定（tentative）。",
+      "sourceUrl": "https://wyk.edu.hk/academic/admission/s1-admissions-0/"
+    },
+    {
+      "id": "ev-141",
+      "title": "華仁書院(九龍) 自行分配學位第二次面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "華仁書院(九龍)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-20",
+      "dateEnd": "2027-03-20",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "資助；日期暫定（tentative）。",
+      "sourceUrl": "https://wyk.edu.hk/academic/admission/s1-admissions-0/"
+    },
+    {
+      "id": "ev-142",
+      "title": "世界龍岡學校劉皇發中學 開放日2026",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "世界龍岡學校劉皇發中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T04:30:00.000Z",
+      "dateEnd": "2026-12-12T08:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "資助；CHSC 學校自行登記開放日；地點：大角咀詩歌舞街66號。校官網 Admission 頁目前主要為2026/27插班／轉校申請（截至掃描日未見獨立升中資訊日專頁）。CHSC id=5190。",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5190"
+    },
+    {
+      "id": "ev-143",
+      "title": "官立嘉道理爵士中學(西九龍) 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "官立嘉道理爵士中學(西九龍)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官立；自行分配學額最多31個（中一學位30%）；全部申請者獲邀面試；甄選準則見官網 admission.php。統一派位結果2027-07-06。",
+      "sourceUrl": "https://www.seksswk.edu.hk/admission.php"
+    },
+    {
+      "id": "ev-144",
+      "title": "天主教新民書院 中一自行收生面試日（校曆）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "天主教新民書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-13",
+      "dateEnd": "2027-03-13",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "資助；取自官網校曆「中一自行收生面試日(13/3)」，同曆列中一派位放榜(6/7)與註冊(8-9/7)，對應2027年自行分配周期。學位申請選單目前僅見插班生；未見獨立2027/28自行分配專頁，請稍後再核對。",
+      "sourceUrl": "https://www.newman.edu.hk"
     }
   ]
 }
