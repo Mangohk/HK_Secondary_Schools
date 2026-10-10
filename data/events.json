@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T20:18:41Z",
+  "syncedAt": "2026-10-10T20:39:54Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -6480,6 +6480,482 @@
         "keyPoints": "約 2027 年 3 月中旬；部分申請人及家長獲邀",
         "notes": "成功申請者於第二次面試後獲通知，約 2027 年 3 月下旬到校註冊。精確日待電郵／書面通知。",
         "sourceUrl": "https://spcs.edu.hk/w/wp-content/uploads/2026/10/2027-28_Notes_on_Application_Chinese.pdf"
-      }
+      },
+    {
+      "id": "ev-384",
+      "title": "顯理中學 中一入學簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "顯理中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-07T06:00:00.000Z",
+      "dateEnd": "2026-11-07T08:30:00.000Z",
+      "keyDateStart": "2026-10-16T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "2026-10-16（五）09:00 起掃二維碼網上報名；當日內容含學校簡介、答問、多元學習體驗",
+      "notes": "來源：校方海報（官網首頁／uploads 中一入學簡介會海報2026-1.jpg）。地點北角城市花園道2號。",
+      "sourceUrl": "https://henrietta.edu.hk/wp-content/uploads/2022/10/中一入學簡介會海報2026-1.jpg"
+    },
+    {
+      "id": "ev-385",
+      "title": "顯理中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "顯理中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額40；親身或經中一派位電子平台（截止 1-18 23:59）；不設筆試",
+      "notes": "來源：校方《2027至2028年度中一自行分配學位申請章程》（2026-10 上載）。取錄比重：成績次第40%、面試30%、學業10%、操行10%、課外活動及其他10%。",
+      "sourceUrl": "https://henrietta.edu.hk/wp-content/uploads/2026/10/2027自行收生章程-v1.pdf"
+    },
+    {
+      "id": "ev-386",
+      "title": "顯理中學 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "顯理中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-06",
+      "dateEnd": "2027-03-13",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "全部申請者面試；安排於 3-6 或 3-13；通知信約三月初寄出；主要以粵語進行",
+      "notes": "來源：同上章程。正取家長於 2027-03-31 郵寄及電話通知；最終結果 2027-07-06 與統一派位一併公布。",
+      "sourceUrl": "https://henrietta.edu.hk/wp-content/uploads/2026/10/2027自行收生章程-v1.pdf"
+    },
+    {
+      "id": "ev-387",
+      "title": "港島民生書院 升中資訊日 2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "港島民生書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-08T01:30:00.000Z",
+      "dateEnd": "2026-11-08T07:30:00.000Z",
+      "keyDateStart": "2026-10-28T02:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "升中講座兩場（內容相同）：10:00–11:15、13:30–14:45，須經 THE GULU App 由 10-28 10:00 起留位；展覽及攤位全日開放毋須登記",
+      "notes": "地點西灣河太安街26號。來源：www2.imsc.edu.hk 首頁 Information Day 2026 及校方 Google Drive 中英海報。www.imsc.edu.hk 回 500／空白。",
+      "sourceUrl": "https://www2.imsc.edu.hk/"
+    },
+    {
+      "id": "ev-388",
+      "title": "福建中學(小西灣) 學校資訊日（2026/27年度公布）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "福建中學(小西灣)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-14T01:00:00.000Z",
+      "dateEnd": "2026-11-14T08:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "時段：09:00–12:00 及 13:30–16:30；地點本校禮堂；Google Form 報名",
+      "notes": "來源：校官網 School Information Day 專頁，以及 CHSC 學校自行登記開放日（id=5179）。報名：https://forms.gle/SD8hf9jdSZTxKfcv8",
+      "sourceUrl": "https://www.fss.edu.hk/tc/school-information-day"
+    },
+    {
+      "id": "ev-389",
+      "title": "福建中學(小西灣) 中一自行收生申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "福建中學(小西灣)"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027/28 年度中一自行收生於 1-4 至 1-18 接受申請；申請詳情稍後公布",
+      "notes": "來源：https://www.fss.edu.hk/tc/secondary-1-discretionary-admission 。舊年（2026/27）面試等細節勿套用。",
+      "sourceUrl": "https://www.fss.edu.hk/tc/secondary-1-discretionary-admission"
+    },
+    {
+      "id": "ev-390",
+      "title": "中華基金中學 周年開放日暨中一入學資訊講座（2027/28）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "中華基金中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-14T03:30:00.000Z",
+      "dateEnd": "2026-11-15T09:00:00.000Z",
+      "keyDateStart": "2026-10-19T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "開放：11-14 11:30–18:00、11-15 10:00–17:00；入學資訊講座（約1小時，每節相同）：11-14 13:00及15:00、11-15 10:30及12:30；講座留座登記 10-19 09:00 至 11-13",
+      "notes": "直資、全面自行收生、不參加統一派位。來源：S1_AdmissionProcedures_2728 PDF 及官網特別通告（2026-09-28）。",
+      "sourceUrl": "https://www.cfss.edu.hk/attachment/upload/files/Website/Adminission/S1_AdmissionProcedures_2728%20for%20website_v1a.pdf"
+    },
+    {
+      "id": "ev-391",
+      "title": "中華基金中學 中一學位網上申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "中華基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-06",
+      "dateEnd": "2026-12-14",
+      "keyDateStart": "2026-12-14",
+      "keyDateIsDateTime": false,
+      "keyPoints": "只接受網上申請；報名費 HK$75 不設退款；12-14 後不接受新申請；篩選以小四小五中英數及操行平均 B+ 或以上入圍第一輪面試",
+      "notes": "官網通告：現已接受網上報名直至 12-14。甄選準則：學業40%、操行20%、課外活動及服務20%、面試20%。",
+      "sourceUrl": "https://www.cfss.edu.hk/attachment/upload/files/Website/Adminission/S1_AdmissionProcedures_2728%20for%20website_v1a.pdf"
+    },
+    {
+      "id": "ev-392",
+      "title": "中華基金中學 中一第一輪面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "中華基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-09",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "第一輪面試 2027-01-09；入圍者約一星期前電郵通知",
+      "notes": "來源：同上 PDF。",
+      "sourceUrl": "https://www.cfss.edu.hk/attachment/upload/files/Website/Adminission/S1_AdmissionProcedures_2728%20for%20website_v1a.pdf"
+    },
+    {
+      "id": "ev-393",
+      "title": "中華基金中學 中一第二輪面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "中華基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-18",
+      "dateEnd": "2027-01-26",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "第二輪面試 2027-01-18 至 01-26；落選者自動入候補名單至 2027-07-05",
+      "notes": "來源：S1_AdmissionProcedures_2728 PDF。結果分批公布由 2027-02-25 起。",
+      "sourceUrl": "https://www.cfss.edu.hk/attachment/upload/files/Website/Adminission/S1_AdmissionProcedures_2728%20for%20website_v1a.pdf"
+    },
+    {
+      "id": "ev-394",
+      "title": "中華基金中學 中一收生結果分批公布（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "中華基金中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-25",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "結果分批公布由 2027-02-25 起",
+      "notes": "來源：同上 PDF。",
+      "sourceUrl": "https://www.cfss.edu.hk/attachment/upload/files/Website/Adminission/S1_AdmissionProcedures_2728%20for%20website_v1a.pdf"
+    },
+    {
+      "id": "ev-395",
+      "title": "庇理羅士女子中學 升中簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "庇理羅士女子中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-11",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "升中簡介會 2026-12-11；網上登記稍後發放",
+      "notes": "來源：https://www.bps.hk/admission （最近更新 2026-09-17）。同日起至 2027-01-18 派發中一自行分配學位申請表。",
+      "sourceUrl": "https://www.bps.hk/admission"
+    },
+    {
+      "id": "ev-396",
+      "title": "庇理羅士女子中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "庇理羅士女子中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2026-12-11",
+      "keyDateIsDateTime": false,
+      "keyPoints": "交表 1-4 至 1-18（電子平台或親臨）；申請表派發 12-11 至 1-18（網頁下載或到校索取）",
+      "notes": "來源：校方 admission 頁。面試名單比重（有成績次第）：學業70%、課外活動30%。",
+      "sourceUrl": "https://www.bps.hk/admission"
+    },
+    {
+      "id": "ev-397",
+      "title": "庇理羅士女子中學 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "庇理羅士女子中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-13",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "面試日 2027-03-13；取錄（有次第）：學業45%、面試40%、課外活動15%",
+      "notes": "正取通知 2027-03-31；統一派位結果 2027-07-06；中一註冊 2027-07-08 至 07-09；學科測驗 2027-07-13。",
+      "sourceUrl": "https://www.bps.hk/admission"
+    },
+    {
+      "id": "ev-398",
+      "title": "庇理羅士女子中學 中一自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "庇理羅士女子中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "公布自行分配學位正取學生名單 2027-03-31",
+      "notes": "來源：校方 admission 日程表。",
+      "sourceUrl": "https://www.bps.hk/admission"
+    },
+    {
+      "id": "ev-399",
+      "title": "庇理羅士女子中學 中一註冊（2027/28）",
+      "type": "註冊",
+      "status": "官方確認",
+      "schools": [
+        "庇理羅士女子中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-07-08",
+      "dateEnd": "2027-07-09",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "中一註冊 2027-07-08 至 07-09；派位結果 07-06；學科測驗 07-13",
+      "notes": "來源：校方 admission 日程表。",
+      "sourceUrl": "https://www.bps.hk/admission"
+    },
+    {
+      "id": "ev-400",
+      "title": "嘉諾撒書院 索取中一自行分配學位申請表（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "嘉諾撒書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-17",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額43；17/10/2026–18/1/2027 可親臨／函索（回郵信封）／網頁下載校本申請表",
+      "notes": "來源：https://www.canossa.edu.hk/en/content.php?wid=183 。辦公：一至五 08:30–16:00、六 09:00–12:00。",
+      "sourceUrl": "https://www.canossa.edu.hk/en/content.php?wid=183"
+    },
+    {
+      "id": "ev-401",
+      "title": "嘉諾撒書院 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "嘉諾撒書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "交表 1-4 至 1-18（親身最遲 18/1 16:00 或經電子平台）",
+      "notes": "取錄：成績次第及成績表40%、操行30%、面試20%、課外活動／其他10%。全部申請者面試。",
+      "sourceUrl": "https://www.canossa.edu.hk/en/content.php?wid=183"
+    },
+    {
+      "id": "ev-402",
+      "title": "嘉諾撒書院 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "嘉諾撒書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "keyDateStart": "2027-03-13",
+      "keyDateIsDateTime": false,
+      "keyPoints": "面試 2027-02-27；請預留 2027-03-13 作延遲後備；全部申請者面試",
+      "notes": "正取名單 2027-03-31 郵寄及電話通知。",
+      "sourceUrl": "https://www.canossa.edu.hk/en/content.php?wid=183"
+    },
+    {
+      "id": "ev-403",
+      "title": "衞理中學 小六升中資訊及體驗日報名開始（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "衞理中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-26T02:00:00.000Z",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2026-10-26 10:00 起可經官網連結網上報名；亦可透過就讀小學報名；含校園參觀、校長講座、課堂體驗",
+      "notes": "校方 admission／events 頁確認報名開始時間，但活動確實日期／時段未在官網正文列明（events_detail 的 Date 欄顯示 15/09/2026 似為發文日）。請稍後再核活動日。來源：https://www.mcw.edu.hk/admission.php?id=3",
+      "sourceUrl": "https://www.mcw.edu.hk/admission.php?id=3"
+    },
+    {
+      "id": "ev-404",
+      "title": "衞理中學 索取中一自行分配學位申請表（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "衞理中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-09",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "11-9 起可到詢問處索取紙本或網頁下載校本申請表",
+      "notes": "交表期仍為 2027-01-04 至 01-18。學額40。",
+      "sourceUrl": "https://www.mcw.edu.hk/admission.php?id=3"
+    },
+    {
+      "id": "ev-405",
+      "title": "衞理中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "衞理中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "紙本或電子平台；交表一至五 09:00–17:00、六 09:00–12:30；學額40",
+      "notes": "比重：學業40%、操行20%、面試20%、課外活動／服務10%、認同辦學理念10%。不設筆試。",
+      "sourceUrl": "https://www.mcw.edu.hk/admission.php?id=3"
+    },
+    {
+      "id": "ev-406",
+      "title": "衞理中學 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "衞理中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-20",
+      "dateEnd": "2027-03-13",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "面試 2027-02-20（六）及 2027-03-13（六）；粵語及英語；獲甄選者一星期前書面及電郵通知",
+      "notes": "正取 2027-03-31 書面及電話；統一派位結果 2027-07-06。",
+      "sourceUrl": "https://www.mcw.edu.hk/admission.php?id=3"
+    },
+    {
+      "id": "ev-407",
+      "title": "文理書院(香港) 資訊及體驗日（小學團體）2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "文理書院(香港)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-28T01:00:00.000Z",
+      "dateEnd": "2026-11-28T05:00:00.000Z",
+      "keyDateStart": "2026-10-09",
+      "keyDateIsDateTime": false,
+      "keyPoints": "2026-11-28（六）09:00–13:00；含 STEAM 實驗、歷奇、爬蟲接觸等；小學團體報名表須於 10-9 或之前傳真 2897 7177 或填網上表格；滿20人可申請免費單程旅遊車",
+      "notes": "來源：官網 InfoDay 專頁及 Poster_Infoday.pdf（路徑 2026-27/infoday）。歡迎小學家長參與。另有 2027/28 中一自行分配學位申請表格已上載入學資訊頁。",
+      "sourceUrl": "https://www.cognitiohk.edu.hk/zh/res/05_news/2026-27/infoday/Poster_Infoday.pdf"
+    },
+    {
+      "id": "ev-408",
+      "title": "中華傳道會劉永生中學 學校資訊日暨中學體驗日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "中華傳道會劉永生中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T02:30:00.000Z",
+      "dateEnd": "2026-12-05T08:10:00.000Z",
+      "keyDateStart": "2026-10-31",
+      "keyDateIsDateTime": false,
+      "keyPoints": "兩節：10:30–12:25、14:15–16:10；歡迎小六生及家長；活動資料 10-31 公布；網上登記 11-3 至 11-13",
+      "notes": "來源：https://www.lws.edu.hk/en/school-information-day-and-secondary-school-experience-day 。頁面同時列 2027/28 自行分配學位申請期 1-4 至 1-18。第二輪（2026-27）申請屬已過周期，不另建項。",
+      "sourceUrl": "https://www.lws.edu.hk/en/school-information-day-and-secondary-school-experience-day"
+    },
+    {
+      "id": "ev-409",
+      "title": "中華傳道會劉永生中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "中華傳道會劉永生中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請期 2027-01-04 至 01-18（與資訊日專頁並列）",
+      "notes": "來源：同上資訊日專頁。詳細校本須知待進一步公布。",
+      "sourceUrl": "https://www.lws.edu.hk/en/school-information-day-and-secondary-school-experience-day"
+    },
+    {
+      "id": "ev-410",
+      "title": "培生學校／Grace Christian Academy 2027-28 入學日程",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "培生學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-05-07",
+      "dateEnd": "2027-06-18",
+      "keyDateStart": "2027-05-07",
+      "keyDateIsDateTime": false,
+      "keyPoints": "課程簡介 2027-05-07；申請期 05-07 至 06-11；面試期 05-17 至 06-18；逾期申請或可個案處理",
+      "notes": "來源：https://gca.edu.hk/admission/dates/ 。私立國際課程學校，非 SSPA。",
+      "sourceUrl": "https://gca.edu.hk/admission/dates/"
+    },
+    {
+      "id": "ev-411",
+      "title": "培僑中學 80周年開放日暨嘉年華（2026年12月）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "培僑中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-01",
+      "dateEnd": "2026-12-31",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "官網預告「12月 開放日暨嘉年華」；含校園導賞及攤位；確實日期待公布",
+      "notes": "80周年校慶系列活動之一（另有 11-14 校慶典禮及晚宴於會展，非升中資訊日）。來源：https://www.pkms.edu.hk/ 首頁。請勿將 2025-12-13（79周年 CHSC 登記）誤作本年。",
+      "sourceUrl": "https://www.pkms.edu.hk/"
+    }
   ]
 }
