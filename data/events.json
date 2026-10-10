@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T17:55:06Z",
+  "syncedAt": "2026-10-10T18:07:18Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -1405,6 +1405,244 @@
       "keyPoints": "2026-09-01 起接受申請；面試約10月起",
       "notes": "直資；網上申請；短列申請人面試；成功申請約一星期內通知；註冊日 2027-07-06。",
       "sourceUrl": "https://www.deliahw.edu.hk/index.php/en/admissions/admissions-to-s1"
+    },
+    {
+      "id": "ev-82",
+      "title": "保良局何蔭棠中學 升中資訊日暨二十五周年校慶開放日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "保良局何蔭棠中學"
+      ],
+      "dateStart": "2026-12-06T01:00:00.000Z",
+      "dateEnd": "2026-12-06T04:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": "2026-10-20T00:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上預約系統開放（先到先得）",
+      "notes": "兩場中一入學講座 09:00–10:00／10:30–11:30（小五小六家長學生）；校園參觀及學生表演 09:00–12:00 無需預約。預約連結於2026-10-20官網公布。",
+      "sourceUrl": "https://www.plkchc.edu.hk/admission/393"
+    },
+    {
+      "id": "ev-83",
+      "title": "可立中學(嗇色園主辦) 開放日與資訊日（嗇色園105周年紀慶）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "可立中學(嗇色園主辦)"
+      ],
+      "dateStart": "2026-11-28T01:30:00.000Z",
+      "dateEnd": "2026-11-28T09:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官網 Information Day 2026 列 2026-11-28；時段據 CHSC 學校自行登記開放日：上午9時30分至下午5時。CHSC id=5197。",
+      "sourceUrl": "https://www.holap.edu.hk/node/420"
+    },
+    {
+      "id": "ev-84",
+      "title": "中華基督教會基協中學 校園資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會基協中學"
+      ],
+      "dateStart": "2026-12-05T02:00:00.000Z",
+      "dateEnd": "2026-12-05T08:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "來源：CHSC 學校自行登記開放日（校園資訊日）；地點黃大仙東頭村道161號。校官網入學頁暫未另列此場詳情。CHSC id=5244。",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5244"
+    },
+    {
+      "id": "ev-85",
+      "title": "中華基督教會協和書院 中一入學資訊日2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會協和書院"
+      ],
+      "dateStart": "2026-11-28T02:00:00.000Z",
+      "dateEnd": "2026-11-28T08:30:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "來源：CHSC 學校自行登記開放日；地點慈雲山蒲崗村道171號。校官網最新消息暫未見獨立專頁（TLS／頁面未列細節）。CHSC id=5184。",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5184"
+    },
+    {
+      "id": "ev-86",
+      "title": "聖母書院 中一入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "聖母書院"
+      ],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2026-11-21",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請表格上載日",
+      "notes": "官網：Application Form will be uploaded on 21st November, 2026；Application Period 4th–18th January, 2027。",
+      "sourceUrl": "https://www.olc.edu.hk/index.php/s1-admission/"
+    },
+    {
+      "id": "ev-87",
+      "title": "聖母書院 中一面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "聖母書院"
+      ],
+      "dateStart": "2027-02-27",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官網 Date of Interview 27th February, 2027；時段未列。",
+      "sourceUrl": "https://www.olc.edu.hk/index.php/s1-admission/"
+    },
+    {
+      "id": "ev-88",
+      "title": "德望學校 中一入學簡介會（2027/28）",
+      "type": "入學講座",
+      "status": "已過",
+      "schools": [
+        "德望學校"
+      ],
+      "dateStart": "2026-10-03",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "直資；官網提供2026-10-03中一資訊簡介會簡報下載；網上登記期已過（2026-09-17至09-21）。精確時段官網本頁未列。",
+      "sourceUrl": "https://www2.ghs.edu.hk/admission/S1Admission/InfoS1Admission"
+    },
+    {
+      "id": "ev-89",
+      "title": "德望學校 中一入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "德望學校"
+      ],
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-11-13",
+      "isDateTime": false,
+      "keyDateStart": "2026-11-13T04:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上文件上載截止（正午12時）",
+      "notes": "直資；網上系統 https://sas.hktedu.com/ghs/6711 ；2026-10-12起開立戶口；申請費$75不設退款；遴選：文件篩選60%／面試40%。",
+      "sourceUrl": "https://www2.ghs.edu.hk/admission/S1Admission/InfoS1Admission"
+    },
+    {
+      "id": "ev-90",
+      "title": "德望學校 中一技能測試／音樂試演（2027/28）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "德望學校"
+      ],
+      "dateStart": "2026-11-28",
+      "dateEnd": "2026-12-05",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "個別邀請；電郵通知",
+      "notes": "田徑／羽毛球／劍擊／乒乓球／網球：2026-11-28（通知約11-23）；游泳／籃球／足球／排球及音樂試演：2026-12-05（通知約11-30）。",
+      "sourceUrl": "https://www2.ghs.edu.hk/admission/S1Admission/InfoS1Admission"
+    },
+    {
+      "id": "ev-91",
+      "title": "德望學校 中一第一次面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "德望學校"
+      ],
+      "dateStart": "2027-01-09",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": "2026-12-31",
+      "keyDateIsDateTime": false,
+      "keyPoints": "通過初步遴選者電郵通知（12月31日或前）",
+      "notes": "直資；英語及普通話進行。",
+      "sourceUrl": "https://www2.ghs.edu.hk/admission/S1Admission/InfoS1Admission"
+    },
+    {
+      "id": "ev-92",
+      "title": "德望學校 中一第二次面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "德望學校"
+      ],
+      "dateStart": "2027-01-25",
+      "dateEnd": "2027-03-05",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "直資；學生與家長會見校長／副校長／資深老師；電郵通知。",
+      "sourceUrl": "https://www2.ghs.edu.hk/admission/S1Admission/InfoS1Admission"
+    },
+    {
+      "id": "ev-93",
+      "title": "德望學校 中一收生結果（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "德望學校"
+      ],
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027年3月底或之前電郵通知",
+      "notes": "直資；獲取錄及候補均以電郵通知。",
+      "sourceUrl": "https://www2.ghs.edu.hk/admission/S1Admission/InfoS1Admission"
+    },
+    {
+      "id": "ev-94",
+      "title": "聖公會聖本德中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "聖公會聖本德中學"
+      ],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2026-11-25",
+      "keyDateIsDateTime": false,
+      "keyPoints": "詳情料2026年11月下旬官網公布",
+      "notes": "官網：2027–28學年度自行分配學位申請將於2027年1月上旬開始；精確報名窗暫按教育局一般期（1月4–18日），校方細節11月下旬公布。",
+      "sourceUrl": "https://www.skhsbs.edu.hk/%e4%b8%ad%e4%b8%80%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e7%94%b3%e8%ab%8b/"
+    },
+    {
+      "id": "ev-95",
+      "title": "香港威雅學校(九龍) Senior School 入學申請截止（2027/28）",
+      "type": "截止",
+      "status": "官方確認",
+      "schools": [
+        "香港威雅學校(九龍)"
+      ],
+      "dateStart": "2026-10-31",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": "2026-10-31",
+      "keyDateIsDateTime": false,
+      "keyPoints": "Senior School 申請截止",
+      "notes": "私立；Prep School 全年接受申請；Senior School 2027/28 截止2026-10-31；首輪評估約11–12月。Year 8 約等於本地中一。",
+      "sourceUrl": "https://was.edu.hk/admissions/"
     }
   ]
 }
