@@ -1,14 +1,14 @@
 {
-  "title": "沙田升中事件清單",
+  "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
   "syncedAt": "2026-10-07T01:56:01Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
-    "note": "一次性手動同步；靜態站不即時連 Notion。"
+    "note": "一次性手動同步（前身沙田區 Notion）；靜態站不即時連 Notion。現有條目偏重沙田區學校。"
   },
   "schema": {
-    "description": "升中項目的唯一資料來源。頁面以 fetch() 讀取本檔。內容可由 Notion「沙田升中事件清單」手動匯出覆寫；站內不連線 Notion API。",
+    "description": "升中項目的唯一資料來源。頁面以 fetch() 讀取本檔。可由 Notion 或其他來源手動匯出覆寫；站內不連線 Notion API。現有條目多來自前身沙田區清單，並非全港完整日程。",
     "event": {
       "id": "字串，唯一識別（例如 ev-10）",
       "notionPageId": "可選；對應 Notion 列頁面 ID（手動同步用，站內不顯示）",

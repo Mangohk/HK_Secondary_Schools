@@ -556,6 +556,18 @@ main {
   white-space: nowrap;
 }
 
+.distance-list li.distance-more {
+  display: block;
+  grid-template-columns: none;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  cursor: default;
+}
+
+.distance-list li.distance-more:hover {
+  background: transparent;
+}
+
 .events-intro {
   display: grid;
   gap: 0.85rem;
@@ -586,11 +598,13 @@ main {
   gap: 0.45rem;
 }
 
+.district-filter,
 .events-school-filter {
   flex: 1 1 12rem;
   min-width: 0;
 }
 
+.district-filter select,
 .events-school-filter select {
   width: 100%;
   max-width: 28rem;
@@ -604,6 +618,7 @@ main {
   box-shadow: var(--shadow);
 }
 
+.district-filter select:focus,
 .events-school-filter select:focus {
   outline: 2px solid var(--teal);
   outline-offset: 1px;

@@ -1,4 +1,4 @@
-window.SHATIN_SCHOOLS = [
+window.HK_SECONDARY_SCHOOLS = [
   {
     "id": "171018000133",
     "nameZh": "樂善堂梁銶琚書院",
