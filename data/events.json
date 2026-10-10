@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T19:48:34Z",
+  "syncedAt": "2026-10-10T19:56:19Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -5562,6 +5562,261 @@
       "keyPoints": "網上eAdmission；約一星期內獲邀面試；面試後兩星期內結果；申請費$2,000不退還",
       "notes": "私立華德福；官網未列截止日。dateStart為本批掃描日。",
       "sourceUrl": "https://foresthouse.edu.hk/application"
+    },
+    {
+      "id": "ev-330",
+      "title": "港青基信書院 Form 1（2027/28）網上申請截止",
+      "type": "截止",
+      "status": "官方確認",
+      "schools": [
+        "港青基信書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-21T08:00:00.000Z",
+      "dateEnd": null,
+      "keyDateStart": "2026-10-21T08:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "截止當日 16:00；申請費 HK$100；須完成網上申請並繳費後始處理；逾期申請或由 2027年1月起視學額再審",
+      "notes": "直資；不參加 SSPA。網上申請：https://sas.hktedu.com/v2/#/application/front/yhkcc/2728 ；詳見 Application Notes for 2027–2028 Admission（2026年9月上載）。",
+      "sourceUrl": "https://yhkcc.edu.hk/wp-content/uploads/2026/09/application-notes-2027-2028.pdf"
+    },
+    {
+      "id": "ev-331",
+      "title": "港青基信書院 Form 1（2027/28）面試",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "港青基信書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-14",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "僅短名單獲邀；申請須知訂面試日為 2026-11-14（星期六）；官網另寫 shortlisted by 14 Nov；Talented Scheme 或另日評估",
+      "notes": "收生比重：學業35%、面試35%、操行／評語20%、課外活動及獎項10%；另設校長個別面試。",
+      "sourceUrl": "https://yhkcc.edu.hk/admission/download-area/form-1-admission/"
+    },
+    {
+      "id": "ev-332",
+      "title": "港青基信書院 Form 1（2027/28）取錄結果通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "港青基信書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-01",
+      "dateEnd": "2026-12-15",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "官網：early December 2026 以電郵通知全部申請人；申請須知：通常於面試後一個月內公布；取錄須繳不可退還註冊費（可抵 2027年9月學費）",
+      "notes": "取錄家長須簽署不會參加 SSPA 之承諾書。",
+      "sourceUrl": "https://yhkcc.edu.hk/admission/download-area/form-1-admission/"
+    },
+    {
+      "id": "ev-333",
+      "title": "香港教育工作者聯會黃楚標中學 升中資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港教育工作者聯會黃楚標中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T01:00:00.000Z",
+      "dateEnd": "2026-12-12T04:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "主題「Next Step 創科啟航」；對象小五／小六；含升中面試技巧、升學講座、校園導賞、跨學科體驗、AI 機器人／激光切割／3D 食物打印",
+      "notes": "海報載於官網「學校資訊日」頁（2026-10-01 更新）。查詢 2109 4005。",
+      "sourceUrl": "https://www.wcbss.edu.hk/article/1118"
+    },
+    {
+      "id": "ev-334",
+      "title": "香港教育工作者聯會黃楚標中學 中一自行分配學位申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港教育工作者聯會黃楚標中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "可經「中一派位電子平台」或親身遞交；校務處一至五 08:30–17:00、六 09:00–13:00；名額頁面寫 40（文案仍見「2026-2027年度」字樣，申請期為 2027年1月，對應 2027/28 入學）",
+      "notes": "比重：面試40%、小學成績35%、評語及操行15%、課外活動／服務／獎項10%。頁面 2026-10-01 刊「中一自行分配學位」2027。",
+      "sourceUrl": "https://www.wcbss.edu.hk/article/441"
+    },
+    {
+      "id": "ev-335",
+      "title": "香港教育工作者聯會黃楚標中學 中一自行分配面試",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港教育工作者聯會黃楚標中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-01",
+      "dateEnd": "2027-03-31",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請者獲安排於二、三月面試；個人面談；粵語／普通話／英語；詳情容後通知",
+      "notes": "官方確認時段為二月或三月，未公布確切日。",
+      "sourceUrl": "https://www.wcbss.edu.hk/article/441"
+    },
+    {
+      "id": "ev-336",
+      "title": "香港教育工作者聯會黃楚標中學 自行分配正取學生通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "香港教育工作者聯會黃楚標中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": "2027-03-31",
+      "keyDateIsDateTime": false,
+      "keyPoints": "以郵寄及電話通知正取名單；須準備兩個回郵信封；不適用於備取／落選",
+      "notes": "非正式最終派位結果；統一派位結果另由教育局公布。",
+      "sourceUrl": "https://www.wcbss.edu.hk/article/441"
+    },
+    {
+      "id": "ev-337",
+      "title": "智新書院 準家長開放日（10月）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-28T00:30:00.000Z",
+      "dateEnd": "2026-10-28T02:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校園導賞、領導層簡介、茶點交流；地點 G/F Theatre；須 RSVP",
+      "notes": "英基私立獨立學校（Discovery College）；招生頁 joinus.discovery.edu.hk。主站 discovery.edu.hk curl 連線失敗，改以官方招生／開放日子站。",
+      "sourceUrl": "https://www.joinus.discovery.edu.hk/event-details/prospective-parent-open-day-28-october"
+    },
+    {
+      "id": "ev-338",
+      "title": "智新書院 準家長開放日（11月）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-17T00:30:00.000Z",
+      "dateEnd": "2026-11-17T02:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校園導賞、領導層簡介、茶點交流；地點 G/F Theatre；須 RSVP",
+      "notes": "英基私立獨立學校（Discovery College）；招生頁 joinus.discovery.edu.hk。主站 discovery.edu.hk curl 連線失敗，改以官方招生／開放日子站。",
+      "sourceUrl": "https://www.joinus.discovery.edu.hk/event-details/prospective-parent-open-day-17-november"
+    },
+    {
+      "id": "ev-339",
+      "title": "智新書院 準家長開放日（2027年1月）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-01-16T02:30:00.000Z",
+      "dateEnd": "2027-01-16T04:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "星期六場次 10:30–12:00；Theatre at Discovery College；須 RSVP",
+      "notes": "英基私立獨立學校（Discovery College）；招生頁 joinus.discovery.edu.hk。主站 discovery.edu.hk curl 連線失敗，改以官方招生／開放日子站。",
+      "sourceUrl": "https://www.joinus.discovery.edu.hk/event-details/prospective-parent-open-day-16-january-2027"
+    },
+    {
+      "id": "ev-340",
+      "title": "智新書院 準家長開放日（2027年2月）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-02-17T00:30:00.000Z",
+      "dateEnd": "2027-02-17T02:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校園導賞、觀課、領導層簡介、茶點交流；地點 G/F Theatre；須 RSVP",
+      "notes": "英基私立獨立學校（Discovery College）；招生頁 joinus.discovery.edu.hk。主站 discovery.edu.hk curl 連線失敗，改以官方招生／開放日子站。",
+      "sourceUrl": "https://www.joinus.discovery.edu.hk/event-details/prospective-parent-open-day-17-feb-2027"
+    },
+    {
+      "id": "ev-341",
+      "title": "智新書院／英基 Year 7（2027/28）中央申請期",
+      "type": "報名／申請",
+      "status": "已過",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-09-01",
+      "dateEnd": "2026-09-30",
+      "keyDateStart": "2026-09-30",
+      "keyDateIsDateTime": false,
+      "keyPoints": "英基中央申請（2016年出生、2027年8月入讀 Year 7）；期內遞交獲隨機編號；逾期只入輪候；補交文件截止為 10月第一個星期五（2026-10-02）",
+      "notes": "由 ESF Centre 中央處理。來源：esf.edu.hk admissions／how-to-apply。",
+      "sourceUrl": "https://www.esf.edu.hk/admissions/how-to-apply/"
+    },
+    {
+      "id": "ev-342",
+      "title": "智新書院／英基 Year 7（2027/28）面試期",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-15",
+      "dateEnd": "2026-11-30",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "英基公布面試期為 mid-October to the end of November；按優先類別、隨機編號、選校次序及學額安排",
+      "notes": "日期為官方「中旬至月底」表述之曆日範圍，非單一場次。",
+      "sourceUrl": "https://www.esf.edu.hk/admissions/how-to-apply/"
+    },
+    {
+      "id": "ev-343",
+      "title": "智新書院／英基 Year 7（2027/28）取錄通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-01",
+      "dateEnd": "2026-12-15",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "Early/Mid-December 發出 Year 7 取錄通知",
+      "notes": "英基中央時間表。",
+      "sourceUrl": "https://www.esf.edu.hk/admissions/how-to-apply/"
+    },
+    {
+      "id": "ev-344",
+      "title": "智新書院／英基 Year 7（2027/28）確認學位截止",
+      "type": "截止",
+      "status": "官方確認",
+      "schools": [
+        "智新書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-15",
+      "dateEnd": null,
+      "keyDateStart": "2026-12-15",
+      "keyDateIsDateTime": false,
+      "keyPoints": "Mid-December：繳付訂金及不可退還資本徵費以確認學位",
+      "notes": "確切截止日以取錄信為準；此條用「月中」代表日。",
+      "sourceUrl": "https://www.esf.edu.hk/admissions/how-to-apply/"
     }
   ]
 }
