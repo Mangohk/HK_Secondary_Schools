@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T17:20:01Z",
+  "syncedAt": "2026-10-10T17:36:42Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -691,6 +691,278 @@
       "keyPoints": "",
       "notes": "校曆學生版；時間未公布",
       "sourceUrl": "https://www.cch.edu.hk/wp-content/uploads/2026/08/2627-%E5%AD%B8%E7%94%9F%E7%89%88%E6%A0%A1%E6%9B%86.pdf"
+    },
+    {
+      "id": "ev-40",
+      "title": "喇沙書院 資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "喇沙書院"
+      ],
+      "dateStart": "2026-11-21",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "報名料11月初",
+      "sourceUrl": "https://www.lasalle.edu.hk/community/news/form-one-information-day-2027-2028-admissions/"
+    },
+    {
+      "id": "ev-41",
+      "title": "保良局顏寶鈴書院 開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "保良局顏寶鈴書院"
+      ],
+      "dateStart": "2026-11-21T01:00:00.000Z",
+      "dateEnd": "2026-11-21T08:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": "2026-11-01T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "報名開始",
+      "notes": "直資；講座10:00及14:30；報名由2026-11-01 09:00",
+      "sourceUrl": "https://www.npl.edu.hk/en/site/view?name=F.1+Admission"
+    },
+    {
+      "id": "ev-42",
+      "title": "保良局顏寶鈴書院 中一入學申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "保良局顏寶鈴書院"
+      ],
+      "dateStart": "2026-11-16T01:00:00.000Z",
+      "dateEnd": "2026-12-24T15:59:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": "2026-12-24T15:59:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "申請截止",
+      "notes": "直資",
+      "sourceUrl": "https://www.npl.edu.hk/en/site/view?name=F.1+Admission"
+    },
+    {
+      "id": "ev-43",
+      "title": "旅港開平商會中學 資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "旅港開平商會中學"
+      ],
+      "dateStart": "2026-11-14T02:00:00.000Z",
+      "dateEnd": "2026-11-14T09:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "兩場 10:00–12:30、14:30–17:00；登記由2026-10-26 09:00",
+      "sourceUrl": "https://www.hpccss.edu.hk/en/s1-admissions-info-day-0"
+    },
+    {
+      "id": "ev-44",
+      "title": "拔萃男書院 入學講座",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "拔萃男書院"
+      ],
+      "dateStart": "2026-10-17T01:30:00.000Z",
+      "dateEnd": "2026-10-17T04:30:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "09:30–10:30（指定小學）及11:30–12:30（公眾）；不參加SSPA",
+      "sourceUrl": "https://www.dbs.edu.hk/index.php?s=admission&m=latestnewsc"
+    },
+    {
+      "id": "ev-45",
+      "title": "拔萃男書院 中一入學申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "拔萃男書院"
+      ],
+      "dateStart": "2026-10-17",
+      "dateEnd": "2026-11-17",
+      "isDateTime": false,
+      "keyDateStart": "2026-11-17",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請截止",
+      "notes": "不參加SSPA",
+      "sourceUrl": "https://www.dbs.edu.hk/index.php?s=admission&m=g7appc"
+    },
+    {
+      "id": "ev-46",
+      "title": "拔萃男書院 中一收生結果",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "拔萃男書院"
+      ],
+      "dateStart": "2027-03-25",
+      "dateEnd": "2027-04-10",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "官網寫3月底或4月初，精確日待公布",
+      "sourceUrl": "https://www.dbs.edu.hk/index.php?s=admission&m=latestnewsc"
+    },
+    {
+      "id": "ev-47",
+      "title": "協恩中學 資訊日",
+      "type": "資訊日",
+      "status": "已過",
+      "schools": [
+        "協恩中學"
+      ],
+      "dateStart": "2026-10-10",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "直資",
+      "sourceUrl": "https://www.hys.edu.hk/en/admission/form1admissions/"
+    },
+    {
+      "id": "ev-48",
+      "title": "協恩中學 中一入學申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "協恩中學"
+      ],
+      "dateStart": "2026-10-10",
+      "dateEnd": "2026-10-24",
+      "isDateTime": false,
+      "keyDateStart": "2026-10-24",
+      "keyDateIsDateTime": false,
+      "keyPoints": "紙本面交截止",
+      "notes": "直資；不參加SSPA；網上申請2026-10-10正午至2026-10-22；紙本面交至2026-10-24正午",
+      "sourceUrl": "https://www.hys.edu.hk/en/admission/form1admissions/"
+    },
+    {
+      "id": "ev-49",
+      "title": "協恩中學 中一個人面試",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "協恩中學"
+      ],
+      "dateStart": "2026-11-14",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "個人面試；直資",
+      "sourceUrl": "https://www.hys.edu.hk/en/admission/form1admissions/"
+    },
+    {
+      "id": "ev-50",
+      "title": "協恩中學 中一收生結果",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "協恩中學"
+      ],
+      "dateStart": "2027-05-01",
+      "dateEnd": "2027-05-10",
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "最遲2027年5月初，精確日待公布",
+      "sourceUrl": "https://www.hys.edu.hk/en/admission/form1admissions/"
+    },
+    {
+      "id": "ev-51",
+      "title": "瑪利諾修院學校(中學部) 中一入學申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "瑪利諾修院學校(中學部)"
+      ],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請截止",
+      "notes": "詳情料2026-11公布",
+      "sourceUrl": "https://www.mcs.edu.hk/%E4%B8%AD%E4%B8%80%E5%85%A5%E5%AD%B8%E7%94%B3%E8%AB%8B"
+    },
+    {
+      "id": "ev-52",
+      "title": "聖公會蔡功譜中學 中一自行分配學位申請",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "聖公會蔡功譜中學"
+      ],
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "isDateTime": false,
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyPoints": "申請截止",
+      "notes": "學額40",
+      "sourceUrl": "https://www.tkp.edu.hk/web/%e4%b8%ad%e4%b8%80%e3%80%8c%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e3%80%8d/"
+    },
+    {
+      "id": "ev-53",
+      "title": "聖公會蔡功譜中學 自行分配學位正取通知",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "聖公會蔡功譜中學"
+      ],
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "正取通知",
+      "sourceUrl": "https://www.tkp.edu.hk/web/%e4%b8%ad%e4%b8%80%e3%80%8c%e8%87%aa%e8%a1%8c%e5%88%86%e9%85%8d%e5%ad%b8%e4%bd%8d%e3%80%8d/"
+    },
+    {
+      "id": "ev-54",
+      "title": "賽馬會官立中學 開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "賽馬會官立中學"
+      ],
+      "dateStart": "2026-12-11",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "",
+      "sourceUrl": "https://www.jcgss.edu.hk/latest_news/%E9%96%8B%E6%94%BE%E6%97%A5-open-day"
+    },
+    {
+      "id": "ev-55",
+      "title": "迦密中學 資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "迦密中學"
+      ],
+      "dateStart": "2026-10-17",
+      "dateEnd": null,
+      "isDateTime": false,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "講座報名已截止；體驗免報名；惡劣天氣改2026-10-18下午",
+      "sourceUrl": "https://www.carmelss.edu.hk/site/about-school/carmel-information-day-2026/"
     }
   ]
 }
