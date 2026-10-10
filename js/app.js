@@ -69,6 +69,104 @@ function ensureUrl(url) {
 }
 
 /**
+ * Decode percent-encoded runs (up to twice). `+` is left alone.
+ * A bad run stays as written instead of throwing away the rest of the string.
+ */
+function decodePercentRuns(raw) {
+  if (raw == null) return "";
+  let text = String(raw);
+  for (let pass = 0; pass < 2; pass += 1) {
+    if (!/%[0-9A-Fa-f]{2}/.test(text)) break;
+    let changed = false;
+    const next = text.replace(/(?:%[0-9A-Fa-f]{2})+/g, (run) => {
+      try {
+        const decoded = decodeURIComponent(run);
+        if (decoded === run) return run;
+        changed = true;
+        return decoded;
+      } catch {
+        return run;
+      }
+    });
+    if (!changed) break;
+    text = next;
+  }
+  return text.normalize("NFC");
+}
+
+/** Visible 升中 copy: `%e4%b8%ad` and similar must not remain on screen. */
+function decodeVisiblePercent(raw) {
+  return decodePercentRuns(raw);
+}
+
+/** One `%HH` byte, or the same byte wrapped once as `%25HH`. */
+function readPercentByte(text, index) {
+  const match = /^%((?:25)*)([0-9A-Fa-f]{2})/i.exec(text.slice(index));
+  if (!match) return null;
+  const layers = match[1].length / 2;
+  if (layers > 1) return null;
+  return { byte: Number.parseInt(match[2], 16), next: index + match[0].length };
+}
+
+/**
+ * Href decode: replace encoded non-ASCII (including one extra `%25` layer)
+ * so the attribute does not show `%e4%b8%ad`. `%20` and `%2F` stay encoded.
+ */
+function decodeHrefPercent(raw) {
+  if (raw == null) return "";
+  const text = String(raw);
+  let out = "";
+  for (let i = 0; i < text.length;) {
+    const lead = readPercentByte(text, i);
+    let need = 0;
+    if (lead && lead.byte >= 0xc2 && lead.byte <= 0xdf) need = 2;
+    else if (lead && lead.byte >= 0xe0 && lead.byte <= 0xef) need = 3;
+    else if (lead && lead.byte >= 0xf0 && lead.byte <= 0xf4) need = 4;
+    if (!need) {
+      out += text[i];
+      i += 1;
+      continue;
+    }
+    const bytes = [lead.byte];
+    let j = lead.next;
+    let ok = true;
+    for (let k = 1; k < need; k += 1) {
+      const next = readPercentByte(text, j);
+      if (!next || next.byte < 0x80 || next.byte > 0xbf) {
+        ok = false;
+        break;
+      }
+      bytes.push(next.byte);
+      j = next.next;
+    }
+    if (!ok) {
+      out += text[i];
+      i += 1;
+      continue;
+    }
+    try {
+      const char = new TextDecoder("utf-8", { fatal: true }).decode(Uint8Array.from(bytes));
+      if (!/[^\u0000-\u007f]/.test(char)) throw new Error("ascii");
+      out += char;
+      i = j;
+    } catch {
+      out += text[i];
+      i += 1;
+    }
+  }
+  return out.normalize("NFC");
+}
+
+/** Outbound 升中 link label. Not always 「來源」. */
+function eventSourceLabel(ev, url) {
+  const path = String(url || "").split(/[?#]/)[0];
+  if (/\.pdf$/i.test(path)) return "PDF";
+  if (ev?.type === "報名／申請") return "報名";
+  if (ev?.type === "註冊") return "註冊";
+  return "學校公告";
+}
+
+/**
  * Decode one application/x-www-form-urlencoded component.
  * `+` is a space. Percent-encoding is applied up to twice so a double-encoded
  * 升中 link (for example `%25E6%25B2%2599`) still becomes the original text.
@@ -581,31 +679,31 @@ class App {
       when.textContent = formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime);
       if (ev.keyPoints) {
         const key = document.createElement("small");
-        key.textContent = `關鍵：${ev.keyPoints}`;
+        key.textContent = `關鍵：${decodeVisiblePercent(ev.keyPoints)}`;
         when.append(key);
       }
 
       const body = document.createElement("div");
       body.className = "event-body";
       const title = document.createElement("h3");
-      title.textContent = ev.title;
+      title.textContent = decodeVisiblePercent(ev.title);
       body.append(title);
 
       const badges = document.createElement("div");
       badges.className = "badges";
       const typeBadge = document.createElement("span");
       typeBadge.className = `badge type-${ev.type}`;
-      typeBadge.textContent = ev.type;
+      typeBadge.textContent = decodeVisiblePercent(ev.type);
       badges.append(typeBadge);
       const statusBadge = document.createElement("span");
       statusBadge.className = `badge status-${ev.status}`;
-      statusBadge.textContent = ev.status;
+      statusBadge.textContent = decodeVisiblePercent(ev.status);
       badges.append(statusBadge);
       if (ev.schools?.length) {
         for (const school of ev.schools) {
           const s = document.createElement("span");
           s.className = "badge";
-          s.textContent = school;
+          s.textContent = decodeVisiblePercent(school);
           badges.append(s);
         }
       }
@@ -613,13 +711,19 @@ class App {
 
       if (ev.notes) {
         const notes = document.createElement("p");
-        notes.textContent = ev.notes;
+        notes.textContent = decodeVisiblePercent(ev.notes);
         body.append(notes);
       }
 
       if (ev.sourceUrl) {
+        const href = ensureUrl(decodeHrefPercent(ev.sourceUrl));
         const links = document.createElement("p");
-        links.innerHTML = `<a href="${escapeHtml(ensureUrl(ev.sourceUrl))}" target="_blank" rel="noopener noreferrer">來源</a>`;
+        const anchor = document.createElement("a");
+        anchor.setAttribute("href", href);
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+        anchor.textContent = eventSourceLabel(ev, ev.sourceUrl);
+        links.append(anchor);
         body.append(links);
       }
 
@@ -858,7 +962,10 @@ class App {
     footer.hidden = false;
     const allShown = shownCount >= total;
     if (more) more.hidden = allShown;
-    if (done) done.hidden = !allShown;
+    if (done) {
+      done.textContent = `已顯示全部 ${total} 所`;
+      done.hidden = !allShown;
+    }
   }
 
   renderList() {

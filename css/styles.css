@@ -216,6 +216,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .school-card-title-row {
@@ -830,6 +833,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .district-filter,
@@ -962,6 +968,16 @@ main {
 
 .leaflet-container {
   font-family: var(--font-sans);
+}
+
+/* Leaflet's zoom links are 26px, or 30px in touch mode. The hit box is 44px. */
+.leaflet-control-zoom.leaflet-bar a,
+.leaflet-touch .leaflet-control-zoom.leaflet-bar a,
+.leaflet-touch .leaflet-control-zoom-in,
+.leaflet-touch .leaflet-control-zoom-out {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
 }
 
 .school-marker {
@@ -1204,8 +1220,14 @@ main {
 
   .toolbar,
   .events-filter-stack {
-    max-height: 42vh;
-    overflow: auto;
+    /* 42vh cropped the 民間組別 row. Let the bar use its real height when it fits. */
+    max-height: none;
+    overflow: visible;
+  }
+
+  .toolbar .filter-row,
+  .events-filter-stack .filter-row {
+    align-items: flex-start;
   }
 
   .distance-list li {
@@ -1248,6 +1270,27 @@ main {
 
   .school-meta div {
     grid-template-columns: 3.6rem 1fr;
+  }
+}
+
+/* Short narrow viewports: a stuck full toolbar covers the list and traps the
+   民間組別 row past the fold. Keep search stuck; let the chip rows scroll. */
+@media (max-width: 640px) and (max-height: 620px) {
+  .toolbar,
+  .events-filter-stack {
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: 0;
+  }
+
+  .toolbar .search-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 32;
+    padding: 0.3rem 0 0.45rem;
+    background: rgba(243, 239, 230, 0.97);
+    backdrop-filter: blur(10px);
   }
 }
 
