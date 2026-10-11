@@ -942,6 +942,19 @@ main {
   text-underline-offset: 2px;
 }
 
+/* Long ASCII URLs in notes must not stretch the card (iPhone Safari shrink-to-fit). */
+.event-card,
+.event-body,
+.event-when { min-width: 0; }
+
+.event-body p,
+.event-body h3,
+.event-when {
+  overflow-wrap: anywhere;
+}
+
+html { overflow-x: clip; }
+
 .badge.status-官方確認 { background: #d7efe4; color: #1f5b43; }
 .badge.status-暫定（坊間） { background: #f5ebc8; color: #6d5310; }
 .badge.status-已過 { background: #e6e6e6; color: #555; }
