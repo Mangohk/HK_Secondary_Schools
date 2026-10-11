@@ -662,10 +662,8 @@ class App {
       this.els.eventsEmpty.hidden = !isEmpty;
       const body = this.els.eventsEmpty.querySelector(".empty-state-body");
       if (body) {
-        const phrase = this.activeFilterPhrase(this.eventFilterItems());
-        body.textContent = phrase
-          ? `目前篩選：${phrase}。沒有符合的升中項目，可清除篩選再看已收錄的活動。`
-          : "現階段主要收錄沙田區的活動。可以清除篩選，查看已收錄的全部項目。";
+        body.textContent =
+          "呢個條件暫時冇項目。可試其他篩選，或稍後再睇（資料持續更新）。";
       }
     }
     if (isEmpty) return;
@@ -790,21 +788,6 @@ class App {
 
   activeFilterPhrase(items) {
     return items.map((item) => item.label).join("、");
-  }
-
-  eventFilterItems() {
-    const items = [];
-    if (this.eventStatus !== "all") items.push({ label: `狀態：${this.eventStatus}` });
-    if (this.eventBand !== "all") {
-      const bandText = this.eventBand === "未知" ? "未知／不適用" : this.bandLabel(this.eventBand);
-      items.push({ label: `民間組別：${bandText}` });
-    }
-    if (this.eventSchool === "__territory__" || this.eventSchool === "__district__") {
-      items.push({ label: "學校：全港／教育局" });
-    } else if (this.eventSchool !== "all") {
-      items.push({ label: `學校：${this.eventSchool}` });
-    }
-    return items;
   }
 
   activeListFilters() {
