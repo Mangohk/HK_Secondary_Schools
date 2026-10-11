@@ -908,12 +908,14 @@ main {
 }
 
 .district-filter,
+.events-district-filter,
 .events-school-filter {
   flex: 1 1 12rem;
   min-width: 0;
 }
 
 .district-filter select,
+.events-district-filter select,
 .events-school-filter select {
   width: 100%;
   max-width: 28rem;
@@ -929,6 +931,7 @@ main {
 }
 
 .district-filter select:focus,
+.events-district-filter select:focus,
 .events-school-filter select:focus {
   outline: 2px solid var(--teal);
   outline-offset: 1px;
@@ -1443,7 +1446,7 @@ html.list-filters-open {
   }
 }
 
-/* Short narrow viewports: leave the 升中 status/school bar in normal flow.
+/* Short narrow viewports: leave the 升中 district/status/school bar in normal flow.
    The school-list toolbar keeps its own compact sticky row. */
 @media (max-width: 640px) and (max-height: 620px) {
   .events-filter-stack {

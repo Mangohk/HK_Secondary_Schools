@@ -337,6 +337,7 @@ class App {
       eventsTitle: document.getElementById("events-title"),
       eventsMeta: document.getElementById("events-meta"),
       eventsFilters: document.querySelector(".events-filters"),
+      eventsDistrictSelect: document.getElementById("events-district-select"),
       eventsSchoolSelect: document.getElementById("events-school-select"),
       map: document.getElementById("map"),
       mapHint: document.getElementById("map-hint"),
@@ -378,6 +379,7 @@ class App {
       this.populateDistrictFilter();
       this.renderList();
     }
+    this.populateEventDistrictFilter();
 
     this.loadEvents();
     this.applyDeepLinkTab();
@@ -491,12 +493,18 @@ class App {
    */
   setSharedDistrict(value) {
     const next = value || "all";
+    if (next === "__territory__") {
+      this.syncDistrictSelect();
+      this.syncEventsDistrictSelect();
+      return;
+    }
     this.filterDistrict = next;
     if (next !== "all" && this.eventsTerritoryOnly) {
       this.eventsTerritoryOnly = false;
       this.syncEventSchoolSelect();
     }
     this.syncDistrictSelect();
+    this.syncEventsDistrictSelect();
   }
 
   eventsJsonUrl() {
@@ -530,6 +538,7 @@ class App {
       }
       this.applyEventDeepLink();
       this.populateEventSchoolFilter();
+      this.syncEventsDistrictSelect();
       this.renderEvents();
     } catch (err) {
       this.showEventsLoadError();
@@ -573,12 +582,57 @@ class App {
       this.eventsTerritoryOnly = true;
       this.eventSchool = "all";
       select.value = "__territory__";
+      this.syncEventsDistrictSelect();
       return;
     }
 
     const stillValid = previous === "all" || names.has(previous);
     this.eventSchool = stillValid ? previous : "all";
     select.value = this.eventSchool;
+    this.syncEventsDistrictSelect();
+  }
+
+  /**
+   * 全部十八區, each DISTRICT_ORDER district, then 全港／教育局.
+   * The territory option is display-only; it never writes filterDistrict.
+   */
+  populateEventDistrictFilter() {
+    const select = this.els.eventsDistrictSelect;
+    if (!select) return;
+
+    select.replaceChildren();
+
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "全部十八區";
+    select.append(allOpt);
+
+    for (const district of DISTRICT_ORDER) {
+      const opt = document.createElement("option");
+      opt.value = district;
+      opt.textContent = district;
+      select.append(opt);
+    }
+
+    const territoryOpt = document.createElement("option");
+    territoryOpt.value = "__territory__";
+    territoryOpt.textContent = "全港／教育局";
+    select.append(territoryOpt);
+
+    this.syncEventsDistrictSelect();
+  }
+
+  /** Reflect shared district, or 全港／教育局 while eventsTerritoryOnly is on. */
+  syncEventsDistrictSelect() {
+    const select = this.els.eventsDistrictSelect;
+    if (!select || !select.options.length) return;
+    if (this.eventsTerritoryOnly) {
+      select.value = "__territory__";
+      return;
+    }
+    const district = this.filterDistrict;
+    const allowed = new Set([...select.options].map((opt) => opt.value));
+    select.value = district !== "__territory__" && allowed.has(district) ? district : "all";
   }
 
   syncEventSchoolSelect() {
@@ -642,6 +696,30 @@ class App {
         this.renderEvents();
       });
     }
+    if (this.els.eventsDistrictSelect) {
+      this.els.eventsDistrictSelect.addEventListener("change", () => {
+        const value = this.els.eventsDistrictSelect.value || "all";
+        if (value === "__territory__") {
+          this.eventsTerritoryOnly = true;
+          this.eventSchool = "all";
+          this.syncDistrictSelect();
+          this.syncEventSchoolSelect();
+          this.onListFiltersChanged();
+          return;
+        }
+        if (value === "all") {
+          this.filterDistrict = "all";
+          this.eventsTerritoryOnly = false;
+          this.syncDistrictSelect();
+          this.syncEventSchoolSelect();
+          this.syncEventsDistrictSelect();
+          this.onListFiltersChanged();
+          return;
+        }
+        this.setSharedDistrict(value);
+        this.onListFiltersChanged();
+      });
+    }
     if (this.els.eventsSchoolSelect) {
       this.els.eventsSchoolSelect.addEventListener("change", () => {
         const value = this.els.eventsSchoolSelect.value || "all";
@@ -654,6 +732,7 @@ class App {
           this.eventSchool = value;
         }
         this.syncDistrictSelect();
+        this.syncEventsDistrictSelect();
         if (wasTerritory !== this.eventsTerritoryOnly) this.onListFiltersChanged();
         else this.renderEvents();
       });
@@ -814,6 +893,7 @@ class App {
         this.renderDistances();
       }
     }
+    this.syncEventsDistrictSelect();
     this.renderEvents();
   }
 
@@ -826,11 +906,14 @@ class App {
 
   /** Reset shared filters. Map reads the same state via onListFiltersChanged. */
   clearAllFilters() {
+    this.eventsTerritoryOnly = false;
     this.filterDistrict = "all";
     this.filterType = "all";
     this.filterBand = "all";
     this.query = "";
     this.syncDistrictSelect();
+    this.syncEventsDistrictSelect();
+    this.syncEventSchoolSelect();
     if (this.els.search) this.els.search.value = "";
     this.syncChipGroup(this.els.filters, "type", "all");
     this.syncChipGroup(this.els.bandFilters, "band", "all");
@@ -1118,9 +1201,11 @@ class App {
 
   /** Clear district, type, and band. Search stays in the compact row. */
   clearCompactFilters() {
+    this.eventsTerritoryOnly = false;
     this.setSharedDistrict("all");
     this.filterType = "all";
     this.filterBand = "all";
+    this.syncEventSchoolSelect();
     this.syncChipGroup(this.els.filters, "type", "all");
     this.syncChipGroup(this.els.bandFilters, "band", "all");
     this.onListFiltersChanged();

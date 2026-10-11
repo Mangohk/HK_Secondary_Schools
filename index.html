@@ -111,11 +111,20 @@
             <h2 class="events-title" id="events-title">升中項目清單</h2>
             <span class="scope-badge">涵蓋全港十八區（持續更新）</span>
           </div>
-          <p class="events-explain">升中項目已涵蓋全港十八區，資料持續更新；請以學校或教育局最新公布為準。分區、類型、民間組別與搜尋跟「學校資料」共用，切換分頁後仍然有效；本頁只另設狀態與學校篩選。</p>
+          <p class="events-explain">升中項目已涵蓋全港十八區，資料持續更新；請以學校或教育局最新公布為準。分區、類型、民間組別與搜尋跟「學校資料」共用，切換分頁後仍然有效。本頁分區選單跟共用分區同步，亦可選「全港／教育局」；另設狀態與學校篩選。</p>
           <p class="events-meta" id="events-meta">載入中…</p>
         </div>
       </div>
       <div class="events-filter-stack">
+        <div class="filter-row">
+          <span class="filter-label">分區</span>
+          <div class="events-district-filter">
+            <label class="sr-only" for="events-district-select">升中項目分區篩選</label>
+            <select id="events-district-select" aria-label="升中項目分區篩選">
+              <option value="all" selected>全部十八區</option>
+            </select>
+          </div>
+        </div>
         <div class="filter-row">
           <span class="filter-label">狀態</span>
           <div class="events-filters" role="group" aria-label="狀態篩選">
@@ -149,9 +158,9 @@
           <summary>技術說明</summary>
           <ul>
             <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
-            <li>分區、類型、民間組別與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型、組別或搜尋列；狀態與學校下拉只影響升中項目。各條件以 AND 併用。</li>
+            <li>分區、類型、民間組別與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型、組別或搜尋列。分區選單寫入共用分區；選「全港／教育局」不會寫入分區，並與學校下拉的同一項同步。狀態與指定學校只影響升中項目。各條件以 AND 併用。</li>
             <li>共用條件依 <code>schools</code> 的校名（須完全相同）對應「學校資料」的行政區、類型、民間參考 Band 與可搜尋欄位。多校事件要有同一所學校同時符合已啟用的分區、類型、組別與搜尋。指定分區時不顯示空 <code>schools</code> 的項目。空 <code>schools</code> 在類型、組別或搜尋不是「全部」時不會出現。</li>
-            <li>學校下拉的「全港／教育局」只顯示空 <code>schools</code> 的項目，不會寫入共用分區。開啟時學校清單與地圖把分區當作「全部」。在學校資料或地圖把分區改成某一區後，會取消「全港／教育局」。</li>
+            <li>分區選單或學校下拉的「全港／教育局」只顯示空 <code>schools</code> 的項目，不會寫入共用分區。開啟時學校清單與地圖把分區當作「全部」，兩個選單都會顯示「全港／教育局」。在學校資料或地圖把分區改成某一區後，會取消「全港／教育局」。分區選單的「全部十八區」，以及學校頁的清除，也會關掉「全港／教育局」。</li>
             <li>時間顯示為香港時間（UTC+8）。可用網址開啟本分頁，例如 <code>?tab=events&amp;status=官方確認&amp;band=1&amp;school=校名</code>。<code>band</code> 套用共用民間組別。<code>school=全港／教育局</code> 只開啟「全港／教育局」，不改分區。參數會還原 <code>+</code> 與百分號編碼（含再編碼一次的連結）。</li>
           </ul>
         </details>
