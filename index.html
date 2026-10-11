@@ -123,6 +123,15 @@
             </div>
           </div>
           <div class="filter-row">
+            <span class="filter-label">分區</span>
+            <div class="events-district-filter">
+              <label class="sr-only" for="events-district-select">升中項目分區篩選</label>
+              <select id="events-district-select" aria-label="升中項目分區篩選">
+                <option value="all" selected>全部十八區</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-row">
             <span class="filter-label">學校</span>
             <div class="events-school-filter">
               <label class="sr-only" for="events-school-select">學校篩選</label>
@@ -147,7 +156,7 @@
           <summary>技術說明</summary>
           <ul>
             <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
-            <li>可用狀態、組別、學校篩選；三者以 AND 併用。組別依 <code>schools</code> 對應「學校資料」的民間參考 Band；多校事件只要其中一校符合即顯示。全港／教育局項目（空 <code>schools</code>）僅在組別為「全部」時出現。</li>
+            <li>可用狀態、組別、分區、學校篩選；四者以 AND 併用。組別與分區依 <code>schools</code> 對應「學校資料」的民間參考 Band 與行政區（校名須完全相同）；多校事件只要其中一校符合即顯示。指定分區時不顯示空 <code>schools</code> 的項目。選「全港／教育局」只顯示空 <code>schools</code> 的項目；該類項目在組別不是「全部」時不會出現。</li>
             <li>時間顯示為香港時間（UTC+8）。可用網址開啟本分頁，例如 <code>?tab=events&amp;status=官方確認&amp;band=1&amp;school=校名</code>。參數會還原 <code>+</code> 與百分號編碼（含再編碼一次的連結）。</li>
           </ul>
         </details>
