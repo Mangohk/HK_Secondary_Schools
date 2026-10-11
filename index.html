@@ -104,6 +104,15 @@
         </div>
         <div class="events-filter-stack">
           <div class="filter-row">
+            <span class="filter-label">分區</span>
+            <div class="events-district-filter">
+              <label class="sr-only" for="events-district-select">升中項目分區篩選</label>
+              <select id="events-district-select" aria-label="升中項目分區篩選">
+                <option value="all" selected>全部十八區</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-row">
             <span class="filter-label">狀態</span>
             <div class="events-filters" role="group" aria-label="狀態篩選">
               <button class="chip is-active" data-event-status="all">全部</button>
@@ -120,15 +129,6 @@
               <button class="chip" data-event-band="2">民間 Band 2</button>
               <button class="chip" data-event-band="3">民間 Band 3</button>
               <button class="chip" data-event-band="未知">未知／不適用</button>
-            </div>
-          </div>
-          <div class="filter-row">
-            <span class="filter-label">分區</span>
-            <div class="events-district-filter">
-              <label class="sr-only" for="events-district-select">升中項目分區篩選</label>
-              <select id="events-district-select" aria-label="升中項目分區篩選">
-                <option value="all" selected>全部十八區</option>
-              </select>
             </div>
           </div>
           <div class="filter-row">
