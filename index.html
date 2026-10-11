@@ -33,43 +33,55 @@
 
   <main>
     <section id="panel-list" class="panel is-active" role="tabpanel" aria-labelledby="tab-list">
-      <div class="toolbar">
-        <label class="search-wrap">
-          <span class="sr-only">搜尋學校</span>
-          <input id="search" type="search" placeholder="搜尋校名、分區、地址、類型…" autocomplete="off" />
-        </label>
-        <div class="filter-row">
-          <span class="filter-label">分區</span>
-          <div class="district-filter">
-            <label class="sr-only" for="district-select">行政區篩選</label>
-            <select id="district-select" aria-label="行政區篩選">
-              <option value="all" selected>全部十八區</option>
-            </select>
-          </div>
+      <div class="toolbar" id="list-toolbar">
+        <div class="toolbar-compact">
+          <label class="search-wrap">
+            <span class="sr-only">搜尋學校</span>
+            <input id="search" type="search" placeholder="搜尋校名、分區、地址、類型…" autocomplete="off" />
+          </label>
+          <button type="button" class="btn btn-secondary toolbar-filter-toggle" id="list-filter-toggle" aria-expanded="false" aria-controls="list-filter-panel" aria-label="展開篩選">
+            <span class="toolbar-filter-toggle-label">篩選</span>
+          </button>
         </div>
-        <div class="filter-row">
-          <span class="filter-label">類型</span>
-          <div class="filters" role="group" aria-label="學校類型篩選">
-            <button class="chip is-active" data-type="all">全部</button>
-            <button class="chip" data-type="官立">官立</button>
-            <button class="chip" data-type="資助">資助</button>
-            <button class="chip" data-type="直資">直資</button>
-            <button class="chip" data-type="私立">私立</button>
-          </div>
+        <div class="toolbar-summary" id="list-filter-summary" hidden>
+          <p class="toolbar-summary-text" id="list-filter-summary-text"></p>
+          <button type="button" class="btn btn-secondary toolbar-summary-clear" id="list-filter-clear" aria-label="清除分區、類型與民間組別">清除</button>
         </div>
-        <div class="filter-row">
-          <span class="filter-label">民間組別</span>
-          <div class="band-filters" role="group" aria-label="民間參考組別篩選">
-            <button class="chip is-active" data-band="all">全部</button>
-            <button class="chip" data-band="1">民間 Band 1</button>
-            <button class="chip" data-band="2">民間 Band 2</button>
-            <button class="chip" data-band="3">民間 Band 3</button>
-            <button class="chip" data-band="未知">未知／不適用</button>
+        <div class="toolbar-panel" id="list-filter-panel">
+          <div class="filter-row">
+            <span class="filter-label">分區</span>
+            <div class="district-filter">
+              <label class="sr-only" for="district-select">行政區篩選</label>
+              <select id="district-select" aria-label="行政區篩選">
+                <option value="all" selected>全部十八區</option>
+              </select>
+            </div>
           </div>
+          <div class="filter-row">
+            <span class="filter-label">類型</span>
+            <div class="filters" role="group" aria-label="學校類型篩選">
+              <button class="chip is-active" data-type="all">全部</button>
+              <button class="chip" data-type="官立">官立</button>
+              <button class="chip" data-type="資助">資助</button>
+              <button class="chip" data-type="直資">直資</button>
+              <button class="chip" data-type="私立">私立</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">民間組別</span>
+            <div class="band-filters" role="group" aria-label="民間參考組別篩選">
+              <button class="chip is-active" data-band="all">全部</button>
+              <button class="chip" data-band="1">民間 Band 1</button>
+              <button class="chip" data-band="2">民間 Band 2</button>
+              <button class="chip" data-band="3">民間 Band 3</button>
+              <button class="chip" data-band="未知">未知／不適用</button>
+            </div>
+          </div>
+          <p class="result-count" id="result-count" aria-live="polite"></p>
+          <p class="band-disclaimer">組別為民間參考，非教育局官方評級</p>
         </div>
-        <p class="result-count" id="result-count" aria-live="polite"></p>
-        <p class="band-disclaimer">組別為民間參考，非教育局官方評級</p>
       </div>
+      <button type="button" class="toolbar-backdrop" id="list-filter-backdrop" hidden tabindex="-1" aria-label="關閉篩選"></button>
       <div id="list-empty" class="empty-state" hidden>
         <p class="empty-state-title">沒有符合條件的學校</p>
         <p class="empty-state-body">試試放寬分區、類型、民間組別或搜尋字詞。</p>
