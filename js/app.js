@@ -298,8 +298,10 @@ class App {
     this.filterDistrict = "all";
     this.eventStatus = "all";
     this.eventBand = "all";
+    this.eventDistrict = "all";
     this.eventSchool = "all";
     this.schoolBandByName = new Map();
+    this.schoolDistrictByName = new Map();
     this.query = "";
     this.pageSize = LIST_PAGE_SIZE;
     this.visibleCount = LIST_PAGE_SIZE;
@@ -337,6 +339,7 @@ class App {
       eventsMeta: document.getElementById("events-meta"),
       eventsFilters: document.querySelector(".events-filters"),
       eventsBandFilters: document.querySelector(".events-band-filters"),
+      eventsDistrictSelect: document.getElementById("events-district-select"),
       eventsSchoolSelect: document.getElementById("events-school-select"),
       map: document.getElementById("map"),
       mapHint: document.getElementById("map-hint"),
@@ -376,9 +379,13 @@ class App {
       this.schoolBandByName = new Map(
         schools.map((s) => [s.nameZh, s.band || "未知"])
       );
+      this.schoolDistrictByName = new Map(
+        schools.map((s) => [s.nameZh, s.district])
+      );
       this.populateDistrictFilter();
       this.renderList();
     }
+    this.populateEventDistrictFilter();
 
     this.loadEvents();
     this.applyDeepLinkTab();
@@ -543,6 +550,36 @@ class App {
     select.value = this.eventSchool;
   }
 
+  /** 全部十八區, each DISTRICT_ORDER district, then 全港／教育局. */
+  populateEventDistrictFilter() {
+    const select = this.els.eventsDistrictSelect;
+    if (!select) return;
+
+    const previous = this.eventDistrict;
+    select.replaceChildren();
+
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "全部十八區";
+    select.append(allOpt);
+
+    for (const district of DISTRICT_ORDER) {
+      const opt = document.createElement("option");
+      opt.value = district;
+      opt.textContent = district;
+      select.append(opt);
+    }
+
+    const territoryOpt = document.createElement("option");
+    territoryOpt.value = "__territory__";
+    territoryOpt.textContent = "全港／教育局";
+    select.append(territoryOpt);
+
+    const allowed = new Set(["all", "__territory__", ...DISTRICT_ORDER]);
+    this.eventDistrict = allowed.has(previous) ? previous : "all";
+    select.value = this.eventDistrict;
+  }
+
   bindTabs() {
     const panels = {
       list: this.els.panelList,
@@ -600,6 +637,12 @@ class App {
         this.renderEvents();
       });
     }
+    if (this.els.eventsDistrictSelect) {
+      this.els.eventsDistrictSelect.addEventListener("change", () => {
+        this.eventDistrict = this.els.eventsDistrictSelect.value || "all";
+        this.renderEvents();
+      });
+    }
     if (this.els.eventsSchoolSelect) {
       this.els.eventsSchoolSelect.addEventListener("change", () => {
         this.eventSchool = this.els.eventsSchoolSelect.value || "all";
@@ -620,6 +663,20 @@ class App {
     return schools.includes(this.eventSchool);
   }
 
+  /**
+   * District from the school list via exact nameZh.
+   * A named district needs at least one matching school; empty schools match only 全港／教育局.
+   */
+  eventMatchesDistrictFilter(ev) {
+    if (this.eventDistrict === "all") return true;
+    const schools = Array.isArray(ev.schools) ? ev.schools : [];
+    if (this.eventDistrict === "__territory__") return schools.length === 0;
+    if (!schools.length) return false;
+    return schools.some(
+      (name) => this.schoolDistrictByName.get(name) === this.eventDistrict
+    );
+  }
+
   /** Band from school list; unknown names count as 未知. Empty schools → no band. */
   eventMatchesBandFilter(ev) {
     if (this.eventBand === "all") return true;
@@ -634,9 +691,11 @@ class App {
   clearEventFilters() {
     this.eventStatus = "all";
     this.eventBand = "all";
+    this.eventDistrict = "all";
     this.eventSchool = "all";
     this.syncChipGroup(this.els.eventsFilters, "eventStatus", "all");
     this.syncChipGroup(this.els.eventsBandFilters, "eventBand", "all");
+    if (this.els.eventsDistrictSelect) this.els.eventsDistrictSelect.value = "all";
     if (this.els.eventsSchoolSelect) this.els.eventsSchoolSelect.value = "all";
     this.renderEvents();
   }
@@ -649,6 +708,7 @@ class App {
         return false;
       }
       if (!this.eventMatchesBandFilter(ev)) return false;
+      if (!this.eventMatchesDistrictFilter(ev)) return false;
       return this.eventMatchesSchoolFilter(ev);
     });
 
