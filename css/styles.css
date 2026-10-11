@@ -823,6 +823,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 30;
+  margin-bottom: 1rem;
   padding: 0.45rem 0.15rem 0.55rem;
   background: rgba(243, 239, 230, 0.94);
   backdrop-filter: blur(10px);
