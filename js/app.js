@@ -613,6 +613,7 @@ class App {
         tabs[key].classList.toggle("is-active", on);
         tabs[key].setAttribute("aria-selected", String(on));
       }
+      if (name !== "list") this.setListFiltersExpanded(false);
       if (name === "map") {
         // Wait until the tab panel is laid out (display:none → visible).
         // One rAF is not always enough; ensureMap retries until size > 0.
@@ -916,6 +917,8 @@ class App {
   }
 
   bindListControls() {
+    this.bindCompactListFilters();
+
     this.els.search.addEventListener("input", (e) => {
       this.query = e.target.value.trim().toLowerCase();
       this.onListFiltersChanged();
@@ -927,6 +930,7 @@ class App {
       this.filterType = btn.dataset.type;
       this.syncChipGroup(this.els.filters, "type", this.filterType);
       this.onListFiltersChanged();
+      this.setListFiltersExpanded(false);
     });
 
     if (this.els.bandFilters) {
@@ -936,6 +940,7 @@ class App {
         this.filterBand = btn.dataset.band;
         this.syncChipGroup(this.els.bandFilters, "band", this.filterBand);
         this.onListFiltersChanged();
+        this.setListFiltersExpanded(false);
       });
     }
 
@@ -943,6 +948,7 @@ class App {
       this.els.districtSelect.addEventListener("change", () => {
         this.setSharedDistrict(this.els.districtSelect.value || "all");
         this.onListFiltersChanged();
+        this.setListFiltersExpanded(false);
       });
     }
   }
@@ -965,6 +971,159 @@ class App {
     ]
       .join(" ")
       .toLowerCase();
+  }
+
+  /** Phone school-list bar: collapsed by default. No scroll listener. */
+  bindCompactListFilters() {
+    const toolbar = document.getElementById("list-toolbar");
+    const toggle = document.getElementById("list-filter-toggle");
+    const backdrop = document.getElementById("list-filter-backdrop");
+    this.els.listToolbar = toolbar;
+    this.els.listFilterToggle = toggle;
+    this.els.listFilterBackdrop = backdrop;
+    this.els.listFilterSummary = document.getElementById("list-filter-summary");
+    this.els.listFilterSummaryText = document.getElementById("list-filter-summary-text");
+    this.els.listFilterPanel = document.getElementById("list-filter-panel");
+
+    toggle?.addEventListener("click", () => {
+      const open = Boolean(toolbar?.classList.contains("is-expanded"));
+      this.setListFiltersExpanded(!open);
+    });
+    backdrop?.addEventListener("click", () => this.setListFiltersExpanded(false));
+    document.getElementById("list-filter-clear")?.addEventListener("click", () => {
+      this.clearCompactFilters();
+      this.setListFiltersExpanded(false);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (!toolbar?.classList.contains("is-expanded")) return;
+      this.setListFiltersExpanded(false);
+    });
+
+    const mq = window.matchMedia("(max-width: 640px)");
+    const onBreakpoint = () => {
+      this.setListFiltersExpanded(false);
+      this.syncListStickyOffset();
+    };
+    if (typeof mq.addEventListener === "function") mq.addEventListener("change", onBreakpoint);
+    else mq.addListener(onBreakpoint);
+
+    if (typeof ResizeObserver !== "undefined" && toolbar) {
+      this._listToolbarObserver = new ResizeObserver(() => this.syncListStickyOffset());
+      this._listToolbarObserver.observe(toolbar);
+    }
+    window.addEventListener("resize", () => this.syncListStickyOffset());
+    this.syncListStickyOffset();
+  }
+
+  syncListStickyOffset() {
+    const toolbar = this.els.listToolbar;
+    if (!toolbar) return;
+    const height = Math.ceil(toolbar.getBoundingClientRect().height);
+    if (height > 0) {
+      document.documentElement.style.setProperty("--list-sticky-offset", `${height}px`);
+    }
+    if (!toolbar.classList.contains("is-expanded")) return;
+    const bottom = Math.max(0, Math.round(toolbar.getBoundingClientRect().bottom));
+    const backdrop = this.els.listFilterBackdrop;
+    if (backdrop && !backdrop.hidden) backdrop.style.top = `${bottom}px`;
+    const panel = this.els.listFilterPanel;
+    if (panel) {
+      const available = window.innerHeight - bottom - 8;
+      panel.style.maxHeight = `${Math.max(140, Math.floor(available))}px`;
+    }
+  }
+
+  setListFiltersExpanded(expanded) {
+    const toolbar = this.els.listToolbar;
+    const toggle = this.els.listFilterToggle;
+    const backdrop = this.els.listFilterBackdrop;
+    if (!toolbar || !toggle) return;
+    const narrow = window.matchMedia("(max-width: 640px)").matches;
+    const open = Boolean(expanded) && narrow;
+    const wasOpen = toolbar.classList.contains("is-expanded");
+    toolbar.classList.toggle("is-expanded", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    const label = toggle.querySelector(".toolbar-filter-toggle-label");
+    if (label) label.textContent = open ? "收起" : "篩選";
+    this.syncListFilterToggleLabel(open);
+    const panel = this.els.listFilterPanel;
+    if (backdrop) {
+      backdrop.hidden = !open;
+      backdrop.classList.toggle("is-open", open);
+    }
+    if (open) {
+      const bottom = Math.max(0, Math.round(toolbar.getBoundingClientRect().bottom));
+      if (backdrop) backdrop.style.top = `${bottom}px`;
+      if (panel) {
+        const available = window.innerHeight - bottom - 8;
+        panel.style.maxHeight = `${Math.max(140, Math.floor(available))}px`;
+      }
+    } else {
+      if (backdrop) backdrop.style.top = "";
+      if (panel) panel.style.maxHeight = "";
+    }
+    document.documentElement.classList.toggle("list-filters-open", open);
+    if (wasOpen && !open) {
+      const active = document.activeElement;
+      if (panel?.contains(active) || active === backdrop || active === document.body) {
+        toggle.focus({ preventScroll: true });
+      }
+    }
+  }
+
+  compactFilterParts() {
+    const parts = [];
+    const district = this.effectiveFilterDistrict();
+    if (district !== "all") parts.push(district);
+    if (this.filterType !== "all") parts.push(this.filterType);
+    if (this.filterBand !== "all") {
+      parts.push(this.filterBand === "未知" ? "未知／不適用" : this.bandLabel(this.filterBand));
+    }
+    return parts;
+  }
+
+  syncListFilterToggleLabel(open) {
+    const toggle = this.els.listFilterToggle;
+    if (!toggle) return;
+    if (open) {
+      toggle.setAttribute("aria-label", "收起篩選");
+      return;
+    }
+    const parts = this.compactFilterParts();
+    toggle.setAttribute(
+      "aria-label",
+      parts.length ? `展開篩選，目前：${parts.join("、")}` : "展開篩選"
+    );
+  }
+
+  updateListFilterSummary() {
+    const summary = this.els.listFilterSummary;
+    const text = this.els.listFilterSummaryText;
+    const parts = this.compactFilterParts();
+    const active = parts.length > 0;
+    this.els.listToolbar?.classList.toggle("has-active-filters", active);
+    this.els.listFilterToggle?.classList.toggle("has-active", active);
+    const open = Boolean(this.els.listToolbar?.classList.contains("is-expanded"));
+    this.syncListFilterToggleLabel(open);
+    if (!summary || !text) return;
+    if (!active) {
+      summary.hidden = true;
+      text.textContent = "";
+      return;
+    }
+    text.textContent = parts.join(" · ");
+    summary.hidden = false;
+  }
+
+  /** Clear district, type, and band. Search stays in the compact row. */
+  clearCompactFilters() {
+    this.setSharedDistrict("all");
+    this.filterType = "all";
+    this.filterBand = "all";
+    this.syncChipGroup(this.els.filters, "type", "all");
+    this.syncChipGroup(this.els.bandFilters, "band", "all");
+    this.onListFiltersChanged();
   }
 
   bandLabel(band) {
@@ -1030,6 +1189,7 @@ class App {
     const districtNote = district === "all" ? "" : ` · ${district}`;
     this.els.resultCount.textContent =
       `顯示 ${list.length} / ${this.schools.length} 所中學${districtNote}`;
+    this.updateListFilterSummary();
     const isEmpty = list.length === 0;
     if (this.els.listEmpty) {
       this.els.listEmpty.hidden = !isEmpty;
