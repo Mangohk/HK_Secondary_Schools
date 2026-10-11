@@ -892,13 +892,13 @@ main {
   position: sticky;
   top: 0;
   z-index: 30;
+  margin-bottom: 1rem;
   padding: 0.45rem 0.15rem 0.55rem;
   background: rgba(243, 239, 230, 0.94);
   backdrop-filter: blur(10px);
 }
 
-.events-filters,
-.events-band-filters {
+.events-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
@@ -908,14 +908,12 @@ main {
 }
 
 .district-filter,
-.events-district-filter,
 .events-school-filter {
   flex: 1 1 12rem;
   min-width: 0;
 }
 
 .district-filter select,
-.events-district-filter select,
 .events-school-filter select {
   width: 100%;
   max-width: 28rem;
@@ -931,7 +929,6 @@ main {
 }
 
 .district-filter select:focus,
-.events-district-filter select:focus,
 .events-school-filter select:focus {
   outline: 2px solid var(--teal);
   outline-offset: 1px;
@@ -1446,9 +1443,8 @@ html.list-filters-open {
   }
 }
 
-/* Short narrow viewports: the 升中 filter stack is still a full block.
-   Leave it static so the 民間組別 row can scroll into view. The school-list
-   toolbar keeps its own compact sticky row. */
+/* Short narrow viewports: leave the 升中 status/school bar in normal flow.
+   The school-list toolbar keeps its own compact sticky row. */
 @media (max-width: 640px) and (max-height: 620px) {
   .events-filter-stack {
     position: static;
