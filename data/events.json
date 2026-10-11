@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-10T20:39:54Z",
+  "syncedAt": "2026-10-10T20:48:28Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -6956,6 +6956,295 @@
       "keyPoints": "官網預告「12月 開放日暨嘉年華」；含校園導賞及攤位；確實日期待公布",
       "notes": "80周年校慶系列活動之一（另有 11-14 校慶典禮及晚宴於會展，非升中資訊日）。來源：https://www.pkms.edu.hk/ 首頁。請勿將 2025-12-13（79周年 CHSC 登記）誤作本年。",
       "sourceUrl": "https://www.pkms.edu.hk/"
+    },
+    {
+      "id": "ev-412",
+      "title": "培英中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "培英中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額30；親身遞交或經中一派位電子平台；章程及申請表已上載官網／Google Sites",
+      "notes": "資助；取錄比重：面試30%、學業成績30%、品格操行25%、課外活動15%。不需推薦信。來源：校方《招收2027-2028年度中一級新生(自行分配學位)章程》。",
+      "sourceUrl": "https://www.puiying.edu.hk/data/upload/files/Admission/2027-2028年度中一自行收生章程.pdf"
+    },
+    {
+      "id": "ev-413",
+      "title": "培英中學 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "培英中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-13",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請者均獲安排面試；時間另行通知",
+      "notes": "來源：同上章程第8項。",
+      "sourceUrl": "https://www.puiying.edu.hk/data/upload/files/Admission/2027-2028年度中一自行收生章程.pdf"
+    },
+    {
+      "id": "ev-414",
+      "title": "培英中學 自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "培英中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取學生家長",
+      "notes": "來源：同上章程第10項；與教育局統一正取通知日一致。",
+      "sourceUrl": "https://www.puiying.edu.hk/data/upload/files/Admission/2027-2028年度中一自行收生章程.pdf"
+    },
+    {
+      "id": "ev-415",
+      "title": "嘉諾撒聖心書院 中一自行分配學位申請資訊公布（2027/28）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "嘉諾撒聖心書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-01",
+      "dateEnd": "2026-11-30",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校方宣布2027-28學年中一自行分配學位申請資訊將於2026年11月在官網公布；細節待更新",
+      "notes": "資助女校；官網 Admission 專頁（https://shcc.edu.hk/ 無 www 可達；www.shcc.edu.hk curl 失敗）。具體申請期／面試日尚未公布。",
+      "sourceUrl": "https://shcc.edu.hk/admission.php?cid=89&r=89"
+    },
+    {
+      "id": "ev-416",
+      "title": "港大同學會書院 中一入學申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "港大同學會書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-13T02:00:00.000Z",
+      "dateEnd": "2026-12-14T15:59:00.000Z",
+      "keyDateStart": "2026-11-13T02:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "網上申請 2026-11-13 10:00 至 2026-12-14 23:59（HKT）；報名費$75；學費參考（2026-27）$48,450；約80個外校學額（6班共198，扣一條龍）",
+      "notes": "直資；中文頁標題寫「中一入學申請2026-2027」惟英文頁及網上申請頁標明2027-2028，日期亦對應2027年9月入學。須網上遞交。來源：Application Guidelines／申請須知。",
+      "sourceUrl": "https://www.hkugac.edu.hk/engage/as-a-student/application-guidelines"
+    },
+    {
+      "id": "ev-417",
+      "title": "港大同學會書院 中一首輪面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "港大同學會書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-30",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請人獲邀首輪小組面試；詳情電郵通知；合資格者進入次輪",
+      "notes": "收生比重（FAQ）：學業40%、其他學習經歷15%、面試40%、其他5%。",
+      "sourceUrl": "https://www.hkugac.edu.hk/engage/as-a-student/application-guidelines"
+    },
+    {
+      "id": "ev-418",
+      "title": "港大同學會書院 中一取錄結果通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "港大同學會書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-04-01",
+      "dateEnd": "2027-04-30",
+      "keyDateStart": "2027-04-30",
+      "keyDateIsDateTime": false,
+      "keyPoints": "獲取錄申請人於2027年4月底前接獲通知",
+      "notes": "來源：申請須知第6點。",
+      "sourceUrl": "https://hkugac.edu.hk/tc/engage/as-a-student/application-guidelines"
+    },
+    {
+      "id": "ev-419",
+      "title": "聖士提反書院 中一入學講座及校園遊（2026-10-10）",
+      "type": "入學講座",
+      "status": "已過",
+      "schools": [
+        "聖士提反書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-10T05:30:00.000Z",
+      "dateEnd": "2026-10-10T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "13:30–17:00；名額已滿；含雙軌課程／寄宿／收生程序簡介及校園遊；12:45起接待",
+      "notes": "直資；不參加SSPA。來源：校方 S1 Admission Talk and Campus Tour (2027-28) 專頁。",
+      "sourceUrl": "https://www.ssc.edu.hk/en/site/view?name=S1+Admission+Talk"
+    },
+    {
+      "id": "ev-420",
+      "title": "聖士提反書院 中一入學講座及校園遊（2026-10-24）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-10-24T05:30:00.000Z",
+      "dateEnd": "2026-10-24T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "13:30–17:00；名額已滿；內容同10-10場",
+      "notes": "直資；官網顯示 Full／名額已滿。地點赤柱東頭灣道22號。",
+      "sourceUrl": "https://www.ssc.edu.hk/zh_tw/site/view?name=S1+Admission+Talk"
+    },
+    {
+      "id": "ev-421",
+      "title": "聖士提反書院 中一網上申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-10",
+      "dateEnd": "2026-11-30",
+      "keyDateStart": "2026-11-30",
+      "keyDateIsDateTime": false,
+      "keyPoints": "網上申請 2026-10-10 起至 2026-11-30；報名費$75；可同時申請非學術獎學金；必須網上完成",
+      "notes": "直資；學費參考（2026-27）永久居民$76,000／非永久居民$152,226（2027-28待更新）。準則：學業50%、面試37%、課外10%、其他3%。面試日期稍後公布。",
+      "sourceUrl": "https://www.ssc.edu.hk/en/site/view?name=Application_S1"
+    },
+    {
+      "id": "ev-422",
+      "title": "聖士提反書院 小六學生資料表電郵遞交截止（2027/28）",
+      "type": "截止",
+      "status": "官方確認",
+      "schools": [
+        "聖士提反書院"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-31",
+      "dateEnd": null,
+      "keyDateStart": "2027-01-31",
+      "keyDateIsDateTime": false,
+      "keyPoints": "Primary Six Student Record Form 電郵至 admission@ssc.edu.hk；家長約12月由小學收取；海外／國際學校學生毋須提交",
+      "notes": "來源：Application Procedure 專頁。",
+      "sourceUrl": "https://www.ssc.edu.hk/en/site/view?name=Application_S1"
+    },
+    {
+      "id": "ev-423",
+      "title": "香港仔工業學校 校園導賞日及升中諮詢日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "香港仔工業學校"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-22T01:00:00.000Z",
+      "dateEnd": "2026-11-22T06:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "09:00–14:00（分時段，每段約45分鐘）；須網上登記；內容含寄宿計劃、STEAM、導賞團；可獲優先報名後續體驗活動",
+      "notes": "資助；官網 www.ats.edu.hk／ats.edu.hk curl 超時（code=000），本條以 WebFetch 取得官方頁內容。登記：Google Forms。地址黃竹坑道1號。",
+      "sourceUrl": "http://www.ats.edu.hk/index.php/2018-11-26-06-17-11/250-2026-09-29-00-49-20"
+    },
+    {
+      "id": "ev-424",
+      "title": "香港仔工業學校 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "香港仔工業學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "學額30；親身遞交或中一派位電子平台（不接受郵寄）；不需推薦信",
+      "notes": "取錄比重：學業25%、操行20%、課外10%、面試40%、與本校聯繫5%。來源：中一入學申請須知專頁（WebFetch；curl 失敗）。",
+      "sourceUrl": "http://www.ats.edu.hk/index.php/2018-11-26-06-17-11/f1admission/2018-11-26-06-21-54"
+    },
+    {
+      "id": "ev-425",
+      "title": "香港仔工業學校 中一自行分配學位面試（2027/28）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "香港仔工業學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-01",
+      "dateEnd": "2027-02-28",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "所有申請人須面試；個人晤談；確切日期時間以信件及電話通知（約1–2月）",
+      "notes": "來源：同上申請須知。",
+      "sourceUrl": "http://www.ats.edu.hk/index.php/2018-11-26-06-17-11/f1admission/2018-11-26-06-21-54"
+    },
+    {
+      "id": "ev-426",
+      "title": "香港仔工業學校 自行分配學位正取通知（2027/28）",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "香港仔工業學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-03-31",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "書面及電話通知正取學生家長",
+      "notes": "來源：同上申請須知備註7。",
+      "sourceUrl": "http://www.ats.edu.hk/index.php/2018-11-26-06-17-11/f1admission/2018-11-26-06-21-54"
+    },
+    {
+      "id": "ev-427",
+      "title": "滬江維多利亞學校 Year 2–11 入學申請開放（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "滬江維多利亞學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-01",
+      "dateEnd": null,
+      "keyDateStart": "2026-11-01",
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027-28 Year 2–11 申請於2026年11月開放；評估日期個別通知；結果於評估後約一個月內公布；報名費$2,000",
+      "notes": "私立國際（IB）；Year 1（2027-28）申請已關閉。升中約對應 Year 7。可預約 School Tour／VSA Connect & Discover Session。來源：Key Dates。",
+      "sourceUrl": "https://www.vsa.edu.hk/admissions/how-to-apply/key-dates"
+    },
+    {
+      "id": "ev-428",
+      "title": "滬江維多利亞學校 Year 1 入學申請截止（2028/29）",
+      "type": "截止",
+      "status": "官方確認",
+      "schools": [
+        "滬江維多利亞學校"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-02-16",
+      "dateEnd": null,
+      "keyDateStart": "2027-02-16",
+      "keyDateIsDateTime": false,
+      "keyPoints": "2028-29 Year 1 申請開放中，截止 2027-02-16",
+      "notes": "小學入學節點；一併錄自 Key Dates 以便跟進。",
+      "sourceUrl": "https://www.vsa.edu.hk/admissions/how-to-apply/key-dates"
     }
   ]
 }
