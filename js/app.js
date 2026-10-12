@@ -618,8 +618,11 @@ class App {
   }
 
   syncTerritoryToggle() {
-    const input = this.els.eventsTerritoryToggle;
-    if (input) input.checked = this.showTerritoryEvents;
+    const button = this.els.eventsTerritoryToggle;
+    if (!button) return;
+    const on = Boolean(this.showTerritoryEvents);
+    button.setAttribute("aria-pressed", on ? "true" : "false");
+    button.classList.toggle("is-active", on);
   }
 
   bindTabs() {
@@ -702,11 +705,12 @@ class App {
       });
     }
     if (this.els.eventsTerritoryToggle) {
-      this.els.eventsTerritoryToggle.addEventListener("change", () => {
-        this.showTerritoryEvents = Boolean(this.els.eventsTerritoryToggle.checked);
+      this.els.eventsTerritoryToggle.addEventListener("click", () => {
+        this.showTerritoryEvents = !this.showTerritoryEvents;
+        this.syncTerritoryToggle();
         this.renderEvents();
-        this.setEventsFiltersExpanded(false);
       });
+      this.syncTerritoryToggle();
     }
   }
 
