@@ -719,8 +719,8 @@ class App {
   /**
    * Shared district / type / band / query, joined through exact nameZh → school.
    * One linked school must satisfy every active shared condition.
-   * Empty schools=[] stay visible only while showTerritoryEvents is on and no
-   * shared filter is active. A selected 民間組別 still hides them: they have no school band.
+   * Empty schools=[] follow showTerritoryEvents. A selected district alone does
+   * not hide them. Type, 民間組別, or search still hides them: they have no school to join.
    */
   eventMatchesSharedFilters(ev) {
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
@@ -730,8 +730,7 @@ class App {
     const districtActive = this.filterDistrict !== "all";
 
     if (!schools.length) {
-      if (!this.showTerritoryEvents) return false;
-      return !districtActive && !typeActive && !bandActive && !queryActive;
+      return this.showTerritoryEvents && !typeActive && !bandActive && !queryActive;
     }
 
     if (!districtActive && !typeActive && !bandActive && !queryActive) return true;
