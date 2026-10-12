@@ -684,6 +684,99 @@ main {
   cursor: not-allowed;
 }
 
+.favorites-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.favorites-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  color: var(--ink);
+}
+
+.favorites-meta {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 40rem;
+}
+
+.favorites-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.favorites-list[hidden] {
+  display: none !important;
+}
+
+.favorites-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.favorites-item-main {
+  min-width: min(100%, 16rem);
+  flex: 1 1 14rem;
+}
+
+.favorites-item-name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.favorites-item-name-en {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.favorites-item-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.favorites-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.favorites-item-actions .btn-remove-fav {
+  border-color: rgba(160, 60, 48, 0.35);
+  color: #8a3a2e;
+}
+
+.favorites-item-actions .btn-remove-fav:hover {
+  background: rgba(160, 60, 48, 0.08);
+}
+
+#panel-favorites .empty-state {
+  margin-top: 0.25rem;
+}
+
 .btn {
   appearance: none;
   border: 0;

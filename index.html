@@ -31,6 +31,7 @@
       <button class="tab is-active" role="tab" id="tab-list" aria-selected="true" aria-controls="panel-list" data-tab="list">學校資料</button>
       <button class="tab" role="tab" id="tab-events" aria-selected="false" aria-controls="panel-events" data-tab="events">升中項目</button>
       <button class="tab" role="tab" id="tab-map" aria-selected="false" aria-controls="panel-map" data-tab="map">地圖與距離</button>
+      <button class="tab" role="tab" id="tab-favorites" aria-selected="false" aria-controls="panel-favorites" data-tab="favorites">我的關注</button>
     </nav>
   </header>
 
@@ -48,7 +49,7 @@
         </div>
         <div class="toolbar-summary" id="list-filter-summary" hidden>
           <p class="toolbar-summary-text" id="list-filter-summary-text"></p>
-          <button type="button" class="btn btn-secondary toolbar-summary-clear" id="list-filter-clear" aria-label="清除分區、類型與民間組別">清除</button>
+          <button type="button" class="btn btn-secondary toolbar-summary-clear" id="list-filter-clear" aria-label="清除分區、類型、民間組別與只看關注">清除</button>
         </div>
         <div class="toolbar-panel" id="list-filter-panel">
           <div class="filter-row">
@@ -84,6 +85,7 @@
             <span class="filter-label">關注</span>
             <div class="favorites-filters" role="group" aria-label="關注學校篩選">
               <button type="button" class="chip" id="favorites-filter" aria-pressed="false" disabled>只看關注</button>
+              <button type="button" class="chip" id="favorites-manage-link">管理關注</button>
             </div>
           </div>
           <p class="result-count" id="result-count" aria-live="polite"></p>
@@ -120,7 +122,7 @@
             <h2 class="events-title" id="events-title">升中項目清單</h2>
             <span class="scope-badge">涵蓋全港十八區（持續更新）</span>
           </div>
-          <p class="events-explain">升中項目已涵蓋全港十八區，資料持續更新；請以學校或教育局最新公布為準。分區、類型、民間組別與搜尋跟「學校資料」共用，切換分頁後仍然有效。本頁分區選單跟共用分區同步；民間組別（按相關學校）跟共用組別同步；另設狀態、學校篩選，以及「顯示教育局／全港項目」。</p>
+          <p class="events-explain">升中項目已涵蓋全港十八區，資料持續更新；請以學校或教育局最新公布為準。分區、類型、民間組別、只看關注與搜尋跟「學校資料」共用，切換分頁後仍然有效。本頁分區選單跟共用分區同步；民間組別（按相關學校）同「只看關注」跟共用條件同步；另設狀態、學校篩選，以及「顯示教育局／全港項目」。</p>
           <p class="events-meta" id="events-meta">載入中…</p>
         </div>
       </div>
@@ -136,7 +138,7 @@
         </div>
         <div class="toolbar-summary" id="events-filter-summary" hidden>
           <p class="toolbar-summary-text" id="events-filter-summary-text"></p>
-          <button type="button" class="btn btn-secondary toolbar-summary-clear" id="events-filter-clear" aria-label="清除分區、民間組別、狀態與學校，並顯示教育局／全港項目">清除</button>
+          <button type="button" class="btn btn-secondary toolbar-summary-clear" id="events-filter-clear" aria-label="清除分區、民間組別、只看關注、狀態與學校，並顯示教育局／全港項目">清除</button>
         </div>
         <div class="toolbar-panel" id="events-filter-panel">
           <div class="filter-row">
@@ -159,6 +161,13 @@
             </div>
           </div>
           <p class="filter-hint">只按相關學校的民間參考組別篩選，並非項目本身的評級。無相關學校的教育局／全港項目只跟「顯示教育局／全港項目」開關。</p>
+          <div class="filter-row">
+            <span class="filter-label">關注</span>
+            <div class="favorites-filters events-favorites-filters" role="group" aria-label="關注學校篩選">
+              <button type="button" class="chip" id="events-favorites-filter" aria-pressed="false" disabled>只看關注</button>
+              <button type="button" class="chip" id="events-favorites-manage-link">管理關注</button>
+            </div>
+          </div>
           <div class="filter-row">
             <span class="filter-label">狀態</span>
             <div class="events-filters" role="group" aria-label="狀態篩選">
@@ -193,13 +202,28 @@
           <summary>技術說明</summary>
           <ul>
             <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
-            <li>分區、類型、民間組別與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型或搜尋列。民間組別（按相關學校）寫入共用民間組別，只按相關學校的民間參考篩選，並非項目本身的評級。分區選單寫入共用分區。狀態、指定學校，以及「顯示教育局／全港項目」只影響升中項目。有相關學校的項目以 AND 併用各條件。空 <code>schools</code> 的教育局／全港項目只受「顯示教育局／全港項目」控制。</li>
-            <li>共用條件依 <code>schools</code> 的校名（須完全相同）對應「學校資料」的行政區、類型、民間參考 Band 與可搜尋欄位。多校事件要有同一所學校同時符合已啟用的分區、類型、組別與搜尋。空 <code>schools</code> 的教育局／全港項目只跟「顯示教育局／全港項目」：開關開着就會顯示，關掉就全部隱藏。分區、類型、民間組別、搜尋、狀態同指定學校都唔會隱藏呢啲項目。</li>
-            <li>「顯示教育局／全港項目」預設開着，用來顯示或隱藏沒有相關學校（空 <code>schools</code>）的教育局／全港項目。關掉之後這些項目全部隱藏，並且唔會改共用分區。分區、類型、民間組別、搜尋、狀態同指定學校都唔會隱藏呢啲項目。分區選單同學校下拉都沒有「全港／教育局」。</li>
+            <li>分區、類型、民間組別、只看關注與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型或搜尋列。民間組別（按相關學校）寫入共用民間組別；「只看關注」寫入共用關注篩選，只按相關學校是否在關注清單篩選。分區選單寫入共用分區。狀態、指定學校，以及「顯示教育局／全港項目」只影響升中項目。有相關學校的項目以 AND 併用各條件。空 <code>schools</code> 的教育局／全港項目只受「顯示教育局／全港項目」控制。</li>
+            <li>共用條件依 <code>schools</code> 的校名（須完全相同）對應「學校資料」的行政區、類型、民間參考 Band、關注清單與可搜尋欄位。多校事件要有同一所學校同時符合已啟用的分區、類型、組別、只看關注與搜尋。空 <code>schools</code> 的教育局／全港項目只跟「顯示教育局／全港項目」：開關開着就會顯示，關掉就全部隱藏。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。</li>
+            <li>「顯示教育局／全港項目」預設開着，用來顯示或隱藏沒有相關學校（空 <code>schools</code>）的教育局／全港項目。關掉之後這些項目全部隱藏，並且唔會改共用分區。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。分區選單同學校下拉都沒有「全港／教育局」。</li>
             <li>時間顯示為香港時間（UTC+8）。可用網址開啟本分頁，例如 <code>?tab=events&amp;status=官方確認&amp;band=1&amp;school=校名</code>。<code>band</code> 套用共用民間組別。舊連結 <code>school=全港／教育局</code> 不再單獨收起有學校的項目。參數會還原 <code>+</code> 與百分號編碼（含再編碼一次的連結）。</li>
           </ul>
         </details>
       </aside>
+    </section>
+
+    <section id="panel-favorites" class="panel" role="tabpanel" aria-labelledby="tab-favorites" hidden>
+      <div class="favorites-intro">
+        <div>
+          <h2 class="favorites-title" id="favorites-title">我的關注學校</h2>
+          <p class="favorites-meta" id="favorites-meta">未登入時關注只保留喺呢次瀏覽；登入後會同步到帳戶。</p>
+        </div>
+      </div>
+      <div id="favorites-empty" class="empty-state" hidden>
+        <p class="empty-state-title">尚未關注任何學校</p>
+        <p class="empty-state-body">喺「學校資料」卡片撳「關注」，就會出現喺呢度。可隨時移出清單。</p>
+        <button type="button" id="favorites-empty-goto-list" class="btn btn-primary">瀏覽學校資料</button>
+      </div>
+      <ul id="favorites-list" class="favorites-list" aria-labelledby="favorites-title"></ul>
     </section>
 
     <section id="panel-map" class="panel" role="tabpanel" aria-labelledby="tab-map" hidden>
