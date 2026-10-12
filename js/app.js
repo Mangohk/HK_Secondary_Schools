@@ -209,6 +209,17 @@ function canonicalTab(value) {
   if (!text) return null;
   if (text === "events" || text === "event" || text === "升中" || text === "升中項目") return "events";
   if (text === "map" || text === "地圖" || text === "地圖與距離") return "map";
+  if (
+    text === "favorites" ||
+    text === "favourite" ||
+    text === "favourites" ||
+    text === "favorite" ||
+    text === "關注" ||
+    text === "我的關注" ||
+    text === "關注學校"
+  ) {
+    return "favorites";
+  }
   if (text === "list" || text === "schools" || text === "school" || text === "學校" || text === "學校資料") return "list";
   return null;
 }
@@ -302,7 +313,10 @@ export class App {
     this.eventSchool = "all";
     /** 升中-only. On shows schools=[]; off hides every empty-schools event. */
     this.showTerritoryEvents = true;
-    /** Session-only list UX: show only favourited schools. Not synced to cloud. */
+    /**
+     * Session-only shared UX: show only favourited schools across list / events / map.
+     * Not synced to cloud (same as search `query`).
+     */
     this.filterFavoritesOnly = false;
     /** Favourites keyed by exact nameZh (synced when signed in). */
     this.favorites = [];
@@ -329,13 +343,21 @@ export class App {
       tabList: document.getElementById("tab-list"),
       tabEvents: document.getElementById("tab-events"),
       tabMap: document.getElementById("tab-map"),
+      tabFavorites: document.getElementById("tab-favorites"),
       panelList: document.getElementById("panel-list"),
       panelEvents: document.getElementById("panel-events"),
       panelMap: document.getElementById("panel-map"),
+      panelFavorites: document.getElementById("panel-favorites"),
       search: document.getElementById("search"),
       filters: document.querySelector(".filters"),
       bandFilters: document.querySelector(".band-filters"),
       favoritesFilter: document.getElementById("favorites-filter"),
+      eventsFavoritesFilter: document.getElementById("events-favorites-filter"),
+      favoritesManageLink: document.getElementById("favorites-manage-link"),
+      eventsFavoritesManageLink: document.getElementById("events-favorites-manage-link"),
+      favoritesList: document.getElementById("favorites-list"),
+      favoritesEmpty: document.getElementById("favorites-empty"),
+      favoritesMeta: document.getElementById("favorites-meta"),
       districtSelect: document.getElementById("district-select"),
       resultCount: document.getElementById("result-count"),
       schoolList: document.getElementById("school-list"),
@@ -374,6 +396,7 @@ export class App {
 
   setAuthUser(user) {
     this.authUser = user;
+    this.syncFavoritesManageMeta();
   }
 
   /** Synced prefs snapshot — never includes search `query`. */
@@ -427,6 +450,7 @@ export class App {
       this.syncTerritoryToggle();
       this.syncFavoritesFilterChip();
       this.onListFiltersChanged();
+      this.renderFavoritesManage();
     } finally {
       this._prefsApplying = false;
     }
@@ -448,17 +472,148 @@ export class App {
     else this.favorites.push(nameZh);
     if (!this.favorites.length) this.filterFavoritesOnly = false;
     this.syncFavoritesFilterChip();
+    this.renderFavoritesManage();
     this.onListFiltersChanged({ prefsImmediate: true });
   }
 
+  removeFavorite(nameZh) {
+    if (!nameZh) return;
+    const idx = this.favorites.indexOf(nameZh);
+    if (idx < 0) return;
+    this.favorites.splice(idx, 1);
+    if (!this.favorites.length) this.filterFavoritesOnly = false;
+    this.syncFavoritesFilterChip();
+    this.renderFavoritesManage();
+    this.onListFiltersChanged({ prefsImmediate: true });
+  }
+
+  setFavoritesOnly(on) {
+    this.filterFavoritesOnly = Boolean(on) && this.favorites.length > 0;
+    this.syncFavoritesFilterChip();
+    this.onListFiltersChanged();
+  }
+
   syncFavoritesFilterChip() {
-    const btn = this.els.favoritesFilter;
-    if (!btn) return;
     const n = this.favorites.length;
-    btn.textContent = n > 0 ? `只看關注（${n}）` : "只看關注";
-    btn.classList.toggle("is-active", this.filterFavoritesOnly);
-    btn.setAttribute("aria-pressed", this.filterFavoritesOnly ? "true" : "false");
-    btn.disabled = n === 0 && !this.filterFavoritesOnly;
+    const label = n > 0 ? `只看關注（${n}）` : "只看關注";
+    const active = this.filterFavoritesOnly;
+    const disabled = n === 0 && !active;
+    for (const btn of [this.els.favoritesFilter, this.els.eventsFavoritesFilter]) {
+      if (!btn) continue;
+      btn.textContent = label;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+      btn.disabled = disabled;
+    }
+  }
+
+  syncFavoritesManageMeta() {
+    const el = this.els.favoritesMeta;
+    if (!el) return;
+    if (this.authUser?.uid) {
+      el.textContent = `已登入：關注清單會同步到帳戶（目前 ${this.favorites.length} 所）。`;
+    } else {
+      el.textContent =
+        `未登入時關注只保留喺呢次瀏覽（目前 ${this.favorites.length} 所）；登入後會同步到帳戶。`;
+    }
+  }
+
+  renderFavoritesManage() {
+    this.syncFavoritesManageMeta();
+    const listEl = this.els.favoritesList;
+    const emptyEl = this.els.favoritesEmpty;
+    if (!listEl || !emptyEl) return;
+
+    const names = this.favorites.slice();
+    const isEmpty = names.length === 0;
+    emptyEl.hidden = !isEmpty;
+    listEl.hidden = isEmpty;
+    listEl.replaceChildren();
+    if (isEmpty) return;
+
+    for (const nameZh of names) {
+      const school = this.schoolByName.get(nameZh);
+      const item = document.createElement("li");
+      item.className = "favorites-item";
+
+      const main = document.createElement("div");
+      main.className = "favorites-item-main";
+
+      const title = document.createElement("h3");
+      title.className = "favorites-item-name";
+      title.textContent = nameZh;
+      main.append(title);
+
+      if (school?.nameEn) {
+        const en = document.createElement("p");
+        en.className = "favorites-item-name-en";
+        en.textContent = school.nameEn;
+        main.append(en);
+      }
+
+      const badges = document.createElement("div");
+      badges.className = "favorites-item-badges";
+      if (school?.district) {
+        const d = document.createElement("span");
+        d.className = "badge";
+        d.textContent = school.district;
+        badges.append(d);
+      }
+      if (school?.type) {
+        const t = document.createElement("span");
+        t.className = `badge type-${school.type}`;
+        t.textContent = school.type;
+        badges.append(t);
+      }
+      if (school) {
+        const band = school.band || "未知";
+        const b = document.createElement("span");
+        b.className = `badge band-pill band-${band}`;
+        b.title = "民間參考組別，非官方評級";
+        b.textContent = this.bandLabel(band);
+        badges.append(b);
+      } else {
+        const missing = document.createElement("span");
+        missing.className = "badge";
+        missing.textContent = "名單暫無對應";
+        badges.append(missing);
+      }
+      main.append(badges);
+      item.append(main);
+
+      const actions = document.createElement("div");
+      actions.className = "favorites-item-actions";
+
+      if (school?.id) {
+        const mapBtn = document.createElement("button");
+        mapBtn.type = "button";
+        mapBtn.className = "btn btn-secondary";
+        mapBtn.textContent = "在地圖查看";
+        mapBtn.addEventListener("click", () => this.showSchoolOnMap(school.id));
+        actions.append(mapBtn);
+      }
+
+      const removeBtn = document.createElement("button");
+      removeBtn.type = "button";
+      removeBtn.className = "btn btn-secondary btn-remove-fav";
+      removeBtn.textContent = "移出關注";
+      removeBtn.setAttribute("aria-label", `移出關注 ${nameZh}`);
+      removeBtn.addEventListener("click", () => this.removeFavorite(nameZh));
+      actions.append(removeBtn);
+
+      item.append(actions);
+      listEl.append(item);
+    }
+  }
+
+  goToTab(name) {
+    const tabs = {
+      list: this.els.tabList,
+      events: this.els.tabEvents,
+      map: this.els.tabMap,
+      favorites: this.els.tabFavorites,
+    };
+    tabs[name]?.click();
   }
 
   init() {
@@ -466,6 +621,7 @@ export class App {
     this.bindTabs();
     this.bindListControls();
     this.bindEventFilters();
+    this.bindFavoritesManage();
     this.applySharedDeepLink();
     this.els.loadMore?.addEventListener("click", () => this.loadMoreSchools());
     this.els.clearPoint.addEventListener("click", () => this.clearSelectedPoint());
@@ -488,9 +644,23 @@ export class App {
     }
     this.populateEventDistrictFilter();
     this.syncFavoritesFilterChip();
+    this.renderFavoritesManage();
 
     this.loadEvents();
     this.applyDeepLinkTab();
+  }
+
+  bindFavoritesManage() {
+    const openManage = () => {
+      this.setListFiltersExpanded(false);
+      this.setEventsFiltersExpanded(false);
+      this.goToTab("favorites");
+    };
+    this.els.favoritesManageLink?.addEventListener("click", openManage);
+    this.els.eventsFavoritesManageLink?.addEventListener("click", openManage);
+    document.getElementById("favorites-empty-goto-list")?.addEventListener("click", () => {
+      this.goToTab("list");
+    });
   }
 
   applyDeepLinkTab() {
@@ -499,6 +669,7 @@ export class App {
     const tab = link.tab || (link.status || link.band || link.school ? "events" : null);
     if (tab === "events") this.els.tabEvents.click();
     else if (tab === "map") this.els.tabMap.click();
+    else if (tab === "favorites") this.els.tabFavorites?.click();
   }
 
   /** Band in the URL is the shared 民間組別, applied before the first school render. */
@@ -734,15 +905,18 @@ export class App {
       list: this.els.panelList,
       events: this.els.panelEvents,
       map: this.els.panelMap,
+      favorites: this.els.panelFavorites,
     };
     const tabs = {
       list: this.els.tabList,
       events: this.els.tabEvents,
       map: this.els.tabMap,
+      favorites: this.els.tabFavorites,
     };
 
     const activate = (name) => {
       for (const [key, panel] of Object.entries(panels)) {
+        if (!panel || !tabs[key]) continue;
         const on = key === name;
         panel.classList.toggle("is-active", on);
         panel.hidden = !on;
@@ -753,6 +927,7 @@ export class App {
       if (name !== "events") this.setEventsFiltersExpanded(false);
       if (name === "list") requestAnimationFrame(() => this.syncListStickyOffset());
       if (name === "events") requestAnimationFrame(() => this.syncEventsStickyOffset());
+      if (name === "favorites") this.renderFavoritesManage();
       if (name === "map") {
         // Wait until the tab panel is laid out (display:none → visible).
         // One rAF is not always enough; ensureMap retries until size > 0.
@@ -763,6 +938,7 @@ export class App {
     this.els.tabList.addEventListener("click", () => activate("list"));
     this.els.tabEvents.addEventListener("click", () => activate("events"));
     this.els.tabMap.addEventListener("click", () => activate("map"));
+    this.els.tabFavorites?.addEventListener("click", () => activate("favorites"));
   }
 
   mapContainerSize() {
@@ -817,6 +993,13 @@ export class App {
       });
       this.syncTerritoryToggle();
     }
+    if (this.els.eventsFavoritesFilter) {
+      this.els.eventsFavoritesFilter.addEventListener("click", () => {
+        if (!this.favorites.length && !this.filterFavoritesOnly) return;
+        this.setFavoritesOnly(!this.filterFavoritesOnly);
+        this.setEventsFiltersExpanded(false);
+      });
+    }
   }
 
   eventMatchesSchoolFilter(ev) {
@@ -827,10 +1010,10 @@ export class App {
   }
 
   /**
-   * Shared district / type / band / query, joined through exact nameZh → school.
+   * Shared district / type / band / favorites-only / query, joined through exact nameZh → school.
    * One linked school must satisfy every active shared condition.
    * Empty schools=[] follow showTerritoryEvents only. District, type, 民間組別,
-   * and search do not hide them.
+   * 只看關注, and search do not hide them.
    */
   eventMatchesSharedFilters(ev) {
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
@@ -840,11 +1023,16 @@ export class App {
     const bandActive = this.filterBand !== "all";
     const queryActive = Boolean(this.query);
     const districtActive = this.filterDistrict !== "all";
+    const favActive = this.filterFavoritesOnly && this.favorites.length > 0;
+    const favSet = favActive ? new Set(this.favorites) : null;
 
-    if (!districtActive && !typeActive && !bandActive && !queryActive) return true;
+    if (!districtActive && !typeActive && !bandActive && !queryActive && !favActive) {
+      return true;
+    }
 
     return schools.some((name) => {
       const school = this.schoolByName.get(name);
+      if (favSet && !favSet.has(name)) return false;
       if (districtActive && school?.district !== this.filterDistrict) return false;
       if (typeActive && school?.type !== this.filterType) return false;
       if (bandActive) {
@@ -889,6 +1077,7 @@ export class App {
         this.filterDistrict !== "all" ||
         this.filterType !== "all" ||
         this.filterBand !== "all" ||
+        (this.filterFavoritesOnly && this.favorites.length > 0) ||
         this.eventSchool !== "all";
       let meta = `顯示 ${list.length} / ${total} 項`;
       if (this.showTerritoryEvents && territoryVisible > 0 && schoolScoped) {
@@ -906,6 +1095,9 @@ export class App {
         const notes = [];
         if (this.filterBand !== "all") {
           notes.push("民間組別只對應相關學校的民間參考，並非項目本身的評級。");
+        }
+        if (this.filterFavoritesOnly && this.favorites.length > 0) {
+          notes.push("「只看關注」只顯示相關學校在關注清單內的項目。");
         }
         if (!this.showTerritoryEvents) {
           notes.push("已關掉「顯示教育局／全港項目」，無相關學校的教育局／全港項目不會顯示。");
@@ -1029,6 +1221,7 @@ export class App {
     this.filterDistrict = "all";
     this.filterType = "all";
     this.filterBand = "all";
+    this.filterFavoritesOnly = false;
     this.query = "";
     this.syncDistrictSelect();
     this.syncEventsDistrictSelect();
@@ -1036,6 +1229,7 @@ export class App {
     if (this.els.search) this.els.search.value = "";
     this.syncChipGroup(this.els.filters, "type", "all");
     this.syncBandChips();
+    this.syncFavoritesFilterChip();
     this.syncTerritoryToggle();
     this.onListFiltersChanged();
   }
@@ -1164,10 +1358,7 @@ export class App {
     if (this.els.favoritesFilter) {
       this.els.favoritesFilter.addEventListener("click", () => {
         if (!this.favorites.length && !this.filterFavoritesOnly) return;
-        this.filterFavoritesOnly = !this.filterFavoritesOnly;
-        if (!this.favorites.length) this.filterFavoritesOnly = false;
-        this.syncFavoritesFilterChip();
-        this.onListFiltersChanged();
+        this.setFavoritesOnly(!this.filterFavoritesOnly);
         this.setListFiltersExpanded(false);
       });
     }
@@ -1339,14 +1530,16 @@ export class App {
     summary.hidden = false;
   }
 
-  /** Clear district, type, and band. Search stays in the compact row. */
+  /** Clear district, type, band, and favorites-only. Search stays in the compact row. */
   clearCompactFilters() {
     this.setSharedDistrict("all");
     this.filterType = "all";
     this.filterBand = "all";
+    this.filterFavoritesOnly = false;
     this.syncEventSchoolSelect();
     this.syncChipGroup(this.els.filters, "type", "all");
     this.syncBandChips();
+    this.syncFavoritesFilterChip();
     this.onListFiltersChanged();
   }
 
@@ -1455,6 +1648,9 @@ export class App {
     if (this.filterBand !== "all") {
       parts.push(this.filterBand === "未知" ? "未知／不適用" : this.bandLabel(this.filterBand));
     }
+    if (this.filterFavoritesOnly && this.favorites.length > 0) {
+      parts.push(`只看關注（${this.favorites.length}）`);
+    }
     if (this.eventStatus !== "all") parts.push(this.eventStatus);
     if (this.eventSchool !== "all") parts.push(this.eventSchool);
     if (!this.showTerritoryEvents) parts.push("不顯示教育局／全港項目");
@@ -1494,14 +1690,16 @@ export class App {
     summary.hidden = false;
   }
 
-  /** Clear the 升中 panel filters. Shared district and band follow the school list. */
+  /** Clear the 升中 panel filters. Shared district / band / favorites-only follow the school list. */
   clearEventsCompactFilters() {
     this.eventStatus = "all";
     this.eventSchool = "all";
     this.showTerritoryEvents = true;
     this.filterBand = "all";
+    this.filterFavoritesOnly = false;
     this.syncChipGroup(this.els.eventsFilters, "eventStatus", "all");
     this.syncBandChips();
+    this.syncFavoritesFilterChip();
     this.syncTerritoryToggle();
     this.setSharedDistrict("all");
     this.syncEventSchoolSelect();
