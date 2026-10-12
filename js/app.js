@@ -715,27 +715,26 @@ class App {
   }
 
   eventMatchesSchoolFilter(ev) {
-    if (this.eventSchool === "all") return true;
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
+    if (!schools.length) return true; // designated-school filter exempt
+    if (this.eventSchool === "all") return true;
     return schools.includes(this.eventSchool);
   }
 
   /**
    * Shared district / type / band / query, joined through exact nameZh → school.
    * One linked school must satisfy every active shared condition.
-   * Empty schools=[] follow showTerritoryEvents. A selected district alone does
-   * not hide them. Type, 民間組別, or search still hides them: they have no school to join.
+   * Empty schools=[] follow showTerritoryEvents only. District, type, 民間組別,
+   * and search do not hide them.
    */
   eventMatchesSharedFilters(ev) {
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
+    if (!schools.length) return this.showTerritoryEvents;
+
     const typeActive = this.filterType !== "all";
     const bandActive = this.filterBand !== "all";
     const queryActive = Boolean(this.query);
     const districtActive = this.filterDistrict !== "all";
-
-    if (!schools.length) {
-      return this.showTerritoryEvents && !typeActive && !bandActive && !queryActive;
-    }
 
     if (!districtActive && !typeActive && !bandActive && !queryActive) return true;
 
@@ -769,6 +768,9 @@ class App {
     if (!this.eventsPayload?.events) return;
     const total = this.eventsPayload.events.length;
     const list = this.eventsPayload.events.filter((ev) => {
+      const schools = Array.isArray(ev.schools) ? ev.schools : [];
+      // Empty schools=[] follow the territory toggle only (status exempt).
+      if (!schools.length) return this.showTerritoryEvents;
       if (this.eventStatus !== "all" && ev.status !== this.eventStatus) {
         return false;
       }
@@ -777,7 +779,17 @@ class App {
     });
 
     if (this.els.eventsMeta) {
-      this.els.eventsMeta.textContent = `顯示 ${list.length} / ${total} 項`;
+      const territoryVisible = list.filter((ev) => !ev.schools?.length).length;
+      const schoolScoped =
+        this.filterDistrict !== "all" ||
+        this.filterType !== "all" ||
+        this.filterBand !== "all" ||
+        this.eventSchool !== "all";
+      let meta = `顯示 ${list.length} / ${total} 項`;
+      if (this.showTerritoryEvents && territoryVisible > 0 && schoolScoped) {
+        meta += `（另加 ${territoryVisible} 項教育局／全港）`;
+      }
+      this.els.eventsMeta.textContent = meta;
     }
 
     this.els.eventsList.replaceChildren();
@@ -788,7 +800,7 @@ class App {
       if (body) {
         const notes = [];
         if (this.filterBand !== "all") {
-          notes.push("民間組別只對應相關學校的民間參考，並非項目本身的評級。民間組別有選時睇唔到無相關學校嘅全港／教育局項目。");
+          notes.push("民間組別只對應相關學校的民間參考，並非項目本身的評級。");
         }
         if (!this.showTerritoryEvents) {
           notes.push("已關掉「顯示教育局／全港項目」，無相關學校的教育局／全港項目不會顯示。");
@@ -828,7 +840,18 @@ class App {
       statusBadge.className = `badge status-${ev.status}`;
       statusBadge.textContent = decodeVisiblePercent(ev.status);
       badges.append(statusBadge);
-      if (ev.schools?.length) {
+      if (!ev.schools?.length) {
+        const territory = document.createElement("span");
+        territory.className = "badge badge-territory";
+        const shortLabel = document.createElement("span");
+        shortLabel.className = "badge-territory-short";
+        shortLabel.textContent = "全港";
+        const wideLabel = document.createElement("span");
+        wideLabel.className = "badge-territory-wide";
+        wideLabel.textContent = "教育局／全港";
+        territory.append(shortLabel, wideLabel);
+        badges.append(territory);
+      } else {
         for (const school of ev.schools) {
           const s = document.createElement("span");
           s.className = "badge";

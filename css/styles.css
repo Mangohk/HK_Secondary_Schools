@@ -1088,6 +1088,25 @@ html.events-filters-open {
   overflow: hidden;
 }
 
+.badge.badge-territory {
+  background: #dce8f5;
+  color: #1f4e79;
+}
+
+.badge-territory-wide {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .badge-territory-short {
+    display: none;
+  }
+
+  .badge-territory-wide {
+    display: inline;
+  }
+}
+
 .badge.status-官方確認 { background: #d7efe4; color: #1f5b43; }
 .badge.status-暫定（坊間） { background: #f5ebc8; color: #6d5310; }
 .badge.status-已過 { background: #e6e6e6; color: #555; }
