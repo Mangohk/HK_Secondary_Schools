@@ -120,6 +120,10 @@
           <button type="button" class="btn btn-secondary toolbar-filter-toggle" id="events-filter-toggle" aria-expanded="false" aria-controls="events-filter-panel" aria-label="展開篩選">
             <span class="toolbar-filter-toggle-label">篩選</span>
           </button>
+          <button type="button" class="btn btn-secondary events-territory-toggle is-active" id="events-territory-toggle" aria-pressed="true" aria-label="顯示教育局／全港項目">
+            <span class="events-territory-label-short">教育局／全港</span>
+            <span class="events-territory-label-wide">含教育局／全港</span>
+          </button>
         </div>
         <div class="toolbar-summary" id="events-filter-summary" hidden>
           <p class="toolbar-summary-text" id="events-filter-summary-text"></p>
@@ -163,12 +167,6 @@
                 <option value="all" selected>全部</option>
               </select>
             </div>
-          </div>
-          <div class="filter-row">
-            <label class="territory-toggle" for="events-territory-toggle">
-              <input type="checkbox" id="events-territory-toggle" checked />
-              顯示教育局／全港項目
-            </label>
           </div>
         </div>
       </div>

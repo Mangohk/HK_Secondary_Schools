@@ -237,6 +237,13 @@ main {
     display: none !important;
   }
 
+  /* Last row of the expanded 升中 stack. The compact 「篩選」 button stays hidden. */
+  #events-territory-toggle {
+    display: inline-flex;
+    order: 1;
+    justify-self: start;
+  }
+
   #panel-list .school-card,
   #panel-list .school-card a,
   #panel-list .school-card button,
@@ -427,23 +434,36 @@ main {
   line-height: 1.45;
 }
 
-.territory-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-height: 44px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--ink);
-  cursor: pointer;
+/* Pill beside 「篩選」. Not .toolbar-filter-toggle, so the wide-screen rule
+   that hides that control leaves this one visible. */
+.events-territory-toggle {
+  flex: 0 1 auto;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
 }
 
-.territory-toggle input {
-  width: 1.15rem;
-  height: 1.15rem;
-  margin: 0;
-  accent-color: var(--teal);
-  flex: 0 0 auto;
+.events-territory-toggle.is-active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+.events-territory-label-wide {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .events-territory-label-short {
+    display: none;
+  }
+
+  .events-territory-label-wide {
+    display: inline;
+  }
 }
 
 .empty-state {
@@ -1412,6 +1432,16 @@ html.events-filters-open {
     display: flex;
     align-items: center;
     gap: 0.45rem;
+    min-width: 0;
+  }
+
+  .events-filter-stack .toolbar-compact {
+    flex-wrap: wrap;
+  }
+
+  .events-filter-stack .events-territory-toggle {
+    display: inline-flex;
+    min-height: 44px;
     min-width: 0;
   }
 
