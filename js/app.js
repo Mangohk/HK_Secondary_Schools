@@ -291,7 +291,7 @@ function formatHongKongDateRange(start, end, isDateTime) {
   return `${startDate} ${startTime}\n– ${endDate} ${endTime}`;
 }
 
-class App {
+export class App {
   constructor() {
     this.schools = [];
     this.eventsPayload = null;
@@ -302,6 +302,10 @@ class App {
     this.eventSchool = "all";
     /** 升中-only. On shows schools=[]; off hides every empty-schools event. */
     this.showTerritoryEvents = true;
+    /** Session-only list UX: show only favourited schools. Not synced to cloud. */
+    this.filterFavoritesOnly = false;
+    /** Favourites keyed by exact nameZh (synced when signed in). */
+    this.favorites = [];
     this.schoolByName = new Map();
     this.query = "";
     this.pageSize = LIST_PAGE_SIZE;
@@ -315,6 +319,11 @@ class App {
     this.userMarker = null;
     this.selectedLatLng = null;
     this.mapReady = false;
+    /** @type {{ uid: string, displayName?: string, email?: string } | null} */
+    this.authUser = null;
+    /** @type {((opts?: { immediate?: boolean }) => void) | null} */
+    this._onSyncedChange = null;
+    this._prefsApplying = false;
 
     this.els = {
       tabList: document.getElementById("tab-list"),
@@ -326,6 +335,7 @@ class App {
       search: document.getElementById("search"),
       filters: document.querySelector(".filters"),
       bandFilters: document.querySelector(".band-filters"),
+      favoritesFilter: document.getElementById("favorites-filter"),
       districtSelect: document.getElementById("district-select"),
       resultCount: document.getElementById("result-count"),
       schoolList: document.getElementById("school-list"),
@@ -358,6 +368,99 @@ class App {
     };
   }
 
+  setPrefsHooks({ onSyncedChange } = {}) {
+    this._onSyncedChange = typeof onSyncedChange === "function" ? onSyncedChange : null;
+  }
+
+  setAuthUser(user) {
+    this.authUser = user;
+  }
+
+  /** Synced prefs snapshot — never includes search `query`. */
+  getSyncedPrefs() {
+    return {
+      filterDistrict: this.filterDistrict || "all",
+      filterType: this.filterType || "all",
+      filterBand: this.filterBand || "all",
+      showTerritoryEvents: this.showTerritoryEvents !== false,
+      favorites: this.favorites.slice(),
+    };
+  }
+
+  /**
+   * Apply cloud prefs over local (TR). Unknown favourite names are dropped.
+   * Does not touch session-only `query` or `filterFavoritesOnly`.
+   */
+  applySyncedPrefs(prefs) {
+    if (!prefs || typeof prefs !== "object") return;
+    this._prefsApplying = true;
+    try {
+      const district =
+        typeof prefs.filterDistrict === "string" && prefs.filterDistrict
+          ? prefs.filterDistrict
+          : "all";
+      this.filterDistrict = district === "all" || DISTRICT_ORDER.includes(district)
+        ? district
+        : "all";
+      this.filterType = ["all", "官立", "資助", "直資", "私立"].includes(prefs.filterType)
+        ? prefs.filterType
+        : "all";
+      this.filterBand = ["all", "1", "2", "3", "未知"].includes(prefs.filterBand)
+        ? prefs.filterBand
+        : "all";
+      this.showTerritoryEvents = prefs.showTerritoryEvents !== false;
+      const favs = Array.isArray(prefs.favorites) ? prefs.favorites : [];
+      const cleaned = [];
+      const seen = new Set();
+      for (const name of favs) {
+        if (typeof name !== "string" || !name || seen.has(name)) continue;
+        if (this.schoolByName.size && !this.schoolByName.has(name)) continue;
+        seen.add(name);
+        cleaned.push(name);
+      }
+      this.favorites = cleaned;
+
+      this.syncDistrictSelect();
+      this.syncEventsDistrictSelect();
+      this.syncChipGroup(this.els.filters, "type", this.filterType);
+      this.syncBandChips();
+      this.syncTerritoryToggle();
+      this.syncFavoritesFilterChip();
+      this.onListFiltersChanged();
+    } finally {
+      this._prefsApplying = false;
+    }
+  }
+
+  notifySyncedPrefsChanged({ immediate = false } = {}) {
+    if (this._prefsApplying) return;
+    this._onSyncedChange?.({ immediate });
+  }
+
+  isFavorite(nameZh) {
+    return this.favorites.includes(nameZh);
+  }
+
+  toggleFavorite(nameZh) {
+    if (!nameZh) return;
+    const idx = this.favorites.indexOf(nameZh);
+    if (idx >= 0) this.favorites.splice(idx, 1);
+    else this.favorites.push(nameZh);
+    if (!this.favorites.length) this.filterFavoritesOnly = false;
+    this.syncFavoritesFilterChip();
+    this.onListFiltersChanged({ prefsImmediate: true });
+  }
+
+  syncFavoritesFilterChip() {
+    const btn = this.els.favoritesFilter;
+    if (!btn) return;
+    const n = this.favorites.length;
+    btn.textContent = n > 0 ? `只看關注（${n}）` : "只看關注";
+    btn.classList.toggle("is-active", this.filterFavoritesOnly);
+    btn.setAttribute("aria-pressed", this.filterFavoritesOnly ? "true" : "false");
+    btn.disabled = n === 0 && !this.filterFavoritesOnly;
+  }
+
   init() {
     this.deepLink = readDeepLink();
     this.bindTabs();
@@ -384,6 +487,7 @@ class App {
       this.renderList();
     }
     this.populateEventDistrictFilter();
+    this.syncFavoritesFilterChip();
 
     this.loadEvents();
     this.applyDeepLinkTab();
@@ -709,6 +813,7 @@ class App {
         this.showTerritoryEvents = !this.showTerritoryEvents;
         this.syncTerritoryToggle();
         this.renderEvents();
+        this.notifySyncedPrefsChanged();
       });
       this.syncTerritoryToggle();
     }
@@ -884,7 +989,7 @@ class App {
     }
   }
 
-  onListFiltersChanged() {
+  onListFiltersChanged({ prefsImmediate = false } = {}) {
     this.visibleCount = this.pageSize;
     this.renderList();
     this.renderMapChrome();
@@ -901,6 +1006,8 @@ class App {
     }
     this.syncEventsDistrictSelect();
     this.renderEvents();
+    // Cloud write for synced filters only (query is excluded from snapshot).
+    this.notifySyncedPrefsChanged({ immediate: prefsImmediate });
   }
 
   syncChipGroup(container, datasetKey, value) {
@@ -945,6 +1052,9 @@ class App {
     } else if (key === "query") {
       this.query = "";
       if (this.els.search) this.els.search.value = "";
+    } else if (key === "favorites") {
+      this.filterFavoritesOnly = false;
+      this.syncFavoritesFilterChip();
     } else {
       return;
     }
@@ -972,6 +1082,9 @@ class App {
     }
     if (this.query) {
       items.push({ key: "query", label: `搜尋：${this.query}` });
+    }
+    if (this.filterFavoritesOnly && this.favorites.length > 0) {
+      items.push({ key: "favorites", label: `只看關注（${this.favorites.length}）` });
     }
     return items;
   }
@@ -1043,6 +1156,17 @@ class App {
     if (this.els.districtSelect) {
       this.els.districtSelect.addEventListener("change", () => {
         this.setSharedDistrict(this.els.districtSelect.value || "all");
+        this.onListFiltersChanged();
+        this.setListFiltersExpanded(false);
+      });
+    }
+
+    if (this.els.favoritesFilter) {
+      this.els.favoritesFilter.addEventListener("click", () => {
+        if (!this.favorites.length && !this.filterFavoritesOnly) return;
+        this.filterFavoritesOnly = !this.filterFavoritesOnly;
+        if (!this.favorites.length) this.filterFavoritesOnly = false;
+        this.syncFavoritesFilterChip();
         this.onListFiltersChanged();
         this.setListFiltersExpanded(false);
       });
@@ -1175,6 +1299,9 @@ class App {
     if (this.filterType !== "all") parts.push(this.filterType);
     if (this.filterBand !== "all") {
       parts.push(this.filterBand === "未知" ? "未知／不適用" : this.bandLabel(this.filterBand));
+    }
+    if (this.filterFavoritesOnly && this.favorites.length > 0) {
+      parts.push(`只看關注（${this.favorites.length}）`);
     }
     return parts;
   }
@@ -1388,7 +1515,10 @@ class App {
 
   filteredSchools() {
     const district = this.effectiveFilterDistrict();
+    const favOnly = this.filterFavoritesOnly && this.favorites.length > 0;
+    const favSet = favOnly ? new Set(this.favorites) : null;
     return this.schools.filter((s) => {
+      if (favSet && !favSet.has(s.nameZh)) return false;
       if (district !== "all" && s.district !== district) return false;
       if (this.filterType !== "all" && s.type !== this.filterType) return false;
       const band = s.band || "未知";
@@ -1515,6 +1645,20 @@ class App {
         .join("");
 
       const actions = card.querySelector(".school-actions");
+      const favBtn = document.createElement("button");
+      favBtn.type = "button";
+      favBtn.className = "btn btn-secondary fav-toggle";
+      const favOn = this.isFavorite(school.nameZh);
+      favBtn.classList.toggle("is-favorited", favOn);
+      favBtn.setAttribute("aria-pressed", favOn ? "true" : "false");
+      favBtn.setAttribute(
+        "aria-label",
+        favOn ? `取消關注 ${school.nameZh}` : `關注 ${school.nameZh}`
+      );
+      favBtn.textContent = favOn ? "已關注" : "關注";
+      favBtn.addEventListener("click", () => this.toggleFavorite(school.nameZh));
+      actions.append(favBtn);
+
       const mapBtn = document.createElement("button");
       mapBtn.type = "button";
       mapBtn.className = "btn btn-primary";
@@ -1956,6 +2100,3 @@ class App {
     open();
   }
 }
-
-const app = new App();
-app.init();

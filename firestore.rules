@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function validFilterType() {
+      return request.resource.data.filterType in ['all', '官立', '資助', '直資', '私立'];
+    }
+
+    function validFilterBand() {
+      return request.resource.data.filterBand in ['all', '1', '2', '3', '未知'];
+    }
+
+    // Owner-only user prefs. Default-deny everything else.
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly([
+          'filterDistrict',
+          'filterType',
+          'filterBand',
+          'showTerritoryEvents',
+          'favorites',
+          'updatedAt'
+        ])
+        && request.resource.data.filterDistrict is string
+        && request.resource.data.filterDistrict.size() <= 40
+        && validFilterType()
+        && validFilterBand()
+        && request.resource.data.showTerritoryEvents is bool
+        && request.resource.data.favorites is list
+        && request.resource.data.favorites.size() <= 500;
+      allow delete: if isOwner(uid);
+    }
+  }
+}

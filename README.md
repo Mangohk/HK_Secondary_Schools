@@ -25,10 +25,26 @@ https://mangohk.github.io/HK_Secondary_Schools/
 
 ## 功能
 
-1. **學校資料**：約 483 所全港日間本地中學（教育局「學校位置及資料」開放數據；不含特殊、國際、英基及夜校），含中文校名、分區、類型、地址、電話、網址；可按十八區、類型與民間參考組別篩選。組別多數來自 [大考 BigExam](https://dse.bigexam.hk/zh-hk/ssp) 的民間估算（非教育局官方），其餘為「未知／不適用」，卡片上以色塊顯示。
+1. **學校資料**：約 483 所全港日間本地中學（教育局「學校位置及資料」開放數據；不含特殊、國際、英基及夜校），含中文校名、分區、類型、地址、電話、網址；可按十八區、類型與民間參考組別篩選。組別多數來自 [大考 BigExam](https://dse.bigexam.hk/zh-hk/ssp) 的民間估算（非教育局官方），其餘為「未知／不適用」，卡片上以色塊顯示。可按「關注」標記學校，並用「只看關注」收窄清單。
 2. **升中項目**：執行時讀取 `data/events.json`（開放日、資訊日、報名／放榜等），可按狀態篩選。不連線 Notion、亦不需後端。現有條目多來自前身沙田區清單，並非全港完整日程。
 3. **地圖**：Leaflet + OSM；標記隨學校資料篩選同步；各校以彩色中文縮寫徽章標記（favicon 成功載入時疊上校徽），滑鼠移上／輕觸顯示校名。
 4. **距離工具**：在地圖上點選一點，依直線距離由近至遠列出目前篩選下的學校（預設顯示最近 40 所）；選點以紅色圖釘標示。
+5. **登入與偏好（可選）**：訪客可直接使用。若已設定 Firebase，可用 **Google 登入**；已登入時會把分區／類型／民間組別／「顯示教育局／全港項目」與關注學校（`nameZh`）同步到 Firestore，跨裝置還原。搜尋字詞只留在本機工作階段，不入帳戶。
+
+## Firebase 登入設定（維護者）
+
+本站以 GitHub Pages 靜態託管，Auth／Firestore 全在瀏覽器端。**切勿**把 Admin SDK 或 service account 金鑰提交到本 repo。
+
+1. 在 [Firebase Console](https://console.firebase.google.com/) 建立專案。
+2. 啟用 **Authentication → Sign-in method → Google**。
+3. **Authentication → Settings → Authorized domains** 加入：
+   - `mangohk.github.io`（正式站）
+   - `localhost`（本機 HTTP 測試）
+4. 建立 **Firestore** 資料庫；用 repo 根目錄的 [`firestore.rules`](./firestore.rules) 部署規則（`users/{uid}` 僅本人讀寫）。
+5. 新增 Web app，複製設定到 [`js/firebase-config.js`](./js/firebase-config.js)（取代 `YOUR_*` placeholder）。`apiKey` 等屬公開 web config，靠 Security Rules 保護資料。
+6. 正式站路徑為 `/HK_Secondary_Schools/`。建議用 **popup** Google 登入（已實作）；若改 redirect，須確認回傳 URL 與 authorized domains 正確。
+
+未填妥 config 時，頁首會顯示「登入未設定」，站點仍以訪客模式運作（關注／篩選只在記憶體，重整即失；v1 不寫 `localStorage`）。
 
 ## 如何新增／修改升中項目
 
