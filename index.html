@@ -19,10 +19,13 @@
   <div class="atmosphere" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="brand-block">
-      <p class="brand-kicker">Hong Kong · 十八區</p>
-      <h1 class="brand">香港升中資訊網</h1>
-      <p class="brand-sub">全港日間中學資料 · 升中項目 · 地圖距離</p>
+    <div class="header-top">
+      <div class="brand-block">
+        <p class="brand-kicker">Hong Kong · 十八區</p>
+        <h1 class="brand">香港升中資訊網</h1>
+        <p class="brand-sub">全港日間中學資料 · 升中項目 · 地圖距離</p>
+      </div>
+      <div id="auth-mount" class="auth-mount" aria-live="polite"></div>
     </div>
     <nav class="tabs" role="tablist" aria-label="主要分頁">
       <button class="tab is-active" role="tab" id="tab-list" aria-selected="true" aria-controls="panel-list" data-tab="list">學校資料</button>
@@ -77,8 +80,14 @@
               <button class="chip" data-band="未知">未知／不適用</button>
             </div>
           </div>
+          <div class="filter-row">
+            <span class="filter-label">關注</span>
+            <div class="favorites-filters" role="group" aria-label="關注學校篩選">
+              <button type="button" class="chip" id="favorites-filter" aria-pressed="false" disabled>只看關注</button>
+            </div>
+          </div>
           <p class="result-count" id="result-count" aria-live="polite"></p>
-          <p class="band-disclaimer">組別為民間參考，非教育局官方評級</p>
+          <p class="band-disclaimer">組別為民間參考，非教育局官方評級。關注學校可登入後跨裝置同步。</p>
         </div>
       </div>
       <button type="button" class="toolbar-backdrop" id="list-filter-backdrop" hidden tabindex="-1" aria-label="關閉篩選"></button>
@@ -251,6 +260,6 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
     integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin=""></script>
   <script src="data/schools-data.js"></script>
-  <script src="js/app.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
