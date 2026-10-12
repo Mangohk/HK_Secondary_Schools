@@ -1527,13 +1527,16 @@ html.events-filters-open {
 
   .tabs {
     width: 100%;
+    flex-wrap: wrap;
+    border-radius: 22px;
   }
 
   .tab {
-    flex: 1;
+    flex: 1 1 calc(50% - 0.4rem);
     text-align: center;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+    font-size: 0.92rem;
   }
 
   #map {

@@ -6,8 +6,8 @@
  * works even when Firebase is unavailable or not configured.
  */
 
-import { App } from "./app.js";
-import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js";
+import { App } from "./app.js?v=favtab-1";
+import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js?v=favtab-1";
 
 const app = new App();
 app.init();
@@ -103,8 +103,8 @@ async function bootAuthLayer() {
   try {
     const [{ initializeApp }, { createAuthChrome }, { createPrefsStore }] = await Promise.all([
       import("https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"),
-      import("./auth.js"),
-      import("./prefs.js"),
+      import("./auth.js?v=favtab-1"),
+      import("./prefs.js?v=favtab-1"),
     ]);
 
     try {
