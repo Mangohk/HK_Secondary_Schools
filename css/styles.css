@@ -244,14 +244,6 @@ main {
     justify-self: start;
   }
 
-  .events-territory-label-short {
-    display: none;
-  }
-
-  .events-territory-label-wide {
-    display: inline;
-  }
-
   #panel-list .school-card,
   #panel-list .school-card a,
   #panel-list .school-card button,
@@ -462,6 +454,16 @@ main {
 
 .events-territory-label-wide {
   display: none;
+}
+
+@media (min-width: 1025px) {
+  .events-territory-label-short {
+    display: none;
+  }
+
+  .events-territory-label-wide {
+    display: inline;
+  }
 }
 
 .empty-state {
