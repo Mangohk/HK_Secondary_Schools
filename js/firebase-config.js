@@ -10,12 +10,12 @@
  */
 
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyD3Owtj6-YWDN5VkpdQXH53J4s5ot3h4nU",
+  authDomain: "hk-secondary-schools.firebaseapp.com",
+  projectId: "hk-secondary-schools",
+  storageBucket: "hk-secondary-schools.firebasestorage.app",
+  messagingSenderId: "173241819499",
+  appId: "1:173241819499:web:5e372a754ad295991a6c2e",
 };
 
 /** True when web config looks filled in (not scaffolding placeholders). */
