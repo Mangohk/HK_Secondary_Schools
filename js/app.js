@@ -607,13 +607,21 @@ export class App {
   }
 
   goToTab(name) {
-    const tabs = {
-      list: this.els.tabList,
-      events: this.els.tabEvents,
-      map: this.els.tabMap,
-      favorites: this.els.tabFavorites,
-    };
-    tabs[name]?.click();
+    if (!name) return;
+    // Prefer the shared activator (works even if a tab node was re-rendered).
+    if (typeof this._activateTab === "function") {
+      this._activateTab(name);
+      return;
+    }
+    const tab =
+      document.querySelector(`.tabs [data-tab="${name}"]`) ||
+      {
+        list: this.els.tabList,
+        events: this.els.tabEvents,
+        map: this.els.tabMap,
+        favorites: this.els.tabFavorites,
+      }[name];
+    tab?.click();
   }
 
   init() {
@@ -667,9 +675,9 @@ export class App {
     const link = this.deepLink;
     if (!link) return;
     const tab = link.tab || (link.status || link.band || link.school ? "events" : null);
-    if (tab === "events") this.els.tabEvents.click();
-    else if (tab === "map") this.els.tabMap.click();
-    else if (tab === "favorites") this.els.tabFavorites?.click();
+    if (tab === "events" || tab === "map" || tab === "favorites" || tab === "list") {
+      this.goToTab(tab);
+    }
   }
 
   /** Band in the URL is the shared 民間組別, applied before the first school render. */
@@ -901,28 +909,64 @@ export class App {
   }
 
   bindTabs() {
-    const panels = {
-      list: this.els.panelList,
-      events: this.els.panelEvents,
-      map: this.els.panelMap,
-      favorites: this.els.panelFavorites,
-    };
-    const tabs = {
-      list: this.els.tabList,
-      events: this.els.tabEvents,
-      map: this.els.tabMap,
-      favorites: this.els.tabFavorites,
+    const nav = document.querySelector("nav.tabs") || this.els.tabList?.parentElement;
+    const panelIds = {
+      list: "panel-list",
+      events: "panel-events",
+      map: "panel-map",
+      favorites: "panel-favorites",
     };
 
     const activate = (name) => {
+      if (!name || !panelIds[name]) return;
+      // Live-query panels/tabs so a late DOM / cache mismatch cannot leave
+      // every panel hidden while the favorites button appears inert.
+      const panels = {
+        list: document.getElementById(panelIds.list) || this.els.panelList,
+        events: document.getElementById(panelIds.events) || this.els.panelEvents,
+        map: document.getElementById(panelIds.map) || this.els.panelMap,
+        favorites:
+          document.getElementById(panelIds.favorites) || this.els.panelFavorites,
+      };
+      const targetPanel = panels[name];
+      if (!targetPanel) {
+        console.warn(`[tabs] missing panel for "${name}"`);
+        return;
+      }
+
+      // Keep els in sync for the rest of App.
+      this.els.panelList = panels.list;
+      this.els.panelEvents = panels.events;
+      this.els.panelMap = panels.map;
+      this.els.panelFavorites = panels.favorites;
+
       for (const [key, panel] of Object.entries(panels)) {
-        if (!panel || !tabs[key]) continue;
+        if (!panel) continue;
         const on = key === name;
         panel.classList.toggle("is-active", on);
         panel.hidden = !on;
-        tabs[key].classList.toggle("is-active", on);
-        tabs[key].setAttribute("aria-selected", String(on));
       }
+
+      const tabButtons = nav
+        ? [...nav.querySelectorAll("[data-tab]")]
+        : [
+            this.els.tabList,
+            this.els.tabEvents,
+            this.els.tabMap,
+            this.els.tabFavorites,
+          ].filter(Boolean);
+      for (const tab of tabButtons) {
+        const key = tab.dataset?.tab;
+        if (!key || !panelIds[key]) continue;
+        const on = key === name;
+        tab.classList.toggle("is-active", on);
+        tab.setAttribute("aria-selected", String(on));
+        if (key === "list") this.els.tabList = tab;
+        if (key === "events") this.els.tabEvents = tab;
+        if (key === "map") this.els.tabMap = tab;
+        if (key === "favorites") this.els.tabFavorites = tab;
+      }
+
       if (name !== "list") this.setListFiltersExpanded(false);
       if (name !== "events") this.setEventsFiltersExpanded(false);
       if (name === "list") requestAnimationFrame(() => this.syncListStickyOffset());
@@ -935,10 +979,24 @@ export class App {
       }
     };
 
-    this.els.tabList.addEventListener("click", () => activate("list"));
-    this.els.tabEvents.addEventListener("click", () => activate("events"));
-    this.els.tabMap.addEventListener("click", () => activate("map"));
-    this.els.tabFavorites?.addEventListener("click", () => activate("favorites"));
+    this._activateTab = activate;
+
+    if (nav) {
+      nav.addEventListener("click", (event) => {
+        const btn = event.target.closest?.("[data-tab]");
+        if (!btn || !nav.contains(btn)) return;
+        const name = btn.getAttribute("data-tab") || btn.dataset?.tab;
+        if (!name || !panelIds[name]) return;
+        event.preventDefault();
+        activate(name);
+      });
+    } else {
+      // Fallback if nav wrapper is missing.
+      this.els.tabList?.addEventListener("click", () => activate("list"));
+      this.els.tabEvents?.addEventListener("click", () => activate("events"));
+      this.els.tabMap?.addEventListener("click", () => activate("map"));
+      this.els.tabFavorites?.addEventListener("click", () => activate("favorites"));
+    }
   }
 
   mapContainerSize() {
