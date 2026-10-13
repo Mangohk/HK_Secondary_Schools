@@ -24,8 +24,6 @@ const DISTRICT_ORDER = [
 
 const DISTANCE_LIST_LIMIT = 40;
 const LIST_PAGE_SIZE = 24;
-/** School list and 升中 share this compact-filter breakpoint. */
-const COMPACT_FILTER_QUERY = "(max-width: 1024px)";
 
 /** Haversine great-circle distance in metres */
 function haversineMeters(lat1, lon1, lat2, lon2) {
@@ -1442,7 +1440,7 @@ export class App {
       .toLowerCase();
   }
 
-  /** Phone school-list bar: collapsed by default. No scroll listener. */
+  /** School-list sticky bar: collapsed by default on every screen size. */
   bindCompactListFilters() {
     const toolbar = document.getElementById("list-toolbar");
     const toggle = document.getElementById("list-filter-toggle");
@@ -1469,19 +1467,12 @@ export class App {
       this.setListFiltersExpanded(false);
     });
 
-    const mq = window.matchMedia(COMPACT_FILTER_QUERY);
-    const onBreakpoint = () => {
-      this.setListFiltersExpanded(false);
-      this.syncListStickyOffset();
-    };
-    if (typeof mq.addEventListener === "function") mq.addEventListener("change", onBreakpoint);
-    else mq.addListener(onBreakpoint);
-
     if (typeof ResizeObserver !== "undefined" && toolbar) {
       this._listToolbarObserver = new ResizeObserver(() => this.syncListStickyOffset());
       this._listToolbarObserver.observe(toolbar);
     }
     window.addEventListener("resize", () => this.syncListStickyOffset());
+    this.setListFiltersExpanded(false);
     this.syncListStickyOffset();
   }
 
@@ -1508,8 +1499,7 @@ export class App {
     const toggle = this.els.listFilterToggle;
     const backdrop = this.els.listFilterBackdrop;
     if (!toolbar || !toggle) return;
-    const narrow = window.matchMedia(COMPACT_FILTER_QUERY).matches;
-    const open = Boolean(expanded) && narrow;
+    const open = Boolean(expanded);
     const wasOpen = toolbar.classList.contains("is-expanded");
     toolbar.classList.toggle("is-expanded", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
@@ -1601,7 +1591,7 @@ export class App {
     this.onListFiltersChanged();
   }
 
-  /** 升中 compact bar: collapsed at ≤1024. Wide screens keep the full stack. */
+  /** 升中 sticky bar: collapsed by default on every screen size. */
   bindCompactEventsFilters() {
     const stack = document.getElementById("events-filter-stack");
     const toggle = document.getElementById("events-filter-toggle");
@@ -1628,19 +1618,12 @@ export class App {
       this.setEventsFiltersExpanded(false);
     });
 
-    const mq = window.matchMedia(COMPACT_FILTER_QUERY);
-    const onBreakpoint = () => {
-      this.setEventsFiltersExpanded(false);
-      this.syncEventsStickyOffset();
-    };
-    if (typeof mq.addEventListener === "function") mq.addEventListener("change", onBreakpoint);
-    else mq.addListener(onBreakpoint);
-
     if (typeof ResizeObserver !== "undefined" && stack) {
       this._eventsToolbarObserver = new ResizeObserver(() => this.syncEventsStickyOffset());
       this._eventsToolbarObserver.observe(stack);
     }
     window.addEventListener("resize", () => this.syncEventsStickyOffset());
+    this.setEventsFiltersExpanded(false);
     this.syncEventsStickyOffset();
   }
 
@@ -1667,8 +1650,7 @@ export class App {
     const toggle = this.els.eventsFilterToggle;
     const backdrop = this.els.eventsFilterBackdrop;
     if (!stack || !toggle) return;
-    const narrow = window.matchMedia(COMPACT_FILTER_QUERY).matches;
-    const open = Boolean(expanded) && narrow;
+    const open = Boolean(expanded);
     const wasOpen = stack.classList.contains("is-expanded");
     stack.classList.toggle("is-expanded", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
