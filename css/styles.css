@@ -1245,6 +1245,23 @@ main {
   background: #fff;
 }
 
+.events-school-filter select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.events-school-empty-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: var(--muted, #5c6570);
+  line-height: 1.35;
+}
+
+.events-school-empty-hint[hidden] {
+  display: none;
+}
+
 .events-list {
   display: grid;
   gap: 0.85rem;

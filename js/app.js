@@ -372,6 +372,7 @@ export class App {
       eventsBandFilters: document.querySelector(".events-band-filters"),
       eventsDistrictSelect: document.getElementById("events-district-select"),
       eventsSchoolSelect: document.getElementById("events-school-select"),
+      eventsSchoolEmptyHint: document.getElementById("events-school-empty-hint"),
       eventsTerritoryToggle: document.getElementById("events-territory-toggle"),
       map: document.getElementById("map"),
       mapHint: document.getElementById("map-hint"),
@@ -706,7 +707,7 @@ export class App {
     }
   }
 
-  /** Match a decoded 升中 school param to a loaded event school.
+  /** Match a decoded 升中 school param to a catalog school (shared filters may still clear it).
    *  全港／教育局 is no longer an exclusive list; it only keeps the toggle on.
    */
   resolveEventSchool(raw) {
@@ -715,14 +716,19 @@ export class App {
     if (name === "__territory__" || name === "全港／教育局" || name === "全港/教育局") {
       return "__territory__";
     }
-    const names = new Set();
+    if (this.schoolByName.has(name)) return name;
+    for (const school of this.schoolByName.keys()) {
+      if (school.normalize("NFC") === name) return school;
+    }
+    // Fallback: names that appear only on events (legacy / mismatched strings).
+    const eventNames = new Set();
     for (const ev of this.eventsPayload?.events || []) {
       for (const school of ev.schools || []) {
-        if (school) names.add(school);
+        if (school) eventNames.add(school);
       }
     }
-    if (names.has(name)) return name;
-    for (const school of names) {
+    if (eventNames.has(name)) return name;
+    for (const school of eventNames) {
       if (school.normalize("NFC") === name) return school;
     }
     return null;
@@ -825,18 +831,20 @@ export class App {
     }
   }
 
-  /** Unique school names from loaded events, plus 全部. */
+  /**
+   * Single-school picker options = schools in the current shared-filter intersection
+   * (district / type / band / 只看關注 / search). Sorted by zh-Hant name.
+   * Empty intersection → disabled select + hint; stale selection resets to 全部.
+   */
   populateEventSchoolFilter() {
     const select = this.els.eventsSchoolSelect;
-    if (!select || !this.eventsPayload?.events) return;
+    if (!select) return;
 
-    const names = new Set();
-    for (const ev of this.eventsPayload.events) {
-      for (const school of ev.schools || []) {
-        if (school) names.add(school);
-      }
-    }
-    const sorted = [...names].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+    const sorted = this.filteredSchools()
+      .map((s) => s.nameZh)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "zh-Hant"));
+    const nameSet = new Set(sorted);
 
     const previous = this.eventSchool;
     select.replaceChildren();
@@ -853,10 +861,15 @@ export class App {
       select.append(opt);
     }
 
-    const stillValid = previous === "all" || names.has(previous);
+    const stillValid = previous === "all" || nameSet.has(previous);
     this.eventSchool = stillValid ? previous : "all";
     select.value = this.eventSchool;
-    this.syncEventsDistrictSelect();
+
+    const empty = sorted.length === 0;
+    select.disabled = empty;
+    select.setAttribute("aria-disabled", empty ? "true" : "false");
+    const hint = this.els.eventsSchoolEmptyHint;
+    if (hint) hint.hidden = !empty;
   }
 
   /** 全部十八區, then each DISTRICT_ORDER district. No territory-only option. */
@@ -1253,6 +1266,7 @@ export class App {
       }
     }
     this.syncEventsDistrictSelect();
+    this.populateEventSchoolFilter();
     this.renderEvents();
     // Cloud write for synced filters only (query is excluded from snapshot).
     this.notifySyncedPrefsChanged({ immediate: prefsImmediate });
