@@ -6,7 +6,7 @@
  * works even when Firebase is unavailable or not configured.
  */
 
-import { App } from "./app.js?v=favtab-1";
+import { App } from "./app.js?v=collapse-all-1";
 import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js?v=favtab-1";
 
 const app = new App();

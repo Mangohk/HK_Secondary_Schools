@@ -1331,7 +1331,7 @@ main {
 
 html { overflow-x: clip; }
 
-/* Phone filter overlay locks scrolling on the root. Removing the class
+/* Filter overlay locks scrolling on the root. Removing the class
    restores overflow-x: clip from the rule above. */
 html.list-filters-open,
 html.events-filters-open {
