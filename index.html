@@ -13,7 +13,7 @@
     integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
     integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="" />
-  <link rel="stylesheet" href="css/styles.css?v=collapse-all-1" />
+  <link rel="stylesheet" href="css/styles.css?v=schoolscope-2" />
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true"></div>
@@ -184,6 +184,7 @@
               <select id="events-school-select" aria-label="學校篩選">
                 <option value="all" selected>全部</option>
               </select>
+              <p id="events-school-empty-hint" class="events-school-empty-hint" hidden>目前篩選下沒有可選學校</p>
             </div>
           </div>
         </div>
@@ -202,7 +203,7 @@
           <summary>技術說明</summary>
           <ul>
             <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
-            <li>分區、類型、民間組別、只看關注與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型或搜尋列。民間組別（按相關學校）寫入共用民間組別；「只看關注」寫入共用關注篩選，只按相關學校是否在關注清單篩選。分區選單寫入共用分區。狀態、指定學校，以及「顯示教育局／全港項目」只影響升中項目。有相關學校的項目以 AND 併用各條件。空 <code>schools</code> 的教育局／全港項目只受「顯示教育局／全港項目」控制。</li>
+            <li>分區、類型、民間組別、只看關注與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型或搜尋列。民間組別（按相關學校）寫入共用民間組別；「只看關注」寫入共用關注篩選，只按相關學校是否在關注清單篩選。分區選單寫入共用分區。狀態、指定學校，以及「顯示教育局／全港項目」只影響升中項目。指定學校下拉只列出當前共用篩選交集內的學校（與「學校資料」同一套條件）；交集為空時下拉停用。若已選學校跌出交集會重置為「全部」。有相關學校的項目以 AND 併用各條件。空 <code>schools</code> 的教育局／全港項目只受「顯示教育局／全港項目」控制。</li>
             <li>共用條件依 <code>schools</code> 的校名（須完全相同）對應「學校資料」的行政區、類型、民間參考 Band、關注清單與可搜尋欄位。多校事件要有同一所學校同時符合已啟用的分區、類型、組別、只看關注與搜尋。空 <code>schools</code> 的教育局／全港項目只跟「顯示教育局／全港項目」：開關開着就會顯示，關掉就全部隱藏。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。</li>
             <li>「顯示教育局／全港項目」預設開着，用來顯示或隱藏沒有相關學校（空 <code>schools</code>）的教育局／全港項目。關掉之後這些項目全部隱藏，並且唔會改共用分區。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。分區選單同學校下拉都沒有「全港／教育局」。</li>
             <li>時間顯示為香港時間（UTC+8）。可用網址開啟本分頁，例如 <code>?tab=events&amp;status=官方確認&amp;band=1&amp;school=校名</code>。<code>band</code> 套用共用民間組別。舊連結 <code>school=全港／教育局</code> 不再單獨收起有學校的項目。參數會還原 <code>+</code> 與百分號編碼（含再編碼一次的連結）。</li>
@@ -283,7 +284,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
     integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin=""></script>
-  <script src="data/schools-data.js?v=collapse-all-1"></script>
-  <script type="module" src="js/main.js?v=collapse-all-1"></script>
+  <script src="data/schools-data.js?v=schoolscope-2"></script>
+  <script type="module" src="js/main.js?v=schoolscope-2"></script>
 </body>
 </html>
