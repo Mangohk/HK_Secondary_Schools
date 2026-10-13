@@ -277,27 +277,52 @@ function districtSortIndex(district) {
   return i === -1 ? DISTRICT_ORDER.length : i;
 }
 
+/** Traditional Chinese weekday in fullwidth parentheses, e.g. （一）. Asia/Hong_Kong calendar day. */
+const HK_WEEKDAY_SHORT = {
+  Sun: "日",
+  Mon: "一",
+  Tue: "二",
+  Wed: "三",
+  Thu: "四",
+  Fri: "五",
+  Sat: "六",
+};
+
+function formatHongKongWeekdayParen(date) {
+  const key = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Hong_Kong",
+    weekday: "short",
+  }).format(date);
+  const day = HK_WEEKDAY_SHORT[key];
+  return day ? `（${day}）` : "";
+}
+
 function formatHongKongDateRange(start, end, isDateTime) {
   if (!start) return "日期待定";
   const optsDate = { timeZone: "Asia/Hong_Kong", year: "numeric", month: "numeric", day: "numeric" };
   const optsTime = { timeZone: "Asia/Hong_Kong", hour: "2-digit", minute: "2-digit", hour12: false };
 
   if (!isDateTime) {
-    const startLabel = new Date(`${start}T12:00:00+08:00`).toLocaleDateString("zh-HK", optsDate);
+    // Noon HKT avoids UTC-midnight off-by-one when reading YYYY-MM-DD.
+    const startDt = new Date(`${start}T12:00:00+08:00`);
+    const startLabel = `${startDt.toLocaleDateString("zh-HK", optsDate)}${formatHongKongWeekdayParen(startDt)}`;
     if (!end || end === start) return startLabel;
-    const endLabel = new Date(`${end}T12:00:00+08:00`).toLocaleDateString("zh-HK", optsDate);
+    const endDt = new Date(`${end}T12:00:00+08:00`);
+    const endLabel = `${endDt.toLocaleDateString("zh-HK", optsDate)}${formatHongKongWeekdayParen(endDt)}`;
     return `${startLabel} – ${endLabel}`;
   }
 
   const s = new Date(start);
   const startDate = s.toLocaleDateString("zh-HK", optsDate);
   const startTime = s.toLocaleTimeString("zh-HK", optsTime);
-  if (!end) return `${startDate} ${startTime}`;
+  const startWd = formatHongKongWeekdayParen(s);
+  if (!end) return `${startDate}${startWd} ${startTime}`;
   const e = new Date(end);
   const endDate = e.toLocaleDateString("zh-HK", optsDate);
   const endTime = e.toLocaleTimeString("zh-HK", optsTime);
-  if (startDate === endDate) return `${startDate}\n${startTime}–${endTime}`;
-  return `${startDate} ${startTime}\n– ${endDate} ${endTime}`;
+  if (startDate === endDate) return `${startDate}${startWd}\n${startTime}–${endTime}`;
+  const endWd = formatHongKongWeekdayParen(e);
+  return `${startDate}${startWd} ${startTime}\n– ${endDate}${endWd} ${endTime}`;
 }
 
 export class App {
