@@ -26,6 +26,8 @@ const DISTRICT_ORDER = [
 
 const DISTANCE_LIST_LIMIT = 40;
 const LIST_PAGE_SIZE = 24;
+/** Watchlist cards show this many 升中 rows before 「顯示全部」. */
+const FAVORITES_EVENTS_PREVIEW = 4;
 
 /** Haversine great-circle distance in metres */
 function haversineMeters(lat1, lon1, lat2, lon2) {
@@ -327,6 +329,64 @@ function formatHongKongDateRange(start, end, isDateTime) {
   return `${startDate}${startWd} ${startTime}\n– ${endDate}${endWd} ${endTime}`;
 }
 
+/** Start used for ordering. Date-only values are noon in Hong Kong. */
+function eventStartMs(ev) {
+  if (!ev?.dateStart) return Number.POSITIVE_INFINITY;
+  if (ev.isDateTime) {
+    const t = new Date(ev.dateStart).getTime();
+    return Number.isNaN(t) ? Number.POSITIVE_INFINITY : t;
+  }
+  const ymd = String(ev.dateStart).slice(0, 10);
+  const t = new Date(`${ymd}T12:00:00+08:00`).getTime();
+  return Number.isNaN(t) ? Number.POSITIVE_INFINITY : t;
+}
+
+/**
+ * When the event is over. Date-only ranges include the whole end day in Hong Kong.
+ * Returns null when there is no usable date.
+ */
+function eventEndMs(ev) {
+  const raw = ev?.dateEnd || ev?.dateStart;
+  if (!raw) return null;
+  if (ev.isDateTime) {
+    const t = new Date(raw).getTime();
+    return Number.isNaN(t) ? null : t;
+  }
+  const ymd = String(raw).slice(0, 10);
+  const t = new Date(`${ymd}T23:59:59+08:00`).getTime();
+  return Number.isNaN(t) ? null : t;
+}
+
+/** Past when marked 已過, or when the end (Hong Kong) is already over. */
+function isEventPast(ev, now = new Date()) {
+  if (ev?.status === "已過") return true;
+  const end = eventEndMs(ev);
+  if (end == null) return false;
+  return end < now.getTime();
+}
+
+/**
+ * Upcoming nearest-first (earliest start at the top).
+ * Past events follow, nearest past first. `now` is only used to split the two groups.
+ */
+function compareEventsNearest(a, b, now = new Date()) {
+  const pastA = isEventPast(a, now) ? 1 : 0;
+  const pastB = isEventPast(b, now) ? 1 : 0;
+  if (pastA !== pastB) return pastA - pastB;
+  if (!pastA) {
+    const diff = eventStartMs(a) - eventStartMs(b);
+    if (diff) return diff;
+  } else {
+    const endA = eventEndMs(a);
+    const endB = eventEndMs(b);
+    const aMs = endA == null ? Number.NEGATIVE_INFINITY : endA;
+    const bMs = endB == null ? Number.NEGATIVE_INFINITY : endB;
+    const diff = bMs - aMs;
+    if (diff) return diff;
+  }
+  return String(a?.id || "").localeCompare(String(b?.id || ""));
+}
+
 export class App {
   constructor() {
     this.schools = [];
@@ -346,6 +406,18 @@ export class App {
     /** Favourites keyed by exact nameZh (synced when signed in). */
     this.favorites = [];
     this.schoolByName = new Map();
+    /**
+     * Built once per page load after schools and events are both available.
+     * Keyed by schools.json nameZh. Territory-wide events (empty schools) are omitted.
+     * @type {Map<string, object[]> | null}
+     */
+    this.schoolEventsByName = null;
+    /** Count of events with schools: []. */
+    this.territoryEventCount = 0;
+    /** Watchlist cards left open across re-renders (exact nameZh). */
+    this.favoritesEventsOpen = new Set();
+    /** Watchlist cards that have revealed events past the preview. */
+    this.favoritesEventsShowAll = new Set();
     this.query = "";
     this.pageSize = LIST_PAGE_SIZE;
     this.visibleCount = LIST_PAGE_SIZE;
@@ -494,8 +566,13 @@ export class App {
   toggleFavorite(nameZh) {
     if (!nameZh) return;
     const idx = this.favorites.indexOf(nameZh);
-    if (idx >= 0) this.favorites.splice(idx, 1);
-    else this.favorites.push(nameZh);
+    if (idx >= 0) {
+      this.favorites.splice(idx, 1);
+      this.favoritesEventsOpen.delete(nameZh);
+      this.favoritesEventsShowAll.delete(nameZh);
+    } else {
+      this.favorites.push(nameZh);
+    }
     if (!this.favorites.length) this.filterFavoritesOnly = false;
     this.syncFavoritesFilterChip();
     this.renderFavoritesManage();
@@ -507,6 +584,8 @@ export class App {
     const idx = this.favorites.indexOf(nameZh);
     if (idx < 0) return;
     this.favorites.splice(idx, 1);
+    this.favoritesEventsOpen.delete(nameZh);
+    this.favoritesEventsShowAll.delete(nameZh);
     if (!this.favorites.length) this.filterFavoritesOnly = false;
     this.syncFavoritesFilterChip();
     this.renderFavoritesManage();
@@ -619,6 +698,37 @@ export class App {
         actions.append(mapBtn);
       }
 
+      const schoolEvents = this.eventsForSchool(nameZh);
+      const eventsKnown = this.schoolEventsByName != null;
+      const panelId = `favorites-events-${listEl.childElementCount}`;
+      let panel = null;
+      if (eventsKnown && schoolEvents.length > 0) {
+        const open = this.favoritesEventsOpen.has(nameZh);
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "btn btn-secondary favorites-events-toggle";
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-controls", panelId);
+        const count = schoolEvents.length;
+        const label = (expanded) => `升中項目（${count}）${expanded ? "▾" : "▸"}`;
+        toggle.textContent = label(open);
+        panel = this.buildFavoritesEventsPanel(nameZh, schoolEvents, panelId, open);
+        toggle.addEventListener("click", () => {
+          const next = toggle.getAttribute("aria-expanded") !== "true";
+          toggle.setAttribute("aria-expanded", next ? "true" : "false");
+          toggle.textContent = label(next);
+          panel.hidden = !next;
+          if (next) this.favoritesEventsOpen.add(nameZh);
+          else this.favoritesEventsOpen.delete(nameZh);
+        });
+        actions.append(toggle);
+      } else if (eventsKnown) {
+        const none = document.createElement("p");
+        none.className = "favorites-no-events";
+        none.textContent = "暫未有已公佈項目";
+        actions.append(none);
+      }
+
       const removeBtn = document.createElement("button");
       removeBtn.type = "button";
       removeBtn.className = "btn btn-secondary btn-remove-fav";
@@ -628,8 +738,106 @@ export class App {
       actions.append(removeBtn);
 
       item.append(actions);
+      if (panel) item.append(panel);
       listEl.append(item);
     }
+  }
+
+  /**
+   * One-time index: schools.json nameZh → events whose schools[] include that name.
+   * Events with an empty schools array are territory-wide and stay out of the map.
+   */
+  indexSchoolEvents() {
+    if (this.schoolEventsByName) return;
+    const events = this.eventsPayload?.events;
+    if (!Array.isArray(events) || !this.schools?.length) return;
+
+    const byName = new Map();
+    const canonical = new Map();
+    for (const school of this.schools) {
+      if (!school?.nameZh) continue;
+      byName.set(school.nameZh, []);
+      canonical.set(String(school.nameZh).normalize("NFC"), school.nameZh);
+    }
+
+    let territory = 0;
+    for (const ev of events) {
+      const schools = ev?.schools;
+      if (!Array.isArray(schools) || schools.length === 0) {
+        if (Array.isArray(schools) && schools.length === 0) territory += 1;
+        continue;
+      }
+      const seen = new Set();
+      for (const raw of schools) {
+        const key = canonical.get(String(raw).normalize("NFC"));
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+        byName.get(key).push(ev);
+      }
+    }
+
+    this.schoolEventsByName = byName;
+    this.territoryEventCount = territory;
+  }
+
+  /** School-scoped events, nearest upcoming first and past events last. */
+  eventsForSchool(nameZh) {
+    if (!this.schoolEventsByName || !nameZh) return [];
+    const list = this.schoolEventsByName.get(nameZh);
+    if (!list?.length) return [];
+    return list.slice().sort((a, b) => compareEventsNearest(a, b));
+  }
+
+  /**
+   * Expanded 升中 list for one watchlist card.
+   * Reuses the 升中 event card. Past rows are greyed. More than four stay behind 「顯示全部」.
+   */
+  buildFavoritesEventsPanel(nameZh, schoolEvents, panelId, open) {
+    const panel = document.createElement("div");
+    panel.className = "favorites-events";
+    panel.id = panelId;
+    panel.hidden = !open;
+
+    const showAll = this.favoritesEventsShowAll.has(nameZh);
+    const now = new Date();
+    schoolEvents.forEach((ev, i) => {
+      const card = this.buildEventCard(ev);
+      if (isEventPast(ev, now)) card.classList.add("is-past");
+      if (!showAll && i >= FAVORITES_EVENTS_PREVIEW) {
+        card.classList.add("favorites-event-extra");
+      }
+      panel.append(card);
+    });
+
+    if (!showAll && schoolEvents.length > FAVORITES_EVENTS_PREVIEW) {
+      const more = document.createElement("button");
+      more.type = "button";
+      more.className = "favorites-events-more";
+      more.textContent = `顯示全部（${schoolEvents.length}）`;
+      more.addEventListener("click", () => {
+        this.favoritesEventsShowAll.add(nameZh);
+        const extras = [...panel.querySelectorAll(".favorites-event-extra")];
+        for (const row of extras) row.classList.remove("favorites-event-extra");
+        const anchor = extras[0];
+        if (anchor) {
+          anchor.tabIndex = -1;
+          anchor.focus({ preventScroll: true });
+        }
+        more.hidden = true;
+      });
+      panel.append(more);
+    }
+
+    if (this.territoryEventCount > 0) {
+      const link = document.createElement("button");
+      link.type = "button";
+      link.className = "favorites-territory-link";
+      link.textContent = `另有全港日程（${this.territoryEventCount}）›`;
+      link.addEventListener("click", () => this.goToTab("events"));
+      panel.append(link);
+    }
+
+    return panel;
   }
 
   goToTab(name) {
@@ -846,6 +1054,7 @@ export class App {
         throw new Error("invalid events payload");
       }
       this.eventsPayload = payload;
+      this.indexSchoolEvents();
       if (this.els.eventsTitle && payload.title) {
         this.els.eventsTitle.textContent = payload.title;
       }
@@ -853,6 +1062,7 @@ export class App {
       this.populateEventSchoolFilter();
       this.syncEventsDistrictSelect();
       this.renderEvents();
+      this.renderFavoritesManage();
     } catch (err) {
       this.showEventsLoadError();
     }
@@ -1205,107 +1415,112 @@ export class App {
     if (isEmpty) return;
 
     for (const ev of list) {
-      const card = document.createElement("article");
-      card.className = "event-card";
-
-      const when = document.createElement("div");
-      when.className = "event-when";
-      when.textContent = formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime);
-      if (ev.keyPoints) {
-        const key = document.createElement("small");
-        key.textContent = `關鍵：${decodeVisiblePercent(ev.keyPoints)}`;
-        when.append(key);
-      }
-
-      const body = document.createElement("div");
-      body.className = "event-body";
-      const title = document.createElement("h3");
-      title.textContent = decodeVisiblePercent(ev.title);
-      body.append(title);
-
-      const badges = document.createElement("div");
-      badges.className = "badges";
-      const typeBadge = document.createElement("span");
-      typeBadge.className = `badge type-${ev.type}`;
-      typeBadge.textContent = decodeVisiblePercent(ev.type);
-      badges.append(typeBadge);
-      const statusBadge = document.createElement("span");
-      statusBadge.className = `badge status-${ev.status}`;
-      statusBadge.textContent = decodeVisiblePercent(ev.status);
-      badges.append(statusBadge);
-      if (!ev.schools?.length) {
-        const territory = document.createElement("span");
-        territory.className = "badge badge-territory";
-        const shortLabel = document.createElement("span");
-        shortLabel.className = "badge-territory-short";
-        shortLabel.textContent = "全港";
-        const wideLabel = document.createElement("span");
-        wideLabel.className = "badge-territory-wide";
-        wideLabel.textContent = "教育局／全港";
-        territory.append(shortLabel, wideLabel);
-        badges.append(territory);
-      } else {
-        for (const school of ev.schools) {
-          const s = document.createElement("span");
-          s.className = "badge";
-          s.textContent = decodeVisiblePercent(school);
-          badges.append(s);
-        }
-      }
-      body.append(badges);
-
-      if (ev.notes) {
-        const notes = document.createElement("p");
-        notes.textContent = decodeVisiblePercent(ev.notes);
-        body.append(notes);
-      }
-
-      const links = document.createElement("p");
-      links.className = "event-links";
-      if (ev.sourceUrl) {
-        const href = ensureUrl(decodeHrefPercent(ev.sourceUrl));
-        const anchor = document.createElement("a");
-        anchor.setAttribute("href", href);
-        anchor.target = "_blank";
-        anchor.rel = "noopener noreferrer";
-        anchor.textContent = eventSourceLabel(ev, ev.sourceUrl);
-        links.append(anchor);
-      }
-
-      if (ev.dateStart) {
-        if (links.childNodes.length) {
-          const sep = document.createElement("span");
-          sep.className = "event-link-sep";
-          sep.setAttribute("aria-hidden", "true");
-          sep.textContent = " · ";
-          links.append(sep);
-        }
-        const icsBtn = document.createElement("button");
-        icsBtn.type = "button";
-        icsBtn.className = "event-ics-link";
-        icsBtn.textContent = "下載日曆";
-        icsBtn.setAttribute(
-          "aria-label",
-          `下載「${decodeVisiblePercent(ev.title) || ev.id}」日曆檔`
-        );
-        icsBtn.addEventListener("click", () => {
-          downloadEventIcs(ev);
-        });
-        links.append(icsBtn);
-      }
-
-      if (links.childNodes.length) body.append(links);
-
-      if (!ev.dateStart) {
-        const hint = document.createElement("p");
-        hint.className = "event-ics-missing";
-        hint.textContent = "缺開始日期，無法下載日曆";
-        body.append(hint);
-      }
-
-      card.append(when, body);
-      this.els.eventsList.append(card);
+      this.els.eventsList.append(this.buildEventCard(ev));
     }
+  }
+
+  /** Shared 升中 event card (升中 tab and watchlist panel). */
+  buildEventCard(ev) {
+    const card = document.createElement("article");
+    card.className = "event-card";
+
+    const when = document.createElement("div");
+    when.className = "event-when";
+    when.textContent = formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime);
+    if (ev.keyPoints) {
+      const key = document.createElement("small");
+      key.textContent = `關鍵：${decodeVisiblePercent(ev.keyPoints)}`;
+      when.append(key);
+    }
+
+    const body = document.createElement("div");
+    body.className = "event-body";
+    const title = document.createElement("h3");
+    title.textContent = decodeVisiblePercent(ev.title);
+    body.append(title);
+
+    const badges = document.createElement("div");
+    badges.className = "badges";
+    const typeBadge = document.createElement("span");
+    typeBadge.className = `badge type-${ev.type}`;
+    typeBadge.textContent = decodeVisiblePercent(ev.type);
+    badges.append(typeBadge);
+    const statusBadge = document.createElement("span");
+    statusBadge.className = `badge status-${ev.status}`;
+    statusBadge.textContent = decodeVisiblePercent(ev.status);
+    badges.append(statusBadge);
+    if (!ev.schools?.length) {
+      const territory = document.createElement("span");
+      territory.className = "badge badge-territory";
+      const shortLabel = document.createElement("span");
+      shortLabel.className = "badge-territory-short";
+      shortLabel.textContent = "全港";
+      const wideLabel = document.createElement("span");
+      wideLabel.className = "badge-territory-wide";
+      wideLabel.textContent = "教育局／全港";
+      territory.append(shortLabel, wideLabel);
+      badges.append(territory);
+    } else {
+      for (const school of ev.schools) {
+        const s = document.createElement("span");
+        s.className = "badge";
+        s.textContent = decodeVisiblePercent(school);
+        badges.append(s);
+      }
+    }
+    body.append(badges);
+
+    if (ev.notes) {
+      const notes = document.createElement("p");
+      notes.textContent = decodeVisiblePercent(ev.notes);
+      body.append(notes);
+    }
+
+    const links = document.createElement("p");
+    links.className = "event-links";
+    if (ev.sourceUrl) {
+      const href = ensureUrl(decodeHrefPercent(ev.sourceUrl));
+      const anchor = document.createElement("a");
+      anchor.setAttribute("href", href);
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = eventSourceLabel(ev, ev.sourceUrl);
+      links.append(anchor);
+    }
+
+    if (ev.dateStart) {
+      if (links.childNodes.length) {
+        const sep = document.createElement("span");
+        sep.className = "event-link-sep";
+        sep.setAttribute("aria-hidden", "true");
+        sep.textContent = " · ";
+        links.append(sep);
+      }
+      const icsBtn = document.createElement("button");
+      icsBtn.type = "button";
+      icsBtn.className = "event-ics-link";
+      icsBtn.textContent = "下載日曆";
+      icsBtn.setAttribute(
+        "aria-label",
+        `下載「${decodeVisiblePercent(ev.title) || ev.id}」日曆檔`
+      );
+      icsBtn.addEventListener("click", () => {
+        downloadEventIcs(ev);
+      });
+      links.append(icsBtn);
+    }
+
+    if (links.childNodes.length) body.append(links);
+
+    if (!ev.dateStart) {
+      const hint = document.createElement("p");
+      hint.className = "event-ics-missing";
+      hint.textContent = "缺開始日期，無法下載日曆";
+      body.append(hint);
+    }
+
+    card.append(when, body);
+    return card;
   }
 
   onListFiltersChanged({ prefsImmediate = false } = {}) {
