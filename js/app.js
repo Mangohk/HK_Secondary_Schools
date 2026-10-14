@@ -428,23 +428,6 @@ function hkMonthDay(value, isDateTime) {
   return `${month}/${day}${formatHongKongWeekdayParen(instant)}`;
 }
 
-/** `09:00` in Asia/Hong_Kong. */
-function hkClock(value) {
-  const instant = new Date(value);
-  if (Number.isNaN(instant.getTime())) return "";
-  const parts = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Asia/Hong_Kong",
-    hour: "2-digit",
-    minute: "2-digit",
-    hourCycle: "h23",
-  }).formatToParts(instant);
-  let hour = parts.find((p) => p.type === "hour")?.value || "";
-  const minute = parts.find((p) => p.type === "minute")?.value || "";
-  if (hour === "24") hour = "00";
-  if (!hour || !minute) return "";
-  return `${hour.padStart(2, "0")}:${minute.padStart(2, "0")}`;
-}
-
 function ticketSchoolLabel(ev) {
   const schools = Array.isArray(ev?.schools)
     ? ev.schools.map((name) => decodeVisiblePercent(name).trim()).filter(Boolean)
@@ -508,23 +491,35 @@ export function formatActivityDayLabel(parent) {
   return hkMonthDay(parent?.dateStart, parent?.isDateTime);
 }
 
-/** Key-date day without a clock, e.g. `11/18（三）`. */
-export function formatTicketOpenDay(parent) {
-  return hkMonthDay(parent?.keyDateStart, parent?.keyDateIsDateTime);
+/**
+ * Parent-card key date in the site's day/month order.
+ * Reuses formatHongKongDateRange (same weekday and the space before the clock
+ * as the ticket card), then drops the year.
+ * Timed: `18/11（三） 09:00`. All-day: `20/10（二）`.
+ */
+function formatParentTicketWhen(parent) {
+  const value = parent?.keyDateStart;
+  if (!value) return "";
+  const full = formatHongKongDateRange(value, null, Boolean(parent.keyDateIsDateTime));
+  if (!full || full === "日期待定") return "";
+  return full.replace(/\/\d{4}/g, "");
 }
 
-/** `11/18（三）09:00` when the key date has a clock; otherwise the day only. */
+/** Key-date day without a clock, e.g. `18/11（三）`. */
+export function formatTicketOpenDay(parent) {
+  const when = formatParentTicketWhen(parent);
+  if (!when) return "";
+  return when.split(" ")[0];
+}
+
+/** `18/11（三） 09:00` when the key date has a clock; otherwise the day only. */
 export function formatTicketOpenStamp(parent) {
-  const day = formatTicketOpenDay(parent);
-  if (!day) return "";
-  if (!parent?.keyDateIsDateTime) return day;
-  const time = hkClock(parent.keyDateStart);
-  return time ? `${day}${time}` : day;
+  return formatParentTicketWhen(parent);
 }
 
 /**
- * Parent-card line. Upcoming: 「🎟 索票：11/18（三）09:00」.
- * Once the key date has passed: 「索票已於 11/18（三）開始」.
+ * Parent-card line. Upcoming: 「🎟 索票：18/11（三） 09:00」.
+ * Once the key date has passed: 「索票已於 18/11（三）開始」.
  * @returns {{ past: boolean, text: string } | null}
  */
 export function ticketLineText(parent, now = new Date()) {
