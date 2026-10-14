@@ -1,4 +1,4 @@
-import { downloadEventIcs } from "./ics.js";
+import { downloadEventIcs } from "./ics.js?v=schoolscope-6";
 
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
@@ -387,6 +387,168 @@ function compareEventsNearest(a, b, now = new Date()) {
   return String(a?.id || "").localeCompare(String(b?.id || ""));
 }
 
+const TICKET_OPEN_KIND = "ticket-open";
+
+/** YYYY-MM-DD in Asia/Hong_Kong. Date-only values are already that calendar day. */
+function hkCalendarDay(value, isDateTime) {
+  if (value == null || value === "") return "";
+  if (!isDateTime) {
+    const ymd = String(value).slice(0, 10);
+    return /^\d{4}-\d{2}-\d{2}$/.test(ymd) ? ymd : "";
+  }
+  const instant = new Date(value);
+  if (Number.isNaN(instant.getTime())) return "";
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Hong_Kong",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(instant);
+  const get = (type) => parts.find((p) => p.type === type)?.value || "";
+  const year = get("year");
+  const month = get("month");
+  const day = get("day");
+  return year && month && day ? `${year}-${month}-${day}` : "";
+}
+
+/** `12/5（六）` — month/day without a leading zero, Hong Kong weekday. */
+function hkMonthDay(value, isDateTime) {
+  const ymd = hkCalendarDay(value, isDateTime);
+  if (!ymd) return "";
+  const instant = isDateTime ? new Date(value) : new Date(`${ymd}T12:00:00+08:00`);
+  if (Number.isNaN(instant.getTime())) return "";
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Hong_Kong",
+    month: "numeric",
+    day: "numeric",
+  }).formatToParts(instant);
+  const month = parts.find((p) => p.type === "month")?.value;
+  const day = parts.find((p) => p.type === "day")?.value;
+  if (!month || !day) return "";
+  return `${month}/${day}${formatHongKongWeekdayParen(instant)}`;
+}
+
+/** `09:00` in Asia/Hong_Kong. */
+function hkClock(value) {
+  const instant = new Date(value);
+  if (Number.isNaN(instant.getTime())) return "";
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Hong_Kong",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(instant);
+  let hour = parts.find((p) => p.type === "hour")?.value || "";
+  const minute = parts.find((p) => p.type === "minute")?.value || "";
+  if (hour === "24") hour = "00";
+  if (!hour || !minute) return "";
+  return `${hour.padStart(2, "0")}:${minute.padStart(2, "0")}`;
+}
+
+function ticketSchoolLabel(ev) {
+  const schools = Array.isArray(ev?.schools)
+    ? ev.schools.map((name) => decodeVisiblePercent(name).trim()).filter(Boolean)
+    : [];
+  if (!schools.length) return "教育局／全港";
+  return schools.join("、");
+}
+
+function ticketActivityLabel(ev) {
+  const title = decodeVisiblePercent(ev?.title || "").trim();
+  const schools = Array.isArray(ev?.schools)
+    ? ev.schools.map((name) => decodeVisiblePercent(name).trim()).filter(Boolean)
+    : [];
+  for (const school of schools) {
+    if (school && title.startsWith(school)) {
+      const rest = title.slice(school.length).trim();
+      if (rest) return rest;
+    }
+  }
+  return title;
+}
+
+/** 「【索票】{school} · {activity}」 */
+export function ticketCardTitle(ev) {
+  const activity = ticketActivityLabel(ev);
+  const school = ticketSchoolLabel(ev);
+  return activity ? `【索票】${school} · ${activity}` : `【索票】${school}`;
+}
+
+/**
+ * In-memory 索票 row. Nothing is written back to events.json.
+ * Derived only when keyDateKind is ticket-open, keyDateStart is set,
+ * and that Hong Kong day differs from dateStart's Hong Kong day.
+ * Missing keyDateKind is treated as other (no card).
+ * @returns {object | null}
+ */
+export function deriveTicketEvent(parent) {
+  if (!parent?.id || parent.derivedFrom) return null;
+  if (parent.keyDateKind !== TICKET_OPEN_KIND) return null;
+  if (!parent.keyDateStart) return null;
+  const keyDay = hkCalendarDay(parent.keyDateStart, parent.keyDateIsDateTime);
+  const startDay = hkCalendarDay(parent.dateStart, parent.isDateTime);
+  if (!keyDay || !startDay || keyDay === startDay) return null;
+  const isDateTime = Boolean(parent.keyDateIsDateTime);
+  return {
+    id: `${parent.id}-key`,
+    derivedFrom: parent.id,
+    type: "索票／登記",
+    status: parent.status,
+    schools: Array.isArray(parent.schools) ? parent.schools.slice() : [],
+    dateStart: parent.keyDateStart,
+    dateEnd: null,
+    isDateTime,
+    title: ticketCardTitle(parent),
+    sourceUrl: parent.sourceUrl || "",
+  };
+}
+
+/** Activity day for the 「活動日：12/5（六）›」 jump. */
+export function formatActivityDayLabel(parent) {
+  return hkMonthDay(parent?.dateStart, parent?.isDateTime);
+}
+
+/** Key-date day without a clock, e.g. `11/18（三）`. */
+export function formatTicketOpenDay(parent) {
+  return hkMonthDay(parent?.keyDateStart, parent?.keyDateIsDateTime);
+}
+
+/** `11/18（三）09:00` when the key date has a clock; otherwise the day only. */
+export function formatTicketOpenStamp(parent) {
+  const day = formatTicketOpenDay(parent);
+  if (!day) return "";
+  if (!parent?.keyDateIsDateTime) return day;
+  const time = hkClock(parent.keyDateStart);
+  return time ? `${day}${time}` : day;
+}
+
+/**
+ * Parent-card line. Upcoming: 「🎟 索票：11/18（三）09:00」.
+ * Once the key date has passed: 「索票已於 11/18（三）開始」.
+ * @returns {{ past: boolean, text: string } | null}
+ */
+export function ticketLineText(parent, now = new Date()) {
+  const ticket = deriveTicketEvent(parent);
+  if (!ticket) return null;
+  const day = formatTicketOpenDay(parent);
+  if (!day) return null;
+  if (isEventPast(ticket, now)) return { past: true, text: `索票已於 ${day}開始` };
+  const stamp = formatTicketOpenStamp(parent);
+  return { past: false, text: `🎟 索票：${stamp}` };
+}
+
+/**
+ * Watchlist rows: parents stay (including past, greyed by the card).
+ * Past ticket rows are omitted from both the count and the list.
+ * Upcoming tickets sort with parents by next start.
+ */
+export function mergeWatchlistEvents(parents, tickets, now = new Date()) {
+  const upcomingTickets = (tickets || []).filter((ev) => !isEventPast(ev, now));
+  return (parents || [])
+    .concat(upcomingTickets)
+    .sort((a, b) => compareEventsNearest(a, b, now));
+}
+
 export class App {
   constructor() {
     this.schools = [];
@@ -744,21 +906,60 @@ export class App {
   }
 
   /**
+   * Build in-memory 索票 rows from keyDateKind. Never written back to events.json.
+   */
+  attachDerivedTickets() {
+    const events = this.eventsPayload?.events;
+    const derived = [];
+    const byParent = new Map();
+    const byId = new Map();
+    if (Array.isArray(events)) {
+      for (const ev of events) {
+        if (ev?.id) byId.set(ev.id, ev);
+        const ticket = deriveTicketEvent(ev);
+        if (!ticket) continue;
+        derived.push(ticket);
+        byParent.set(ev.id, ticket);
+      }
+    }
+    this.eventById = byId;
+    this.derivedTicketEvents = derived;
+    this.ticketByParentId = byParent;
+  }
+
+  /**
    * One-time index: schools.json nameZh → events whose schools[] include that name.
    * Events with an empty schools array are territory-wide and stay out of the map.
+   * Ticket rows are indexed separately so past ones can be dropped at render time.
    */
   indexSchoolEvents() {
     if (this.schoolEventsByName) return;
     const events = this.eventsPayload?.events;
     if (!Array.isArray(events) || !this.schools?.length) return;
 
+    this.attachDerivedTickets();
+
     const byName = new Map();
+    const ticketsByName = new Map();
     const canonical = new Map();
     for (const school of this.schools) {
       if (!school?.nameZh) continue;
       byName.set(school.nameZh, []);
+      ticketsByName.set(school.nameZh, []);
       canonical.set(String(school.nameZh).normalize("NFC"), school.nameZh);
     }
+
+    const pushNamed = (map, ev) => {
+      const schools = ev?.schools;
+      if (!Array.isArray(schools) || schools.length === 0) return;
+      const seen = new Set();
+      for (const raw of schools) {
+        const key = canonical.get(String(raw).normalize("NFC"));
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+        map.get(key).push(ev);
+      }
+    };
 
     let territory = 0;
     for (const ev of events) {
@@ -767,25 +968,25 @@ export class App {
         if (Array.isArray(schools) && schools.length === 0) territory += 1;
         continue;
       }
-      const seen = new Set();
-      for (const raw of schools) {
-        const key = canonical.get(String(raw).normalize("NFC"));
-        if (!key || seen.has(key)) continue;
-        seen.add(key);
-        byName.get(key).push(ev);
-      }
+      pushNamed(byName, ev);
     }
+    for (const ev of this.derivedTicketEvents || []) pushNamed(ticketsByName, ev);
 
     this.schoolEventsByName = byName;
+    this.derivedTicketsBySchool = ticketsByName;
     this.territoryEventCount = territory;
   }
 
-  /** School-scoped events, nearest upcoming first and past events last. */
-  eventsForSchool(nameZh) {
+  /**
+   * School-scoped rows for one watchlist card.
+   * Upcoming ticket rows count and sort by next start. Past ticket rows are omitted.
+   */
+  eventsForSchool(nameZh, now = new Date()) {
     if (!this.schoolEventsByName || !nameZh) return [];
-    const list = this.schoolEventsByName.get(nameZh);
-    if (!list?.length) return [];
-    return list.slice().sort((a, b) => compareEventsNearest(a, b));
+    const list = this.schoolEventsByName.get(nameZh) || [];
+    const tickets = this.derivedTicketsBySchool?.get(nameZh) || [];
+    if (!list.length && !tickets.length) return [];
+    return mergeWatchlistEvents(list, tickets, now);
   }
 
   /**
@@ -1362,20 +1563,31 @@ export class App {
     this.clearAllFilters();
   }
 
+  /**
+   * Same 升中 filters for source rows and derived ticket rows.
+   * Shared filters read schools (copied from the parent). Status reads the
+   * copied parent status. There is no 索票／登記 filter.
+   */
+  eventPassesListFilters(ev) {
+    const schools = Array.isArray(ev.schools) ? ev.schools : [];
+    // Empty schools=[] follow the territory toggle only (status exempt).
+    if (!schools.length) return this.showTerritoryEvents;
+    if (this.eventStatus !== "all" && ev.status !== this.eventStatus) return false;
+    if (!this.eventMatchesSharedFilters(ev)) return false;
+    return this.eventMatchesSchoolFilter(ev);
+  }
+
   renderEvents() {
     this.updateEventsFilterSummary();
     if (!this.eventsPayload?.events) return;
-    const total = this.eventsPayload.events.length;
-    const list = this.eventsPayload.events.filter((ev) => {
-      const schools = Array.isArray(ev.schools) ? ev.schools : [];
-      // Empty schools=[] follow the territory toggle only (status exempt).
-      if (!schools.length) return this.showTerritoryEvents;
-      if (this.eventStatus !== "all" && ev.status !== this.eventStatus) {
-        return false;
-      }
-      if (!this.eventMatchesSharedFilters(ev)) return false;
-      return this.eventMatchesSchoolFilter(ev);
-    });
+    if (!this.derivedTicketEvents) this.attachDerivedTickets();
+    const combined = this.eventsPayload.events.concat(this.derivedTicketEvents || []);
+    const total = combined.length;
+    // Upcoming nearest-first, then past (same split the watchlist uses).
+    // Past ticket rows stay in that past group; they are not dropped here.
+    const list = combined
+      .filter((ev) => this.eventPassesListFilters(ev))
+      .sort((a, b) => compareEventsNearest(a, b));
 
     if (this.els.eventsMeta) {
       const territoryVisible = list.filter((ev) => !ev.schools?.length).length;
@@ -1415,14 +1627,41 @@ export class App {
     if (isEmpty) return;
 
     for (const ev of list) {
-      this.els.eventsList.append(this.buildEventCard(ev));
+      this.els.eventsList.append(this.buildEventCard(ev, { anchor: true }));
     }
   }
 
+  /** Scroll the 升中 list to the parent. Clear filters when that card is not in the list. */
+  revealParentEvent(parentId) {
+    if (!parentId) return;
+    const find = () => this.els.eventsList?.querySelector(`[data-event-id="${parentId}"]`);
+    const focusCard = (el) => {
+      this.goToTab("events");
+      requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.classList.add("is-scroll-target");
+        el.tabIndex = -1;
+        el.focus({ preventScroll: true });
+        window.setTimeout(() => el.classList.remove("is-scroll-target"), 2200);
+      });
+    };
+    const existing = find();
+    if (existing) {
+      focusCard(existing);
+      return;
+    }
+    this.clearEventFilters();
+    const revealed = find();
+    if (revealed) focusCard(revealed);
+  }
+
   /** Shared 升中 event card (升中 tab and watchlist panel). */
-  buildEventCard(ev) {
+  buildEventCard(ev, { anchor = false } = {}) {
+    if (ev?.derivedFrom) return this.buildTicketCard(ev, { anchor });
     const card = document.createElement("article");
     card.className = "event-card";
+    card.dataset.eventId = ev.id || "";
+    if (anchor && ev.id) card.id = `event-${ev.id}`;
 
     const when = document.createElement("div");
     when.className = "event-when";
@@ -1469,6 +1708,14 @@ export class App {
       }
     }
     body.append(badges);
+
+    const ticketLine = ticketLineText(ev);
+    if (ticketLine) {
+      const line = document.createElement("p");
+      line.className = ticketLine.past ? "event-ticket-line is-past" : "event-ticket-line";
+      line.textContent = ticketLine.text;
+      body.append(line);
+    }
 
     if (ev.notes) {
       const notes = document.createElement("p");
@@ -1517,6 +1764,69 @@ export class App {
       hint.className = "event-ics-missing";
       hint.textContent = "缺開始日期，無法下載日曆";
       body.append(hint);
+    }
+
+    card.append(when, body);
+    return card;
+  }
+
+  /**
+   * Derived 索票 card. Main line is the ticket time. The only action is
+   * 「下載索票提醒」. 「活動日 ›」 scrolls to the parent card.
+   */
+  buildTicketCard(ev, { anchor = false } = {}) {
+    const card = document.createElement("article");
+    card.className = "event-card is-ticket";
+    card.dataset.eventId = ev.id || "";
+    card.dataset.derivedFrom = ev.derivedFrom || "";
+    if (anchor && ev.id) card.id = `event-${ev.id}`;
+
+    const when = document.createElement("div");
+    when.className = "event-when";
+    const main = document.createElement("span");
+    main.className = "event-when-main";
+    main.textContent = formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime);
+    when.append(main);
+
+    const parent = this.eventById?.get(ev.derivedFrom);
+    const activityDay = parent ? formatActivityDayLabel(parent) : "";
+    if (parent && activityDay) {
+      const jump = document.createElement("button");
+      jump.type = "button";
+      jump.className = "event-activity-jump";
+      jump.textContent = `活動日：${activityDay}›`;
+      jump.setAttribute("aria-label", `前往活動日 ${activityDay} 的項目`);
+      jump.addEventListener("click", () => this.revealParentEvent(parent.id));
+      when.append(jump);
+    }
+
+    const body = document.createElement("div");
+    body.className = "event-body";
+    const title = document.createElement("h3");
+    title.textContent = ev.title || "";
+    body.append(title);
+
+    const badges = document.createElement("div");
+    badges.className = "badges";
+    const badge = document.createElement("span");
+    badge.className = "badge badge-ticket";
+    badge.textContent = "索票";
+    badges.append(badge);
+    body.append(badges);
+
+    if (ev.dateStart) {
+      const links = document.createElement("p");
+      links.className = "event-links";
+      const icsBtn = document.createElement("button");
+      icsBtn.type = "button";
+      icsBtn.className = "event-ics-link";
+      icsBtn.textContent = "下載索票提醒";
+      icsBtn.setAttribute("aria-label", `下載「${ev.title || ev.id}」索票提醒`);
+      icsBtn.addEventListener("click", () => {
+        downloadEventIcs(ev);
+      });
+      links.append(icsBtn);
+      body.append(links);
     }
 
     card.append(when, body);

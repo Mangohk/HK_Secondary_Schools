@@ -63,10 +63,25 @@ https://mangohk.github.io/HK_Secondary_Schools/
 | `dateStart` | 必填 |
 | `dateEnd` | 可選／`null` |
 | `keyDateStart` / `keyDateIsDateTime` / `keyPoints` | 可選關鍵節點（截止、派票等） |
+| `keyDateKind` | 可選。`ticket-open`（索票／登記開始）、`deadline`（截止）、`other`（其他）。缺省視為 `other` |
 | `notes` | 說明 |
 | `sourceUrl` | 來源網址 |
 
 香港時間注意：有時刻的活動請把本地時間換成 UTC 再寫入。例如香港 2026-11-14 12:00 寫成 `2026-11-14T04:00:00.000Z`。純日期勿加 `Z`，用 `2027-01-04`。
+
+### 索票關鍵日（`keyDateKind`）
+
+頁面只在記憶體派生「索票」虛擬項目，**不會寫回** `events.json`。條件要三個同時成立：
+
+1. `keyDateKind` 是 `ticket-open`
+2. `keyDateStart` 有值
+3. `keyDateStart` 的香港日與 `dateStart` 的香港日不同
+
+缺省或任何其他值（包括 `deadline`、`other`）都不會派生。同一香港日的派票（例如活動當日現場派票）不要標 `ticket-open`。
+
+只在關鍵日**確實是索票或登記開始**時才標 `ticket-open`。截止、確認電郵、活動當日派票、詳情未定的預告，都不要標。
+
+**覆寫或更新現有項目時必須保留已有的 `keyDateKind`。** 不要在同步時清掉或改回未標，除非該關鍵日已不再是索票／登記開始。其他欄位照常更新時，這個欄位原樣留下。
 
 ## 資料與授權
 
