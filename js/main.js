@@ -6,8 +6,8 @@
  * works even when Firebase is unavailable or not configured.
  */
 
-import { App } from "./app.js?v=schoolscope-3";
-import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js?v=schoolscope-3";
+import { App } from "./app.js?v=schoolscope-4";
+import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js?v=schoolscope-4";
 
 const app = new App();
 app.init();
@@ -103,8 +103,8 @@ async function bootAuthLayer() {
   try {
     const [{ initializeApp }, { createAuthChrome }, { createPrefsStore }] = await Promise.all([
       import("https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"),
-      import("./auth.js?v=schoolscope-3"),
-      import("./prefs.js?v=schoolscope-3"),
+      import("./auth.js?v=schoolscope-4"),
+      import("./prefs.js?v=schoolscope-4"),
     ]);
 
     try {

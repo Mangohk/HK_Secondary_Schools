@@ -1329,22 +1329,45 @@ main {
   font-size: 0.9rem;
 }
 
-.event-body a {
+.event-body a,
+.event-ics-link {
   color: var(--teal-deep);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
-.event-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.55rem;
+/* Inline with the source link; padding grows the hit box to ~44px. */
+.event-ics-link {
+  appearance: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0.7rem 0.15rem;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: inherit;
+  line-height: 1.55;
+  text-decoration: underline;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: baseline;
 }
 
-.event-actions .event-ics-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
+.event-ics-link:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.event-link-sep {
+  white-space: pre;
+  color: var(--ink-soft);
+}
+
+.event-body p.event-ics-missing {
+  margin: 0.2rem 0 0;
+  color: #5c6570;
+  font-size: 0.78rem;
+  line-height: 1.35;
 }
 
 /* Long ASCII URLs in notes must not stretch the card (iPhone Safari shrink-to-fit). */
