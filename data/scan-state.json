@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-10-14T03:21:28Z",
+  "districts": {
+    "沙田": {
+      "lastScannedAt": "2026-10-14T02:51:39Z",
+      "lastStatus": "ok"
+    },
+    "九龍城": {
+      "lastScannedAt": "2026-10-14T03:04:06Z",
+      "lastStatus": "ok"
+    },
+    "觀塘": {
+      "lastScannedAt": "2026-10-14T03:10:30Z",
+      "lastStatus": "ok"
+    }
+  },
+  "schools": {},
+  "rotation": {
+    "lastDistrictBatch": null,
+    "lastRotatedAt": null
+  },
+  "lightScan": {
+    "lastRanAt": null,
+    "lastStatus": null
+  }
+}
