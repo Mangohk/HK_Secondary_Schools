@@ -1260,38 +1260,48 @@ export class App {
         body.append(notes);
       }
 
+      const links = document.createElement("p");
+      links.className = "event-links";
       if (ev.sourceUrl) {
         const href = ensureUrl(decodeHrefPercent(ev.sourceUrl));
-        const links = document.createElement("p");
         const anchor = document.createElement("a");
         anchor.setAttribute("href", href);
         anchor.target = "_blank";
         anchor.rel = "noopener noreferrer";
         anchor.textContent = eventSourceLabel(ev, ev.sourceUrl);
         links.append(anchor);
-        body.append(links);
       }
 
-      const actions = document.createElement("div");
-      actions.className = "event-actions";
-      const icsBtn = document.createElement("button");
-      icsBtn.type = "button";
-      icsBtn.className = "btn btn-secondary event-ics-btn";
-      icsBtn.textContent = "加入日曆";
-      icsBtn.setAttribute(
-        "aria-label",
-        `下載「${decodeVisiblePercent(ev.title) || ev.id}」日曆檔`
-      );
-      const canIcs = Boolean(ev.dateStart);
-      icsBtn.disabled = !canIcs;
-      if (!canIcs) {
-        icsBtn.title = "缺少開始日期，無法加入日曆";
+      if (ev.dateStart) {
+        if (links.childNodes.length) {
+          const sep = document.createElement("span");
+          sep.className = "event-link-sep";
+          sep.setAttribute("aria-hidden", "true");
+          sep.textContent = " · ";
+          links.append(sep);
+        }
+        const icsBtn = document.createElement("button");
+        icsBtn.type = "button";
+        icsBtn.className = "event-ics-link";
+        icsBtn.textContent = "下載日曆";
+        icsBtn.setAttribute(
+          "aria-label",
+          `下載「${decodeVisiblePercent(ev.title) || ev.id}」日曆檔`
+        );
+        icsBtn.addEventListener("click", () => {
+          downloadEventIcs(ev);
+        });
+        links.append(icsBtn);
       }
-      icsBtn.addEventListener("click", () => {
-        downloadEventIcs(ev);
-      });
-      actions.append(icsBtn);
-      body.append(actions);
+
+      if (links.childNodes.length) body.append(links);
+
+      if (!ev.dateStart) {
+        const hint = document.createElement("p");
+        hint.className = "event-ics-missing";
+        hint.textContent = "缺開始日期，無法下載日曆";
+        body.append(hint);
+      }
 
       card.append(when, body);
       this.els.eventsList.append(card);
