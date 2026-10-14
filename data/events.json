@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-14T03:04:06Z",
+  "syncedAt": "2026-10-14T03:10:30Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -1300,8 +1300,8 @@
       "isDateTime": true,
       "keyDateStart": null,
       "keyDateIsDateTime": false,
-      "keyPoints": "",
-      "notes": "含入學資訊講座、學科展覽及校園參觀。官網焦點消息 2026-09-22；CHSC id=5154。",
+      "keyPoints": "09:00–12:30；報名 forms.gle/Sw4syrZgaiKPFASf9",
+      "notes": "【更新】官網焦點消息（2026-09-22）報名連結為 https://forms.gle/Sw4syrZgaiKPFASf9 ；CHSC id=5154 備註另列 forms.gle/oqNoUeBsPPHdWnvJ8，以校官網為準。內容：入學資訊講座、學科展覽及校園參觀。",
       "sourceUrl": "https://www.holmglad.edu.hk/Content/08_others/01_what_is_new/index.aspx"
     },
     {
@@ -1351,8 +1351,8 @@
       "isDateTime": true,
       "keyDateStart": "2026-10-27",
       "keyDateIsDateTime": false,
-      "keyPoints": "網上報名期約 10-27 至 11-21（兩場相同）",
-      "notes": "上午 10:00–12:00、下午 14:00–16:00；含中一自行分配資訊。官網報名 forms.gle/ytFJySc6FdvuNRN17。",
+      "keyPoints": "網上報名 10-27 至 11-21；兩場相同",
+      "notes": "【更新】核對官網新聞仍列 上午 10:00–12:00、下午 14:00–16:00；報名 https://forms.gle/ytFJySc6FdvuNRN17 。另見 CHSC 學校自行登記開放日 id=5109（備註寫報名十一月上旬開放，以校官網報名期為準）。",
       "sourceUrl": "https://cccmmwc.edu.hk/tc/news_detail.php?id=391&wid="
     },
     {
@@ -7551,6 +7551,91 @@
       "keyPoints": "所有申請者；家長及學生均需出席；時間稍後通知",
       "notes": "見官網中一自行分配學位申請辦法（2027年9月入學）。",
       "sourceUrl": "https://www.scientia.edu.hk/show_page.php?ID=29"
+    },
+    {
+      "id": "ev-447",
+      "title": "福建中學 中一入學簡介會（2027年9月入學）",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "福建中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-14T06:00:00.000Z",
+      "dateEnd": "2026-11-14T07:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "14:00–15:30；須事前報名",
+      "notes": "直資；來源：校方《中一入學申請日程（2027年9月入學）》PDF（官網 ADMISSION／Admission Schedule）。與東區「福建中學(小西灣)」不同校。",
+      "sourceUrl": "https://s3-ap-southeast-1.amazonaws.com/i.fmscms.ievent.hk/upload/fmscms/files/School_Documents/2026-27%20Admission%20Schedule_website%20use.pdf"
+    },
+    {
+      "id": "ev-448",
+      "title": "福建中學 中一入學申請（本地小六／2027年9月入學）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "福建中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-11-22",
+      "keyDateStart": "2026-11-22",
+      "keyDateIsDateTime": false,
+      "keyPoints": "本地截止 11-22 23:59；非本地截止 11-16 23:59；10-12 09:00 起接受申請",
+      "notes": "網上申請：https://fms.ievent.hk/event/1175?lang=en ；日程 PDF 同上。非本地申請者另見日程表。",
+      "sourceUrl": "https://s3-ap-southeast-1.amazonaws.com/i.fmscms.ievent.hk/upload/fmscms/files/School_Documents/2026-27%20Admission%20Schedule_website%20use.pdf"
+    },
+    {
+      "id": "ev-449",
+      "title": "福建中學 中一入學面試（第一輪）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "福建中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-28",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "本地申請者第一輪面試",
+      "notes": "非本地第一輪評估為 2026-11-21。短名單／第二輪名單於 2026-12-04 18:00 公布。",
+      "sourceUrl": "https://s3-ap-southeast-1.amazonaws.com/i.fmscms.ievent.hk/upload/fmscms/files/School_Documents/2026-27%20Admission%20Schedule_website%20use.pdf"
+    },
+    {
+      "id": "ev-450",
+      "title": "福建中學 中一入學面試（第二輪）",
+      "type": "面試",
+      "status": "官方確認",
+      "schools": [
+        "福建中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-12",
+      "dateEnd": null,
+      "keyDateStart": "2026-12-04",
+      "keyDateIsDateTime": false,
+      "keyPoints": "短名單 12-04 18:00 公布",
+      "notes": "僅限入選第二輪者；非本地同日為第二輪評估。",
+      "sourceUrl": "https://s3-ap-southeast-1.amazonaws.com/i.fmscms.ievent.hk/upload/fmscms/files/School_Documents/2026-27%20Admission%20Schedule_website%20use.pdf"
+    },
+    {
+      "id": "ev-451",
+      "title": "福建中學 中一入學申請結果公布",
+      "type": "放榜／結果",
+      "status": "官方確認",
+      "schools": [
+        "福建中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-22",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "",
+      "notes": "取錄後留位及初步註冊 2026-12-23 至 2027-01-08；正式註冊 2027-07-08 至 07-09。",
+      "sourceUrl": "https://s3-ap-southeast-1.amazonaws.com/i.fmscms.ievent.hk/upload/fmscms/files/School_Documents/2026-27%20Admission%20Schedule_website%20use.pdf"
     }
   ]
 }
