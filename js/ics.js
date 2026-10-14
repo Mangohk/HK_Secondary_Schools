@@ -208,6 +208,14 @@ export function buildEventIcs(ev, { now = new Date() } = {}) {
   lines.push(`SUMMARY:${icsEscapeText(summary)}`);
   if (description) lines.push(`DESCRIPTION:${icsEscapeText(description)}`);
   if (url) lines.push(`URL:${url}`);
+  // Derived 索票 rows (id `{parent}-key`) remind one day before the opening.
+  if (ev.derivedFrom) {
+    lines.push("BEGIN:VALARM");
+    lines.push("TRIGGER:-P1D");
+    lines.push("ACTION:DISPLAY");
+    lines.push(`DESCRIPTION:${icsEscapeText("索票提醒")}`);
+    lines.push("END:VALARM");
+  }
   lines.push("END:VEVENT", "END:VCALENDAR");
 
   const content = `${lines.map(icsFoldLine).join("\r\n")}\r\n`;
