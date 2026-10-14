@@ -6,7 +6,7 @@
  * works even when Firebase is unavailable or not configured.
  */
 
-import { App } from "./app.js?v=schoolscope-6";
+import { App } from "./app.js?v=schoolscope-7";
 import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js?v=schoolscope-6";
 
 const app = new App();
