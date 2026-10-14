@@ -1335,6 +1335,18 @@ main {
   text-underline-offset: 2px;
 }
 
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+}
+
+.event-actions .event-ics-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 /* Long ASCII URLs in notes must not stretch the card (iPhone Safari shrink-to-fit). */
 .event-card,
 .event-body,

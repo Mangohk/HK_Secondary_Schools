@@ -1,3 +1,5 @@
+import { downloadEventIcs } from "./ics.js";
+
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
 /** Official 18-district display order (Hong Kong Island → Kowloon → New Territories). */
@@ -1269,6 +1271,27 @@ export class App {
         links.append(anchor);
         body.append(links);
       }
+
+      const actions = document.createElement("div");
+      actions.className = "event-actions";
+      const icsBtn = document.createElement("button");
+      icsBtn.type = "button";
+      icsBtn.className = "btn btn-secondary event-ics-btn";
+      icsBtn.textContent = "加入日曆";
+      icsBtn.setAttribute(
+        "aria-label",
+        `下載「${decodeVisiblePercent(ev.title) || ev.id}」日曆檔`
+      );
+      const canIcs = Boolean(ev.dateStart);
+      icsBtn.disabled = !canIcs;
+      if (!canIcs) {
+        icsBtn.title = "缺少開始日期，無法加入日曆";
+      }
+      icsBtn.addEventListener("click", () => {
+        downloadEventIcs(ev);
+      });
+      actions.append(icsBtn);
+      body.append(actions);
 
       card.append(when, body);
       this.els.eventsList.append(card);
