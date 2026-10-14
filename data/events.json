@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-14T03:10:30Z",
+  "syncedAt": "2026-10-14T17:05:24Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -190,7 +190,7 @@
     {
       "id": "ev-10",
       "notionPageId": "3f01b69134c1811ab613ed2fdb8b000a",
-      "title": "沙田循道衞理中學 小六輔導日／開放日（P.6 Guidance Day）",
+      "title": "沙田循道衞理中學 升中選校家長講座及學習成果展 2026",
       "type": "資訊日",
       "status": "官方確認",
       "schools": [
@@ -199,10 +199,10 @@
       "dateStart": "2026-12-05T05:00:00.000Z",
       "dateEnd": "2026-12-05T09:30:00.000Z",
       "isDateTime": true,
-      "keyDateStart": null,
-      "keyDateIsDateTime": false,
-      "keyPoints": "下午1時至5時30分（CHSC）",
-      "notes": "【更新】校曆仍列 2026-12-05 P.6 Guidance Day；CHSC 學校自行登記開放日 id=5093 補時段 下午1時正至5時30分、地點新田圍邨主校舍。原條目無時段。",
+      "keyDateStart": "2026-11-18T01:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyPoints": "門票登記開始（11-18 09:00；每家庭最多4張；額滿即止）",
+      "notes": "【更新】12/5（六）13:00–17:30（12:30 開放校園登記）；新田圍邨主校舍；11/18 09:00 起 http://www.stmc.edu.hk 索票每家最多4張；報唔到可留電郵事後收錄影；電話 26021300／info@stmc.edu.hk；CHSC id=5093；校曆仍列同日 P.6 Guidance Day；官網講座頁 wid=108 暫仍 2025。",
       "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5093"
     },
     {
