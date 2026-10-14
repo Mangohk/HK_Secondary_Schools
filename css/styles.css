@@ -1363,7 +1363,7 @@ main {
   color: var(--ink-soft);
 }
 
-.event-ics-missing {
+.event-body p.event-ics-missing {
   margin: 0.2rem 0 0;
   color: #5c6570;
   font-size: 0.78rem;
