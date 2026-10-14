@@ -22,9 +22,29 @@ export function createAuthChrome({ firebaseApp, mount, onUser, enabled = true })
   const provider = enabled ? new GoogleAuthProvider() : null;
   let currentUser = null;
   let busy = false;
+  /** @type {null | (() => void)} */
+  let disposeMenu = null;
+
+  function getDisplayLabel(user) {
+    return user.displayName || user.email || "已登入";
+  }
+
+  function getAvatarInitial(user) {
+    const source = (user.displayName || user.email || "").trim();
+    const first = source ? [...source][0] : "";
+    return first || "?";
+  }
+
+  function clearMenuListeners() {
+    if (disposeMenu) {
+      disposeMenu();
+      disposeMenu = null;
+    }
+  }
 
   function render() {
     if (!mount) return;
+    clearMenuListeners();
     mount.replaceChildren();
     mount.hidden = false;
 
@@ -60,8 +80,22 @@ export function createAuthChrome({ firebaseApp, mount, onUser, enabled = true })
       return;
     }
 
+    const displayLabel = getDisplayLabel(currentUser);
+    const menuId = "auth-account-menu";
+
     const wrap = document.createElement("div");
     wrap.className = "auth-user";
+
+    const trigger = document.createElement("button");
+    trigger.type = "button";
+    trigger.className = "auth-avatar-trigger";
+    trigger.setAttribute("aria-haspopup", "menu");
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.setAttribute("aria-controls", menuId);
+    trigger.setAttribute(
+      "aria-label",
+      currentUser.displayName || currentUser.email || "帳戶選單"
+    );
 
     if (currentUser.photoURL) {
       const img = document.createElement("img");
@@ -71,22 +105,79 @@ export function createAuthChrome({ firebaseApp, mount, onUser, enabled = true })
       img.width = 32;
       img.height = 32;
       img.referrerPolicy = "no-referrer";
-      wrap.append(img);
+      trigger.append(img);
+    } else {
+      const initial = document.createElement("span");
+      initial.className = "auth-avatar auth-avatar-initial";
+      initial.textContent = getAvatarInitial(currentUser);
+      initial.setAttribute("aria-hidden", "true");
+      trigger.append(initial);
     }
 
-    const name = document.createElement("span");
+    const menu = document.createElement("div");
+    menu.id = menuId;
+    menu.className = "auth-menu";
+    menu.hidden = true;
+    menu.setAttribute("role", "menu");
+
+    const name = document.createElement("div");
     name.className = "auth-display-name";
-    name.textContent = currentUser.displayName || currentUser.email || "已登入";
+    name.textContent = displayLabel;
     name.title = currentUser.email || "";
-    wrap.append(name);
+    menu.append(name);
 
     const out = document.createElement("button");
     out.type = "button";
-    out.className = "btn btn-secondary auth-logout-btn";
+    out.className = "auth-logout-btn";
+    out.setAttribute("role", "menuitem");
     out.textContent = "登出";
-    out.addEventListener("click", () => logOut());
-    wrap.append(out);
+    out.addEventListener("click", () => {
+      closeMenu({ returnFocus: false });
+      logOut();
+    });
+    menu.append(out);
 
+    function closeMenu({ returnFocus = true } = {}) {
+      if (menu.hidden) return;
+      clearMenuListeners();
+      menu.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+      if (returnFocus) trigger.focus();
+    }
+
+    function openMenu() {
+      if (!menu.hidden) return;
+      menu.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      out.focus();
+
+      const onPointerDown = (event) => {
+        if (wrap.contains(event.target)) return;
+        closeMenu();
+      };
+      const onKeyDown = (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeMenu();
+        }
+      };
+
+      document.addEventListener("pointerdown", onPointerDown, true);
+      document.addEventListener("keydown", onKeyDown, true);
+      disposeMenu = () => {
+        document.removeEventListener("pointerdown", onPointerDown, true);
+        document.removeEventListener("keydown", onKeyDown, true);
+      };
+    }
+
+    function toggleMenu() {
+      if (menu.hidden) openMenu();
+      else closeMenu();
+    }
+
+    trigger.addEventListener("click", () => toggleMenu());
+
+    wrap.append(trigger, menu);
     mount.append(wrap);
   }
 
