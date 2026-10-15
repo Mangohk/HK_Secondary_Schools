@@ -21,7 +21,7 @@
       "dateEnd": "可選／null。同日或同場結束；全日活動可省略",
       "keyDateStart": "可選／null。關鍵節點（截止、派票開始等），格式規則同 isDateTime 對應的 keyDateIsDateTime",
       "keyDateIsDateTime": "keyDateStart 是否含時刻",
-      "keyDateKind": "可選。ticket-open｜deadline｜other。缺省視為 other，不派生索票項。僅當 keyDateKind 為 ticket-open、keyDateStart 有值，且其香港日與 dateStart 的香港日不同，頁面才在記憶體派生索票卡（id 為 {id}-key，不寫回本檔）。更新或覆寫現有項目時必須保留已有的 keyDateKind，不要清掉或改回未標，除非該關鍵日已不再是索票／登記開始。",
+      "keyDateKind": "可選。ticket-open｜deadline｜other。缺省視為 other，不派生登記項。僅當 keyDateKind 為 ticket-open、keyDateStart 有值，且其香港日與 dateStart 的香港日不同，頁面才在記憶體派生登記卡（id 為 {id}-key，不寫回本檔）。更新或覆寫現有項目時必須保留已有的 keyDateKind，不要清掉或改回未標，除非該關鍵日已不再是索票／登記開始。",
       "keyPoints": "可選短註，顯示於日期欄「關鍵：…」",
       "notes": "說明／場地／預約等",
       "sourceUrl": "來源網址"

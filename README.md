@@ -69,9 +69,9 @@ https://mangohk.github.io/HK_Secondary_Schools/
 
 香港時間注意：有時刻的活動請把本地時間換成 UTC 再寫入。例如香港 2026-11-14 12:00 寫成 `2026-11-14T04:00:00.000Z`。純日期勿加 `Z`，用 `2027-01-04`。
 
-### 索票關鍵日（`keyDateKind`）
+### 登記關鍵日（`keyDateKind`）
 
-頁面只在記憶體派生「索票」虛擬項目，**不會寫回** `events.json`。條件要三個同時成立：
+頁面只在記憶體派生「登記」虛擬項目，**不會寫回** `events.json`。條件要三個同時成立：
 
 1. `keyDateKind` 是 `ticket-open`
 2. `keyDateStart` 有值
