@@ -1,4 +1,4 @@
-import { downloadEventIcs } from "./ics.js?v=schoolscope-9";
+import { downloadEventIcs } from "./ics.js?v=schoolscope-10";
 
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
@@ -500,6 +500,64 @@ function hkCalendarDay(value, isDateTime) {
   const month = get("month");
   const day = get("day");
   return year && month && day ? `${year}-${month}-${day}` : "";
+}
+
+/** Countdown only while the start day is today through 30 Hong Kong days ahead. */
+const COUNTDOWN_WINDOW_DAYS = 30;
+
+/**
+ * Whole Hong Kong calendar days from today to a start value.
+ * Date-only strings are that calendar day. Instants use Asia/Hong_Kong date parts.
+ * Negative when the start day is already behind today. Null when unusable.
+ * @returns {number | null}
+ */
+export function hkRemainingCalendarDays(value, isDateTime, now = new Date()) {
+  const target = hkCalendarDay(value, Boolean(isDateTime));
+  const today = hkCalendarDay(now.toISOString(), true);
+  if (!target || !today) return null;
+  const [ty, tm, td] = target.split("-").map(Number);
+  const [ny, nm, nd] = today.split("-").map(Number);
+  return Math.round((Date.UTC(ty, tm - 1, td) - Date.UTC(ny, nm - 1, nd)) / 86400000);
+}
+
+/**
+ * Countdown copy beside a 升中 card's start day, or "" when it should not show.
+ * Activity cards count to `dateStart`. 登記 virtual cards store `keyDateStart`
+ * on `dateStart`, so they count to the registration day, never the end day.
+ * Past cards (status 已過, or the Hong Kong end already over) stay blank.
+ * 0 → 今日, 1 → 聽日, 2–30 → 仲有 N 日. 登記 cards prefix 「登記 · 」.
+ */
+export function eventCountdownLabel(ev, now = new Date()) {
+  if (!ev?.dateStart || isEventPast(ev, now)) return "";
+  const days = hkRemainingCalendarDays(ev.dateStart, ev.isDateTime, now);
+  if (days == null || days < 0 || days > COUNTDOWN_WINDOW_DAYS) return "";
+  const core = days === 0 ? "今日" : days === 1 ? "聽日" : `仲有 ${days} 日`;
+  return ev.derivedFrom || ev.type === "登記" ? `登記 · ${core}` : core;
+}
+
+/** First date line, with the countdown bound to that line. Later lines (clocks) follow. */
+function fillEventWhenMain(main, label, countdown) {
+  main.replaceChildren();
+  const [first, ...rest] = String(label || "").split("\n");
+  const line = document.createElement("span");
+  line.className = "event-when-line";
+  const date = document.createElement("span");
+  date.className = "event-when-date";
+  date.textContent = first;
+  line.append(date);
+  if (countdown) {
+    const mark = document.createElement("span");
+    mark.className = "event-countdown";
+    mark.textContent = countdown;
+    line.append(mark);
+  }
+  main.append(line);
+  if (rest.length) {
+    const more = document.createElement("span");
+    more.className = "event-when-rest";
+    more.textContent = rest.join("\n");
+    main.append(more);
+  }
 }
 
 function ticketSchoolLabel(ev) {
@@ -1741,7 +1799,14 @@ export class App {
 
     const when = document.createElement("div");
     when.className = "event-when";
-    when.textContent = formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime);
+    const main = document.createElement("div");
+    main.className = "event-when-main";
+    fillEventWhenMain(
+      main,
+      formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime),
+      eventCountdownLabel(ev)
+    );
+    when.append(main);
     if (ev.keyPoints) {
       const key = document.createElement("small");
       key.textContent = `關鍵：${decodeVisiblePercent(ev.keyPoints)}`;
@@ -1859,9 +1924,13 @@ export class App {
 
     const when = document.createElement("div");
     when.className = "event-when";
-    const main = document.createElement("span");
+    const main = document.createElement("div");
     main.className = "event-when-main";
-    main.textContent = formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime);
+    fillEventWhenMain(
+      main,
+      formatHongKongDateRange(ev.dateStart, ev.dateEnd, ev.isDateTime),
+      eventCountdownLabel(ev)
+    );
     when.append(main);
 
     const parent = this.eventById?.get(ev.derivedFrom);

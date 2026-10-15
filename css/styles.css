@@ -8,6 +8,8 @@
   --teal-soft: #d5ebe4;
   --amber: #c47a2c;
   --amber-soft: #f3e0c4;
+  /* Apple systemOrange (light). Countdown copy only. */
+  --system-orange: #ff9500;
   --line: rgba(20, 35, 31, 0.12);
   --shadow: 0 18px 40px rgba(20, 35, 31, 0.08);
   --radius: 14px;
@@ -1522,7 +1524,42 @@ main {
 
 .event-when-main {
   display: block;
+  min-width: 0;
+  white-space: normal;
+}
+
+/* Date main line and countdown stay together. The countdown wraps under the
+   date inside this row; it is not a separate card row. */
+.event-when-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.4rem;
+  row-gap: 0.05rem;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: normal;
+}
+
+.event-when-date {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.event-when-rest {
+  display: block;
   white-space: pre-line;
+}
+
+.event-countdown {
+  flex: 0 0 auto;
+  color: var(--system-orange);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow-wrap: normal;
 }
 
 .event-activity-jump {
