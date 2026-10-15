@@ -1,4 +1,4 @@
-import { downloadEventIcs } from "./ics.js?v=schoolscope-6";
+import { downloadEventIcs } from "./ics.js?v=schoolscope-8";
 
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
@@ -450,15 +450,15 @@ function ticketActivityLabel(ev) {
   return title;
 }
 
-/** 「【索票】{school} · {activity}」 */
+/** 「【登記】{school} · {activity}」 */
 export function ticketCardTitle(ev) {
   const activity = ticketActivityLabel(ev);
   const school = ticketSchoolLabel(ev);
-  return activity ? `【索票】${school} · ${activity}` : `【索票】${school}`;
+  return activity ? `【登記】${school} · ${activity}` : `【登記】${school}`;
 }
 
 /**
- * In-memory 索票 row. Nothing is written back to events.json.
+ * In-memory 登記 row. Nothing is written back to events.json.
  * Derived only when keyDateKind is ticket-open, keyDateStart is set,
  * and that Hong Kong day differs from dateStart's Hong Kong day.
  * Missing keyDateKind is treated as other (no card).
@@ -475,7 +475,7 @@ export function deriveTicketEvent(parent) {
   return {
     id: `${parent.id}-key`,
     derivedFrom: parent.id,
-    type: "索票／登記",
+    type: "登記",
     status: parent.status,
     schools: Array.isArray(parent.schools) ? parent.schools.slice() : [],
     dateStart: parent.keyDateStart,
@@ -518,8 +518,8 @@ export function formatTicketOpenStamp(parent) {
 }
 
 /**
- * Parent-card line. Upcoming: 「🎟 索票：18/11（三） 09:00」.
- * Once the key date has passed: 「索票已於 18/11（三）開始」.
+ * Parent-card line. Upcoming: 「🎟 登記：18/11（三） 09:00」.
+ * Once the key date has passed: 「登記已於 18/11（三）開始」.
  * @returns {{ past: boolean, text: string } | null}
  */
 export function ticketLineText(parent, now = new Date()) {
@@ -527,9 +527,9 @@ export function ticketLineText(parent, now = new Date()) {
   if (!ticket) return null;
   const day = formatTicketOpenDay(parent);
   if (!day) return null;
-  if (isEventPast(ticket, now)) return { past: true, text: `索票已於 ${day}開始` };
+  if (isEventPast(ticket, now)) return { past: true, text: `登記已於 ${day}開始` };
   const stamp = formatTicketOpenStamp(parent);
-  return { past: false, text: `🎟 索票：${stamp}` };
+  return { past: false, text: `🎟 登記：${stamp}` };
 }
 
 /**
@@ -901,7 +901,7 @@ export class App {
   }
 
   /**
-   * Build in-memory 索票 rows from keyDateKind. Never written back to events.json.
+   * Build in-memory 登記 rows from keyDateKind. Never written back to events.json.
    */
   attachDerivedTickets() {
     const events = this.eventsPayload?.events;
@@ -1561,7 +1561,7 @@ export class App {
   /**
    * Same 升中 filters for source rows and derived ticket rows.
    * Shared filters read schools (copied from the parent). Status reads the
-   * copied parent status. There is no 索票／登記 filter.
+   * copied parent status. There is no 登記 filter.
    */
   eventPassesListFilters(ev) {
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
@@ -1766,8 +1766,8 @@ export class App {
   }
 
   /**
-   * Derived 索票 card. Main line is the ticket time. The only action is
-   * 「下載索票提醒」. 「活動日 ›」 scrolls to the parent card.
+   * Derived 登記 card. Main line is the ticket time. The only action is
+   * 「下載登記提醒」. 「活動日 ›」 scrolls to the parent card.
    */
   buildTicketCard(ev, { anchor = false } = {}) {
     const card = document.createElement("article");
@@ -1805,7 +1805,7 @@ export class App {
     badges.className = "badges";
     const badge = document.createElement("span");
     badge.className = "badge badge-ticket";
-    badge.textContent = "索票";
+    badge.textContent = "登記";
     badges.append(badge);
     body.append(badges);
 
@@ -1815,8 +1815,8 @@ export class App {
       const icsBtn = document.createElement("button");
       icsBtn.type = "button";
       icsBtn.className = "event-ics-link";
-      icsBtn.textContent = "下載索票提醒";
-      icsBtn.setAttribute("aria-label", `下載「${ev.title || ev.id}」索票提醒`);
+      icsBtn.textContent = "下載登記提醒";
+      icsBtn.setAttribute("aria-label", `下載「${ev.title || ev.id}」登記提醒`);
       icsBtn.addEventListener("click", () => {
         downloadEventIcs(ev);
       });
