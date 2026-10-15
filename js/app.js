@@ -1,4 +1,4 @@
-import { downloadEventIcs } from "./ics.js?v=schoolscope-8";
+import { downloadEventIcs } from "./ics.js?v=schoolscope-9";
 
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
@@ -292,41 +292,132 @@ const HK_WEEKDAY_SHORT = {
   Sat: "六",
 };
 
-function formatHongKongWeekdayParen(date) {
-  const key = new Intl.DateTimeFormat("en-US", {
-    timeZone: "Asia/Hong_Kong",
+const HK_TZ = "Asia/Hong_Kong";
+
+/**
+ * Calendar + clock parts in Asia/Hong_Kong.
+ * Date-only values are read at noon HKT so a UTC midnight does not shift the day.
+ * @returns {{ year: number, month: number, day: number, hour: number, minute: number, weekday: string } | null}
+ */
+function hkWallParts(value, isDateTime) {
+  if (value == null || value === "") return null;
+  const instant = isDateTime
+    ? new Date(value)
+    : new Date(`${String(value).slice(0, 10)}T12:00:00+08:00`);
+  if (Number.isNaN(instant.getTime())) return null;
+  if (!isDateTime && !/^\d{4}-\d{2}-\d{2}$/.test(String(value).slice(0, 10))) return null;
+
+  // Date and clock are read separately. A combined format can report midnight
+  // as 24:00 on the previous civil day; the date-only format does not.
+  const dateParts = new Intl.DateTimeFormat("en-US", {
+    timeZone: HK_TZ,
     weekday: "short",
-  }).format(date);
-  const day = HK_WEEKDAY_SHORT[key];
-  return day ? `（${day}）` : "";
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  }).formatToParts(instant);
+  const timeParts = new Intl.DateTimeFormat("en-US", {
+    timeZone: HK_TZ,
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(instant);
+  const pick = (list, type) => list.find((p) => p.type === type)?.value || "";
+  const year = Number(pick(dateParts, "year"));
+  const month = Number(pick(dateParts, "month"));
+  const day = Number(pick(dateParts, "day"));
+  let hour = Number(pick(timeParts, "hour"));
+  const minute = Number(pick(timeParts, "minute"));
+  if (!year || !month || !day || !Number.isFinite(minute)) return null;
+  if (!Number.isFinite(hour) || hour === 24) hour = 0;
+  hour = ((hour % 24) + 24) % 24;
+  return { year, month, day, hour, minute, weekday: pick(dateParts, "weekday") };
 }
 
-function formatHongKongDateRange(start, end, isDateTime) {
-  if (!start) return "日期待定";
-  const optsDate = { timeZone: "Asia/Hong_Kong", year: "numeric", month: "numeric", day: "numeric" };
-  const optsTime = { timeZone: "Asia/Hong_Kong", hour: "2-digit", minute: "2-digit", hour12: false };
+function hkYmdKey(parts) {
+  return parts.year * 10000 + parts.month * 100 + parts.day;
+}
 
-  if (!isDateTime) {
-    // Noon HKT avoids UTC-midnight off-by-one when reading YYYY-MM-DD.
-    const startDt = new Date(`${start}T12:00:00+08:00`);
-    const startLabel = `${startDt.toLocaleDateString("zh-HK", optsDate)}${formatHongKongWeekdayParen(startDt)}`;
-    if (!end || end === start) return startLabel;
-    const endDt = new Date(`${end}T12:00:00+08:00`);
-    const endLabel = `${endDt.toLocaleDateString("zh-HK", optsDate)}${formatHongKongWeekdayParen(endDt)}`;
-    return `${startLabel} – ${endLabel}`;
+/**
+ * Current school year plus the next one, inclusive.
+ * Hong Kong school years run 1 Sep–31 Aug. `now` is read in Asia/Hong_Kong.
+ * @returns {{ start: number, end: number }}
+ */
+function hkSchoolYearWindow(now) {
+  const today = hkWallParts(now.toISOString(), true);
+  const year = today ? today.year : now.getFullYear();
+  const month = today ? today.month : now.getMonth() + 1;
+  const startYear = month >= 9 ? year : year - 1;
+  return { start: startYear * 10000 + 901, end: (startYear + 2) * 10000 + 831 };
+}
+
+function hkOutsideSchoolWindow(parts, window) {
+  const key = hkYmdKey(parts);
+  return key < window.start || key > window.end;
+}
+
+/** `5/12（六）` or, when a year is required, `5/12/26（六）`. */
+function formatHkDayMonth(parts, withYear) {
+  const wd = HK_WEEKDAY_SHORT[parts.weekday];
+  const paren = wd ? `（${wd}）` : "";
+  const core = withYear
+    ? `${parts.day}/${parts.month}/${String(parts.year % 100).padStart(2, "0")}`
+    : `${parts.day}/${parts.month}`;
+  return `${core}${paren}`;
+}
+
+/** 24-hour `HH:mm`, always two digits. */
+function formatHkClock(parts) {
+  return `${String(parts.hour).padStart(2, "0")}:${String(parts.minute).padStart(2, "0")}`;
+}
+
+/**
+ * Shared on-screen date label. Every visible system date goes through here.
+ *
+ * Day/month, no zero-padding, weekday in fullwidth parentheses (`5/12（六）`,
+ * `18/11（三）`). A clock is `09:00` (24-hour) with one space before it:
+ * `18/11（三） 09:00`. Same-day time ranges put the clocks on the next line.
+ * Longer ranges use an en dash. Order is never month/day and never locale order.
+ *
+ * The two-digit year (`5/12/26`) is omitted when the date sits in the current
+ * or next Hong Kong school year (1 Sep–31 Aug from `now`). It is shown on every
+ * date in the label when a date is outside that window, or when a range crosses
+ * a calendar year — both ends, so `3/12/26（四） – 28/2/27（日）` is unambiguous.
+ *
+ * @param {string|null|undefined} start
+ * @param {string|null|undefined} end
+ * @param {boolean} isDateTime
+ * @param {{ now?: Date, withTime?: boolean }} [options]
+ *   `withTime` defaults to `isDateTime`. Pass false for a day label with no clock.
+ */
+export function formatHongKongDateRange(start, end, isDateTime, options = {}) {
+  const now =
+    options.now instanceof Date && !Number.isNaN(options.now.getTime()) ? options.now : new Date();
+  const startParts = hkWallParts(start, isDateTime);
+  if (!startParts) return "日期待定";
+
+  const showTime = options.withTime ?? Boolean(isDateTime);
+  let endParts = end ? hkWallParts(end, isDateTime) : null;
+  if (endParts && hkYmdKey(startParts) === hkYmdKey(endParts) && !showTime) endParts = null;
+
+  const window = hkSchoolYearWindow(now);
+  const crossYear = Boolean(endParts && startParts.year !== endParts.year);
+  const withYear =
+    crossYear ||
+    hkOutsideSchoolWindow(startParts, window) ||
+    (endParts ? hkOutsideSchoolWindow(endParts, window) : false);
+
+  const startLabel = formatHkDayMonth(startParts, withYear);
+  if (!showTime) {
+    if (!endParts) return startLabel;
+    return `${startLabel} – ${formatHkDayMonth(endParts, withYear)}`;
   }
 
-  const s = new Date(start);
-  const startDate = s.toLocaleDateString("zh-HK", optsDate);
-  const startTime = s.toLocaleTimeString("zh-HK", optsTime);
-  const startWd = formatHongKongWeekdayParen(s);
-  if (!end) return `${startDate}${startWd} ${startTime}`;
-  const e = new Date(end);
-  const endDate = e.toLocaleDateString("zh-HK", optsDate);
-  const endTime = e.toLocaleTimeString("zh-HK", optsTime);
-  if (startDate === endDate) return `${startDate}${startWd}\n${startTime}–${endTime}`;
-  const endWd = formatHongKongWeekdayParen(e);
-  return `${startDate}${startWd} ${startTime}\n– ${endDate}${endWd} ${endTime}`;
+  const startTime = formatHkClock(startParts);
+  if (!endParts) return `${startLabel} ${startTime}`;
+  const endTime = formatHkClock(endParts);
+  if (hkYmdKey(startParts) === hkYmdKey(endParts)) return `${startLabel}\n${startTime}–${endTime}`;
+  return `${startLabel} ${startTime}\n– ${formatHkDayMonth(endParts, withYear)} ${endTime}`;
 }
 
 /** Start used for ordering. Date-only values are noon in Hong Kong. */
@@ -411,23 +502,6 @@ function hkCalendarDay(value, isDateTime) {
   return year && month && day ? `${year}-${month}-${day}` : "";
 }
 
-/** `12/5（六）` — month/day without a leading zero, Hong Kong weekday. */
-function hkMonthDay(value, isDateTime) {
-  const ymd = hkCalendarDay(value, isDateTime);
-  if (!ymd) return "";
-  const instant = isDateTime ? new Date(value) : new Date(`${ymd}T12:00:00+08:00`);
-  if (Number.isNaN(instant.getTime())) return "";
-  const parts = new Intl.DateTimeFormat("en-US", {
-    timeZone: "Asia/Hong_Kong",
-    month: "numeric",
-    day: "numeric",
-  }).formatToParts(instant);
-  const month = parts.find((p) => p.type === "month")?.value;
-  const day = parts.find((p) => p.type === "day")?.value;
-  if (!month || !day) return "";
-  return `${month}/${day}${formatHongKongWeekdayParen(instant)}`;
-}
-
 function ticketSchoolLabel(ev) {
   const schools = Array.isArray(ev?.schools)
     ? ev.schools.map((name) => decodeVisiblePercent(name).trim()).filter(Boolean)
@@ -486,35 +560,42 @@ export function deriveTicketEvent(parent) {
   };
 }
 
-/** Activity day for the 「活動日：12/5（六）›」 jump. */
-export function formatActivityDayLabel(parent) {
-  return hkMonthDay(parent?.dateStart, parent?.isDateTime);
+/** Activity day for the 「活動日：5/12（六）›」 jump. Day/month, no clock. */
+export function formatActivityDayLabel(parent, now = new Date()) {
+  if (!parent?.dateStart) return "";
+  const label = formatHongKongDateRange(parent.dateStart, null, Boolean(parent.isDateTime), {
+    now,
+    withTime: false,
+  });
+  return label === "日期待定" ? "" : label;
 }
 
 /**
- * Parent-card key date in the site's day/month order.
- * Reuses formatHongKongDateRange (same weekday and the space before the clock
- * as the ticket card), then drops the year.
+ * Key-date stamp shared by the parent 登記 line and the ticket card.
  * Timed: `18/11（三） 09:00`. All-day: `20/10（二）`.
  */
-function formatParentTicketWhen(parent) {
+function formatParentTicketWhen(parent, now = new Date()) {
   const value = parent?.keyDateStart;
   if (!value) return "";
-  const full = formatHongKongDateRange(value, null, Boolean(parent.keyDateIsDateTime));
+  const full = formatHongKongDateRange(value, null, Boolean(parent.keyDateIsDateTime), { now });
   if (!full || full === "日期待定") return "";
-  return full.replace(/\/\d{4}/g, "");
+  return full;
 }
 
 /** Key-date day without a clock, e.g. `18/11（三）`. */
-export function formatTicketOpenDay(parent) {
-  const when = formatParentTicketWhen(parent);
-  if (!when) return "";
-  return when.split(" ")[0];
+export function formatTicketOpenDay(parent, now = new Date()) {
+  const value = parent?.keyDateStart;
+  if (!value) return "";
+  const label = formatHongKongDateRange(value, null, Boolean(parent.keyDateIsDateTime), {
+    now,
+    withTime: false,
+  });
+  return !label || label === "日期待定" ? "" : label;
 }
 
 /** `18/11（三） 09:00` when the key date has a clock; otherwise the day only. */
-export function formatTicketOpenStamp(parent) {
-  return formatParentTicketWhen(parent);
+export function formatTicketOpenStamp(parent, now = new Date()) {
+  return formatParentTicketWhen(parent, now);
 }
 
 /**
@@ -525,10 +606,10 @@ export function formatTicketOpenStamp(parent) {
 export function ticketLineText(parent, now = new Date()) {
   const ticket = deriveTicketEvent(parent);
   if (!ticket) return null;
-  const day = formatTicketOpenDay(parent);
+  const day = formatTicketOpenDay(parent, now);
   if (!day) return null;
   if (isEventPast(ticket, now)) return { past: true, text: `登記已於 ${day}開始` };
-  const stamp = formatTicketOpenStamp(parent);
+  const stamp = formatTicketOpenStamp(parent, now);
   return { past: false, text: `🎟 登記：${stamp}` };
 }
 
