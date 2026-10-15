@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-14T17:05:24Z",
+  "syncedAt": "2026-10-15T02:30:07Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -1425,8 +1425,9 @@
       "isDateTime": true,
       "keyDateStart": "2026-10-20T00:00:00.000Z",
       "keyDateIsDateTime": true,
-      "keyPoints": "網上預約系統開放（先到先得）",
-      "notes": "兩場中一入學講座 09:00–10:00／10:30–11:30（小五小六家長學生）；校園參觀及學生表演 09:00–12:00 無需預約。預約連結於2026-10-20官網公布。",
+      "keyDateKind": "ticket-open",
+      "keyPoints": "網上預約系統開放（先到先得；連結料 2026-10-20 官網公布）",
+      "notes": "兩場中一入學講座 09:00–10:00／10:30–11:30（小五小六家長學生）；校園參觀及學生表演 09:00–12:00 無需預約。本批僅補 keyDateKind；日期／時段與官網一致、預約連結仍未上線。",
       "sourceUrl": "https://www.plkchc.edu.hk/admission/393"
     },
     {
@@ -1714,8 +1715,8 @@
       "isDateTime": true,
       "keyDateStart": null,
       "keyDateIsDateTime": false,
-      "keyPoints": "",
-      "notes": "直資；CHSC 學校自行登記開放日；介紹探究式學習、聯課活動、AI 應用及 DSE／IB 升學資訊；門票先到先得，Eventbrite 登記。校官網另設 Book a School Tour（平日 15:45–17:00）。CHSC id=5173。",
+      "keyPoints": "門票先到先得；Eventbrite 登記",
+      "notes": "直資；CHSC 學校自行登記開放日（id=5173）；上午10:00–下午3:00；介紹探究式學習、聯課活動、AI 及 DSE／IB 升學資訊。門票登記：https://www.eventbrite.com/e/be-future-ready-now-delia-glee-path-open-day-2026-tickets-1998661322819 。校官網另設 Book a School Tour（平日 15:45–17:00）。",
       "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5173"
     },
     {
@@ -2374,14 +2375,14 @@
       "schools": [
         "華仁書院(九龍)"
       ],
-      "isDateTime": false,
-      "dateStart": "2026-11-07",
-      "dateEnd": "2026-11-07",
+      "isDateTime": true,
+      "dateStart": "2026-11-07T01:00:00.000Z",
+      "dateEnd": "2026-11-07T05:00:00.000Z",
       "keyDateStart": "2026-10-23T04:00:00.000Z",
       "keyDateIsDateTime": true,
       "keyDateKind": "ticket-open",
-      "keyPoints": "登記開始（2026-10-23 星期五中午12時；免費先到先得）",
-      "notes": "資助；官網未列當日具體時段；登記連結見收生頁（click here for registration）。",
+      "keyPoints": "登記開始 2026-10-23（五）中午12時；免費先到先得；入場須出示 QR 門票",
+      "notes": "資助；更新：官網已列時段——禮堂簡介三場內容相同 09:00–10:00／10:30–11:30／12:00–13:00；校園參觀 10:00–13:00（已登記者）。前版本僅有日期無時段。DP 申請 2027-01-04–18；面試暫定 03-13／03-20（見既有條目）。",
       "sourceUrl": "https://wyk.edu.hk/academic/admission/s1-admissions-0/"
     },
     {
@@ -7647,6 +7648,57 @@
       "keyPoints": "",
       "notes": "取錄後留位及初步註冊 2026-12-23 至 2027-01-08；正式註冊 2027-07-08 至 07-09。",
       "sourceUrl": "https://s3-ap-southeast-1.amazonaws.com/i.fmscms.ievent.hk/upload/fmscms/files/School_Documents/2026-27%20Admission%20Schedule_website%20use.pdf"
+    },
+    {
+      "id": "ev-452",
+      "title": "麗澤中學 升中面試工作坊",
+      "type": "入學講座",
+      "status": "官方確認",
+      "schools": [
+        "麗澤中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-07T06:00:00.000Z",
+      "dateEnd": "2026-11-07T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "下午2:00–4:00；地點九龍廣東道180號",
+      "notes": "資助；來源：CHSC 學校自行登記開放日。校官網暫未見獨立專頁（僅有中一自行收生申請表 PDF）。CHSC id=5249。",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5249"
+    },
+    {
+      "id": "ev-453",
+      "title": "麗澤中學 同樂日暨中一資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "麗澤中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-14T01:00:00.000Z",
+      "dateEnd": "2026-11-14T03:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "上午9:00–11:00；地點九龍廣東道180號",
+      "notes": "資助；來源：CHSC 學校自行登記開放日。與 11-07 面試工作坊為不同場次。CHSC id=5250。",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5250"
+    },
+    {
+      "id": "ev-454",
+      "title": "聖母玫瑰書院 入學資訊日2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖母玫瑰書院"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T02:30:00.000Z",
+      "dateEnd": "2026-12-12T07:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "兩場相同：10:30–12:00（校園10:10開放）／14:00–15:30（校園13:40開放）；網上／QR 報名，座位有限宜早登記",
+      "notes": "資助；來源：校方《School Information Day》海報（官網 admission/school-info-day 及首頁 popup）＋ Microsoft Forms 報名 https://forms.cloud.microsoft/r/8DKHwpRziS ；活動含校園導賞、禮堂簡介、STEM／手作／科學實驗／小食製作、樂隊表演；不設泊車。查詢 2380 6468。",
+      "sourceUrl": "https://www.olr.edu.hk/admission/school-info-day"
     }
   ]
 }

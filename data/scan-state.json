@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T03:21:28Z",
+  "updatedAt": "2026-10-15T02:30:07Z",
   "districts": {
     "沙田": {
       "lastScannedAt": "2026-10-14T02:51:39Z",
@@ -12,12 +12,422 @@
     "觀塘": {
       "lastScannedAt": "2026-10-14T03:10:30Z",
       "lastStatus": "ok"
+    },
+    "黃大仙": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok"
+    },
+    "深水埗": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "partial",
+      "lastError": "部分官網 403／SSL 失敗"
+    },
+    "油尖旺": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok"
     }
   },
-  "schools": {},
+  "schools": {
+    "佛教孔仙洲紀念中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "SSL UNEXPECTED_EOF",
+      "district": "黃大仙"
+    },
+    "中華基督教會扶輪中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "timeout",
+      "district": "黃大仙"
+    },
+    "保良局何蔭棠中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "可立中學(嗇色園主辦)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "中華基督教會基協中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "中華基督教會協和書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "聖母書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "德望學校": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "聖公會聖本德中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "香港威雅學校(九龍)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "五旬節聖潔會永光書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "佛教志蓮中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "保良局第一張永慶中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "國際基督教優質音樂中學暨小學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "天主教伍華中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "彩虹邨天主教英文中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "德愛中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "救世軍卜維廉中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "李求恩紀念中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "樂善堂余近卿中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "樂善堂王仲銘中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "潔心林炳炎中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "聖文德書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "香港神託會培敦中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "黃大仙"
+    },
+    "德雅中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "HTTP 403 Forbidden",
+      "district": "深水埗"
+    },
+    "中華基督教會銘賢書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "SSL UNEXPECTED_EOF（本批）；既有 PDF 事件維持",
+      "district": "深水埗"
+    },
+    "瑪利諾神父教會學校": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "主站 mfs.edu.hk 連線失敗；備用 mfs1.edu.hk 無新日程（CHSC 既有事項維持）",
+      "district": "深水埗"
+    },
+    "中黃書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "schools.json 無 website",
+      "district": "深水埗"
+    },
+    "聖母玫瑰書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "地利亞修女紀念學校(吉利徑)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "基督教崇真中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "地利亞修女紀念學校﹝百老匯﹞": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "香島中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "寶血會上智英文書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "保良局唐乃勤初中書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "聖公會聖馬利亞堂莫慶堯中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "長沙灣天主教英文中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "英華書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "聖瑪加利男女英文中小學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "聖道百卉書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "中聖書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "九龍工業學校": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "佛教大雄中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "保良局蔡繼有學校": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "天主教南華中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "廠商會中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "德貞女子中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "惠僑英文中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "東華三院張明添中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "滙基書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "路德會協同中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "香港四邑商工總會黃棣珊紀念中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "深水埗"
+    },
+    "STAMFORD AMERICAN SCHOOL HONG KONG (WEST KOWLOON)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "error",
+      "lastError": "schools.json 無 website",
+      "district": "油尖旺"
+    },
+    "麗澤中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "華仁書院(九龍)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "拔萃女書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "香港管理專業協會李國寶中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "伊利沙伯中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "真光女書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "世界龍岡學校劉皇發中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "官立嘉道理爵士中學(西九龍)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "天主教新民書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "CALIFORNIA SCHOOL": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "九龍三育中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "保良局莊啓程預科書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "倫敦卓越書院(尖沙咀)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "嘉諾撒聖瑪利書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "基督教香港信義會信義中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "循道中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "港九潮州公會中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "聖公會諸聖中學": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "聖芳濟書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "華夏書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "遵理學校(旺角)": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "香港力邁學校": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "香港華德福教育基金會瑪利亞書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    },
+    "中華基督教會銘基書院": {
+      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastStatus": "ok",
+      "district": "油尖旺"
+    }
+  },
   "rotation": {
-    "lastDistrictBatch": null,
-    "lastRotatedAt": null
+    "lastDistrictBatch": [
+      "黃大仙",
+      "深水埗",
+      "油尖旺"
+    ],
+    "lastRotatedAt": "2026-10-15T02:30:07Z"
   },
   "lightScan": {
     "lastRanAt": null,
