@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-10-15T02:30:07Z",
+  "syncedAt": "2026-10-16T12:59:26Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -126,14 +126,15 @@
       "schools": [
         "沙田官立中學"
       ],
-      "dateStart": "2026-11-21",
-      "dateEnd": null,
-      "isDateTime": false,
-      "keyDateStart": null,
-      "keyDateIsDateTime": false,
-      "keyPoints": "",
-      "notes": "學校 2026-27 校曆（Talk on S1 Admissions (Discretionary Places)，星期六）；時間及報名方法未公布。2026-10-05 監察加入。",
-      "sourceUrl": "https://www.stgss.edu.hk/wp-content/uploads/2026/09/035Sa-School-Calendar-26-27-v6-Student-Version.pdf"
+      "dateStart": "2026-11-21T01:30:00.000Z",
+      "dateEnd": "2026-11-21T03:00:00.000Z",
+      "isDateTime": true,
+      "keyDateStart": "2026-11-02T02:00:00.000Z",
+      "keyDateIsDateTime": true,
+      "keyDateKind": "ticket-open",
+      "keyPoints": "網上預留座位開始（11-02 10:00）",
+      "notes": "簡介會 2026-11-21（六）09:30–11:00。網上預留座位 2026-11-02（一）10:00 起。索取申請表：2026-11-21～2027-01-18。遞交申請表：2027-01-04～2027-01-18。寄出面試通知：2027-03-03。",
+      "sourceUrl": "https://www.stgss.edu.hk/wp-content/uploads/2026/10/S1-DP-Schedule-of-Application-2027-2028.pdf"
     },
     {
       "id": "ev-07",
@@ -383,8 +384,8 @@
       "keyDateStart": null,
       "keyDateIsDateTime": false,
       "keyPoints": "",
-      "notes": "學校 2026-27 校曆（S1 Admissions (Discretionary Places) Interview，星期六）。2026-10-05 監察加入。",
-      "sourceUrl": "https://www.stgss.edu.hk/wp-content/uploads/2026/09/035Sa-School-Calendar-26-27-v6-Student-Version.pdf"
+      "notes": "面試 2027-03-13（六）。寄出面試通知：2027-03-03。校曆原列同日 S1 Admissions (Discretionary Places) Interview。",
+      "sourceUrl": "https://www.stgss.edu.hk/wp-content/uploads/2026/10/S1-DP-Schedule-of-Application-2027-2028.pdf"
     },
     {
       "id": "ev-21",
@@ -7287,9 +7288,9 @@
       "dateEnd": "2026-11-07T08:30:00.000Z",
       "keyDateStart": null,
       "keyDateIsDateTime": false,
-      "keyPoints": "兩場 10:00–12:00、14:30–16:30",
-      "notes": "來源：CHSC 學校自行登記開放日（活動名稱「中一入學資訊日」）；地點沙田博康邨5A區。校官網首頁有「中一資訊日」橫額。CHSC id=5150。",
-      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5150"
+      "keyPoints": "兩場 10:00–12:00、14:30–16:30；毋須報名",
+      "notes": "毋須報名。地點沙田博康邨5A區。校官網確認毋須報名；CHSC 學校自行登記開放日 id=5150 同列兩場 10:00–12:00、14:30–16:30。",
+      "sourceUrl": "https://www.ccst.edu.hk/26-27-入學資訊/"
     },
     {
       "id": "ev-431",
