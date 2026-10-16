@@ -45,6 +45,17 @@ export function createPrefsStore(app) {
     return out;
   }
 
+  /**
+   * Cloud showPast when it is a boolean. Legacy hidePast is inverted.
+   * Missing both → undefined so login does not invent a value and write it back.
+   */
+  function readShowPast(raw) {
+    if (!raw || typeof raw !== "object") return undefined;
+    if (typeof raw.showPast === "boolean") return raw.showPast;
+    if (typeof raw.hidePast === "boolean") return !raw.hidePast;
+    return undefined;
+  }
+
   function sanitizePrefs(raw, schoolByName) {
     if (!raw || typeof raw !== "object") return null;
     const filterDistrict =
@@ -55,13 +66,16 @@ export function createPrefsStore(app) {
     const filterBand = ALLOWED_BANDS.has(raw.filterBand) ? raw.filterBand : "all";
     const showTerritoryEvents = raw.showTerritoryEvents !== false;
     const favorites = sanitizeFavorites(raw.favorites, schoolByName);
-    return {
+    const showPast = readShowPast(raw);
+    const prefs = {
       filterDistrict,
       filterType,
       filterBand,
       showTerritoryEvents,
       favorites,
     };
+    if (typeof showPast === "boolean") prefs.showPast = showPast;
+    return prefs;
   }
 
   /**
@@ -79,6 +93,7 @@ export function createPrefsStore(app) {
       filterType: prefs.filterType ?? "all",
       filterBand: prefs.filterBand ?? "all",
       showTerritoryEvents: prefs.showTerritoryEvents !== false,
+      showPast: prefs.showPast === true,
       favorites: Array.isArray(prefs.favorites) ? prefs.favorites : [],
       updatedAt: serverTimestamp(),
     };

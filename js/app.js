@@ -1,4 +1,4 @@
-import { downloadEventIcs } from "./ics.js?v=schoolscope-10";
+import { downloadEventIcs } from "./ics.js?v=schoolscope-11";
 
 const TYPE_ORDER = ["官立", "資助", "直資", "私立"];
 
@@ -457,24 +457,11 @@ function isEventPast(ev, now = new Date()) {
 }
 
 /**
- * Upcoming nearest-first (earliest start at the top).
- * Past events follow, nearest past first. `now` is only used to split the two groups.
+ * Start-date order. Past rows stay in place; they do not sink to the bottom.
  */
-function compareEventsNearest(a, b, now = new Date()) {
-  const pastA = isEventPast(a, now) ? 1 : 0;
-  const pastB = isEventPast(b, now) ? 1 : 0;
-  if (pastA !== pastB) return pastA - pastB;
-  if (!pastA) {
-    const diff = eventStartMs(a) - eventStartMs(b);
-    if (diff) return diff;
-  } else {
-    const endA = eventEndMs(a);
-    const endB = eventEndMs(b);
-    const aMs = endA == null ? Number.NEGATIVE_INFINITY : endA;
-    const bMs = endB == null ? Number.NEGATIVE_INFINITY : endB;
-    const diff = bMs - aMs;
-    if (diff) return diff;
-  }
+function compareEventsByStart(a, b) {
+  const diff = eventStartMs(a) - eventStartMs(b);
+  if (diff) return diff;
   return String(a?.id || "").localeCompare(String(b?.id || ""));
 }
 
@@ -672,15 +659,13 @@ export function ticketLineText(parent, now = new Date()) {
 }
 
 /**
- * Watchlist rows: parents stay (including past, greyed by the card).
- * Past ticket rows are omitted from both the count and the list.
- * Upcoming tickets sort with parents by next start.
+ * Watchlist rows. Past 登記 virtual cards stay omitted and do not count.
+ * Past main cards follow `showPast`. Remaining rows sort by start date.
  */
-export function mergeWatchlistEvents(parents, tickets, now = new Date()) {
+export function mergeWatchlistEvents(parents, tickets, now = new Date(), showPast = false) {
   const upcomingTickets = (tickets || []).filter((ev) => !isEventPast(ev, now));
-  return (parents || [])
-    .concat(upcomingTickets)
-    .sort((a, b) => compareEventsNearest(a, b, now));
+  const visibleParents = (parents || []).filter((ev) => showPast || !isEventPast(ev, now));
+  return visibleParents.concat(upcomingTickets).sort(compareEventsByStart);
 }
 
 export class App {
@@ -694,6 +679,13 @@ export class App {
     this.eventSchool = "all";
     /** 升中-only. On shows schools=[]; off hides every empty-schools event. */
     this.showTerritoryEvents = true;
+    /**
+     * 升中 list preference. False hides past items. Logged-in users sync it.
+     * An existing cloud showPast (or legacy hidePast) wins over this default.
+     */
+    this.showPast = false;
+    /** Set when cloud actually stored the preference, so login does not clobber it. */
+    this._showPastFromCloud = false;
     /**
      * Session-only shared UX: show only favourited schools across list / events / map.
      * Not synced to cloud (same as search `query`).
@@ -800,6 +792,7 @@ export class App {
       filterType: this.filterType || "all",
       filterBand: this.filterBand || "all",
       showTerritoryEvents: this.showTerritoryEvents !== false,
+      showPast: this.showPast === true,
       favorites: this.favorites.slice(),
     };
   }
@@ -826,6 +819,10 @@ export class App {
         ? prefs.filterBand
         : "all";
       this.showTerritoryEvents = prefs.showTerritoryEvents !== false;
+      if (typeof prefs.showPast === "boolean") {
+        this.showPast = prefs.showPast;
+        this._showPastFromCloud = true;
+      }
       const favs = Array.isArray(prefs.favorites) ? prefs.favorites : [];
       const cleaned = [];
       const seen = new Set();
@@ -994,8 +991,13 @@ export class App {
         actions.append(mapBtn);
       }
 
-      const schoolEvents = this.eventsForSchool(nameZh);
+      const now = new Date();
+      const schoolEvents = this.eventsForSchool(nameZh, now);
       const eventsKnown = this.schoolEventsByName != null;
+      const pastParentsHidden =
+        eventsKnown &&
+        this.showPast !== true &&
+        (this.schoolEventsByName.get(nameZh) || []).some((ev) => isEventPast(ev, now));
       const panelId = `favorites-events-${listEl.childElementCount}`;
       let panel = null;
       if (eventsKnown && schoolEvents.length > 0) {
@@ -1018,6 +1020,11 @@ export class App {
           else this.favoritesEventsOpen.delete(nameZh);
         });
         actions.append(toggle);
+      } else if (eventsKnown && pastParentsHidden) {
+        const none = document.createElement("p");
+        none.className = "favorites-no-events";
+        none.textContent = "已過項目已收起";
+        actions.append(none);
       } else if (eventsKnown) {
         const none = document.createElement("p");
         none.className = "favorites-no-events";
@@ -1113,14 +1120,15 @@ export class App {
 
   /**
    * School-scoped rows for one watchlist card.
-   * Upcoming ticket rows count and sort by next start. Past ticket rows are omitted.
+   * Past 登記 rows stay omitted. Past main cards follow showPast.
+   * Order is start date.
    */
   eventsForSchool(nameZh, now = new Date()) {
     if (!this.schoolEventsByName || !nameZh) return [];
     const list = this.schoolEventsByName.get(nameZh) || [];
     const tickets = this.derivedTicketsBySchool?.get(nameZh) || [];
     if (!list.length && !tickets.length) return [];
-    return mergeWatchlistEvents(list, tickets, now);
+    return mergeWatchlistEvents(list, tickets, now, this.showPast === true);
   }
 
   /**
@@ -1261,7 +1269,13 @@ export class App {
     const link = this.deepLink;
     if (!link || link.eventsApplied) return;
     link.eventsApplied = true;
-    if (link.status) {
+    if (link.status === "已過") {
+      // The status chip is gone. Old links reveal past instead of filtering on it.
+      // A cloud value already applied this session is left as stored.
+      this.eventStatus = "all";
+      this.syncChipGroup(this.els.eventsFilters, "eventStatus", "all");
+      if (!this._showPastFromCloud) this.showPast = true;
+    } else if (link.status) {
       this.eventStatus = link.status;
       this.syncChipGroup(this.els.eventsFilters, "eventStatus", this.eventStatus);
     }
@@ -1699,14 +1713,16 @@ export class App {
 
   /**
    * Same 升中 filters for source rows and derived ticket rows.
-   * Shared filters read schools (copied from the parent). Status reads the
-   * copied parent status. There is no 登記 filter.
+   * Shared filters read schools (copied from the parent). Status chips
+   * (全部／官方確認／暫定) apply only to items that are not past.
+   * There is no 登記 filter and no 已過 status chip.
    */
-  eventPassesListFilters(ev) {
+  eventPassesListFilters(ev, now = new Date()) {
     const schools = Array.isArray(ev.schools) ? ev.schools : [];
     // Empty schools=[] follow the territory toggle only (status exempt).
     if (!schools.length) return this.showTerritoryEvents;
-    if (this.eventStatus !== "all" && ev.status !== this.eventStatus) return false;
+    const status = this.eventStatus === "已過" ? "all" : this.eventStatus;
+    if (!isEventPast(ev, now) && status !== "all" && ev.status !== status) return false;
     if (!this.eventMatchesSharedFilters(ev)) return false;
     return this.eventMatchesSchoolFilter(ev);
   }
@@ -1717,21 +1733,25 @@ export class App {
     if (!this.derivedTicketEvents) this.attachDerivedTickets();
     const combined = this.eventsPayload.events.concat(this.derivedTicketEvents || []);
     const total = combined.length;
-    // Upcoming nearest-first, then past (same split the watchlist uses).
-    // Past ticket rows stay in that past group; they are not dropped here.
-    const list = combined
-      .filter((ev) => this.eventPassesListFilters(ev))
-      .sort((a, b) => compareEventsNearest(a, b));
+    const now = new Date();
+    const upcoming = [];
+    const past = [];
+    for (const ev of combined) {
+      if (!this.eventPassesListFilters(ev, now)) continue;
+      if (isEventPast(ev, now)) past.push(ev);
+      else upcoming.push(ev);
+    }
+    const visible = (this.showPast ? upcoming.concat(past) : upcoming.slice()).sort(compareEventsByStart);
 
     if (this.els.eventsMeta) {
-      const territoryVisible = list.filter((ev) => !ev.schools?.length).length;
+      const territoryVisible = visible.filter((ev) => !ev.schools?.length).length;
       const schoolScoped =
         this.filterDistrict !== "all" ||
         this.filterType !== "all" ||
         this.filterBand !== "all" ||
         (this.filterFavoritesOnly && this.favorites.length > 0) ||
         this.eventSchool !== "all";
-      let meta = `顯示 ${list.length} / ${total} 項`;
+      let meta = `顯示 ${visible.length} / ${total} 項`;
       if (this.showTerritoryEvents && territoryVisible > 0 && schoolScoped) {
         meta += `（另加 ${territoryVisible} 項教育局／全港）`;
       }
@@ -1739,7 +1759,8 @@ export class App {
     }
 
     this.els.eventsList.replaceChildren();
-    const isEmpty = list.length === 0;
+    const pastHiddenOnly = !this.showPast && past.length > 0 && upcoming.length === 0;
+    const isEmpty = visible.length === 0 && !pastHiddenOnly;
     if (this.els.eventsEmpty) {
       this.els.eventsEmpty.hidden = !isEmpty;
       const body = this.els.eventsEmpty.querySelector(".empty-state-body");
@@ -1758,10 +1779,44 @@ export class App {
         body.textContent = notes.length ? `${notes.join("")}${tail}` : tail;
       }
     }
-    if (isEmpty) return;
 
-    for (const ev of list) {
+    if (past.length > 0 || this.showPast) {
+      this.els.eventsList.append(this.buildPastEventsToggle(past.length));
+    }
+    if (visible.length === 0) return;
+
+    for (const ev of visible) {
       this.els.eventsList.append(this.buildEventCard(ev, { anchor: true }));
+    }
+  }
+
+  /** Top-of-list hint. Shown while past rows match the filter, and while showPast is on. */
+  buildPastEventsToggle(pastCount) {
+    const open = this.showPast === true;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "events-past-toggle";
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    const label = document.createElement("span");
+    label.className = "events-past-toggle-label";
+    label.textContent = open ? "已顯示已過 · 收起" : `另有 ${pastCount} 項已過 · 顯示`;
+    const chevron = document.createElement("span");
+    chevron.className = "events-past-toggle-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    chevron.textContent = "›";
+    button.append(label, chevron);
+    button.addEventListener("click", () => this.toggleShowPast());
+    return button;
+  }
+
+  toggleShowPast() {
+    const keepFocus = document.activeElement?.classList?.contains("events-past-toggle");
+    this.showPast = !this.showPast;
+    this.renderEvents();
+    this.renderFavoritesManage();
+    this.notifySyncedPrefsChanged();
+    if (keepFocus) {
+      this.els.eventsList?.querySelector(".events-past-toggle")?.focus({ preventScroll: true });
     }
   }
 
@@ -1784,6 +1839,18 @@ export class App {
       focusCard(existing);
       return;
     }
+    const parent = this.eventById?.get(parentId);
+    if (parent && isEventPast(parent) && !this.showPast) {
+      this.showPast = true;
+      this.renderEvents();
+      this.renderFavoritesManage();
+      this.notifySyncedPrefsChanged();
+      const revealedPast = find();
+      if (revealedPast) {
+        focusCard(revealedPast);
+        return;
+      }
+    }
     this.clearEventFilters();
     const revealed = find();
     if (revealed) focusCard(revealed);
@@ -1795,6 +1862,8 @@ export class App {
     const card = document.createElement("article");
     card.className = "event-card";
     card.dataset.eventId = ev.id || "";
+    const past = isEventPast(ev);
+    if (past) card.classList.add("is-past");
     if (anchor && ev.id) card.id = `event-${ev.id}`;
 
     const when = document.createElement("div");
@@ -1826,8 +1895,8 @@ export class App {
     typeBadge.textContent = decodeVisiblePercent(ev.type);
     badges.append(typeBadge);
     const statusBadge = document.createElement("span");
-    statusBadge.className = `badge status-${ev.status}`;
-    statusBadge.textContent = decodeVisiblePercent(ev.status);
+    statusBadge.className = past ? "badge status-已過" : `badge status-${ev.status}`;
+    statusBadge.textContent = past ? "已過" : decodeVisiblePercent(ev.status);
     badges.append(statusBadge);
     if (!ev.schools?.length) {
       const territory = document.createElement("span");
@@ -1920,6 +1989,8 @@ export class App {
     card.className = "event-card is-ticket";
     card.dataset.eventId = ev.id || "";
     card.dataset.derivedFrom = ev.derivedFrom || "";
+    const past = isEventPast(ev);
+    if (past) card.classList.add("is-past");
     if (anchor && ev.id) card.id = `event-${ev.id}`;
 
     const when = document.createElement("div");
@@ -1957,6 +2028,12 @@ export class App {
     badge.className = "badge badge-ticket";
     badge.textContent = "登記";
     badges.append(badge);
+    if (past) {
+      const pastBadge = document.createElement("span");
+      pastBadge.className = "badge status-已過";
+      pastBadge.textContent = "已過";
+      badges.append(pastBadge);
+    }
     body.append(badges);
 
     if (ev.dateStart) {

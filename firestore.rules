@@ -22,9 +22,13 @@ service cloud.firestore {
           'filterType',
           'filterBand',
           'showTerritoryEvents',
+          'showPast',
+          'hidePast',
           'favorites',
           'updatedAt'
         ])
+        && (!('showPast' in request.resource.data) || request.resource.data.showPast is bool)
+        && (!('hidePast' in request.resource.data) || request.resource.data.hidePast is bool)
         && request.resource.data.filterDistrict is string
         && request.resource.data.filterDistrict.size() <= 40
         && validFilterType()
