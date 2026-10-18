@@ -1,6 +1,7 @@
 [
   {
     "id": "171018000133",
+    "seq": "009",
     "nameZh": "樂善堂梁銶琚書院",
     "nameEn": "LOK SIN TONG LEUNG KAU KUI COLLEGE",
     "type": "資助",
@@ -21,6 +22,7 @@
   },
   {
     "id": "514209000133",
+    "seq": "011",
     "nameZh": "聖保羅書院",
     "nameEn": "ST. PAUL'S COLLEGE",
     "type": "直資",
@@ -41,6 +43,7 @@
   },
   {
     "id": "510980000133",
+    "seq": "010",
     "nameZh": "聖保羅男女中學",
     "nameEn": "ST. PAUL'S CO-EDUCATIONAL COLLEGE",
     "type": "直資",
@@ -61,6 +64,7 @@
   },
   {
     "id": "514020000133",
+    "seq": "007",
     "nameZh": "聖嘉勒女書院",
     "nameEn": "ST. CLARE'S GIRLS' SCHOOL",
     "type": "資助",
@@ -81,6 +85,7 @@
   },
   {
     "id": "213195000233",
+    "seq": "005",
     "nameZh": "聖士提反堂中學",
     "nameEn": "ST. STEPHEN'S CHURCH COLLEGE",
     "type": "資助",
@@ -101,6 +106,7 @@
   },
   {
     "id": "514268000133",
+    "seq": "004",
     "nameZh": "聖士提反女子中學",
     "nameEn": "ST STEPHEN'S GIRLS' COLLEGE",
     "type": "資助",
@@ -121,6 +127,7 @@
   },
   {
     "id": "510459000133",
+    "seq": "006",
     "nameZh": "聖若瑟書院",
     "nameEn": "ST. JOSEPH'S COLLEGE",
     "type": "資助",
@@ -141,6 +148,7 @@
   },
   {
     "id": "514101000133",
+    "seq": "008",
     "nameZh": "聖類斯中學",
     "nameEn": "ST. LOUIS SCHOOL",
     "type": "資助",
@@ -161,6 +169,7 @@
   },
   {
     "id": "510408000133",
+    "seq": "001",
     "nameZh": "英皇書院",
     "nameEn": "KING'S COLLEGE",
     "type": "官立",
@@ -181,6 +190,7 @@
   },
   {
     "id": "511030000333",
+    "seq": "002",
     "nameZh": "英華女學校",
     "nameEn": "YING WA GIRLS' SCHOOL",
     "type": "資助",
@@ -201,6 +211,7 @@
   },
   {
     "id": "608319000233",
+    "seq": "012",
     "nameZh": "香島華德福學校",
     "nameEn": "ISLAND WALDORF SCHOOL",
     "type": "私立",
@@ -221,6 +232,7 @@
   },
   {
     "id": "211265000133",
+    "seq": "003",
     "nameZh": "高主教書院",
     "nameEn": "RAIMONDI COLLEGE",
     "type": "資助",
@@ -241,6 +253,7 @@
   },
   {
     "id": "605638000133",
+    "seq": "221",
     "nameZh": "STAMFORD AMERICAN SCHOOL HONG KONG",
     "nameEn": "STAMFORD AMERICAN SCHOOL HONG KONG",
     "type": "私立",
@@ -261,6 +274,7 @@
   },
   {
     "id": "211990000233",
+    "seq": "186",
     "nameZh": "中華基督教會基道中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KEI TO SECONDARY SCHOOL",
     "type": "資助",
@@ -281,6 +295,7 @@
   },
   {
     "id": "213764000133",
+    "seq": "185",
     "nameZh": "九龍塘學校(中學部)",
     "nameEn": "KOWLOON TONG SCHOOL (SECONDARY SECTION)",
     "type": "資助",
@@ -301,6 +316,7 @@
   },
   {
     "id": "130893000233",
+    "seq": "184",
     "nameZh": "九龍真光中學",
     "nameEn": "KOWLOON TRUE LIGHT SCHOOL",
     "type": "資助",
@@ -321,6 +337,7 @@
   },
   {
     "id": "214426000133",
+    "seq": "187",
     "nameZh": "五旬節中學",
     "nameEn": "PENTECOSTAL SCHOOL",
     "type": "資助",
@@ -341,6 +358,7 @@
   },
   {
     "id": "510394000133",
+    "seq": "181",
     "nameZh": "何文田官立中學",
     "nameEn": "HOMANTIN GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -361,6 +379,7 @@
   },
   {
     "id": "170100000133",
+    "seq": "190",
     "nameZh": "何明華會督銀禧中學",
     "nameEn": "BISHOP HALL JUBILEE SCHOOL",
     "type": "資助",
@@ -381,6 +400,7 @@
   },
   {
     "id": "213209000133",
+    "seq": "191",
     "nameZh": "余振強紀念中學",
     "nameEn": "YU CHUN KEUNG MEMORIAL COLLEGE",
     "type": "資助",
@@ -401,6 +421,7 @@
   },
   {
     "id": "552801000233",
+    "seq": "214",
     "nameZh": "保良局顏寶鈴書院",
     "nameEn": "PO LEUNG KUK NGAN PO LING COLLEGE",
     "type": "直資",
@@ -421,6 +442,7 @@
   },
   {
     "id": "512915000133",
+    "seq": "216",
     "nameZh": "創知中學",
     "nameEn": "SCIENTIA SECONDARY SCHOOL",
     "type": "直資",
@@ -441,6 +463,7 @@
   },
   {
     "id": "617334000233",
+    "seq": "219",
     "nameZh": "劍津英國學校",
     "nameEn": "OXBRIDGE BRITISH SCHOOL",
     "type": "私立",
@@ -461,6 +484,7 @@
   },
   {
     "id": "511935000133",
+    "seq": "212",
     "nameZh": "協恩中學",
     "nameEn": "HEEP YUNN SCHOOL",
     "type": "直資",
@@ -481,6 +505,7 @@
   },
   {
     "id": "512583000133",
+    "seq": "199",
     "nameZh": "喇沙書院",
     "nameEn": "LA SALLE COLLEGE",
     "type": "資助",
@@ -501,6 +526,7 @@
   },
   {
     "id": "170569000133",
+    "seq": "206",
     "nameZh": "嘉諾撒聖家書院",
     "nameEn": "HOLY FAMILY CANOSSIAN COLLEGE",
     "type": "資助",
@@ -521,6 +547,7 @@
   },
   {
     "id": "170380000133",
+    "seq": "197",
     "nameZh": "基督教女青年會丘佐榮中學",
     "nameEn": "THE Y.W.C.A. HIOE TJO YOENG COLLEGE",
     "type": "資助",
@@ -541,6 +568,7 @@
   },
   {
     "id": "514276000133",
+    "seq": "208",
     "nameZh": "德蘭中學",
     "nameEn": "ST. TERESA SECONDARY SCHOOL",
     "type": "資助",
@@ -561,6 +589,7 @@
   },
   {
     "id": "510777000133",
+    "seq": "213",
     "nameZh": "拔萃男書院",
     "nameEn": "DIOCESAN BOYS' SCHOOL",
     "type": "直資",
@@ -581,6 +610,7 @@
   },
   {
     "id": "214752000233",
+    "seq": "188",
     "nameZh": "文理書院(九龍)",
     "nameEn": "COGNITIO COLLEGE (KOWLOON)",
     "type": "資助",
@@ -601,6 +631,7 @@
   },
   {
     "id": "630381000133",
+    "seq": "218",
     "nameZh": "斯彼德書院",
     "nameEn": "SPEATER COLLEGE",
     "type": "私立",
@@ -621,6 +652,7 @@
   },
   {
     "id": "322857000133",
+    "seq": "202",
     "nameZh": "新亞中學",
     "nameEn": "NEW ASIA MIDDLE SCHOOL",
     "type": "資助",
@@ -641,6 +673,7 @@
   },
   {
     "id": "170607000133",
+    "seq": "196",
     "nameZh": "旅港開平商會中學",
     "nameEn": "HOI PING CHAMBER OF COMMERCE SECONDARY SCHOOL",
     "type": "資助",
@@ -661,6 +694,7 @@
   },
   {
     "id": "170089000133",
+    "seq": "192",
     "nameZh": "東華三院黃笏南中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS WONG FUT NAM COLLEGE",
     "type": "資助",
@@ -681,6 +715,7 @@
   },
   {
     "id": "210536000133",
+    "seq": "189",
     "nameZh": "民生書院",
     "nameEn": "MUNSANG COLLEGE",
     "type": "資助",
@@ -701,6 +736,7 @@
   },
   {
     "id": "612820000133",
+    "seq": "217",
     "nameZh": "泰來書院",
     "nameEn": "ANANTARA COLLEGE",
     "type": "私立",
@@ -721,6 +757,7 @@
   },
   {
     "id": "212636000133",
+    "seq": "211",
     "nameZh": "獻主會聖母院書院",
     "nameEn": "NOTRE DAME COLLEGE",
     "type": "資助",
@@ -741,6 +778,7 @@
   },
   {
     "id": "512818000133",
+    "seq": "207",
     "nameZh": "瑪利諾修院學校(中學部)",
     "nameEn": "MARYKNOLL CONVENT SCHOOL (SECONDARY SECTION)",
     "type": "資助",
@@ -761,6 +799,7 @@
   },
   {
     "id": "170208000133",
+    "seq": "210",
     "nameZh": "禮賢會彭學高紀念中學",
     "nameEn": "RHENISH CHURCH PANG HOK-KO MEMORIAL COLLEGE",
     "type": "資助",
@@ -781,6 +820,7 @@
   },
   {
     "id": "567450000133",
+    "seq": "220",
     "nameZh": "耀中國際學校（中學）",
     "nameEn": "YEW CHUNG INTERNATIONAL SCHOOL - SECONDARY",
     "type": "私立",
@@ -801,6 +841,7 @@
   },
   {
     "id": "170666000133",
+    "seq": "203",
     "nameZh": "聖公會聖三一堂中學",
     "nameEn": "SHENG KUNG HUI HOLY TRINITY CHURCH SECONDARY SCHOOL",
     "type": "資助",
@@ -821,6 +862,7 @@
   },
   {
     "id": "283002000133",
+    "seq": "204",
     "nameZh": "聖公會聖匠中學",
     "nameEn": "SKH HOLY CARPENTER SECONDARY SCHOOL",
     "type": "資助",
@@ -841,6 +883,7 @@
   },
   {
     "id": "170658000133",
+    "seq": "205",
     "nameZh": "聖公會蔡功譜中學",
     "nameEn": "SHENG KUNG HUI TSOI KUNG PO SECONDARY SCHOOL",
     "type": "資助",
@@ -861,6 +904,7 @@
   },
   {
     "id": "170313000133",
+    "seq": "200",
     "nameZh": "華英中學",
     "nameEn": "WA YING COLLEGE",
     "type": "資助",
@@ -881,6 +925,7 @@
   },
   {
     "id": "511072000133",
+    "seq": "183",
     "nameZh": "藝術與科技教育中心",
     "nameEn": "ARTS & TECHNOLOGY EDUCATION CENTRE",
     "type": "官立",
@@ -901,6 +946,7 @@
   },
   {
     "id": "510092000133",
+    "seq": "182",
     "nameZh": "賽馬會官立中學",
     "nameEn": "JOCKEY CLUB GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -921,6 +967,7 @@
   },
   {
     "id": "135968000233",
+    "seq": "193",
     "nameZh": "迦密中學",
     "nameEn": "CARMEL SECONDARY SCHOOL",
     "type": "資助",
@@ -941,6 +988,7 @@
   },
   {
     "id": "132209000133",
+    "seq": "209",
     "nameZh": "鄧鏡波學校",
     "nameEn": "TANG KING PO SCHOOL",
     "type": "資助",
@@ -961,6 +1009,7 @@
   },
   {
     "id": "170550000133",
+    "seq": "198",
     "nameZh": "陳瑞祺(喇沙)書院",
     "nameEn": "CHAN SUI KI (LA SALLE) COLLEGE",
     "type": "資助",
@@ -981,6 +1030,7 @@
   },
   {
     "id": "170593000133",
+    "seq": "201",
     "nameZh": "順德聯誼總會胡兆熾中學",
     "nameEn": "SHUN TAK FRATERNAL ASSOCIATION SEAWARD WOO COLLEGE",
     "type": "資助",
@@ -1001,6 +1051,7 @@
   },
   {
     "id": "558095000233",
+    "seq": "215",
     "nameZh": "香港兆基創意書院(李兆基基金會贊助、香港當代文化中心主辦)",
     "nameEn": "HONG KONG INSTITUTE OF CONTEMPORARY CULTURE LEE SHAU KEE SCHOOL OF CREATIVITY",
     "type": "直資",
@@ -1021,6 +1072,7 @@
   },
   {
     "id": "510912000133",
+    "seq": "194",
     "nameZh": "香港培正中學",
     "nameEn": "PUI CHING MIDDLE SCHOOL",
     "type": "資助",
@@ -1041,6 +1093,7 @@
   },
   {
     "id": "513288000133",
+    "seq": "195",
     "nameZh": "香港培道中學",
     "nameEn": "POOI TO MIDDLE SCHOOL",
     "type": "資助",
@@ -1061,6 +1114,7 @@
   },
   {
     "id": "190241000133",
+    "seq": "418",
     "nameZh": "中華基督教會基元中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KEI YUEN COLLEGE",
     "type": "資助",
@@ -1081,6 +1135,7 @@
   },
   {
     "id": "190250000133",
+    "seq": "419",
     "nameZh": "中華基督教會基朗中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KEI LONG COLLEGE",
     "type": "資助",
@@ -1101,6 +1156,7 @@
   },
   {
     "id": "545228000133",
+    "seq": "417",
     "nameZh": "中華基督教會方潤華中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA FONG YUN WAH SECONDARY SCHOOL",
     "type": "資助",
@@ -1121,6 +1177,7 @@
   },
   {
     "id": "511536000333",
+    "seq": "446",
     "nameZh": "中華基督教青年會中學",
     "nameEn": "CHINESE Y.M.C.A. SECONDARY SCHOOL",
     "type": "直資",
@@ -1141,6 +1198,7 @@
   },
   {
     "id": "518387000133",
+    "seq": "427",
     "nameZh": "伊利沙伯中學舊生會中學",
     "nameEn": "QUEEN ELIZABETH SCHOOL OLD STUDENTS' ASSOCIATION SECONDARY SCHOOL",
     "type": "資助",
@@ -1161,6 +1219,7 @@
   },
   {
     "id": "560480000133",
+    "seq": "428",
     "nameZh": "伊利沙伯中學舊生會湯國華中學",
     "nameEn": "QUEEN ELIZABETH SCHOOL OLD STUDENTS' ASSOCIATION TONG KWOK WAH SECONDARY SCHOOL",
     "type": "資助",
@@ -1181,6 +1240,7 @@
   },
   {
     "id": "511170000133",
+    "seq": "429",
     "nameZh": "伯特利中學",
     "nameEn": "BETHEL HIGH SCHOOL",
     "type": "資助",
@@ -1201,6 +1261,7 @@
   },
   {
     "id": "524530000133",
+    "seq": "430",
     "nameZh": "佛教茂峰法師紀念中學",
     "nameEn": "BUDDHIST MAU FUNG MEMORIAL COLLEGE",
     "type": "資助",
@@ -1221,6 +1282,7 @@
   },
   {
     "id": "510483000133",
+    "seq": "412",
     "nameZh": "元朗公立中學",
     "nameEn": "YUEN LONG PUBLIC SECONDARY SCHOOL",
     "type": "官立",
@@ -1241,6 +1303,7 @@
   },
   {
     "id": "529761000133",
+    "seq": "420",
     "nameZh": "元朗公立中學校友會鄧兆棠中學",
     "nameEn": "YUEN LONG PUBLIC MIDDLE SCHOOL ALUMNI ASSOCIATION TANG SIU TONG SECONDARY SCHOOL",
     "type": "資助",
@@ -1261,6 +1324,7 @@
   },
   {
     "id": "230510000133",
+    "seq": "422",
     "nameZh": "元朗商會中學",
     "nameEn": "YUEN LONG MERCHANTS ASSOCIATION SECONDARY SCHOOL",
     "type": "資助",
@@ -1281,6 +1345,7 @@
   },
   {
     "id": "516970000133",
+    "seq": "421",
     "nameZh": "元朗天主教中學",
     "nameEn": "YUEN LONG CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -1301,6 +1366,7 @@
   },
   {
     "id": "518417000133",
+    "seq": "416",
     "nameZh": "十八鄉鄉事委員會公益社中學",
     "nameEn": "SHAP PAT HEUNG RURAL COMMITTEE KUNG YIK SHE SECONDARY SCHOOL",
     "type": "資助",
@@ -1321,6 +1387,7 @@
   },
   {
     "id": "190659000133",
+    "seq": "439",
     "nameZh": "博愛醫院鄧佩瓊紀念中學",
     "nameEn": "POK OI HOSPITAL TANG PUI KING MEMORIAL COLLEGE",
     "type": "資助",
@@ -1341,6 +1408,7 @@
   },
   {
     "id": "190799000133",
+    "seq": "426",
     "nameZh": "可道中學(嗇色園主辦)",
     "nameEn": "HO DAO COLLEGE (SPONSORED BY SIK SIK YUEN)",
     "type": "資助",
@@ -1361,6 +1429,7 @@
   },
   {
     "id": "152196000133",
+    "seq": "441",
     "nameZh": "圓玄學院妙法寺內明陳呂重德紀念中學",
     "nameEn": "THE YUEN YUEN INSTITUTE MFBM NEI MING CHAN LUI CHUNG TAK MEMORIAL COLLEGE",
     "type": "資助",
@@ -1381,6 +1450,7 @@
   },
   {
     "id": "151335000133",
+    "seq": "438",
     "nameZh": "基督教香港信義會元朗信義中學",
     "nameEn": "THE EVANGELICAL LUTHERAN CHURCH OF HONG KONG YUEN LONG LUTHERAN SECONDARY SCHOOL",
     "type": "資助",
@@ -1401,6 +1471,7 @@
   },
   {
     "id": "579530000133",
+    "seq": "449",
     "nameZh": "基督教香港信義會宏信書院",
     "nameEn": "ELCHK LUTHERAN ACADEMY",
     "type": "直資",
@@ -1421,6 +1492,7 @@
   },
   {
     "id": "510580000233",
+    "seq": "424",
     "nameZh": "天主教培聖中學",
     "nameEn": "PUI SHING CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -1441,6 +1513,7 @@
   },
   {
     "id": "230057000133",
+    "seq": "425",
     "nameZh": "天主教崇德英文書院",
     "nameEn": "SHUNG TAK CATHOLIC ENGLISH COLLEGE",
     "type": "資助",
@@ -1461,6 +1534,7 @@
   },
   {
     "id": "510270000133",
+    "seq": "413",
     "nameZh": "天水圍官立中學",
     "nameEn": "TIN SHUI WAI GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -1481,6 +1555,7 @@
   },
   {
     "id": "536580000133",
+    "seq": "423",
     "nameZh": "天水圍循道衞理中學",
     "nameEn": "TIN SHUI WAI METHODIST COLLEGE",
     "type": "資助",
@@ -1501,6 +1576,7 @@
   },
   {
     "id": "541532000133",
+    "seq": "447",
     "nameZh": "天水圍香島中學",
     "nameEn": "HEUNG TO MIDDLE SCHOOL (TIN SHUI WAI)",
     "type": "直資",
@@ -1521,6 +1597,7 @@
   },
   {
     "id": "622079000133",
+    "seq": "451",
     "nameZh": "安基司學校",
     "nameEn": "ANCHORS ACADEMY",
     "type": "私立",
@@ -1541,6 +1618,7 @@
   },
   {
     "id": "510165000133",
+    "seq": "414",
     "nameZh": "新界鄉議局元朗區中學",
     "nameEn": "NTHYK YUEN LONG DISTRICT SECONDARY SCH",
     "type": "官立",
@@ -1561,6 +1639,7 @@
   },
   {
     "id": "270156000133",
+    "seq": "431",
     "nameZh": "明愛元朗陳震夏中學",
     "nameEn": "CARITAS YUEN LONG CHAN CHUN HA SECONDARY SCHOOL",
     "type": "資助",
@@ -1581,6 +1660,7 @@
   },
   {
     "id": "190578000133",
+    "seq": "434",
     "nameZh": "東華三院盧幹庭紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS LO KON TING MEMORIAL COLLEGE",
     "type": "資助",
@@ -1601,6 +1681,7 @@
   },
   {
     "id": "517011000133",
+    "seq": "433",
     "nameZh": "東華三院郭一葦中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS KWOK YAT WAI COLLEGE",
     "type": "資助",
@@ -1621,6 +1702,7 @@
   },
   {
     "id": "250740000133",
+    "seq": "432",
     "nameZh": "東華三院馬振玉紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS C.Y. MA MEMORIAL COLLEGE",
     "type": "資助",
@@ -1641,6 +1723,7 @@
   },
   {
     "id": "190470000133",
+    "seq": "442",
     "nameZh": "聖公會白約翰會督中學",
     "nameEn": "SHENG KUNG HUI BISHOP BAKER SECONDARY SCHOOL",
     "type": "資助",
@@ -1661,6 +1744,7 @@
   },
   {
     "id": "230030000533",
+    "seq": "450",
     "nameZh": "萬鈞伯裘書院",
     "nameEn": "MAN KWAN PAK KAU COLLEGE",
     "type": "直資",
@@ -1681,6 +1765,7 @@
   },
   {
     "id": "230286000233",
+    "seq": "443",
     "nameZh": "裘錦秋中學(元朗)",
     "nameEn": "JU CHING CHU SECONDARY SCHOOL (YUEN LONG)",
     "type": "資助",
@@ -1701,6 +1786,7 @@
   },
   {
     "id": "529788000133",
+    "seq": "445",
     "nameZh": "賽馬會萬鈞毅智書院",
     "nameEn": "JOCKEY CLUB MAN KWAN EDUYOUNG COLLEGE",
     "type": "資助",
@@ -1721,6 +1807,7 @@
   },
   {
     "id": "510491000133",
+    "seq": "415",
     "nameZh": "趙聿修紀念中學",
     "nameEn": "CHIU LUT SAU MEMORIAL SECONDARY SCHOOL",
     "type": "官立",
@@ -1741,6 +1828,7 @@
   },
   {
     "id": "170801000233",
+    "seq": "444",
     "nameZh": "路德會西門英才中學",
     "nameEn": "GERTRUDE SIMON LUTHERAN COLLEGE",
     "type": "資助",
@@ -1761,6 +1849,7 @@
   },
   {
     "id": "289094000231",
+    "seq": "452",
     "nameZh": "遵理學校",
     "nameEn": "BEACON COLLEGE",
     "type": "私立",
@@ -1781,6 +1870,7 @@
   },
   {
     "id": "560499000133",
+    "seq": "435",
     "nameZh": "金巴崙長老會耀道中學",
     "nameEn": "CUMBERLAND PRESBYTERIAN CHURCH YAO DAO SECONDARY SCHOOL",
     "type": "資助",
@@ -1801,6 +1891,7 @@
   },
   {
     "id": "541168000133",
+    "seq": "440",
     "nameZh": "順德聯誼總會翁祐中學",
     "nameEn": "SHUN TAK FRATERNAL ASSOCIATION YUNG YAU COLLEGE",
     "type": "資助",
@@ -1821,6 +1912,7 @@
   },
   {
     "id": "190837000133",
+    "seq": "436",
     "nameZh": "香港中文大學校友會聯會張煊昌中學",
     "nameEn": "CUHK FEDERATION OF ALUMNI ASSOCIATIONS THOMAS CHEUNG SECONDARY SCHOOL",
     "type": "資助",
@@ -1841,6 +1933,7 @@
   },
   {
     "id": "190888000233",
+    "seq": "437",
     "nameZh": "香港管理專業協會羅桂祥中學",
     "nameEn": "THE HONG KONG MANAGEMENT ASSOCIATION K. S. LO COLLEGE",
     "type": "資助",
@@ -1861,6 +1954,7 @@
   },
   {
     "id": "568287000133",
+    "seq": "448",
     "nameZh": "香港青年協會李兆基書院",
     "nameEn": "HKFYG LEE SHAU KEE COLLEGE",
     "type": "直資",
@@ -1881,6 +1975,7 @@
   },
   {
     "id": "510645000133",
+    "seq": "461",
     "nameZh": "上水官立中學",
     "nameEn": "SHEUNG SHUI GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -1901,6 +1996,7 @@
   },
   {
     "id": "113182000133",
+    "seq": "463",
     "nameZh": "中華基督教會基新中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KEI SAN SECONDARY SCHOOL",
     "type": "資助",
@@ -1921,6 +2017,7 @@
   },
   {
     "id": "517020000133",
+    "seq": "468",
     "nameZh": "保良局馬錦明中學",
     "nameEn": "PO LEUNG KUK MA KAM MING COLLEGE",
     "type": "資助",
@@ -1941,6 +2038,7 @@
   },
   {
     "id": "151807000133",
+    "seq": "480",
     "nameZh": "基督教香港信義會心誠中學",
     "nameEn": "FANLING LUTHERAN SECONDARY SCHOOL",
     "type": "直資",
@@ -1961,6 +2059,7 @@
   },
   {
     "id": "524557000133",
+    "seq": "469",
     "nameZh": "宣道會陳朱素華紀念中學",
     "nameEn": "CHRISTIAN ALLIANCE S W CHAN MEMORIAL COLLEGE",
     "type": "資助",
@@ -1981,6 +2080,7 @@
   },
   {
     "id": "190020000133",
+    "seq": "475",
     "nameZh": "新界喇沙中學",
     "nameEn": "DE LA SALLE SECONDARY SCHOOL N T",
     "type": "資助",
@@ -2001,6 +2101,7 @@
   },
   {
     "id": "270148000133",
+    "seq": "465",
     "nameZh": "明愛粉嶺陳震夏中學",
     "nameEn": "CARITAS FANLING CHAN CHUN HA SECONDARY SCHOOL",
     "type": "資助",
@@ -2021,6 +2122,7 @@
   },
   {
     "id": "190403000133",
+    "seq": "467",
     "nameZh": "東華三院李嘉誠中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS LI KA SHING COLLEGE",
     "type": "資助",
@@ -2041,6 +2143,7 @@
   },
   {
     "id": "190373000133",
+    "seq": "466",
     "nameZh": "東華三院甲寅年總理中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS KAP YAN DIRECTORS' COLLEGE",
     "type": "資助",
@@ -2061,6 +2164,7 @@
   },
   {
     "id": "190870000133",
+    "seq": "464",
     "nameZh": "田家炳中學",
     "nameEn": "TIN KA PING SECONDARY SCHOOL",
     "type": "資助",
@@ -2081,6 +2185,7 @@
   },
   {
     "id": "510041000133",
+    "seq": "462",
     "nameZh": "粉嶺官立中學",
     "nameEn": "FANLING GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -2101,6 +2206,7 @@
   },
   {
     "id": "536539000133",
+    "seq": "473",
     "nameZh": "粉嶺救恩書院",
     "nameEn": "FANLING KAU YAN COLLEGE",
     "type": "資助",
@@ -2121,6 +2227,7 @@
   },
   {
     "id": "530034000133",
+    "seq": "474",
     "nameZh": "粉嶺禮賢會中學",
     "nameEn": "FANLING RHENISH CHURCH SECONDARY SCHOOL",
     "type": "資助",
@@ -2141,6 +2248,7 @@
   },
   {
     "id": "190721000133",
+    "seq": "476",
     "nameZh": "聖公會陳融中學",
     "nameEn": "S.K.H. CHAN YOUNG SECONDARY SCHOOL",
     "type": "資助",
@@ -2161,6 +2269,7 @@
   },
   {
     "id": "170771000233",
+    "seq": "477",
     "nameZh": "聖芳濟各書院",
     "nameEn": "ST. FRANCIS OF ASSISI'S COLLEGE",
     "type": "資助",
@@ -2181,6 +2290,7 @@
   },
   {
     "id": "545198000133",
+    "seq": "470",
     "nameZh": "風采中學(教育評議會主辦)",
     "nameEn": "ELEGANTIA COLLEGE (SPONSORED BY EDUCATION CONVERGENCE)",
     "type": "資助",
@@ -2201,6 +2311,7 @@
   },
   {
     "id": "190845000133",
+    "seq": "471",
     "nameZh": "香海正覺蓮社佛教馬錦燦紀念英文中學",
     "nameEn": "HHCKLA BUDDHIST MA KAM CHAN MEMORIAL ENGLISH SECONDARY SCHOOL",
     "type": "資助",
@@ -2221,6 +2332,7 @@
   },
   {
     "id": "190420000133",
+    "seq": "472",
     "nameZh": "香港道教聯合會鄧顯紀念中學",
     "nameEn": "HONG KONG TAOIST ASSOCIATION TANG HIN MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -2241,6 +2353,7 @@
   },
   {
     "id": "518379000133",
+    "seq": "479",
     "nameZh": "鳳溪廖萬石堂中學",
     "nameEn": "FUNG KAI LIU MAN SHEK TONG SECONDARY SCHOOL",
     "type": "資助",
@@ -2261,6 +2374,7 @@
   },
   {
     "id": "511854000133",
+    "seq": "478",
     "nameZh": "鳳溪第一中學",
     "nameEn": "FUNG KAI NO.1 SECONDARY SCHOOL",
     "type": "資助",
@@ -2281,6 +2395,7 @@
   },
   {
     "id": "214981000133",
+    "seq": "086",
     "nameZh": "余振強紀念第二中學",
     "nameEn": "YU CHUN KEUNG MEMORIAL COLLEGE NO. 2",
     "type": "資助",
@@ -2301,6 +2416,7 @@
   },
   {
     "id": "316377000133",
+    "seq": "096",
     "nameZh": "嘉諾撒培德書院",
     "nameEn": "PUI TAK CANOSSIAN COLLEGE",
     "type": "資助",
@@ -2321,6 +2437,7 @@
   },
   {
     "id": "510203000133",
+    "seq": "097",
     "nameZh": "嘉諾撒聖心書院",
     "nameEn": "SACRED HEART CANOSSIAN COLLEGE",
     "type": "資助",
@@ -2341,6 +2458,7 @@
   },
   {
     "id": "513407000133",
+    "seq": "092",
     "nameZh": "培英中學",
     "nameEn": "PUI YING SECONDARY SCHOOL",
     "type": "資助",
@@ -2361,6 +2479,7 @@
   },
   {
     "id": "553190000333",
+    "seq": "100",
     "nameZh": "弘立書院",
     "nameEn": "THE INDEPENDENT SCHOOLS FOUNDATION ACADEMY",
     "type": "私立",
@@ -2381,6 +2500,7 @@
   },
   {
     "id": "170615000133",
+    "seq": "093",
     "nameZh": "新會商會陳白沙紀念中學",
     "nameEn": "SAN WUI COMMERCIAL SOCIETY CHAN PAK SHA SCHOOL",
     "type": "資助",
@@ -2401,6 +2521,7 @@
   },
   {
     "id": "282758000233",
+    "seq": "087",
     "nameZh": "明愛莊月明中學",
     "nameEn": "CARITAS CHONG YUET MING SECONDARY SCHOOL",
     "type": "資助",
@@ -2421,6 +2542,7 @@
   },
   {
     "id": "560472000133",
+    "seq": "098",
     "nameZh": "港大同學會書院",
     "nameEn": "HKUGA COLLEGE",
     "type": "直資",
@@ -2441,6 +2563,7 @@
   },
   {
     "id": "560138000233",
+    "seq": "102",
     "nameZh": "滬江維多利亞學校",
     "nameEn": "VICTORIA SHANGHAI ACADEMY",
     "type": "私立",
@@ -2461,6 +2584,7 @@
   },
   {
     "id": "607819000133",
+    "seq": "103",
     "nameZh": "漢鼎書院",
     "nameEn": "HAN ACADEMY",
     "type": "私立",
@@ -2481,6 +2605,7 @@
   },
   {
     "id": "170267000233",
+    "seq": "095",
     "nameZh": "聖伯多祿中學",
     "nameEn": "ST. PETER'S SECONDARY SCHOOL",
     "type": "資助",
@@ -2501,6 +2626,7 @@
   },
   {
     "id": "170690000133",
+    "seq": "094",
     "nameZh": "聖公會呂明才中學",
     "nameEn": "SHENG KUNG HUI LUI MING CHOI SECONDARY SCHOOL",
     "type": "資助",
@@ -2521,6 +2647,7 @@
   },
   {
     "id": "170712000133",
+    "seq": "099",
     "nameZh": "聖士提反書院",
     "nameEn": "ST. STEPHEN'S COLLEGE",
     "type": "直資",
@@ -2541,6 +2668,7 @@
   },
   {
     "id": "511102000133",
+    "seq": "088",
     "nameZh": "香港仔工業學校",
     "nameEn": "ABERDEEN TECHNICAL SCHOOL",
     "type": "資助",
@@ -2561,6 +2689,7 @@
   },
   {
     "id": "214485000233",
+    "seq": "089",
     "nameZh": "香港仔浸信會呂明才書院",
     "nameEn": "ABERDEEN BAPTIST LUI MING CHOI COLLEGE",
     "type": "資助",
@@ -2581,6 +2710,7 @@
   },
   {
     "id": "611751000133",
+    "seq": "101",
     "nameZh": "香港威雅學校",
     "nameEn": "WYCOMBE ABBEY SCHOOL HONG KONG",
     "type": "私立",
@@ -2601,6 +2731,7 @@
   },
   {
     "id": "512141000233",
+    "seq": "090",
     "nameZh": "香港真光書院",
     "nameEn": "HONG KONG TRUE LIGHT COLLEGE",
     "type": "資助",
@@ -2621,6 +2752,7 @@
   },
   {
     "id": "260312000133",
+    "seq": "091",
     "nameZh": "香港航海學校",
     "nameEn": "HONG KONG SEA SCHOOL",
     "type": "資助",
@@ -2641,6 +2773,7 @@
   },
   {
     "id": "270130000133",
+    "seq": "490",
     "nameZh": "中華基督教會馮梁結紀念中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA FUNG LEUNG KIT MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -2661,6 +2794,7 @@
   },
   {
     "id": "524549000133",
+    "seq": "491",
     "nameZh": "中華聖潔會靈風中學",
     "nameEn": "CHINA HOLINESS CHURCH LIVING SPIRIT COLLEGE",
     "type": "資助",
@@ -2681,6 +2815,7 @@
   },
   {
     "id": "190748000133",
+    "seq": "494",
     "nameZh": "佛教大光慈航中學",
     "nameEn": "BUDDHIST TAI KWONG CHI HONG COLLEGE",
     "type": "資助",
@@ -2701,6 +2836,7 @@
   },
   {
     "id": "190446000133",
+    "seq": "495",
     "nameZh": "南亞路德會沐恩中學",
     "nameEn": "SALEM-IMMANUEL LUTHERAN COLLEGE",
     "type": "資助",
@@ -2721,6 +2857,7 @@
   },
   {
     "id": "615137000133",
+    "seq": "509",
     "nameZh": "大光德萃書院",
     "nameEn": "TAI KWONG HILARY COLLEGE",
     "type": "私立",
@@ -2741,6 +2878,7 @@
   },
   {
     "id": "150894000133",
+    "seq": "507",
     "nameZh": "大埔三育中學",
     "nameEn": "TAI PO SAM YUK SECONDARY SCHOOL",
     "type": "直資",
@@ -2761,6 +2899,7 @@
   },
   {
     "id": "190810000133",
+    "seq": "492",
     "nameZh": "孔教學院大成何郭佩珍中學",
     "nameEn": "CONFUCIAN TAI SHING HO KWOK PUI CHUN COLLEGE",
     "type": "資助",
@@ -2781,6 +2920,7 @@
   },
   {
     "id": "114120000133",
+    "seq": "501",
     "nameZh": "恩主教書院",
     "nameEn": "VALTORTA COLLEGE",
     "type": "資助",
@@ -2801,6 +2941,7 @@
   },
   {
     "id": "210129000133",
+    "seq": "503",
     "nameZh": "救恩書院",
     "nameEn": "KAU YAN COLLEGE",
     "type": "資助",
@@ -2821,6 +2962,7 @@
   },
   {
     "id": "510556000133",
+    "seq": "489",
     "nameZh": "新界鄉議局大埔區中學",
     "nameEn": "NTHYK TAI PO DISTRICT SECONDARY SCHOOL",
     "type": "官立",
@@ -2841,6 +2983,7 @@
   },
   {
     "id": "545201000133",
+    "seq": "504",
     "nameZh": "港九街坊婦女會孫方中書院",
     "nameEn": "HONG KONG AND KOWLOON KAIFONG WOMEN'S ASSOCIATION SUN FONG CHUNG COLLEGE",
     "type": "資助",
@@ -2861,6 +3004,7 @@
   },
   {
     "id": "112810000133",
+    "seq": "493",
     "nameZh": "王肇枝中學",
     "nameEn": "WONG SHIU CHI SECONDARY SCHOOL",
     "type": "資助",
@@ -2881,6 +3025,7 @@
   },
   {
     "id": "212318000133",
+    "seq": "502",
     "nameZh": "神召會康樂中學",
     "nameEn": "ASSEMBLY OF GOD HEBRON SECONDARY SCHOOL",
     "type": "資助",
@@ -2901,6 +3046,7 @@
   },
   {
     "id": "190829000133",
+    "seq": "508",
     "nameZh": "羅定邦中學",
     "nameEn": "LAW TING PONG SECONDARY SCHOOL",
     "type": "直資",
@@ -2921,6 +3067,7 @@
   },
   {
     "id": "190080000133",
+    "seq": "505",
     "nameZh": "聖公會莫壽增會督中學",
     "nameEn": "SHENG KUNG HUI BISHOP MOK SAU TSENG SECONDARY SCHOOL",
     "type": "資助",
@@ -2941,6 +3088,7 @@
   },
   {
     "id": "230880000133",
+    "seq": "496",
     "nameZh": "迦密柏雨中學",
     "nameEn": "CARMEL PAK U SECONDARY SCHOOL",
     "type": "資助",
@@ -2961,6 +3109,7 @@
   },
   {
     "id": "524573000133",
+    "seq": "497",
     "nameZh": "迦密聖道中學",
     "nameEn": "CARMEL HOLY WORD SECONDARY SCHOOL",
     "type": "資助",
@@ -2981,6 +3130,7 @@
   },
   {
     "id": "529656000133",
+    "seq": "506",
     "nameZh": "靈糧堂劉梅軒中學",
     "nameEn": "LING LIANG CHURCH M H LAU SECONDARY SCHOOL",
     "type": "資助",
@@ -3001,6 +3151,7 @@
   },
   {
     "id": "190896000233",
+    "seq": "499",
     "nameZh": "香港教師會李興貴中學",
     "nameEn": "HONG KONG TEACHERS' ASSOCIATION LEE HENG KWEI SECONDARY SCHOOL",
     "type": "資助",
@@ -3021,6 +3172,7 @@
   },
   {
     "id": "190730000133",
+    "seq": "498",
     "nameZh": "香港紅卍字會大埔卍慈中學",
     "nameEn": "HONG KONG RED SWASTIKA SOCIETY TAI PO SECONDARY SCHOOL",
     "type": "資助",
@@ -3041,6 +3193,7 @@
   },
   {
     "id": "609498000233",
+    "seq": "510",
     "nameZh": "香港西班牙學校",
     "nameEn": "SPANISH SCHOOL OF HONG KONG",
     "type": "私立",
@@ -3061,6 +3214,7 @@
   },
   {
     "id": "190683000133",
+    "seq": "500",
     "nameZh": "香港道教聯合會圓玄學院第二中學",
     "nameEn": "HONG KONG TAOIST ASSOCIATION THE YUEN YUEN INSTITUTE NO.2 SECONDARY SCHOOL",
     "type": "資助",
@@ -3081,6 +3235,7 @@
   },
   {
     "id": "230120000133",
+    "seq": "369",
     "nameZh": "中華基督教會何福堂書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA HOH FUK TONG COLLEGE",
     "type": "資助",
@@ -3101,6 +3256,7 @@
   },
   {
     "id": "270202000133",
+    "seq": "370",
     "nameZh": "中華基督教會譚李麗芬紀念中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA TAM LEE LAI FUN MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -3121,6 +3277,7 @@
   },
   {
     "id": "190640000133",
+    "seq": "371",
     "nameZh": "仁愛堂田家炳中學",
     "nameEn": "YAN OI TONG TIN KA PING SECONDARY SCHOOL",
     "type": "資助",
@@ -3141,6 +3298,7 @@
   },
   {
     "id": "190454000133",
+    "seq": "372",
     "nameZh": "仁愛堂陳黃淑芳紀念中學",
     "nameEn": "YAN OI TONG CHAN WONG SUK FONG MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -3161,6 +3319,7 @@
   },
   {
     "id": "191671000133",
+    "seq": "373",
     "nameZh": "仁濟醫院第二中學",
     "nameEn": "YAN CHAI HOSPITAL NO. 2 SECONDARY SCHOOL",
     "type": "資助",
@@ -3181,6 +3340,7 @@
   },
   {
     "id": "230782000133",
+    "seq": "376",
     "nameZh": "佛教沈香林紀念中學",
     "nameEn": "BUDDHIST SUM HEUNG LAM MEMORIAL COLLEGE",
     "type": "資助",
@@ -3201,6 +3361,7 @@
   },
   {
     "id": "230774000133",
+    "seq": "383",
     "nameZh": "保良局百周年李兆忠紀念中學",
     "nameEn": "PO LEUNG KUK CENTENARY LI SHIU CHUNG MEMORIAL COLLEGE",
     "type": "資助",
@@ -3221,6 +3382,7 @@
   },
   {
     "id": "190586000133",
+    "seq": "384",
     "nameZh": "保良局董玉娣中學",
     "nameEn": "PO LEUNG KUK TANG YUK TIEN COLLEGE",
     "type": "資助",
@@ -3241,6 +3403,7 @@
   },
   {
     "id": "132918000133",
+    "seq": "375",
     "nameZh": "加拿大神召會嘉智中學",
     "nameEn": "PAOC KA CHI SECONDARY SCHOOL",
     "type": "資助",
@@ -3261,6 +3424,7 @@
   },
   {
     "id": "510661000133",
+    "seq": "368",
     "nameZh": "南屯門官立中學",
     "nameEn": "SOUTH TUEN MUN GOVERNMENT SEC SCH",
     "type": "官立",
@@ -3281,6 +3445,7 @@
   },
   {
     "id": "270105000133",
+    "seq": "396",
     "nameZh": "嗇色園主辦可藝中學",
     "nameEn": "HO NGAI COLLEGE (SPONSORED BY SIK SIK YUEN)",
     "type": "資助",
@@ -3301,6 +3466,7 @@
   },
   {
     "id": "190063000133",
+    "seq": "377",
     "nameZh": "妙法寺劉金龍中學",
     "nameEn": "MADAM LAU KAM LUNG SECONDARY SCHOOL OF MIU FAT BUDDHIST MONASTERY",
     "type": "資助",
@@ -3321,6 +3487,7 @@
   },
   {
     "id": "311103000233",
+    "seq": "385",
     "nameZh": "宣道中學",
     "nameEn": "CHRISTIAN ALLIANCE COLLEGE",
     "type": "資助",
@@ -3341,6 +3508,7 @@
   },
   {
     "id": "190624000133",
+    "seq": "374",
     "nameZh": "屯門天主教中學",
     "nameEn": "TUEN MUN CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -3361,6 +3529,7 @@
   },
   {
     "id": "510297000133",
+    "seq": "367",
     "nameZh": "屯門官立中學",
     "nameEn": "TUEN MUN GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -3381,6 +3550,7 @@
   },
   {
     "id": "210137000133",
+    "seq": "392",
     "nameZh": "崇真書院",
     "nameEn": "TSUNG TSIN COLLEGE",
     "type": "資助",
@@ -3401,6 +3571,7 @@
   },
   {
     "id": "270075000133",
+    "seq": "402",
     "nameZh": "廠商會蔡章閣中學",
     "nameEn": "CMA CHOI CHEUNG KOK SECONDARY SCHOOL",
     "type": "資助",
@@ -3421,6 +3592,7 @@
   },
   {
     "id": "190594000133",
+    "seq": "389",
     "nameZh": "恩平工商會李琳明中學",
     "nameEn": "YAN PING INDUSTRIAL & COMMERCIAL ASSOCIATION LEE LIM MING COLLEGE",
     "type": "資助",
@@ -3441,6 +3613,7 @@
   },
   {
     "id": "190691000133",
+    "seq": "398",
     "nameZh": "新會商會中學",
     "nameEn": "SAN WUI COMMERCIAL SOCIETY SECONDARY SCHOOL",
     "type": "資助",
@@ -3461,6 +3634,7 @@
   },
   {
     "id": "530352000133",
+    "seq": "397",
     "nameZh": "新生命教育協會平安福音中學",
     "nameEn": "NLSI PEACE EVANGELICAL SECONDARY SCHOOL",
     "type": "資助",
@@ -3481,6 +3655,7 @@
   },
   {
     "id": "270032000133",
+    "seq": "378",
     "nameZh": "明愛屯門馬登基金中學",
     "nameEn": "CARITAS TUEN MUN MARDEN FOUNDATION SECONDARY SCHOOL",
     "type": "資助",
@@ -3501,6 +3676,7 @@
   },
   {
     "id": "190292000133",
+    "seq": "379",
     "nameZh": "東華三院辛亥年總理中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS SUN HOI DIRECTORS' COLLEGE",
     "type": "資助",
@@ -3521,6 +3697,7 @@
   },
   {
     "id": "190381000133",
+    "seq": "380",
     "nameZh": "東華三院邱子田紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS YAU TZE TIN MEMORIAL COLLEGE",
     "type": "資助",
@@ -3541,6 +3718,7 @@
   },
   {
     "id": "523208000133",
+    "seq": "381",
     "nameZh": "東華三院鄺錫坤伉儷中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS MR & MRS KWONG SIK KWAN COLLEGE",
     "type": "資助",
@@ -3561,6 +3739,7 @@
   },
   {
     "id": "518360000133",
+    "seq": "390",
     "nameZh": "浸信會永隆中學",
     "nameEn": "BAPTIST WING LUNG SECONDARY SCHOOL",
     "type": "資助",
@@ -3581,6 +3760,7 @@
   },
   {
     "id": "510599000133",
+    "seq": "393",
     "nameZh": "深培中學",
     "nameEn": "SEMPLE MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -3601,6 +3781,7 @@
   },
   {
     "id": "190071000133",
+    "seq": "399",
     "nameZh": "聖公會聖西門呂明才中學",
     "nameEn": "S.K.H. ST. SIMON'S LUI MING CHOI SECONDARY SCHOOL",
     "type": "資助",
@@ -3621,6 +3802,7 @@
   },
   {
     "id": "230928000133",
+    "seq": "400",
     "nameZh": "裘錦秋中學﹝屯門﹞",
     "nameEn": "JU CHING CHU SECONDARY SCHOOL (TUEN MUN)",
     "type": "資助",
@@ -3641,6 +3823,7 @@
   },
   {
     "id": "190284000133",
+    "seq": "401",
     "nameZh": "路德會呂祥光中學",
     "nameEn": "LUI CHEUNG KWONG LUTHERAN COLLEGE",
     "type": "資助",
@@ -3661,6 +3844,7 @@
   },
   {
     "id": "190411000133",
+    "seq": "386",
     "nameZh": "迦密唐賓南紀念中學",
     "nameEn": "CARMEL BUNNAN TONG MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -3681,6 +3865,7 @@
   },
   {
     "id": "511617000133",
+    "seq": "403",
     "nameZh": "鐘聲慈善社胡陳金枝中學",
     "nameEn": "CHUNG SING BENEVOLENT SOCIETY MRS. AW BOON HAW SECONDARY SCHOOL",
     "type": "資助",
@@ -3701,6 +3886,7 @@
   },
   {
     "id": "530778000133",
+    "seq": "382",
     "nameZh": "青松侯寶垣中學",
     "nameEn": "CHING CHUNG HAU PO WOON SECONDARY SCHOOL",
     "type": "資助",
@@ -3721,6 +3907,7 @@
   },
   {
     "id": "190233000133",
+    "seq": "394",
     "nameZh": "順德聯誼總會梁銶琚中學",
     "nameEn": "SHUN TAK FRATERNAL ASSOCIATION LEUNG KAU KUI COLLEGE",
     "type": "資助",
@@ -3741,6 +3928,7 @@
   },
   {
     "id": "190179000133",
+    "seq": "395",
     "nameZh": "順德聯誼總會譚伯羽中學",
     "nameEn": "SHUN TAK FRATERNAL ASSOCIATION TAM PAK YU COLLEGE",
     "type": "資助",
@@ -3761,6 +3949,7 @@
   },
   {
     "id": "190551000133",
+    "seq": "387",
     "nameZh": "香海正覺蓮社佛教梁植偉中學",
     "nameEn": "HHCKLA BUDDHIST LEUNG CHIK WAI COLLEGE",
     "type": "資助",
@@ -3781,6 +3970,7 @@
   },
   {
     "id": "190160000133",
+    "seq": "388",
     "nameZh": "香港九龍塘基督教中華宣道會陳瑞芝紀念中學",
     "nameEn": "CHRISTIAN ALLIANCE S. C. CHAN MEMORIAL COLLEGE",
     "type": "資助",
@@ -3801,6 +3991,7 @@
   },
   {
     "id": "521981000133",
+    "seq": "391",
     "nameZh": "馬錦明慈善基金馬可賓紀念中學",
     "nameEn": "STEWARDS MA KAM MING CHARITABLE FOUNDATION MA KO PAN MEMORIAL COLLEGE",
     "type": "資助",
@@ -3821,6 +4012,7 @@
   },
   {
     "id": "529990000233",
+    "seq": "051",
     "nameZh": "中華傳道會劉永生中學",
     "nameEn": "CHRISTIAN NATIONALS' EVANGELISM COMMISSION LAU WING SANG SECONDARY SCHOOL",
     "type": "資助",
@@ -3841,6 +4033,7 @@
   },
   {
     "id": "170216000133",
+    "seq": "050",
     "nameZh": "中華基督教會桂華山中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KWEI WAH SHAN COLLEGE",
     "type": "資助",
@@ -3861,6 +4054,7 @@
   },
   {
     "id": "536598000133",
+    "seq": "072",
     "nameZh": "中華基金中學",
     "nameEn": "THE CHINESE FOUNDATION SECONDARY SCHOOL",
     "type": "直資",
@@ -3881,6 +4075,7 @@
   },
   {
     "id": "522082000133",
+    "seq": "053",
     "nameZh": "伊斯蘭脫維善紀念中學",
     "nameEn": "ISLAMIC KASIM TUET MEMORIAL COLLEGE",
     "type": "資助",
@@ -3901,6 +4096,7 @@
   },
   {
     "id": "133124000133",
+    "seq": "063",
     "nameZh": "嘉諾撒書院",
     "nameEn": "CANOSSA COLLEGE",
     "type": "資助",
@@ -3921,6 +4117,7 @@
   },
   {
     "id": "513369000133",
+    "seq": "073",
     "nameZh": "培僑中學",
     "nameEn": "PUI KIU MIDDLE SCHOOL",
     "type": "直資",
@@ -3941,6 +4138,7 @@
   },
   {
     "id": "581259000133",
+    "seq": "077",
     "nameZh": "培生學校",
     "nameEn": "GRACE CHRISTIAN ACADEMY",
     "type": "私立",
@@ -3961,6 +4159,7 @@
   },
   {
     "id": "513300000233",
+    "seq": "070",
     "nameZh": "寶血女子中學",
     "nameEn": "PRECIOUS BLOOD SECONDARY SCHOOL",
     "type": "資助",
@@ -3981,6 +4180,7 @@
   },
   {
     "id": "171042000233",
+    "seq": "068",
     "nameZh": "嶺南中學",
     "nameEn": "LINGNAN SECONDARY SCHOOL",
     "type": "資助",
@@ -4001,6 +4201,7 @@
   },
   {
     "id": "171000000233",
+    "seq": "069",
     "nameZh": "嶺南衡怡紀念中學",
     "nameEn": "LINGNAN HANG YEE MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -4021,6 +4222,7 @@
   },
   {
     "id": "510378000133",
+    "seq": "046",
     "nameZh": "庇理羅士女子中學",
     "nameEn": "BELILIOS PUBLIC SCHOOL",
     "type": "官立",
@@ -4041,6 +4243,7 @@
   },
   {
     "id": "170526000133",
+    "seq": "057",
     "nameZh": "張振興伉儷書院",
     "nameEn": "CHONG GENE HANG COLLEGE",
     "type": "資助",
@@ -4061,6 +4264,7 @@
   },
   {
     "id": "170186000133",
+    "seq": "058",
     "nameZh": "張祝珊英文中學",
     "nameEn": "CHEUNG CHUK SHAN COLLEGE",
     "type": "資助",
@@ -4081,6 +4285,7 @@
   },
   {
     "id": "210528000133",
+    "seq": "064",
     "nameZh": "慈幼英文學校",
     "nameEn": "SALESIAN ENGLISH SCHOOL",
     "type": "資助",
@@ -4101,6 +4306,7 @@
   },
   {
     "id": "212431000133",
+    "seq": "052",
     "nameZh": "文理書院(香港)",
     "nameEn": "COGNITIO COLLEGE (HONG KONG)",
     "type": "資助",
@@ -4121,6 +4327,7 @@
   },
   {
     "id": "270040000133",
+    "seq": "054",
     "nameZh": "明愛柴灣馬登基金中學",
     "nameEn": "CARITAS CHAI WAN MARDEN FOUNDATION SECONDARY SCHOOL",
     "type": "資助",
@@ -4141,6 +4348,7 @@
   },
   {
     "id": "530018000133",
+    "seq": "059",
     "nameZh": "港島民生書院",
     "nameEn": "MUNSANG COLLEGE (HONG KONG ISLAND)",
     "type": "資助",
@@ -4161,6 +4369,7 @@
   },
   {
     "id": "512079000233",
+    "seq": "074",
     "nameZh": "漢華中學",
     "nameEn": "HON WAH COLLEGE",
     "type": "直資",
@@ -4181,6 +4390,7 @@
   },
   {
     "id": "516961000133",
+    "seq": "055",
     "nameZh": "炮台山循道衛理中學",
     "nameEn": "FORTRESS HILL METHODIST SECONDARY SCHOOL",
     "type": "資助",
@@ -4201,6 +4411,7 @@
   },
   {
     "id": "524590000133",
+    "seq": "065",
     "nameZh": "福建中學(小西灣)",
     "nameEn": "FUKIEN SECONDARY SCHOOL (SIU SAI WAN)",
     "type": "資助",
@@ -4221,6 +4432,7 @@
   },
   {
     "id": "510440000133",
+    "seq": "048",
     "nameZh": "筲箕灣官立中學",
     "nameEn": "SHAU KEI WAN GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -4241,6 +4453,7 @@
   },
   {
     "id": "510220000133",
+    "seq": "049",
     "nameZh": "筲箕灣東官立中學",
     "nameEn": "SHAU KEI WAN EAST GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -4261,6 +4474,7 @@
   },
   {
     "id": "518395000133",
+    "seq": "060",
     "nameZh": "聖公會李福慶中學",
     "nameEn": "SKH LI FOOK HING SECONDARY SCHOOL",
     "type": "資助",
@@ -4281,6 +4495,7 @@
   },
   {
     "id": "133469000133",
+    "seq": "061",
     "nameZh": "聖貞德中學",
     "nameEn": "ST. JOAN OF ARC SECONDARY SCHOOL",
     "type": "資助",
@@ -4301,6 +4516,7 @@
   },
   {
     "id": "514110000233",
+    "seq": "062",
     "nameZh": "聖馬可中學",
     "nameEn": "ST. MARK'S SCHOOL",
     "type": "資助",
@@ -4321,6 +4537,7 @@
   },
   {
     "id": "616354000133",
+    "seq": "076",
     "nameZh": "茵維特學校(香港)",
     "nameEn": "INVICTUS SECONDARY SCHOOL",
     "type": "私立",
@@ -4341,6 +4558,7 @@
   },
   {
     "id": "211338000133",
+    "seq": "075",
     "nameZh": "蘇浙公學",
     "nameEn": "KIANGSU-CHEKIANG COLLEGE",
     "type": "直資",
@@ -4361,6 +4579,7 @@
   },
   {
     "id": "170810000233",
+    "seq": "067",
     "nameZh": "衞理中學",
     "nameEn": "THE METHODIST CHURCH HONG KONG WESLEY COLLEGE",
     "type": "資助",
@@ -4381,6 +4600,7 @@
   },
   {
     "id": "510033000133",
+    "seq": "047",
     "nameZh": "金文泰中學",
     "nameEn": "CLEMENTI SECONDARY SCHOOL",
     "type": "官立",
@@ -4401,6 +4621,7 @@
   },
   {
     "id": "214590000133",
+    "seq": "066",
     "nameZh": "閩僑中學",
     "nameEn": "MAN KIU COLLEGE",
     "type": "資助",
@@ -4421,6 +4642,7 @@
   },
   {
     "id": "511943000133",
+    "seq": "071",
     "nameZh": "顯理中學",
     "nameEn": "HENRIETTA SECONDARY SCHOOL",
     "type": "資助",
@@ -4441,6 +4663,7 @@
   },
   {
     "id": "215139000133",
+    "seq": "056",
     "nameZh": "香港中國婦女會中學",
     "nameEn": "HONG KONG CHINESE WOMEN'S CLUB COLLEGE",
     "type": "資助",
@@ -4461,6 +4684,7 @@
   },
   {
     "id": "190438000133",
+    "seq": "521",
     "nameZh": "五旬節林漢光中學",
     "nameEn": "PENTECOSTAL LAM HON KWONG SCHOOL",
     "type": "資助",
@@ -4481,6 +4705,7 @@
   },
   {
     "id": "513067000133",
+    "seq": "522",
     "nameZh": "五育中學",
     "nameEn": "NG YUK SECONDARY SCHOOL",
     "type": "資助",
@@ -4501,6 +4726,7 @@
   },
   {
     "id": "270180000133",
+    "seq": "523",
     "nameZh": "仁濟醫院董之英紀念中學",
     "nameEn": "YAN CHAI HOSPITAL TUNG CHI YING MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -4521,6 +4747,7 @@
   },
   {
     "id": "190217000133",
+    "seq": "527",
     "nameZh": "佛教覺光法師中學",
     "nameEn": "BUDDHIST KOK KWONG SECONDARY SCHOOL",
     "type": "資助",
@@ -4541,6 +4768,7 @@
   },
   {
     "id": "190268000133",
+    "seq": "526",
     "nameZh": "佛教黃允畋中學",
     "nameEn": "BUDDHIST WONG WAN TIN COLLEGE",
     "type": "資助",
@@ -4561,6 +4789,7 @@
   },
   {
     "id": "270083000133",
+    "seq": "538",
     "nameZh": "保良局朱敬文中學",
     "nameEn": "PO LEUNG KUK C.W. CHU COLLEGE",
     "type": "資助",
@@ -4581,6 +4810,7 @@
   },
   {
     "id": "170755000133",
+    "seq": "539",
     "nameZh": "保良局胡忠中學",
     "nameEn": "PO LEUNG KUK WU CHUNG COLLEGE",
     "type": "資助",
@@ -4601,6 +4831,7 @@
   },
   {
     "id": "190764000133",
+    "seq": "547",
     "nameZh": "博愛醫院陳楷紀念中學",
     "nameEn": "POK OI HOSPITAL CHAN KAI MEMORIAL COLLEGE",
     "type": "資助",
@@ -4621,6 +4852,7 @@
   },
   {
     "id": "190390000133",
+    "seq": "525",
     "nameZh": "台山商會中學",
     "nameEn": "TOI SHAN ASSOCIATION COLLEGE",
     "type": "資助",
@@ -4641,6 +4873,7 @@
   },
   {
     "id": "567485000133",
+    "seq": "563",
     "nameZh": "啓新書院",
     "nameEn": "RENAISSANCE COLLEGE",
     "type": "私立",
@@ -4661,6 +4894,7 @@
   },
   {
     "id": "560553000133",
+    "seq": "561",
     "nameZh": "培僑書院",
     "nameEn": "PUI KIU COLLEGE",
     "type": "直資",
@@ -4681,6 +4915,7 @@
   },
   {
     "id": "569836000133",
+    "seq": "564",
     "nameZh": "基督教國際學校",
     "nameEn": "INTERNATIONAL CHRISTIAN SCHOOL",
     "type": "私立",
@@ -4701,6 +4936,7 @@
   },
   {
     "id": "132764000133",
+    "seq": "546",
     "nameZh": "基督書院",
     "nameEn": "CHRIST COLLEGE",
     "type": "資助",
@@ -4721,6 +4957,7 @@
   },
   {
     "id": "190667000133",
+    "seq": "524",
     "nameZh": "天主教郭得勝中學",
     "nameEn": "KWOK TAK SENG CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -4741,6 +4978,7 @@
   },
   {
     "id": "536571000133",
+    "seq": "562",
     "nameZh": "德信中學",
     "nameEn": "TAK SUN SECONDARY SCHOOL",
     "type": "直資",
@@ -4761,6 +4999,7 @@
   },
   {
     "id": "523305000133",
+    "seq": "532",
     "nameZh": "明愛馬鞍山中學",
     "nameEn": "CARITAS MA ON SHAN SECONDARY SCHOOL",
     "type": "資助",
@@ -4781,6 +5020,7 @@
   },
   {
     "id": "190780000133",
+    "seq": "548",
     "nameZh": "曾璧山(崇蘭)中學",
     "nameEn": "TSANG PIK SHAN (SUNG LAN) SECONDARY SCHOOL",
     "type": "資助",
@@ -4801,6 +5041,7 @@
   },
   {
     "id": "231622000133",
+    "seq": "557",
     "nameZh": "李寶椿聯合世界書院",
     "nameEn": "LI PO CHUN UNITED WORLD COLLEGE OF HONG KONG",
     "type": "直資",
@@ -4821,6 +5062,7 @@
   },
   {
     "id": "190519000133",
+    "seq": "533",
     "nameZh": "東莞工商總會劉百樂中學",
     "nameEn": "GENERAL CHAMBER OF COMMERCE AND INDUSTRY OF THE TUNG KUN DISTRICT LAU PAK LOK SECONDARY SCHOOL",
     "type": "資助",
@@ -4841,6 +5083,7 @@
   },
   {
     "id": "270091000133",
+    "seq": "534",
     "nameZh": "東華三院邱金元中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS YOW KAM YUEN COLLEGE",
     "type": "資助",
@@ -4861,6 +5104,7 @@
   },
   {
     "id": "230812000133",
+    "seq": "535",
     "nameZh": "東華三院馮黃鳳亭中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS MRS FUNG WONG FUNG TING COLLEGE",
     "type": "資助",
@@ -4881,6 +5125,7 @@
   },
   {
     "id": "170780000133",
+    "seq": "536",
     "nameZh": "東華三院黃鳳翎中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS WONG FUNG LING COLLEGE",
     "type": "資助",
@@ -4901,6 +5146,7 @@
   },
   {
     "id": "558060000233",
+    "seq": "558",
     "nameZh": "林大輝中學",
     "nameEn": "LAM TAI FAI COLLEGE",
     "type": "直資",
@@ -4921,6 +5167,7 @@
   },
   {
     "id": "510076000133",
+    "seq": "520",
     "nameZh": "梁文燕紀念中學(沙田)",
     "nameEn": "HELEN LIANG MEMORIAL SECONDARY SCHOOL (SHATIN)",
     "type": "官立",
@@ -4941,6 +5188,7 @@
   },
   {
     "id": "190756000133",
+    "seq": "553",
     "nameZh": "樂善堂楊葛小琳中學",
     "nameEn": "LOK SIN TONG YOUNG KO HSIAO LIN SECONDARY SCHOOL",
     "type": "資助",
@@ -4961,6 +5209,7 @@
   },
   {
     "id": "133078000133",
+    "seq": "554",
     "nameZh": "樂道中學",
     "nameEn": "LOCK TAO SECONDARY SCHOOL",
     "type": "資助",
@@ -4981,6 +5230,7 @@
   },
   {
     "id": "230839000133",
+    "seq": "528",
     "nameZh": "沙田培英中學",
     "nameEn": "SHATIN PUI YING COLLEGE",
     "type": "資助",
@@ -5001,6 +5251,7 @@
   },
   {
     "id": "510610000133",
+    "seq": "519",
     "nameZh": "沙田官立中學",
     "nameEn": "SHA TIN GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -5021,6 +5272,7 @@
   },
   {
     "id": "190527000233",
+    "seq": "529",
     "nameZh": "沙田崇真中學",
     "nameEn": "SHATIN TSUNG TSIN SECONDARY SCHOOL",
     "type": "資助",
@@ -5041,6 +5293,7 @@
   },
   {
     "id": "190187000133",
+    "seq": "530",
     "nameZh": "沙田循道衞理中學",
     "nameEn": "SHA TIN METHODIST COLLEGE",
     "type": "資助",
@@ -5061,6 +5314,7 @@
   },
   {
     "id": "230804000133",
+    "seq": "531",
     "nameZh": "沙田蘇浙公學",
     "nameEn": "KIANGSU-CHEKIANG COLLEGE (SHATIN)",
     "type": "資助",
@@ -5081,6 +5335,7 @@
   },
   {
     "id": "230820000133",
+    "seq": "543",
     "nameZh": "浸信會呂明才中學",
     "nameEn": "BAPTIST LUI MING CHOI SECONDARY SCHOOL",
     "type": "資助",
@@ -5101,6 +5356,7 @@
   },
   {
     "id": "190616000133",
+    "seq": "555",
     "nameZh": "潮州會館中學",
     "nameEn": "CHIU CHOW ASSOCIATION SECONDARY SCHOOL",
     "type": "資助",
@@ -5121,6 +5377,7 @@
   },
   {
     "id": "230790000133",
+    "seq": "550",
     "nameZh": "聖公會曾肇添中學",
     "nameEn": "SHENG KUNG HUI TSANG SHIU TIM SECONDARY SCHOOL",
     "type": "資助",
@@ -5141,6 +5398,7 @@
   },
   {
     "id": "190209000133",
+    "seq": "549",
     "nameZh": "聖公會林裘謀中學",
     "nameEn": "SHENG KUNG HUI LAM KAU MOW SECONDARY SCHOOL",
     "type": "資助",
@@ -5161,6 +5419,7 @@
   },
   {
     "id": "190195000133",
+    "seq": "551",
     "nameZh": "聖母無玷聖心書院",
     "nameEn": "IMMACULATE HEART OF MARY COLLEGE",
     "type": "資助",
@@ -5181,6 +5440,7 @@
   },
   {
     "id": "530689000133",
+    "seq": "552",
     "nameZh": "聖羅撒書院",
     "nameEn": "ST. ROSE OF LIMA'S COLLEGE",
     "type": "資助",
@@ -5201,6 +5461,7 @@
   },
   {
     "id": "190705000133",
+    "seq": "556",
     "nameZh": "賽馬會體藝中學",
     "nameEn": "JOCKEY CLUB TI-I COLLEGE",
     "type": "資助",
@@ -5221,6 +5482,7 @@
   },
   {
     "id": "210390000133",
+    "seq": "537",
     "nameZh": "青年會書院",
     "nameEn": "CHINESE Y.M.C.A. COLLEGE",
     "type": "資助",
@@ -5241,6 +5503,7 @@
   },
   {
     "id": "190802000133",
+    "seq": "542",
     "nameZh": "香港中國婦女會馮堯敬紀念中學",
     "nameEn": "THE HONG KONG CHINESE WOMEN'S CLUB FUNG YIU KING MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -5261,6 +5524,7 @@
   },
   {
     "id": "535761000133",
+    "seq": "541",
     "nameZh": "香港中文大學校友會聯會陳震夏中學",
     "nameEn": "CUHK FAA CHAN CHUN HA SECONDARY SCHOOL",
     "type": "資助",
@@ -5281,6 +5545,7 @@
   },
   {
     "id": "190497000133",
+    "seq": "540",
     "nameZh": "香港九龍塘基督教中華宣道會鄭榮之中學",
     "nameEn": "CHRISTIAN ALLIANCE CHENG WING GEE COLLEGE OF THE KOWLOON TONG CHURCH OF THE CHINESE CHRISTIAN AND MISSIONARY ALLIANCE, HONG KONG",
     "type": "資助",
@@ -5301,6 +5566,7 @@
   },
   {
     "id": "567353000133",
+    "seq": "559",
     "nameZh": "香港浸會大學附屬學校王錦輝中小學",
     "nameEn": "HONG KONG BAPTIST UNIVERSITY AFFILIATED SCHOOL WONG KAM FAI SECONDARY AND PRIMARY SCHOOL",
     "type": "直資",
@@ -5321,6 +5587,7 @@
   },
   {
     "id": "558567000133",
+    "seq": "560",
     "nameZh": "香港神託會培基書院",
     "nameEn": "STEWARDS POOI KEI COLLEGE",
     "type": "直資",
@@ -5341,6 +5608,7 @@
   },
   {
     "id": "190772000133",
+    "seq": "544",
     "nameZh": "馬鞍山崇真中學",
     "nameEn": "MA ON SHAN TSUNG TSIN SECONDARY SCHOOL",
     "type": "資助",
@@ -5361,6 +5629,7 @@
   },
   {
     "id": "518310000133",
+    "seq": "545",
     "nameZh": "馬鞍山聖若瑟中學",
     "nameEn": "MA ON SHAN ST. JOSEPH'S SECONDARY SCHOOL",
     "type": "資助",
@@ -5381,6 +5650,7 @@
   },
   {
     "id": "289515000133",
+    "seq": "135",
     "nameZh": "CALIFORNIA SCHOOL",
     "nameEn": "CALIFORNIA SCHOOL",
     "type": "私立",
@@ -5401,6 +5671,7 @@
   },
   {
     "id": "626864000133",
+    "seq": "136",
     "nameZh": "STAMFORD AMERICAN SCHOOL HONG KONG (WEST KOWLOON)",
     "nameEn": "STAMFORD AMERICAN SCHOOL HONG KONG (WEST KOWLOON)",
     "type": "私立",
@@ -5421,6 +5692,7 @@
   },
   {
     "id": "170437000133",
+    "seq": "116",
     "nameZh": "世界龍岡學校劉皇發中學",
     "nameEn": "LUNG KONG WORLD FEDERATION SCHOOL LIMITED LAU WONG FAT SECONDARY SCHOOL",
     "type": "資助",
@@ -5441,6 +5713,7 @@
   },
   {
     "id": "170305000133",
+    "seq": "114",
     "nameZh": "中華基督教會銘基書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA MING KEI COLLEGE",
     "type": "資助",
@@ -5461,6 +5734,7 @@
   },
   {
     "id": "131814000333",
+    "seq": "127",
     "nameZh": "九龍三育中學",
     "nameEn": "KOWLOON SAM YUK SECONDARY SCHOOL",
     "type": "直資",
@@ -5481,6 +5755,7 @@
   },
   {
     "id": "510424000133",
+    "seq": "112",
     "nameZh": "伊利沙伯中學",
     "nameEn": "QUEEN ELIZABETH SCHOOL",
     "type": "官立",
@@ -5501,6 +5776,7 @@
   },
   {
     "id": "171026000133",
+    "seq": "117",
     "nameZh": "保良局莊啓程預科書院",
     "nameEn": "PO LEUNG KUK VICWOOD K.T. CHONG SIXTH FORM COLLEGE",
     "type": "資助",
@@ -5521,6 +5797,7 @@
   },
   {
     "id": "625264000133",
+    "seq": "132",
     "nameZh": "倫敦卓越書院(尖沙咀)",
     "nameEn": "EXCEL LONDON COLLEGE (TSIM SHA TSUI)",
     "type": "私立",
@@ -5541,6 +5818,7 @@
   },
   {
     "id": "514128000133",
+    "seq": "125",
     "nameZh": "嘉諾撒聖瑪利書院",
     "nameEn": "ST. MARY'S CANOSSIAN COLLEGE",
     "type": "資助",
@@ -5561,6 +5839,7 @@
   },
   {
     "id": "135712000133",
+    "seq": "119",
     "nameZh": "基督教香港信義會信義中學",
     "nameEn": "ELCHK LUTHERAN SECONDARY SCHOOL",
     "type": "資助",
@@ -5581,6 +5860,7 @@
   },
   {
     "id": "212067000133",
+    "seq": "115",
     "nameZh": "天主教新民書院",
     "nameEn": "NEWMAN CATHOLIC COLLEGE",
     "type": "資助",
@@ -5601,6 +5881,7 @@
   },
   {
     "id": "536997000133",
+    "seq": "113",
     "nameZh": "官立嘉道理爵士中學(西九龍)",
     "nameEn": "SIR ELLIS KADOORIE SECONDARY SCHOOL (WEST KOWLOON)",
     "type": "官立",
@@ -5621,6 +5902,7 @@
   },
   {
     "id": "510890000133",
+    "seq": "120",
     "nameZh": "循道中學",
     "nameEn": "METHODIST COLLEGE",
     "type": "資助",
@@ -5641,6 +5923,7 @@
   },
   {
     "id": "511714000133",
+    "seq": "128",
     "nameZh": "拔萃女書院",
     "nameEn": "DIOCESAN GIRLS' SCHOOL",
     "type": "直資",
@@ -5661,6 +5944,7 @@
   },
   {
     "id": "135011000133",
+    "seq": "121",
     "nameZh": "港九潮州公會中學",
     "nameEn": "HONG KONG & KOWLOON CHIU CHOW PUBLIC ASSOCIATION SECONDARY SCHOOL",
     "type": "資助",
@@ -5681,6 +5965,7 @@
   },
   {
     "id": "170631000133",
+    "seq": "118",
     "nameZh": "真光女書院",
     "nameEn": "TRUE LIGHT GIRLS' COLLEGE",
     "type": "資助",
@@ -5701,6 +5986,7 @@
   },
   {
     "id": "133183000133",
+    "seq": "123",
     "nameZh": "聖公會諸聖中學",
     "nameEn": "S.K.H. ALL SAINTS' MIDDLE SCHOOL",
     "type": "資助",
@@ -5721,6 +6007,7 @@
   },
   {
     "id": "210277000133",
+    "seq": "124",
     "nameZh": "聖芳濟書院",
     "nameEn": "ST. FRANCIS XAVIER'S COLLEGE",
     "type": "資助",
@@ -5741,6 +6028,7 @@
   },
   {
     "id": "510475000133",
+    "seq": "122",
     "nameZh": "華仁書院(九龍)",
     "nameEn": "WAH YAN COLLEGE, KOWLOON",
     "type": "資助",
@@ -5761,6 +6049,7 @@
   },
   {
     "id": "315699000333",
+    "seq": "133",
     "nameZh": "華夏書院",
     "nameEn": "WAHHAR COLLEGE HONG KONG",
     "type": "私立",
@@ -5781,6 +6070,7 @@
   },
   {
     "id": "524867000131",
+    "seq": "134",
     "nameZh": "遵理學校(旺角)",
     "nameEn": "BEACON COLLEGE (MONG KOK)",
     "type": "私立",
@@ -5801,6 +6091,7 @@
   },
   {
     "id": "609781000233",
+    "seq": "130",
     "nameZh": "香港力邁學校",
     "nameEn": "HONGKONG LIMAI SCHOOL",
     "type": "私立",
@@ -5821,6 +6112,7 @@
   },
   {
     "id": "536563000133",
+    "seq": "129",
     "nameZh": "香港管理專業協會李國寶中學",
     "nameEn": "HKMA DAVID LI KWOK PO COLLEGE",
     "type": "直資",
@@ -5841,6 +6133,7 @@
   },
   {
     "id": "215287000933",
+    "seq": "131",
     "nameZh": "香港華德福教育基金會瑪利亞書院",
     "nameEn": "RUDOLF STEINER EDUCATION FOUNDATION HONG KONG MARIA COLLEGE",
     "type": "私立",
@@ -5861,6 +6154,7 @@
   },
   {
     "id": "512605000133",
+    "seq": "126",
     "nameZh": "麗澤中學",
     "nameEn": "LAI CHACK MIDDLE SCHOOL",
     "type": "資助",
@@ -5881,6 +6175,7 @@
   },
   {
     "id": "134333000133",
+    "seq": "162",
     "nameZh": "中聖書院",
     "nameEn": "CHINA HOLINESS COLLEGE",
     "type": "直資",
@@ -5901,6 +6196,7 @@
   },
   {
     "id": "170097000133",
+    "seq": "146",
     "nameZh": "中華基督教會銘賢書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA MING YIN COLLEGE",
     "type": "資助",
@@ -5921,6 +6217,7 @@
   },
   {
     "id": "629081000133",
+    "seq": "170",
     "nameZh": "中黃書院",
     "nameEn": "ZHONGSHAN WHAMPOA ACADEMY",
     "type": "私立",
@@ -5941,6 +6238,7 @@
   },
   {
     "id": "510521000133",
+    "seq": "145",
     "nameZh": "九龍工業學校",
     "nameEn": "KOWLOON TECHNICAL SCHOOL",
     "type": "官立",
@@ -5961,6 +6259,7 @@
   },
   {
     "id": "170372000133",
+    "seq": "148",
     "nameZh": "佛教大雄中學",
     "nameEn": "BUDDHIST TAI HUNG COLLEGE",
     "type": "資助",
@@ -5981,6 +6280,7 @@
   },
   {
     "id": "519111000233",
+    "seq": "151",
     "nameZh": "保良局唐乃勤初中書院",
     "nameEn": "PO LEUNG KUK TONG NAI KAN JUNIOR SECONDARY COLLEGE",
     "type": "資助",
@@ -6001,6 +6301,7 @@
   },
   {
     "id": "543560000433",
+    "seq": "171",
     "nameZh": "保良局蔡繼有學校",
     "nameEn": "PO LEUNG KUK CHOI KAI YAU SCHOOL",
     "type": "私立",
@@ -6021,6 +6322,7 @@
   },
   {
     "id": "214906000133",
+    "seq": "163",
     "nameZh": "地利亞修女紀念學校(吉利徑)",
     "nameEn": "DELIA MEMORIAL SCHOOL (GLEE PATH)",
     "type": "直資",
@@ -6041,6 +6343,7 @@
   },
   {
     "id": "214930000133",
+    "seq": "164",
     "nameZh": "地利亞修女紀念學校﹝百老匯﹞",
     "nameEn": "DELIA MEMORIAL SCHOOL (BROADWAY )",
     "type": "直資",
@@ -6061,6 +6364,7 @@
   },
   {
     "id": "558079000133",
+    "seq": "167",
     "nameZh": "基督教崇真中學",
     "nameEn": "TSUNG TSIN CHRISTIAN ACADEMY",
     "type": "直資",
@@ -6081,6 +6385,7 @@
   },
   {
     "id": "313076000133",
+    "seq": "147",
     "nameZh": "天主教南華中學",
     "nameEn": "NAM WAH CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -6101,6 +6406,7 @@
   },
   {
     "id": "213845000133",
+    "seq": "161",
     "nameZh": "寶血會上智英文書院",
     "nameEn": "HOLY TRINITY COLLEGE",
     "type": "資助",
@@ -6121,6 +6427,7 @@
   },
   {
     "id": "270024000133",
+    "seq": "158",
     "nameZh": "廠商會中學",
     "nameEn": "CMA SECONDARY SCHOOL",
     "type": "資助",
@@ -6141,6 +6448,7 @@
   },
   {
     "id": "170852000233",
+    "seq": "159",
     "nameZh": "德貞女子中學",
     "nameEn": "TACK CHING GIRLS' SECONDARY SCHOOL",
     "type": "資助",
@@ -6161,6 +6469,7 @@
   },
   {
     "id": "310042000133",
+    "seq": "160",
     "nameZh": "德雅中學",
     "nameEn": "TAK NGA SECONDARY SCHOOL",
     "type": "資助",
@@ -6181,6 +6490,7 @@
   },
   {
     "id": "131318000133",
+    "seq": "168",
     "nameZh": "惠僑英文中學",
     "nameEn": "WAI KIU COLLEGE",
     "type": "直資",
@@ -6201,6 +6511,7 @@
   },
   {
     "id": "170623000133",
+    "seq": "149",
     "nameZh": "東華三院張明添中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS CHANG MING THIEN COLLEGE",
     "type": "資助",
@@ -6221,6 +6532,7 @@
   },
   {
     "id": "134724000133",
+    "seq": "153",
     "nameZh": "滙基書院",
     "nameEn": "UNITED CHRISTIAN COLLEGE",
     "type": "資助",
@@ -6241,6 +6553,7 @@
   },
   {
     "id": "512834000133",
+    "seq": "157",
     "nameZh": "瑪利諾神父教會學校",
     "nameEn": "MARYKNOLL FATHERS' SCHOOL",
     "type": "資助",
@@ -6261,6 +6574,7 @@
   },
   {
     "id": "514144000233",
+    "seq": "154",
     "nameZh": "聖公會聖馬利亞堂莫慶堯中學",
     "nameEn": "S.K.H. ST. MARY'S CHURCH MOK HING YIU COLLEGE",
     "type": "資助",
@@ -6281,6 +6595,7 @@
   },
   {
     "id": "170500000133",
+    "seq": "155",
     "nameZh": "聖母玫瑰書院",
     "nameEn": "OUR LADY OF THE ROSARY COLLEGE",
     "type": "資助",
@@ -6301,6 +6616,7 @@
   },
   {
     "id": "542105000333",
+    "seq": "169",
     "nameZh": "聖瑪加利男女英文中小學",
     "nameEn": "ST. MARGARET'S CO-EDUCATIONAL ENGLISH SECONDARY AND PRIMARY SCHOOL",
     "type": "直資",
@@ -6321,6 +6637,7 @@
   },
   {
     "id": "623067000133",
+    "seq": "172",
     "nameZh": "聖道百卉書院",
     "nameEn": "SAINT TOO BLOOM ACADEMY",
     "type": "私立",
@@ -6341,6 +6658,7 @@
   },
   {
     "id": "515027000233",
+    "seq": "165",
     "nameZh": "英華書院",
     "nameEn": "YING WA COLLEGE",
     "type": "直資",
@@ -6361,6 +6679,7 @@
   },
   {
     "id": "132756000133",
+    "seq": "156",
     "nameZh": "路德會協同中學",
     "nameEn": "CONCORDIA LUTHERAN SCHOOL",
     "type": "資助",
@@ -6381,6 +6700,7 @@
   },
   {
     "id": "170291000133",
+    "seq": "150",
     "nameZh": "長沙灣天主教英文中學",
     "nameEn": "CHEUNG SHA WAN CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -6401,6 +6721,7 @@
   },
   {
     "id": "511960000533",
+    "seq": "166",
     "nameZh": "香島中學",
     "nameEn": "HEUNG TO MIDDLE SCHOOL",
     "type": "直資",
@@ -6421,6 +6742,7 @@
   },
   {
     "id": "170577000133",
+    "seq": "152",
     "nameZh": "香港四邑商工總會黃棣珊紀念中學",
     "nameEn": "THE HONG KONG SZE YAP COMMERCIAL & INDUSTRIAL ASSOCIATION WONG TAI SHAN MEMORIAL COLLEGE",
     "type": "資助",
@@ -6441,6 +6763,7 @@
   },
   {
     "id": "553700000133",
+    "seq": "034",
     "nameZh": "中華基督教會公理書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KUNG LEE COLLEGE",
     "type": "直資",
@@ -6461,6 +6784,7 @@
   },
   {
     "id": "510386000133",
+    "seq": "021",
     "nameZh": "何東中學",
     "nameEn": "HOTUNG SECONDARY SCHOOL",
     "type": "官立",
@@ -6481,6 +6805,7 @@
   },
   {
     "id": "511307000133",
+    "seq": "025",
     "nameZh": "佛教黃鳳翎中學",
     "nameEn": "BUDDHIST WONG FUNG LING COLLEGE",
     "type": "資助",
@@ -6501,6 +6826,7 @@
   },
   {
     "id": "170178000133",
+    "seq": "024",
     "nameZh": "北角協同中學",
     "nameEn": "CONCORDIA LUTHERAN SCHOOL - NORTH POINT",
     "type": "資助",
@@ -6521,6 +6847,7 @@
   },
   {
     "id": "514047000133",
+    "seq": "032",
     "nameZh": "嘉諾撒聖方濟各書院",
     "nameEn": "ST. FRANCIS' CANOSSIAN COLLEGE",
     "type": "資助",
@@ -6541,6 +6868,7 @@
   },
   {
     "id": "131385000133",
+    "seq": "035",
     "nameZh": "孔聖堂禮仁書院",
     "nameEn": "ACADEMY OF INNOVATION (CONFUCIUS HALL)",
     "type": "直資",
@@ -6561,6 +6889,7 @@
   },
   {
     "id": "170283000133",
+    "seq": "026",
     "nameZh": "東華三院李潤田紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS LEE CHING DEA MEMORIAL COLLEGE",
     "type": "資助",
@@ -6581,6 +6910,7 @@
   },
   {
     "id": "512869000133",
+    "seq": "033",
     "nameZh": "瑪利曼中學",
     "nameEn": "MARYMOUNT SECONDARY SCHOOL",
     "type": "資助",
@@ -6601,6 +6931,7 @@
   },
   {
     "id": "510432000133",
+    "seq": "022",
     "nameZh": "皇仁書院",
     "nameEn": "QUEEN'S COLLEGE",
     "type": "官立",
@@ -6621,6 +6952,7 @@
   },
   {
     "id": "510998000133",
+    "seq": "031",
     "nameZh": "聖保祿中學",
     "nameEn": "ST. PAUL'S SECONDARY SCHOOL",
     "type": "資助",
@@ -6641,6 +6973,7 @@
   },
   {
     "id": "514217000133",
+    "seq": "036",
     "nameZh": "聖保祿學校",
     "nameEn": "ST. PAUL'S CONVENT SCHOOL",
     "type": "直資",
@@ -6661,6 +6994,7 @@
   },
   {
     "id": "212725000133",
+    "seq": "030",
     "nameZh": "聖公會鄧肇堅中學",
     "nameEn": "SHENG KUNG HUI TANG SHIU KIN SECONDARY SCHOOL",
     "type": "資助",
@@ -6681,6 +7015,7 @@
   },
   {
     "id": "510262000133",
+    "seq": "023",
     "nameZh": "鄧肇堅維多利亞官立中學",
     "nameEn": "TANG SHIU KIN VICTORIA GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -6701,6 +7036,7 @@
   },
   {
     "id": "623857000133",
+    "seq": "027",
     "nameZh": "香港真光中學",
     "nameEn": "THE TRUE LIGHT SCHOOL OF HONG KONG",
     "type": "資助",
@@ -6721,6 +7057,7 @@
   },
   {
     "id": "514802000133",
+    "seq": "028",
     "nameZh": "香港華仁書院",
     "nameEn": "WAH YAN COLLEGE, HONG KONG",
     "type": "資助",
@@ -6741,6 +7078,7 @@
   },
   {
     "id": "607371000233",
+    "seq": "037",
     "nameZh": "香港道爾頓學校",
     "nameEn": "DALTON SCHOOL HONG KONG",
     "type": "私立",
@@ -6761,6 +7099,7 @@
   },
   {
     "id": "213705000133",
+    "seq": "029",
     "nameZh": "香港鄧鏡波書院",
     "nameEn": "HONG KONG TANG KING PO COLLEGE",
     "type": "資助",
@@ -6781,6 +7120,7 @@
   },
   {
     "id": "190306000133",
+    "seq": "345",
     "nameZh": "仁濟醫院林百欣中學",
     "nameEn": "YAN CHAI HOSPITAL LIM POR YEN SECONDARY SCHOOL",
     "type": "資助",
@@ -6801,6 +7141,7 @@
   },
   {
     "id": "190349000133",
+    "seq": "349",
     "nameZh": "保良局姚連生中學",
     "nameEn": "PO LEUNG KUK YAO LING SUN COLLEGE",
     "type": "資助",
@@ -6821,6 +7162,7 @@
   },
   {
     "id": "190330000133",
+    "seq": "348",
     "nameZh": "保良局李城璧中學",
     "nameEn": "PO LEUNG KUK LEE SHING PIK COLLEGE",
     "type": "資助",
@@ -6841,6 +7183,7 @@
   },
   {
     "id": "230910000133",
+    "seq": "353",
     "nameZh": "博愛醫院歷屆總理聯誼會梁省德中學",
     "nameEn": "THE ASSOCIATION OF DIRECTORS & FORMER DIRECTORS OF POK OI HOSPITAL LTD. LEUNG SING TAK COLLEGE",
     "type": "資助",
@@ -6861,6 +7204,7 @@
   },
   {
     "id": "517160000233",
+    "seq": "347",
     "nameZh": "可觀自然教育中心暨天文館",
     "nameEn": "HO KOON NATURE EDUCATION CUM ASTRONOMICAL CENTRE",
     "type": "資助",
@@ -6881,6 +7225,7 @@
   },
   {
     "id": "190098000133",
+    "seq": "346",
     "nameZh": "可風中學(嗇色園主辦)",
     "nameEn": "HO FUNG COLLEGE (SPONSORED BY THE SIK SIK YUEN)",
     "type": "資助",
@@ -6901,6 +7246,7 @@
   },
   {
     "id": "230898000133",
+    "seq": "357",
     "nameZh": "寶安商會王少清中學",
     "nameEn": "PO ON COMMERCIAL ASSOCIATION WONG SIU CHING SECONDARY SCHOOL",
     "type": "資助",
@@ -6921,6 +7267,7 @@
   },
   {
     "id": "190462000133",
+    "seq": "356",
     "nameZh": "廖寶珊紀念書院",
     "nameEn": "LIU PO SHAN MEMORIAL COLLEGE",
     "type": "資助",
@@ -6941,6 +7288,7 @@
   },
   {
     "id": "270067000133",
+    "seq": "350",
     "nameZh": "紡織學會美國商會胡漢輝中學",
     "nameEn": "TEXTILE INSTITUTE AMERICAN CHAMBER OF COMMERCE WOO HON FAI SECONDARY SCHOOL",
     "type": "資助",
@@ -6961,6 +7309,7 @@
   },
   {
     "id": "230871000133",
+    "seq": "354",
     "nameZh": "聖公會李炳中學",
     "nameEn": "SHENG KUNG HUI LI PING SECONDARY SCHOOL",
     "type": "資助",
@@ -6981,6 +7330,7 @@
   },
   {
     "id": "190144000133",
+    "seq": "351",
     "nameZh": "荃灣公立何傳耀紀念中學",
     "nameEn": "TSUEN WAN PUBLIC HO CHUEN YIU MEMORIAL COLLEGE",
     "type": "資助",
@@ -7001,6 +7351,7 @@
   },
   {
     "id": "510467000133",
+    "seq": "344",
     "nameZh": "荃灣官立中學",
     "nameEn": "TSUEN WAN GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -7021,6 +7372,7 @@
   },
   {
     "id": "190012000133",
+    "seq": "352",
     "nameZh": "荃灣聖芳濟中學",
     "nameEn": "ST. FRANCIS XAVIER'S SCHOOL, TSUEN WAN",
     "type": "資助",
@@ -7041,6 +7393,7 @@
   },
   {
     "id": "230847000133",
+    "seq": "355",
     "nameZh": "路德會呂明才中學",
     "nameEn": "LUI MING CHOI LUTHERAN COLLEGE",
     "type": "資助",
@@ -7061,6 +7414,7 @@
   },
   {
     "id": "630004000133",
+    "seq": "358",
     "nameZh": "香港蔚來中學",
     "nameEn": "HONG KONG WEI LAI SECONDARY SCHOOL",
     "type": "私立",
@@ -7081,6 +7435,7 @@
   },
   {
     "id": "114111000133",
+    "seq": "307",
     "nameZh": "中華傳道會安柱中學",
     "nameEn": "CNEC CHRISTIAN COLLEGE",
     "type": "資助",
@@ -7101,6 +7456,7 @@
   },
   {
     "id": "190225000133",
+    "seq": "308",
     "nameZh": "中華傳道會李賢堯紀念中學",
     "nameEn": "CNEC LEE I YAO MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -7121,6 +7477,7 @@
   },
   {
     "id": "113840000133",
+    "seq": "305",
     "nameZh": "中華基督教會全完中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA CHUEN YUEN COLLEGE",
     "type": "資助",
@@ -7141,6 +7498,7 @@
   },
   {
     "id": "170763000233",
+    "seq": "306",
     "nameZh": "中華基督教會燕京書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA YENCHING COLLEGE",
     "type": "資助",
@@ -7161,6 +7519,7 @@
   },
   {
     "id": "190101000133",
+    "seq": "312",
     "nameZh": "佛教善德英文中學",
     "nameEn": "BUDDHIST SIN TAK COLLEGE",
     "type": "資助",
@@ -7181,6 +7540,7 @@
   },
   {
     "id": "214965000133",
+    "seq": "313",
     "nameZh": "佛教葉紀南紀念中學",
     "nameEn": "BUDDHIST YIP KEI NAM MEMORIAL COLLEGE",
     "type": "資助",
@@ -7201,6 +7561,7 @@
   },
   {
     "id": "114081000133",
+    "seq": "320",
     "nameZh": "保祿六世書院",
     "nameEn": "POPE PAUL VI COLLEGE",
     "type": "資助",
@@ -7221,6 +7582,7 @@
   },
   {
     "id": "190489000133",
+    "seq": "319",
     "nameZh": "保良局羅傑承(一九八三)中學",
     "nameEn": "PO LEUNG KUK LO KIT SING (1983) COLLEGE",
     "type": "資助",
@@ -7241,6 +7603,7 @@
   },
   {
     "id": "190055000133",
+    "seq": "310",
     "nameZh": "天主教慈幼會伍少梅中學",
     "nameEn": "SALESIANS OF DON BOSCO NG SIU MUI SECONDARY SCHOOL",
     "type": "資助",
@@ -7261,6 +7624,7 @@
   },
   {
     "id": "113794000133",
+    "seq": "309",
     "nameZh": "天主教母佑會蕭明中學",
     "nameEn": "DAUGHTERS OF MARY HELP OF CHRISTIANS SIU MING CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -7281,6 +7645,7 @@
   },
   {
     "id": "230758000133",
+    "seq": "335",
     "nameZh": "嶺南鍾榮光博士紀念中學",
     "nameEn": "LINGNAN DR. CHUNG WING KWONG MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -7301,6 +7666,7 @@
   },
   {
     "id": "285285000133",
+    "seq": "315",
     "nameZh": "明愛聖若瑟中學",
     "nameEn": "CARITAS ST. JOSEPH SECONDARY SCHOOL",
     "type": "資助",
@@ -7321,6 +7687,7 @@
   },
   {
     "id": "230472000133",
+    "seq": "314",
     "nameZh": "李惠利中學",
     "nameEn": "THE METHODIST LEE WAI LEE COLLEGE",
     "type": "資助",
@@ -7341,6 +7708,7 @@
   },
   {
     "id": "190136000133",
+    "seq": "316",
     "nameZh": "東華三院伍若瑜夫人紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS MRS. WU YORK YU MEMORIAL COLLEGE",
     "type": "資助",
@@ -7361,6 +7729,7 @@
   },
   {
     "id": "190500000133",
+    "seq": "317",
     "nameZh": "東華三院吳祥川紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS S.C. GAW MEMORIAL COLLEGE",
     "type": "資助",
@@ -7381,6 +7750,7 @@
   },
   {
     "id": "190110000133",
+    "seq": "318",
     "nameZh": "東華三院陳兆民中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS CHEN ZAO MEN COLLEGE",
     "type": "資助",
@@ -7401,6 +7771,7 @@
   },
   {
     "id": "284939000133",
+    "seq": "326",
     "nameZh": "棉紡會中學",
     "nameEn": "COTTON SPINNERS ASSOCIATION SECONDARY SCHOOL",
     "type": "資助",
@@ -7421,6 +7792,7 @@
   },
   {
     "id": "190535000133",
+    "seq": "333",
     "nameZh": "樂善堂梁植偉紀念中學",
     "nameEn": "LOK SIN TONG LEUNG CHIK WAI MEMORIAL SCHOOL",
     "type": "資助",
@@ -7441,6 +7813,7 @@
   },
   {
     "id": "230766000133",
+    "seq": "334",
     "nameZh": "樂善堂顧超文中學",
     "nameEn": "LOK SIN TONG KU CHIU MAN SECONDARY SCHOOL",
     "type": "資助",
@@ -7461,6 +7834,7 @@
   },
   {
     "id": "519006000133",
+    "seq": "328",
     "nameZh": "獅子會蔣翠琼中學",
     "nameEn": "LIONS CLUBS INTERNATIONAL TSEUNG CHUI KING COLLEGE",
     "type": "資助",
@@ -7481,6 +7855,7 @@
   },
   {
     "id": "190632000133",
+    "seq": "321",
     "nameZh": "皇仁舊生會中學",
     "nameEn": "QUEEN'S COLLEGE OLD BOYS' ASSOCIATION SECONDARY SCHOOL",
     "type": "資助",
@@ -7501,6 +7876,7 @@
   },
   {
     "id": "230456000133",
+    "seq": "311",
     "nameZh": "石籬天主教中學",
     "nameEn": "SHEK LEI CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -7521,6 +7897,7 @@
   },
   {
     "id": "170542000133",
+    "seq": "329",
     "nameZh": "聖公會林護紀念中學",
     "nameEn": "S.K.H. LAM WOO MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -7541,6 +7918,7 @@
   },
   {
     "id": "230863000133",
+    "seq": "325",
     "nameZh": "荔景天主教中學",
     "nameEn": "LAI KING CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -7561,6 +7939,7 @@
   },
   {
     "id": "230855000133",
+    "seq": "330",
     "nameZh": "葵涌循道中學",
     "nameEn": "KWAI CHUNG METHODIST COLLEGE",
     "type": "資助",
@@ -7581,6 +7960,7 @@
   },
   {
     "id": "230430000133",
+    "seq": "331",
     "nameZh": "葵涌蘇浙公學",
     "nameEn": "KIANGSU-CHEKIANG COLLEGE (KWAI CHUNG)",
     "type": "資助",
@@ -7601,6 +7981,7 @@
   },
   {
     "id": "230936000133",
+    "seq": "332",
     "nameZh": "裘錦秋中學(葵涌)",
     "nameEn": "JU CHING CHU SECONDARY SCHOOL (KWAI CHUNG)",
     "type": "資助",
@@ -7621,6 +8002,7 @@
   },
   {
     "id": "190357000133",
+    "seq": "322",
     "nameZh": "迦密愛禮信中學",
     "nameEn": "CARMEL ALISON LAM FOUNDATION SECONDARY SCHOOL",
     "type": "資助",
@@ -7641,6 +8023,7 @@
   },
   {
     "id": "230740000133",
+    "seq": "327",
     "nameZh": "順德聯誼總會李兆基中學",
     "nameEn": "SHUN TAK FRATERNAL ASSOCIATION LEE SHAU KEE COLLEGE",
     "type": "資助",
@@ -7661,6 +8044,7 @@
   },
   {
     "id": "230901000133",
+    "seq": "323",
     "nameZh": "香港四邑商工總會陳南昌紀念中學",
     "nameEn": "THE HONG KONG S.Y.C. & I.A. CHAN NAM CHONG MEMORIAL COLLEGE",
     "type": "資助",
@@ -7681,6 +8065,7 @@
   },
   {
     "id": "230421000133",
+    "seq": "324",
     "nameZh": "香港道教聯合會圓玄學院第一中學",
     "nameEn": "HONG KONG TAOIST ASSOCIATION THE YUEN YUEN INSTITUTE NO.1 SECONDARY SCHOOL",
     "type": "資助",
@@ -7701,6 +8086,7 @@
   },
   {
     "id": "530441000133",
+    "seq": "574",
     "nameZh": "仁濟醫院王華湘中學",
     "nameEn": "YAN CHAI HOSPITAL WONG WHA SAN SECONDARY SCHOOL",
     "type": "資助",
@@ -7721,6 +8107,7 @@
   },
   {
     "id": "518409000133",
+    "seq": "575",
     "nameZh": "仁濟醫院靚次伯紀念中學",
     "nameEn": "YAN CHAI HOSPITAL LAN CHI PAT MEMORIAL SECONDARY SCHOOL",
     "type": "資助",
@@ -7741,6 +8128,7 @@
   },
   {
     "id": "270199000133",
+    "seq": "579",
     "nameZh": "保良局甲子何玉清中學",
     "nameEn": "PO LEUNG KUK HO YUK CHING (1984) COLLEGE",
     "type": "資助",
@@ -7761,6 +8149,7 @@
   },
   {
     "id": "558044000233",
+    "seq": "592",
     "nameZh": "保良局羅氏基金中學",
     "nameEn": "PO LEUNG KUK LAWS FOUNDATION COLLEGE",
     "type": "直資",
@@ -7781,6 +8170,7 @@
   },
   {
     "id": "543292000233",
+    "seq": "598",
     "nameZh": "優才(楊殷有娣)書院",
     "nameEn": "G.T. (ELLEN YEUNG) COLLEGE",
     "type": "直資",
@@ -7801,6 +8191,7 @@
   },
   {
     "id": "530450000133",
+    "seq": "586",
     "nameZh": "博愛醫院八十週年鄧英喜中學",
     "nameEn": "POK OI HOSPITAL 80TH ANNIVERSARY TANG YING HEI COLLEGE",
     "type": "資助",
@@ -7821,6 +8212,7 @@
   },
   {
     "id": "564419000133",
+    "seq": "594",
     "nameZh": "啓思中學",
     "nameEn": "CREATIVE SECONDARY SCHOOL",
     "type": "直資",
@@ -7841,6 +8233,7 @@
   },
   {
     "id": "530247000133",
+    "seq": "585",
     "nameZh": "基督教宣道會宣基中學",
     "nameEn": "CHRISTIAN & MISSIONARY ALLIANCE SUN KEI SECONDARY SCHOOL",
     "type": "資助",
@@ -7861,6 +8254,7 @@
   },
   {
     "id": "316628000133",
+    "seq": "576",
     "nameZh": "天主教鳴遠中學",
     "nameEn": "CATHOLIC MING YUEN SECONDARY SCHOOL",
     "type": "資助",
@@ -7881,6 +8275,7 @@
   },
   {
     "id": "522155000133",
+    "seq": "580",
     "nameZh": "威靈頓教育機構張沛松紀念中學",
     "nameEn": "WELLINGTON EDUCATION ORGANIZATION CHANG PUI CHUNG MEMORIAL SCHOOL",
     "type": "資助",
@@ -7901,6 +8296,7 @@
   },
   {
     "id": "537152000233",
+    "seq": "591",
     "nameZh": "寶覺中學",
     "nameEn": "PO KOK SECONDARY SCHOOL",
     "type": "資助",
@@ -7921,6 +8317,7 @@
   },
   {
     "id": "510700000133",
+    "seq": "573",
     "nameZh": "將軍澳官立中學",
     "nameEn": "TSEUNG KWAN O GOVERNMENT SEC SCHOOL",
     "type": "官立",
@@ -7941,6 +8338,7 @@
   },
   {
     "id": "552828000333",
+    "seq": "595",
     "nameZh": "將軍澳香島中學",
     "nameEn": "HEUNG TO SECONDARY SCHOOL (TSEUNG KWAN O)",
     "type": "直資",
@@ -7961,6 +8359,7 @@
   },
   {
     "id": "567337000133",
+    "seq": "597",
     "nameZh": "播道書院",
     "nameEn": "EVANGEL COLLEGE",
     "type": "直資",
@@ -7981,6 +8380,7 @@
   },
   {
     "id": "190152000133",
+    "seq": "590",
     "nameZh": "新界西貢坑口區鄭植之中學",
     "nameEn": "CHENG CHEK CHEE SECONDARY SCHOOL OF SAI KUNG AND HANG HAU DISTRICT, N.T.",
     "type": "資助",
@@ -8001,6 +8401,7 @@
   },
   {
     "id": "190853000233",
+    "seq": "587",
     "nameZh": "景嶺書院",
     "nameEn": "KING LING COLLEGE",
     "type": "資助",
@@ -8021,6 +8422,7 @@
   },
   {
     "id": "516988000233",
+    "seq": "578",
     "nameZh": "東華三院呂潤財紀念中學",
     "nameEn": "TUNG WAH GROUP OF HOSPITALS LUI YUN CHOY MEMORIAL COLLEGE",
     "type": "資助",
@@ -8041,6 +8443,7 @@
   },
   {
     "id": "596140000233",
+    "seq": "600",
     "nameZh": "樹宏學校",
     "nameEn": "FOREST HOUSE WALDORF SCHOOL",
     "type": "私立",
@@ -8061,6 +8464,7 @@
   },
   {
     "id": "311863000133",
+    "seq": "588",
     "nameZh": "港澳信義會慕德中學",
     "nameEn": "HONG KONG AND MACAU LUTHERAN CHURCH QUEEN MAUD SECONDARY SCHOOL",
     "type": "資助",
@@ -8081,6 +8485,7 @@
   },
   {
     "id": "552844000233",
+    "seq": "596",
     "nameZh": "萬鈞匯知中學",
     "nameEn": "MAN KWAN QUALIED COLLEGE",
     "type": "直資",
@@ -8101,6 +8506,7 @@
   },
   {
     "id": "514330000133",
+    "seq": "577",
     "nameZh": "西貢崇真天主教學校(中學部)",
     "nameEn": "SAI KUNG SUNG TSUN CATHOLIC SCHOOL (SECONDARY SECTION)",
     "type": "資助",
@@ -8121,6 +8527,7 @@
   },
   {
     "id": "190560000133",
+    "seq": "581",
     "nameZh": "迦密主恩中學",
     "nameEn": "CARMEL DIVINE GRACE FOUNDATION SECONDARY SCHOOL",
     "type": "資助",
@@ -8141,6 +8548,7 @@
   },
   {
     "id": "522090000133",
+    "seq": "589",
     "nameZh": "順德聯誼總會鄭裕彤中學",
     "nameEn": "SHUN TAK FRATERNAL ASSOCIATION CHENG YU TUNG SECONDARY SCHOOL",
     "type": "資助",
@@ -8161,6 +8569,7 @@
   },
   {
     "id": "552666000133",
+    "seq": "582",
     "nameZh": "香海正覺蓮社佛教正覺中學",
     "nameEn": "HHCKLA BUDDHIST CHING KOK SECONDARY SCHOOL",
     "type": "資助",
@@ -8181,6 +8590,7 @@
   },
   {
     "id": "513725000133",
+    "seq": "599",
     "nameZh": "香港復臨學校",
     "nameEn": "HONG KONG ADVENTIST ACADEMY",
     "type": "私立",
@@ -8201,6 +8611,7 @@
   },
   {
     "id": "543314000333",
+    "seq": "593",
     "nameZh": "香港華人基督教聯會真道書院",
     "nameEn": "THE HONG KONG CHINESE CHRISTIAN CHURCHES UNION LOGOS ACADEMY",
     "type": "直資",
@@ -8221,6 +8632,7 @@
   },
   {
     "id": "524808000133",
+    "seq": "583",
     "nameZh": "香港道教聯合會圓玄學院第三中學",
     "nameEn": "THE HONG KONG TAOIST ASSOCIATION THE YUEN YUEN INSTITUTE NO. 3 SECONDARY SCHOOL",
     "type": "資助",
@@ -8241,6 +8653,7 @@
   },
   {
     "id": "524816000133",
+    "seq": "584",
     "nameZh": "馬錦明慈善基金馬陳端喜紀念中學",
     "nameEn": "MA KAM MING CHARITABLE FOUNDATION MA CHAN DUEN HEY MEMORIAL COLLEGE",
     "type": "資助",
@@ -8261,6 +8674,7 @@
   },
   {
     "id": "512281000133",
+    "seq": "264",
     "nameZh": "中華基督教會基智中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KEI CHI SECONDARY SCHOOL",
     "type": "資助",
@@ -8281,6 +8695,7 @@
   },
   {
     "id": "170704000133",
+    "seq": "265",
     "nameZh": "中華基督教會蒙民偉書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA MONG MAN WAI COLLEGE",
     "type": "資助",
@@ -8301,6 +8716,7 @@
   },
   {
     "id": "215040000133",
+    "seq": "266",
     "nameZh": "五邑司徒浩中學",
     "nameEn": "F.D.B.W.A. SZETO HO SECONDARY SCHOOL",
     "type": "資助",
@@ -8321,6 +8737,7 @@
   },
   {
     "id": "541842000233",
+    "seq": "267",
     "nameZh": "仁濟醫院羅陳楚思中學",
     "nameEn": "YAN CHAI HOSPITAL LAW CHAN CHOR SI COLLEGE",
     "type": "資助",
@@ -8341,6 +8758,7 @@
   },
   {
     "id": "270172000133",
+    "seq": "269",
     "nameZh": "佛教何南金中學",
     "nameEn": "BUDDHIST HO NAM KAM COLLEGE",
     "type": "資助",
@@ -8361,6 +8779,7 @@
   },
   {
     "id": "216143000133",
+    "seq": "289",
     "nameZh": "地利亞修女紀念學校(協和)",
     "nameEn": "DELIA MEMORIAL SCHOOL (HIP WO)",
     "type": "直資",
@@ -8381,6 +8800,7 @@
   },
   {
     "id": "213039000133",
+    "seq": "290",
     "nameZh": "地利亞修女紀念學校(協和二中)",
     "nameEn": "DELIA MEMORIAL SCHOOL (HIP WO NO.2 COLLEGE)",
     "type": "直資",
@@ -8401,6 +8821,7 @@
   },
   {
     "id": "552836000133",
+    "seq": "291",
     "nameZh": "基督教中國佈道會聖道迦南書院",
     "nameEn": "EVANGELIZE CHINA FELLOWSHIP SAINT TOO CANAAN COLLEGE",
     "type": "直資",
@@ -8421,6 +8842,7 @@
   },
   {
     "id": "214957000133",
+    "seq": "274",
     "nameZh": "基督教聖約教會堅樂中學",
     "nameEn": "THE MISSION COVENANT CHURCH HOLM GLAD COLLEGE",
     "type": "資助",
@@ -8441,6 +8863,7 @@
   },
   {
     "id": "170429000233",
+    "seq": "268",
     "nameZh": "天主教普照中學",
     "nameEn": "PO CHIU CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -8461,6 +8884,7 @@
   },
   {
     "id": "214477000133",
+    "seq": "284",
     "nameZh": "寧波公學",
     "nameEn": "NING PO COLLEGE",
     "type": "資助",
@@ -8481,6 +8905,7 @@
   },
   {
     "id": "170984000133",
+    "seq": "285",
     "nameZh": "寧波第二中學",
     "nameEn": "NING PO NO.2 COLLEGE",
     "type": "資助",
@@ -8501,6 +8926,7 @@
   },
   {
     "id": "133477000133",
+    "seq": "294",
     "nameZh": "慕光英文書院",
     "nameEn": "MU KUANG ENGLISH SCHOOL",
     "type": "直資",
@@ -8521,6 +8947,7 @@
   },
   {
     "id": "170925000133",
+    "seq": "277",
     "nameZh": "新生命教育協會呂郭碧鳳中學",
     "nameEn": "NEW LIFE SCHOOLS INCORPORATION LUI KWOK PAT FONG COLLEGE",
     "type": "資助",
@@ -8541,6 +8968,7 @@
   },
   {
     "id": "170682000133",
+    "seq": "275",
     "nameZh": "梁式芝書院",
     "nameEn": "LEUNG SHEK CHEE COLLEGE",
     "type": "資助",
@@ -8561,6 +8989,7 @@
   },
   {
     "id": "552810000133",
+    "seq": "292",
     "nameZh": "滙基書院(東九龍)",
     "nameEn": "UNITED CHRISTIAN COLLEGE (KOWLOON EAST)",
     "type": "直資",
@@ -8581,6 +9010,7 @@
   },
   {
     "id": "512842000233",
+    "seq": "286",
     "nameZh": "瑪利諾中學",
     "nameEn": "MARYKNOLL SECONDARY SCHOOL",
     "type": "資助",
@@ -8601,6 +9031,7 @@
   },
   {
     "id": "608327000133",
+    "seq": "295",
     "nameZh": "示昕學校",
     "nameEn": "SHEMA ACADEMY",
     "type": "私立",
@@ -8621,6 +9052,7 @@
   },
   {
     "id": "536857000133",
+    "seq": "293",
     "nameZh": "福建中學",
     "nameEn": "FUKIEN SECONDARY SCHOOL",
     "type": "直資",
@@ -8641,6 +9073,7 @@
   },
   {
     "id": "170321000133",
+    "seq": "283",
     "nameZh": "聖傑靈女子中學",
     "nameEn": "ST. CATHARINE'S SCHOOL FOR GIRLS",
     "type": "資助",
@@ -8661,6 +9094,7 @@
   },
   {
     "id": "170720000133",
+    "seq": "278",
     "nameZh": "聖公會基孝中學",
     "nameEn": "SHENG KUNG HUI KEI HAU SECONDARY SCHOOL",
     "type": "資助",
@@ -8681,6 +9115,7 @@
   },
   {
     "id": "214990000133",
+    "seq": "279",
     "nameZh": "聖公會梁季彜中學",
     "nameEn": "S.K.H. LEUNG KWAI YEE SECONDARY SCHOOL",
     "type": "資助",
@@ -8701,6 +9136,7 @@
   },
   {
     "id": "170410000133",
+    "seq": "280",
     "nameZh": "聖安當女書院",
     "nameEn": "ST. ANTONIUS GIRLS' COLLEGE",
     "type": "資助",
@@ -8721,6 +9157,7 @@
   },
   {
     "id": "170844000233",
+    "seq": "282",
     "nameZh": "聖若瑟英文中學",
     "nameEn": "ST. JOSEPH'S ANGLO-CHINESE SCHOOL",
     "type": "資助",
@@ -8741,6 +9178,7 @@
   },
   {
     "id": "170445000233",
+    "seq": "281",
     "nameZh": "聖言中學",
     "nameEn": "SING YIN SECONDARY SCHOOL",
     "type": "資助",
@@ -8761,6 +9199,7 @@
   },
   {
     "id": "170488000133",
+    "seq": "287",
     "nameZh": "藍田聖保祿中學",
     "nameEn": "ST. PAUL'S SCHOOL (LAM TIN)",
     "type": "資助",
@@ -8781,6 +9220,7 @@
   },
   {
     "id": "510114000133",
+    "seq": "262",
     "nameZh": "觀塘功樂官立中學",
     "nameEn": "KWUN TONG KUNG LOK GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -8801,6 +9241,7 @@
   },
   {
     "id": "510416000133",
+    "seq": "263",
     "nameZh": "觀塘官立中學",
     "nameEn": "KWUN TONG GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -8821,6 +9262,7 @@
   },
   {
     "id": "170518000133",
+    "seq": "288",
     "nameZh": "觀塘瑪利諾書院",
     "nameEn": "KWUN TONG MARYKNOLL COLLEGE",
     "type": "資助",
@@ -8841,6 +9283,7 @@
   },
   {
     "id": "170968000133",
+    "seq": "276",
     "nameZh": "順利天主教中學",
     "nameEn": "SHUN LEE CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -8861,6 +9304,7 @@
   },
   {
     "id": "270121000133",
+    "seq": "270",
     "nameZh": "香港布廠商會朱石麟中學",
     "nameEn": "HONG KONG WEAVING MILLS ASSOCIATION CHU SHEK LUN SECONDARY SCHOOL",
     "type": "資助",
@@ -8881,6 +9325,7 @@
   },
   {
     "id": "621374000133",
+    "seq": "296",
     "nameZh": "香港紫荊書院",
     "nameEn": "HONG KONG BLUEBELL COLLEGE",
     "type": "私立",
@@ -8901,6 +9346,7 @@
   },
   {
     "id": "284955000133",
+    "seq": "271",
     "nameZh": "香港聖公會何明華會督中學",
     "nameEn": "HONG KONG SHENG KUNG HUI BISHOP HALL SECONDARY SCHOOL",
     "type": "資助",
@@ -8921,6 +9367,7 @@
   },
   {
     "id": "170933000133",
+    "seq": "272",
     "nameZh": "香港道教聯合會青松中學",
     "nameEn": "THE HONG KONG TAOIST ASSOCIATION CHING CHUNG SECONDARY SCHOOL",
     "type": "資助",
@@ -8941,6 +9388,7 @@
   },
   {
     "id": "170976000133",
+    "seq": "273",
     "nameZh": "高雷中學",
     "nameEn": "KO LUI SECONDARY SCHOOL",
     "type": "資助",
@@ -8961,6 +9409,7 @@
   },
   {
     "id": "190128000133",
+    "seq": "617",
     "nameZh": "佛教筏可紀念中學",
     "nameEn": "BUDDHIST FAT HO MEMORIAL COLLEGE",
     "type": "直資",
@@ -8981,6 +9430,7 @@
   },
   {
     "id": "522058000133",
+    "seq": "613",
     "nameZh": "保良局馬錦明夫人章馥仙中學",
     "nameEn": "PO LEUNG KUK MRS MA KAM MING-CHEUNG FOOK SIEN COLLEGE",
     "type": "資助",
@@ -9001,6 +9451,7 @@
   },
   {
     "id": "522074000233",
+    "seq": "615",
     "nameZh": "嗇色園主辦可譽中學暨可譽小學",
     "nameEn": "HO YU COLLEGE AND PRIMARY SCHOOL (SPONSORED BY SIK SIK YUEN)",
     "type": "資助",
@@ -9021,6 +9472,7 @@
   },
   {
     "id": "283495000333",
+    "seq": "610",
     "nameZh": "明愛胡振中書院",
     "nameEn": "CARITAS WU CHENG-CHUNG COLLEGE",
     "type": "資助",
@@ -9041,6 +9493,7 @@
   },
   {
     "id": "519162000233",
+    "seq": "611",
     "nameZh": "明愛陳震夏郊野學園",
     "nameEn": "CARITAS CHAN CHUN HA FIELD STUDIES CENTRE",
     "type": "資助",
@@ -9061,6 +9514,7 @@
   },
   {
     "id": "569747000233",
+    "seq": "619",
     "nameZh": "智新書院",
     "nameEn": "DISCOVERY COLLEGE",
     "type": "私立",
@@ -9081,6 +9535,7 @@
   },
   {
     "id": "536547000233",
+    "seq": "612",
     "nameZh": "東涌天主教學校",
     "nameEn": "TUNG CHUNG CATHOLIC SCHOOL",
     "type": "資助",
@@ -9101,6 +9556,7 @@
   },
   {
     "id": "549487000133",
+    "seq": "618",
     "nameZh": "港青基信書院",
     "nameEn": "YMCA OF HONG KONG CHRISTIAN COLLEGE",
     "type": "直資",
@@ -9121,6 +9577,7 @@
   },
   {
     "id": "510025000133",
+    "seq": "609",
     "nameZh": "長洲官立中學",
     "nameEn": "CHEUNG CHAU GOVERNMENT SECONDARY SCHOOL",
     "type": "官立",
@@ -9141,6 +9598,7 @@
   },
   {
     "id": "545147000133",
+    "seq": "616",
     "nameZh": "靈糧堂怡文中學",
     "nameEn": "LING LIANG CHURCH E WUN SECONDARY SCHOOL",
     "type": "資助",
@@ -9161,6 +9619,7 @@
   },
   {
     "id": "552917000133",
+    "seq": "614",
     "nameZh": "香港教育工作者聯會黃楚標中學",
     "nameEn": "HKFEW WONG CHO BAU SECONDARY SCHOOL",
     "type": "資助",
@@ -9181,6 +9640,7 @@
   },
   {
     "id": "170470000133",
+    "seq": "231",
     "nameZh": "中華基督教會協和書院",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA HEEP WOH COLLEGE",
     "type": "資助",
@@ -9201,6 +9661,7 @@
   },
   {
     "id": "510831000133",
+    "seq": "232",
     "nameZh": "中華基督教會基協中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA KEI HEEP SECONDARY SCHOOL",
     "type": "資助",
@@ -9221,6 +9682,7 @@
   },
   {
     "id": "511650000133",
+    "seq": "230",
     "nameZh": "中華基督教會扶輪中學",
     "nameEn": "THE CHURCH OF CHRIST IN CHINA ROTARY SECONDARY SCHOOL",
     "type": "資助",
@@ -9241,6 +9703,7 @@
   },
   {
     "id": "213292000133",
+    "seq": "233",
     "nameZh": "五旬節聖潔會永光書院",
     "nameEn": "THE PENTECOSTAL HOLINESS CHURCH WING KWONG COLLEGE",
     "type": "資助",
@@ -9261,6 +9724,7 @@
   },
   {
     "id": "214973000133",
+    "seq": "236",
     "nameZh": "佛教孔仙洲紀念中學",
     "nameEn": "BUDDHIST HUNG SEAN CHAU MEMORIAL COLLEGE",
     "type": "資助",
@@ -9281,6 +9745,7 @@
   },
   {
     "id": "527467000233",
+    "seq": "237",
     "nameZh": "佛教志蓮中學",
     "nameEn": "CHI LIN BUDDHIST SECONDARY SCHOOL",
     "type": "資助",
@@ -9301,6 +9766,7 @@
   },
   {
     "id": "541850000233",
+    "seq": "239",
     "nameZh": "保良局何蔭棠中學",
     "nameEn": "PO LEUNG KUK CELINE HO YAM TONG COLLEGE",
     "type": "資助",
@@ -9321,6 +9787,7 @@
   },
   {
     "id": "170461000133",
+    "seq": "240",
     "nameZh": "保良局第一張永慶中學",
     "nameEn": "PO LEUNG KUK NO.1 W.H. CHEUNG COLLEGE",
     "type": "資助",
@@ -9341,6 +9808,7 @@
   },
   {
     "id": "170364000133",
+    "seq": "235",
     "nameZh": "可立中學(嗇色園主辦)",
     "nameEn": "HO LAP COLLEGE (SPONSORED BY THE SIK SIK YUEN)",
     "type": "資助",
@@ -9361,6 +9829,7 @@
   },
   {
     "id": "553867000333",
+    "seq": "253",
     "nameZh": "國際基督教優質音樂中學暨小學",
     "nameEn": "INTERNATIONAL CHRISTIAN QUALITY MUSIC SECONDARY AND PRIMARY SCHOOL",
     "type": "私立",
@@ -9381,6 +9850,7 @@
   },
   {
     "id": "170135000133",
+    "seq": "234",
     "nameZh": "天主教伍華中學",
     "nameEn": "NG WAH CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -9401,6 +9871,7 @@
   },
   {
     "id": "170046000133",
+    "seq": "242",
     "nameZh": "彩虹邨天主教英文中學",
     "nameEn": "CHOI HUNG ESTATE CATHOLIC SECONDARY SCHOOL",
     "type": "資助",
@@ -9421,6 +9892,7 @@
   },
   {
     "id": "170496000133",
+    "seq": "247",
     "nameZh": "德愛中學",
     "nameEn": "TAK OI SECONDARY SCHOOL",
     "type": "資助",
@@ -9441,6 +9913,7 @@
   },
   {
     "id": "132837000133",
+    "seq": "251",
     "nameZh": "德望學校",
     "nameEn": "GOOD HOPE SCHOOL",
     "type": "直資",
@@ -9461,6 +9934,7 @@
   },
   {
     "id": "170585000133",
+    "seq": "243",
     "nameZh": "救世軍卜維廉中學",
     "nameEn": "THE SALVATION ARMY WILLIAM BOOTH SECONDARY SCHOOL",
     "type": "資助",
@@ -9481,6 +9955,7 @@
   },
   {
     "id": "170143000133",
+    "seq": "238",
     "nameZh": "李求恩紀念中學",
     "nameEn": "LEE KAU YAN MEMORIAL SCHOOL",
     "type": "資助",
@@ -9501,6 +9976,7 @@
   },
   {
     "id": "170453000133",
+    "seq": "249",
     "nameZh": "樂善堂余近卿中學",
     "nameEn": "LOK SIN TONG YU KAN HING SECONDARY SCHOOL",
     "type": "資助",
@@ -9521,6 +9997,7 @@
   },
   {
     "id": "512710000133",
+    "seq": "248",
     "nameZh": "樂善堂王仲銘中學",
     "nameEn": "LOK SIN TONG WONG CHUNG MING SECONDARY SCHOOL",
     "type": "資助",
@@ -9541,6 +10018,7 @@
   },
   {
     "id": "170534000133",
+    "seq": "250",
     "nameZh": "潔心林炳炎中學",
     "nameEn": "KIT SAM LAM BING YIM SECONDARY SCHOOL",
     "type": "資助",
@@ -9561,6 +10039,7 @@
   },
   {
     "id": "513997000133",
+    "seq": "244",
     "nameZh": "聖公會聖本德中學",
     "nameEn": "SHENG KUNG HUI ST. BENEDICT'S SCHOOL",
     "type": "資助",
@@ -9581,6 +10060,7 @@
   },
   {
     "id": "170402000133",
+    "seq": "245",
     "nameZh": "聖文德書院",
     "nameEn": "ST. BONAVENTURE COLLEGE AND HIGH SCHOOL",
     "type": "資助",
@@ -9601,6 +10081,7 @@
   },
   {
     "id": "131709000133",
+    "seq": "246",
     "nameZh": "聖母書院",
     "nameEn": "OUR LADY'S COLLEGE",
     "type": "資助",
@@ -9621,6 +10102,7 @@
   },
   {
     "id": "627267000133",
+    "seq": "252",
     "nameZh": "香港威雅學校(九龍)",
     "nameEn": "WYCOMBE ABBEY SCHOOL HONG KONG (KOWLOON)",
     "type": "私立",
@@ -9641,6 +10123,7 @@
   },
   {
     "id": "320609000133",
+    "seq": "241",
     "nameZh": "香港神託會培敦中學",
     "nameEn": "STEWARDS POOI TUN SECONDARY SCHOOL",
     "type": "資助",
