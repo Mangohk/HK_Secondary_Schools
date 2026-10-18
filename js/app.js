@@ -707,6 +707,11 @@ export class App {
     /** Watchlist cards that have revealed events past the preview. */
     this.favoritesEventsShowAll = new Set();
     this.query = "";
+    /**
+     * Session-only list order: district/type/name, or short number (`seq`).
+     * Not synced (same as search `query`).
+     */
+    this.sortMode = "district";
     this.pageSize = LIST_PAGE_SIZE;
     this.visibleCount = LIST_PAGE_SIZE;
     this.deepLink = null;
@@ -734,6 +739,7 @@ export class App {
       panelMap: document.getElementById("panel-map"),
       panelFavorites: document.getElementById("panel-favorites"),
       search: document.getElementById("search"),
+      listSort: document.getElementById("list-sort"),
       filters: document.querySelector(".filters"),
       bandFilters: document.querySelector(".band-filters"),
       favoritesFilter: document.getElementById("favorites-filter"),
@@ -923,6 +929,12 @@ export class App {
     if (!listEl || !emptyEl) return;
 
     const names = this.favorites.slice();
+    if (this.sortMode === "seq") {
+      names.sort((a, b) => this.compareSchoolsBySeq(
+        this.schoolByName.get(a) || { nameZh: a, seq: "999" },
+        this.schoolByName.get(b) || { nameZh: b, seq: "999" },
+      ));
+    }
     const isEmpty = names.length === 0;
     emptyEl.hidden = !isEmpty;
     listEl.hidden = isEmpty;
@@ -939,7 +951,8 @@ export class App {
 
       const title = document.createElement("h3");
       title.className = "favorites-item-name";
-      title.textContent = nameZh;
+      this.appendSchoolSeq(title, school);
+      title.append(document.createTextNode(nameZh));
       main.append(title);
 
       if (school?.nameEn) {
@@ -1419,18 +1432,22 @@ export class App {
 
   /**
    * Single-school picker options = schools in the current shared-filter intersection
-   * (district / type / band / 只看關注 / search). Sorted by zh-Hant name.
+   * (district / type / band / 只看關注 / search). Labels show `seq` plus the
+   * Chinese name. Default order is zh-Hant name; 編號排序 follows `seq`.
+   * Option values stay `nameZh` so the events filter does not switch to seq.
    * Empty intersection → disabled select + hint; stale selection resets to 全部.
    */
   populateEventSchoolFilter() {
     const select = this.els.eventsSchoolSelect;
     if (!select) return;
 
-    const sorted = this.filteredSchools()
-      .map((s) => s.nameZh)
-      .filter(Boolean)
-      .sort((a, b) => a.localeCompare(b, "zh-Hant"));
-    const nameSet = new Set(sorted);
+    const sorted = this.filteredSchools().filter((s) => s.nameZh);
+    if (this.sortMode === "seq") {
+      sorted.sort((a, b) => this.compareSchoolsBySeq(a, b));
+    } else {
+      sorted.sort((a, b) => a.nameZh.localeCompare(b.nameZh, "zh-Hant"));
+    }
+    const nameSet = new Set(sorted.map((s) => s.nameZh));
 
     const previous = this.eventSchool;
     select.replaceChildren();
@@ -1440,10 +1457,10 @@ export class App {
     allOpt.textContent = "全部";
     select.append(allOpt);
 
-    for (const name of sorted) {
+    for (const school of sorted) {
       const opt = document.createElement("option");
-      opt.value = name;
-      opt.textContent = name;
+      opt.value = school.nameZh;
+      opt.textContent = school.seq ? `${school.seq} ${school.nameZh}` : school.nameZh;
       select.append(opt);
     }
 
@@ -1694,7 +1711,7 @@ export class App {
         const band = school ? (school.band || "未知") : "未知";
         if (band !== this.filterBand) return false;
       }
-      if (queryActive && (!school || !this.schoolSearchText(school).includes(this.query))) {
+      if (queryActive && !this.schoolMatchesQuery(school)) {
         return false;
       }
       return true;
@@ -2202,6 +2219,17 @@ export class App {
       this.onListFiltersChanged();
     });
 
+    if (this.els.listSort) {
+      this.els.listSort.addEventListener("change", () => {
+        const value = this.els.listSort.value;
+        this.sortMode = value === "seq" ? "seq" : "district";
+        this.visibleCount = this.pageSize;
+        this.renderList();
+        this.populateEventSchoolFilter();
+        this.renderFavoritesManage();
+      });
+    }
+
     this.els.filters.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-type]");
       if (!btn) return;
@@ -2237,6 +2265,38 @@ export class App {
         this.setListFiltersExpanded(false);
       });
     }
+  }
+
+  /**
+   * 1–3 digit queries filter by the short number. `17` and `017` both match
+   * seq `017`, and so does any seq that contains the typed digits.
+   * Longer queries keep the text haystack (phone, address, name).
+   */
+  schoolMatchesQuery(school, query = this.query) {
+    if (!query) return true;
+    if (!school) return false;
+    if (/^\d{1,3}$/.test(query)) {
+      const seq = String(school.seq || "");
+      return seq === query.padStart(3, "0") || seq.includes(query);
+    }
+    return this.schoolSearchText(school).includes(query);
+  }
+
+  /** Prefix the visible school name. Map popups and detail rows stay without seq. */
+  appendSchoolSeq(parent, school) {
+    const seq = school?.seq;
+    if (!seq || !parent) return;
+    const el = document.createElement("span");
+    el.className = "school-seq";
+    el.textContent = seq;
+    parent.append(el);
+  }
+
+  compareSchoolsBySeq(a, b) {
+    const sa = String(a?.seq || "999");
+    const sb = String(b?.seq || "999");
+    if (sa !== sb) return sa < sb ? -1 : 1;
+    return String(a?.nameZh || "").localeCompare(String(b?.nameZh || ""), "zh-Hant");
   }
 
   schoolSearchText(school) {
@@ -2580,19 +2640,24 @@ export class App {
       if (this.filterType !== "all" && s.type !== this.filterType) return false;
       const band = s.band || "未知";
       if (this.filterBand !== "all" && band !== this.filterBand) return false;
-      if (!this.query) return true;
-      return this.schoolSearchText(s).includes(this.query);
+      return this.schoolMatchesQuery(s);
     });
   }
 
   sortedFilteredSchools() {
-    return this.filteredSchools().slice().sort((a, b) => {
+    const list = this.filteredSchools().slice();
+    if (this.sortMode === "seq") {
+      list.sort((a, b) => this.compareSchoolsBySeq(a, b));
+      return list;
+    }
+    list.sort((a, b) => {
       const di = districtSortIndex(a.district) - districtSortIndex(b.district);
       if (di !== 0) return di;
       const ti = TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type);
       if (ti !== 0) return ti;
       return a.nameZh.localeCompare(b.nameZh, "zh-Hant");
     });
+    return list;
   }
 
   loadMoreSchools() {
@@ -2650,7 +2715,10 @@ export class App {
     for (const school of visible) {
       const node = this.els.cardTemplate.content.cloneNode(true);
       const card = node.querySelector(".school-card");
-      card.querySelector(".school-name").textContent = school.nameZh;
+      const nameEl = card.querySelector(".school-name");
+      nameEl.replaceChildren();
+      this.appendSchoolSeq(nameEl, school);
+      nameEl.append(document.createTextNode(school.nameZh));
       card.querySelector(".school-name-en").textContent = school.nameEn;
 
       const band = school.band || "未知";

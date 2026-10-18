@@ -13,7 +13,7 @@
     integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
     integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="" />
-  <link rel="stylesheet" href="css/styles.css?v=schoolscope-11" />
+  <link rel="stylesheet" href="css/styles.css?v=schoolscope-12" />
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true"></div>
@@ -41,7 +41,14 @@
         <div class="toolbar-compact">
           <label class="search-wrap">
             <span class="sr-only">搜尋學校</span>
-            <input id="search" type="search" placeholder="搜尋校名、分區、地址、類型…" autocomplete="off" />
+            <input id="search" type="search" placeholder="搜尋校名、編號、分區、地址、類型…" autocomplete="off" />
+          </label>
+          <label class="sort-wrap">
+            <span class="sr-only">排序</span>
+            <select id="list-sort" aria-label="學校排序">
+              <option value="district" selected>按分區</option>
+              <option value="seq">按編號</option>
+            </select>
           </label>
           <button type="button" class="btn btn-secondary toolbar-filter-toggle" id="list-filter-toggle" aria-expanded="false" aria-controls="list-filter-panel" aria-label="展開篩選">
             <span class="toolbar-filter-toggle-label">篩選</span>
@@ -108,6 +115,7 @@
         <h2>資料來源與說明</h2>
         <ul>
           <li>學校名單、地址、電話、網址、分區與座標主要參考教育局「學校位置及資料」開放數據（日間本地中學；不含特殊、國際、英基及夜校）。</li>
+          <li>校名前面的三位編號（<code>seq</code>，例如 017）方便口述同搜尋。1 至 3 位純數字會按編號篩選；清單可改「按編號」排序。地圖同卡片內的地址、電話暫不顯示編號。內部仍用 12 位學校 id。</li>
           <li>「民間參考組別」主要參考第三方網站 <a href="https://dse.bigexam.hk/zh-hk/ssp" rel="noopener noreferrer" target="_blank">大考 BigExam</a>（dse.bigexam.hk）以文憑試表現等估算的中學組別，<strong>並非教育局官方評級</strong>；未有可靠對應的學校顯示「未知／不適用」。收生組別每年不同，請自行向學校／教育局核實。</li>
           <li>地圖座標取自教育局公開地理資料，精確至社區／鄰里層級，可能與校門實際位置略有偏差。</li>
           <li>地圖使用 Leaflet + OpenStreetMap 圖磚，無需付費 API 金鑰。</li>
@@ -203,7 +211,7 @@
           <ul>
             <li>本分頁於執行時讀取 <code>data/events.json</code>（單一資料來源）。請以 GitHub Pages 或本機 HTTP 開啟；直接雙擊 <code>index.html</code> 時瀏覽器通常無法 fetch 本地 JSON。</li>
             <li>分區、類型、民間組別、只看關注與搜尋跟「學校資料」「地圖與距離」共用同一組條件，切換分頁後仍然有效。本分頁沒有類型或搜尋列。民間組別（按相關學校）寫入共用民間組別；「只看關注」寫入共用關注篩選，只按相關學校是否在關注清單篩選。分區選單寫入共用分區。狀態、指定學校，以及「顯示教育局／全港項目」只影響升中項目。指定學校下拉只列出當前共用篩選交集內的學校（與「學校資料」同一套條件）；交集為空時下拉停用。若已選學校跌出交集會重置為「全部」。有相關學校的項目以 AND 併用各條件。空 <code>schools</code> 的教育局／全港項目只受「顯示教育局／全港項目」控制。</li>
-            <li>共用條件依 <code>schools</code> 的校名（須完全相同）對應「學校資料」的行政區、類型、民間參考 Band、關注清單與可搜尋欄位。多校事件要有同一所學校同時符合已啟用的分區、類型、組別、只看關注與搜尋。空 <code>schools</code> 的教育局／全港項目只跟「顯示教育局／全港項目」：開關開着就會顯示，關掉就全部隱藏。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。</li>
+            <li>共用條件依 <code>schools</code> 的校名（須完全相同）對應「學校資料」的行政區、類型、民間參考 Band、關注清單與可搜尋欄位。搜尋若是 1 至 3 位純數字，改為對照學校短編號 <code>seq</code>（<code>17</code> 與 <code>017</code> 都對到 <code>017</code>）。學校下拉顯示編號加校名，選項的值仍是校名。多校事件要有同一所學校同時符合已啟用的分區、類型、組別、只看關注與搜尋。空 <code>schools</code> 的教育局／全港項目只跟「顯示教育局／全港項目」：開關開着就會顯示，關掉就全部隱藏。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。</li>
             <li>「顯示教育局／全港項目」預設開着，用來顯示或隱藏沒有相關學校（空 <code>schools</code>）的教育局／全港項目。關掉之後這些項目全部隱藏，並且唔會改共用分區。分區、類型、民間組別、只看關注、搜尋、狀態同指定學校都唔會隱藏呢啲項目。分區選單同學校下拉都沒有「全港／教育局」。</li>
             <li>時間顯示為香港時間（UTC+8）。可用網址開啟本分頁，例如 <code>?tab=events&amp;status=官方確認&amp;band=1&amp;school=校名</code>。<code>band</code> 套用共用民間組別。舊連結 <code>school=全港／教育局</code> 不再單獨收起有學校的項目。參數會還原 <code>+</code> 與百分號編碼（含再編碼一次的連結）。狀態按鈕只剩全部、官方確認、暫定，而且只作用於未過項目。已過項目（狀態為已過，或香港結束日已過）預設隱藏；清單頂端「另有 N 項已過 · 顯示」可按開始日期插回原位。舊連結 <code>status=已過</code> 會展開已過項目，不再當成狀態篩選。</li>
           </ul>
@@ -283,7 +291,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
     integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin=""></script>
-  <script src="data/schools-data.js?v=schoolscope-6"></script>
-  <script type="module" src="js/main.js?v=schoolscope-11"></script>
+  <script src="data/schools-data.js?v=schoolscope-12"></script>
+  <script type="module" src="js/main.js?v=schoolscope-12"></script>
 </body>
 </html>
