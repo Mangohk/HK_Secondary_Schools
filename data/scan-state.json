@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T02:30:07Z",
+  "updatedAt": "2026-10-19T03:24:03Z",
   "districts": {
     "沙田": {
       "lastScannedAt": "2026-10-14T02:51:39Z",
@@ -25,6 +25,57 @@
     "油尖旺": {
       "lastScannedAt": "2026-10-15T02:30:07Z",
       "lastStatus": "ok"
+    },
+    "元朗": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "屯門": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "東區": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "葵青": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "西貢": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "大埔": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "北區": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "南區": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "灣仔": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "partial",
+      "lastError": "CHSC＋官網抽樣；聖方濟各資訊日頁未更新至 2026；李潤田資訊日日期未抽出；部分官網失敗"
+    },
+    "荃灣": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "ok"
+    },
+    "中西區": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "partial",
+      "lastError": "CHSC 本批無中西區新場；官網抽樣（12 校）對照 live；聖若瑟／聖保羅書院首頁抓取失敗"
+    },
+    "離島": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "partial",
+      "lastError": "CHSC 全表＋官網抽樣／入學頁；唔改 repo"
     }
   },
   "schools": {
@@ -419,18 +470,111 @@
       "lastScannedAt": "2026-10-15T02:30:07Z",
       "lastStatus": "ok",
       "district": "油尖旺"
+    },
+    "聖若瑟書院": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "中西區"
+    },
+    "聖保羅書院": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "中西區"
+    },
+    "智新書院": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "離島"
+    },
+    "香港華仁書院": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "灣仔"
+    },
+    "鄧肇堅維多利亞官立中學": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "灣仔"
+    },
+    "聖保祿學校": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "灣仔"
+    },
+    "聖保祿中學": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "灣仔"
+    },
+    "鐘聲慈善社胡陳金枝中學": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "屯門"
+    },
+    "裘錦秋中學﹝屯門﹞": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "屯門"
+    },
+    "新生命教育協會平安福音中學": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "官網首頁未能讀取／內容過短",
+      "district": "屯門"
+    },
+    "嘉諾撒聖方濟各書院": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "入學選單有「S1 Admission Information Day 2026-2027」，但 article=695 內文仍為 2025-12-06；未入庫臆測 2026 日期",
+      "district": "灣仔"
+    },
+    "東華三院李潤田紀念中學": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "校曆／入學頁見「中一入學資訊日」字樣，本批未能從公開頁抽出可核實單一日期",
+      "district": "灣仔"
+    },
+    "安基司學校": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "schools.json 無官網",
+      "district": "元朗"
+    },
+    "香港西班牙學校": {
+      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastStatus": "error",
+      "lastError": "schools.json 無官網",
+      "district": "大埔"
     }
   },
   "rotation": {
     "lastDistrictBatch": [
-      "黃大仙",
-      "深水埗",
-      "油尖旺"
+      "元朗",
+      "屯門",
+      "東區",
+      "葵青",
+      "西貢",
+      "大埔",
+      "北區",
+      "南區",
+      "灣仔",
+      "荃灣",
+      "中西區",
+      "離島"
     ],
-    "lastRotatedAt": "2026-10-15T02:30:07Z"
+    "lastRotatedAt": "2026-10-19T03:24:03Z"
   },
   "lightScan": {
-    "lastRanAt": null,
-    "lastStatus": null
+    "lastRanAt": "2026-10-19T03:20:42Z",
+    "lastStatus": "ok"
   }
 }
