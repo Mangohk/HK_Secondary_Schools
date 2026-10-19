@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T03:24:03Z",
+  "updatedAt": "2026-10-19T03:39:15Z",
   "districts": {
     "沙田": {
       "lastScannedAt": "2026-10-14T02:51:39Z",
@@ -27,31 +27,36 @@
       "lastStatus": "ok"
     },
     "元朗": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "ok"
+      "lastScannedAt": "2026-10-19T03:39:15Z",
+      "lastStatus": "partial",
+      "lastError": "6校官網失敗"
     },
     "屯門": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "ok"
+      "lastScannedAt": "2026-10-19T03:39:15Z",
+      "lastStatus": "partial",
+      "lastError": "1校官網失敗"
     },
     "東區": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "ok"
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "partial",
+      "lastError": "8校官網失敗／空頁"
     },
     "葵青": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "ok"
+      "lastScannedAt": "2026-10-19T03:39:15Z",
+      "lastStatus": "partial",
+      "lastError": "6校官網失敗"
     },
     "西貢": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:30:00Z",
       "lastStatus": "ok"
     },
     "大埔": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "ok"
+      "lastScannedAt": "2026-10-19T03:30:00Z",
+      "lastStatus": "partial",
+      "lastError": "羅定邦／恩主教等既有核對；迦密聖道／圓玄二中見 CHSC；大光慈航／沐恩／王肇枝抓取失敗"
     },
     "北區": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:30:00Z",
       "lastStatus": "ok"
     },
     "南區": {
@@ -59,18 +64,18 @@
       "lastStatus": "ok"
     },
     "灣仔": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "partial",
-      "lastError": "CHSC＋官網抽樣；聖方濟各資訊日頁未更新至 2026；李潤田資訊日日期未抽出；部分官網失敗"
+      "lastError": "4校官網失敗／空頁"
     },
     "荃灣": {
       "lastScannedAt": "2026-10-19T03:24:03Z",
       "lastStatus": "ok"
     },
     "中西區": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "partial",
-      "lastError": "CHSC 本批無中西區新場；官網抽樣（12 校）對照 live；聖若瑟／聖保羅書院首頁抓取失敗"
+      "lastError": "2校官網失敗／空頁"
     },
     "離島": {
       "lastScannedAt": "2026-10-19T03:24:03Z",
@@ -472,15 +477,15 @@
       "district": "油尖旺"
     },
     "聖若瑟書院": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "連線逾時／失敗：http://www.sjc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.sjc.edu.hk', port=80): Max retries exceed",
       "district": "中西區"
     },
     "聖保羅書院": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "連線逾時／失敗：http://www.spc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.spc.edu.hk', port=80): Max retries exceed",
       "district": "中西區"
     },
     "智新書院": {
@@ -490,27 +495,27 @@
       "district": "離島"
     },
     "香港華仁書院": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "空頁／內容過少（疑封鎖或轉址失敗）",
       "district": "灣仔"
     },
     "鄧肇堅維多利亞官立中學": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "連線逾時／失敗：http://www.tskvgss.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.tskvgss.edu.hk', port=80): Max retrie",
       "district": "灣仔"
     },
     "聖保祿學校": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "連線逾時／失敗：http://www.spcs.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.spcs.edu.hk', port=80): Max retries exce",
       "district": "灣仔"
     },
     "聖保祿中學": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "連線逾時／失敗：http://www.spss.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.spss.edu.hk', port=80): Max retries exce",
       "district": "灣仔"
     },
     "鐘聲慈善社胡陳金枝中學": {
@@ -532,15 +537,13 @@
       "district": "屯門"
     },
     "嘉諾撒聖方濟各書院": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "error",
-      "lastError": "入學選單有「S1 Admission Information Day 2026-2027」，但 article=695 內文仍為 2025-12-06；未入庫臆測 2026 日期",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
       "district": "灣仔"
     },
     "東華三院李潤田紀念中學": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "error",
-      "lastError": "校曆／入學頁見「中一入學資訊日」字樣，本批未能從公開頁抽出可核實單一日期",
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
       "district": "灣仔"
     },
     "安基司學校": {
@@ -554,24 +557,294 @@
       "lastStatus": "error",
       "lastError": "schools.json 無官網",
       "district": "大埔"
+    },
+    "樂善堂梁銶琚書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "聖保羅男女中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "聖嘉勒女書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "聖士提反堂中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "聖士提反女子中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "聖類斯中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "英皇書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "英華女學校": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "香島華德福學校": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "高主教書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "中西區"
+    },
+    "中華基督教會公理書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "何東中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "佛教黃鳳翎中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "北角協同中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "孔聖堂禮仁書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "瑪利曼中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "皇仁書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "聖公會鄧肇堅中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "香港真光中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "香港道爾頓學校": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "香港鄧鏡波書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "灣仔"
+    },
+    "中華傳道會劉永生中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "中華基督教會桂華山中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "中華基金中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "伊斯蘭脫維善紀念中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "連線逾時／失敗：http://www.iktmc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.iktmc.edu.hk', port=80): Max retries ex",
+      "district": "東區"
+    },
+    "嘉諾撒書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "培僑中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "培生學校": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "寶血女子中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "嶺南中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "嶺南衡怡紀念中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "連線逾時／失敗：http://www.lhymss.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.lhymss.edu.hk', port=80): Max retries ",
+      "district": "東區"
+    },
+    "庇理羅士女子中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "張振興伉儷書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "連線逾時／失敗：http://www.cghc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.cghc.edu.hk', port=80): Max retries exce",
+      "district": "東區"
+    },
+    "張祝珊英文中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "慈幼英文學校": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "文理書院(香港)": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "明愛柴灣馬登基金中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "連線逾時／失敗：http://www.ccm.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.ccm.edu.hk', port=80): Max retries exceed",
+      "district": "東區"
+    },
+    "港島民生書院": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "連線逾時／失敗：http://www.imsc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.imsc.edu.hk', port=80): Max retries exce",
+      "district": "東區"
+    },
+    "漢華中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "炮台山循道衛理中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "首頁內容過少／未能取得入學資訊",
+      "district": "東區"
+    },
+    "福建中學(小西灣)": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "筲箕灣官立中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "筲箕灣東官立中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "聖公會李福慶中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "聖貞德中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "聖馬可中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "連線逾時／失敗：http://www.stmarks.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.stmarks.edu.hk', port=80): Max retrie",
+      "district": "東區"
+    },
+    "茵維特學校(香港)": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "error",
+      "lastError": "HTTP 失敗／限制：https://www.invictus.edu.hk/ -> 429 len=31431; http://www.invictus.edu.hk/ -> ConnectTimeout: HTTPConnectionP",
+      "district": "東區"
+    },
+    "蘇浙公學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "衞理中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "金文泰中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "閩僑中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "顯理中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
+    },
+    "香港中國婦女會中學": {
+      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastStatus": "ok",
+      "district": "東區"
     }
   },
   "rotation": {
     "lastDistrictBatch": [
-      "元朗",
-      "屯門",
+      "中西區",
+      "灣仔",
       "東區",
       "葵青",
-      "西貢",
-      "大埔",
+      "屯門",
+      "元朗",
       "北區",
-      "南區",
-      "灣仔",
-      "荃灣",
-      "中西區",
-      "離島"
+      "大埔",
+      "西貢"
     ],
-    "lastRotatedAt": "2026-10-19T03:24:03Z"
+    "lastRotatedAt": "2026-10-19T03:39:15Z"
   },
   "lightScan": {
     "lastRanAt": "2026-10-19T03:20:42Z",
