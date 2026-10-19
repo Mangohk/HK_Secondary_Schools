@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T02:30:07Z",
+  "updatedAt": "2026-10-19T03:20:42Z",
   "districts": {
     "沙田": {
       "lastScannedAt": "2026-10-14T02:51:39Z",
@@ -430,7 +430,7 @@
     "lastRotatedAt": "2026-10-15T02:30:07Z"
   },
   "lightScan": {
-    "lastRanAt": null,
-    "lastStatus": null
+    "lastRanAt": "2026-10-19T03:20:42Z",
+    "lastStatus": "ok"
   }
 }
