@@ -210,6 +210,7 @@ function canonicalTab(value) {
   const text = decodeUrlParam(value).toLowerCase();
   if (!text) return null;
   if (text === "events" || text === "event" || text === "升中" || text === "升中項目") return "events";
+  if (text === "changelog" || text === "更新記錄") return "changelog";
   if (text === "map" || text === "地圖" || text === "地圖與距離") return "map";
   if (
     text === "favorites" ||
@@ -245,6 +246,115 @@ function canonicalBand(value) {
   return null;
 }
 
+/** Changelog date chip. Null when the URL does not set one. */
+function canonicalChangelogRange(value) {
+  const text = decodeUrlParam(value).replace(/\s+/g, "");
+  if (!text) return null;
+  if (text === "7" || text === "近7日" || text === "7d") return "7";
+  if (text === "30" || text === "近30日" || text === "30d") return "30";
+  if (text === "all" || text === "全部") return "all";
+  return null;
+}
+
+/** Changelog segmented control. 「刪除」 is not a segment, so it does not match. */
+function canonicalChangelogKind(value) {
+  const text = decodeUrlParam(value).replace(/\s+/g, "");
+  if (!text) return null;
+  if (text === "all" || text === "全部") return "all";
+  if (text === "added" || text === "新" || text === "new") return "added";
+  if (text === "updated" || text === "更新") return "updated";
+  return null;
+}
+
+function canonicalChangelogDistrict(value) {
+  const text = decodeUrlParam(value).trim();
+  if (!text || text === "all" || text === "全部" || text === "全部十八區") return null;
+  if (DISTRICT_ORDER.includes(text)) return text;
+  if (DISTRICT_ORDER.includes(`${text}區`)) return `${text}區`;
+  return null;
+}
+
+const CHANGELOG_KIND_LABEL = { added: "新", updated: "更新", removed: "刪除" };
+
+const CHANGELOG_TYPE_ORDER = [
+  "開放日",
+  "資訊日",
+  "入學講座",
+  "報名／申請",
+  "申請",
+  "截止",
+  "面試",
+  "放榜／結果",
+  "放榜",
+  "註冊",
+  "體驗日",
+  "其他",
+  "登記",
+];
+
+function changelogTodayYmd(now = new Date()) {
+  return hkCalendarDay(now.toISOString(), true);
+}
+
+function shiftYmd(ymd, deltaDays) {
+  const [y, m, d] = String(ymd || "").split("-").map(Number);
+  if (!y || !m || !d) return "";
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  dt.setUTCDate(dt.getUTCDate() + deltaDays);
+  const yy = dt.getUTCFullYear();
+  const mm = String(dt.getUTCMonth() + 1).padStart(2, "0");
+  const dd = String(dt.getUTCDate()).padStart(2, "0");
+  return `${yy}-${mm}-${dd}`;
+}
+
+/** Inclusive Hong Kong calendar window. 近7日 is today and the previous 6 days. */
+function changelogRangeCutoff(range, now = new Date()) {
+  const today = changelogTodayYmd(now);
+  if (!today || range === "all") return "";
+  if (range === "7") return shiftYmd(today, -6);
+  return shiftYmd(today, -29);
+}
+
+function changelogSchoolHeading(entry) {
+  const schools = Array.isArray(entry?.schools)
+    ? entry.schools.map((name) => String(name).trim()).filter(Boolean)
+    : [];
+  if (!schools.length) {
+    if (entry?.scope === "edb") return "教育局";
+    if (entry?.scope === "territory") return "全港";
+    return "全港／教育局";
+  }
+  if (schools.length === 1) return schools[0];
+  return `${schools[0]}等 ${schools.length} 間`;
+}
+
+function changelogDistrictMeta(entry) {
+  const list = Array.isArray(entry?.districts)
+    ? entry.districts.map((name) => String(name).trim()).filter(Boolean)
+    : [];
+  if (!list.length) return "";
+  if (list.length <= 2) return list.join("、");
+  return "多區";
+}
+
+function compareChangelogEntries(a, b) {
+  const day = String(b?.loggedAt || "").localeCompare(String(a?.loggedAt || ""));
+  if (day) return day;
+  return String(a?.id || "").localeCompare(String(b?.id || ""));
+}
+
+function safeHttpUrl(raw) {
+  const url = ensureUrl(String(raw || "").trim());
+  if (!/^https?:\/\//i.test(url)) return "";
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
+    return parsed.href;
+  } catch {
+    return "";
+  }
+}
+
 /** Query and hash deep link. Search params win over the hash when both set a key. */
 function readDeepLink() {
   const pairs = readQueryPairs(window.location.search);
@@ -273,6 +383,12 @@ function readDeepLink() {
     band: canonicalBand(map.get("band") || map.get("eventband")),
     school,
     eventsApplied: false,
+    changelogApplied: false,
+    changelogDate: canonicalChangelogRange(map.get("cdate")),
+    changelogDistrict: canonicalChangelogDistrict(map.get("cdistrict")),
+    changelogSchool: map.get("cschool") || "",
+    changelogKind: canonicalChangelogKind(map.get("ckind")),
+    changelogType: (map.get("ctype") || "").trim(),
   };
 }
 
@@ -677,6 +793,16 @@ export class App {
     this.filterDistrict = "all";
     this.eventStatus = "all";
     this.eventSchool = "all";
+    /** Changelog panel only. Default date window is the last 30 Hong Kong days. */
+    this.changelogDate = "30";
+    this.changelogDistrict = "all";
+    this.changelogSchool = "all";
+    this.changelogKind = "all";
+    this.changelogType = "all";
+    this.changelogPayload = null;
+    this.changelogError = false;
+    /** Row ids left open across changelog re-renders. */
+    this.changelogExpanded = new Set();
     /** 升中-only. On shows schools=[]; off hides every empty-schools event. */
     this.showTerritoryEvents = true;
     /**
@@ -732,10 +858,12 @@ export class App {
     this.els = {
       tabList: document.getElementById("tab-list"),
       tabEvents: document.getElementById("tab-events"),
+      tabChangelog: document.getElementById("tab-changelog"),
       tabMap: document.getElementById("tab-map"),
       tabFavorites: document.getElementById("tab-favorites"),
       panelList: document.getElementById("panel-list"),
       panelEvents: document.getElementById("panel-events"),
+      panelChangelog: document.getElementById("panel-changelog"),
       panelMap: document.getElementById("panel-map"),
       panelFavorites: document.getElementById("panel-favorites"),
       search: document.getElementById("search"),
@@ -767,6 +895,17 @@ export class App {
       eventsSchoolSelect: document.getElementById("events-school-select"),
       eventsSchoolEmptyHint: document.getElementById("events-school-empty-hint"),
       eventsTerritoryToggle: document.getElementById("events-territory-toggle"),
+      changelogList: document.getElementById("changelog-list"),
+      changelogEmpty: document.getElementById("changelog-empty"),
+      changelogEmptyTitle: document.getElementById("changelog-empty-title"),
+      changelogMeta: document.getElementById("changelog-meta"),
+      changelogDateFilters: document.querySelector(".changelog-date-filters"),
+      changelogKindFilters: document.querySelector(".changelog-kind-filters"),
+      changelogDistrictSelect: document.getElementById("changelog-district-select"),
+      changelogSchoolSelect: document.getElementById("changelog-school-select"),
+      changelogTypeSelect: document.getElementById("changelog-type-select"),
+      changelogActiveRow: document.getElementById("changelog-active-row"),
+      changelogActiveChips: document.getElementById("changelog-active-chips"),
       map: document.getElementById("map"),
       mapHint: document.getElementById("map-hint"),
       mapFilterBar: document.getElementById("map-filter-bar"),
@@ -1210,6 +1349,7 @@ export class App {
         events: this.els.tabEvents,
         map: this.els.tabMap,
         favorites: this.els.tabFavorites,
+        changelog: this.els.tabChangelog,
       }[name];
     tab?.click();
   }
@@ -1241,10 +1381,13 @@ export class App {
       this.renderList();
     }
     this.populateEventDistrictFilter();
+    this.populateChangelogDistrictFilter();
     this.syncFavoritesFilterChip();
     this.renderFavoritesManage();
 
+    this.bindChangelogFilters();
     this.loadEvents();
+    this.loadChangelog();
     this.applyDeepLinkTab();
   }
 
@@ -1265,7 +1408,7 @@ export class App {
     const link = this.deepLink;
     if (!link) return;
     const tab = link.tab || (link.status || link.band || link.school ? "events" : null);
-    if (tab === "events" || tab === "map" || tab === "favorites" || tab === "list") {
+    if (tab === "events" || tab === "map" || tab === "favorites" || tab === "list" || tab === "changelog") {
       this.goToTab(tab);
     }
   }
@@ -1527,6 +1670,7 @@ export class App {
     const panelIds = {
       list: "panel-list",
       events: "panel-events",
+      changelog: "panel-changelog",
       map: "panel-map",
       favorites: "panel-favorites",
     };
@@ -1538,6 +1682,8 @@ export class App {
       const panels = {
         list: document.getElementById(panelIds.list) || this.els.panelList,
         events: document.getElementById(panelIds.events) || this.els.panelEvents,
+        changelog:
+          document.getElementById(panelIds.changelog) || this.els.panelChangelog,
         map: document.getElementById(panelIds.map) || this.els.panelMap,
         favorites:
           document.getElementById(panelIds.favorites) || this.els.panelFavorites,
@@ -1551,6 +1697,7 @@ export class App {
       // Keep els in sync for the rest of App.
       this.els.panelList = panels.list;
       this.els.panelEvents = panels.events;
+      this.els.panelChangelog = panels.changelog;
       this.els.panelMap = panels.map;
       this.els.panelFavorites = panels.favorites;
 
@@ -1566,6 +1713,7 @@ export class App {
         : [
             this.els.tabList,
             this.els.tabEvents,
+            this.els.tabChangelog,
             this.els.tabMap,
             this.els.tabFavorites,
           ].filter(Boolean);
@@ -1577,14 +1725,17 @@ export class App {
         tab.setAttribute("aria-selected", String(on));
         if (key === "list") this.els.tabList = tab;
         if (key === "events") this.els.tabEvents = tab;
+        if (key === "changelog") this.els.tabChangelog = tab;
         if (key === "map") this.els.tabMap = tab;
         if (key === "favorites") this.els.tabFavorites = tab;
       }
 
       if (name !== "list") this.setListFiltersExpanded(false);
       if (name !== "events") this.setEventsFiltersExpanded(false);
+      if (name !== "changelog") this.setChangelogFiltersExpanded(false);
       if (name === "list") requestAnimationFrame(() => this.syncListStickyOffset());
       if (name === "events") requestAnimationFrame(() => this.syncEventsStickyOffset());
+      if (name === "changelog") requestAnimationFrame(() => this.syncChangelogStickyOffset());
       if (name === "favorites") this.renderFavoritesManage();
       if (name === "map") {
         // Wait until the tab panel is laid out (display:none → visible).
@@ -1608,6 +1759,7 @@ export class App {
       // Fallback if nav wrapper is missing.
       this.els.tabList?.addEventListener("click", () => activate("list"));
       this.els.tabEvents?.addEventListener("click", () => activate("events"));
+      this.els.tabChangelog?.addEventListener("click", () => activate("changelog"));
       this.els.tabMap?.addEventListener("click", () => activate("map"));
       this.els.tabFavorites?.addEventListener("click", () => activate("favorites"));
     }
@@ -3223,5 +3375,596 @@ export class App {
       });
     };
     open();
+  }
+
+  /**
+   * Changelog is separate from events.json (current state).
+   * Write contract: any PR that changes data/events.json must append one
+   * changelog row per changed event in the same commit (added, updated, or
+   * removed). Do not replace those rows with a single weekly batch summary.
+   * loggedAt is the merge day in Asia/Hong_Kong (YYYY-MM-DD).
+   * source is weekly-scan, manual, or backfill.
+   */
+  changelogJsonUrl() {
+    return new URL("data/changelog.json", window.location.href).href;
+  }
+
+  populateChangelogDistrictFilter() {
+    const select = this.els.changelogDistrictSelect;
+    if (!select) return;
+    const previous = this.changelogDistrict;
+    select.replaceChildren();
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "全部十八區";
+    select.append(allOpt);
+    for (const district of DISTRICT_ORDER) {
+      const opt = document.createElement("option");
+      opt.value = district;
+      opt.textContent = district;
+      select.append(opt);
+    }
+    const allowed = new Set([...select.options].map((opt) => opt.value));
+    this.changelogDistrict = allowed.has(previous) ? previous : "all";
+    select.value = this.changelogDistrict;
+  }
+
+  populateChangelogSchoolFilter() {
+    const select = this.els.changelogSchoolSelect;
+    if (!select) return;
+    const names = new Set();
+    for (const entry of this.changelogPayload?.entries || []) {
+      for (const name of entry.schools || []) {
+        if (name) names.add(String(name));
+      }
+    }
+    if (this.changelogSchool !== "all") names.add(this.changelogSchool);
+    const rows = [...names].map((name) => ({
+      name,
+      seq: this.schoolByName.get(name)?.seq || "",
+    }));
+    rows.sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+
+    select.replaceChildren();
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "全部";
+    select.append(allOpt);
+    for (const row of rows) {
+      const opt = document.createElement("option");
+      opt.value = row.name;
+      opt.textContent = row.seq ? `${row.seq} ${row.name}` : row.name;
+      select.append(opt);
+    }
+    const allowed = new Set([...select.options].map((opt) => opt.value));
+    if (!allowed.has(this.changelogSchool)) this.changelogSchool = "all";
+    select.value = this.changelogSchool;
+  }
+
+  populateChangelogTypeFilter() {
+    const select = this.els.changelogTypeSelect;
+    if (!select) return;
+    const present = new Set();
+    for (const entry of this.changelogPayload?.entries || []) {
+      if (entry.eventType) present.add(String(entry.eventType));
+    }
+    if (this.changelogType !== "all") present.add(this.changelogType);
+    const ordered = CHANGELOG_TYPE_ORDER.filter((type) => present.has(type));
+    for (const type of [...present].sort((a, b) => a.localeCompare(b, "zh-Hant"))) {
+      if (!ordered.includes(type)) ordered.push(type);
+    }
+
+    select.replaceChildren();
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "全部";
+    select.append(allOpt);
+    for (const type of ordered) {
+      const opt = document.createElement("option");
+      opt.value = type;
+      opt.textContent = type;
+      select.append(opt);
+    }
+    const allowed = new Set([...select.options].map((opt) => opt.value));
+    if (!allowed.has(this.changelogType)) this.changelogType = "all";
+    select.value = this.changelogType;
+  }
+
+  resolveChangelogSchool(raw) {
+    const name = decodeUrlParam(raw).trim();
+    if (!name || name === "all" || name === "全部") return "all";
+    if (this.schoolByName.has(name)) return name;
+    for (const school of this.schools) {
+      if (school.nameZh?.normalize("NFC") === name.normalize("NFC")) return school.nameZh;
+      if (String(school.id) === name) return school.nameZh;
+      if (school.seq && school.seq === name) return school.nameZh;
+    }
+    if (/^\d{1,3}$/.test(name)) {
+      const padded = name.padStart(3, "0");
+      for (const school of this.schools) {
+        if (school.seq === padded) return school.nameZh;
+      }
+    }
+    for (const entry of this.changelogPayload?.entries || []) {
+      for (const schoolName of entry.schools || []) {
+        if (schoolName === name || String(schoolName).normalize("NFC") === name.normalize("NFC")) {
+          return schoolName;
+        }
+      }
+      if ((entry.schoolIds || []).map(String).includes(name)) {
+        const school = this.schools.find((item) => String(item.id) === name);
+        if (school?.nameZh) return school.nameZh;
+      }
+    }
+    return name;
+  }
+
+  applyChangelogDeepLink() {
+    const link = this.deepLink;
+    if (!link || link.changelogApplied) return;
+    link.changelogApplied = true;
+    if (link.changelogDate) this.changelogDate = link.changelogDate;
+    if (link.changelogDistrict) this.changelogDistrict = link.changelogDistrict;
+    if (link.changelogKind) this.changelogKind = link.changelogKind;
+    const type = link.changelogType;
+    if (type === "all" || type === "全部") this.changelogType = "all";
+    else if (type) this.changelogType = type;
+    if (link.changelogSchool) {
+      this.changelogSchool = this.resolveChangelogSchool(link.changelogSchool);
+    }
+  }
+
+  async loadChangelog() {
+    try {
+      const response = await fetch(this.changelogJsonUrl(), { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      if (!payload || !Array.isArray(payload.entries)) throw new Error("invalid changelog payload");
+      this.changelogError = false;
+      this.changelogPayload = payload;
+      this.applyChangelogDeepLink();
+      this.populateChangelogDistrictFilter();
+      this.populateChangelogSchoolFilter();
+      this.populateChangelogTypeFilter();
+      this.syncChangelogControls();
+      this.renderChangelog();
+    } catch {
+      this.showChangelogLoadError();
+    }
+  }
+
+  showChangelogLoadError() {
+    this.changelogPayload = null;
+    this.changelogError = true;
+    if (this.els.changelogMeta) this.els.changelogMeta.textContent = "載入失敗";
+    if (this.els.changelogEmpty) this.els.changelogEmpty.hidden = true;
+    const list = this.els.changelogList;
+    if (!list) return;
+    list.replaceChildren();
+    const alert = document.createElement("p");
+    alert.className = "events-error";
+    alert.setAttribute("role", "alert");
+    alert.textContent = "無法載入更新記錄。請用網頁方式開啟本站，再重新整理。";
+    const details = document.createElement("details");
+    details.className = "tech-fold";
+    const summary = document.createElement("summary");
+    summary.textContent = "技術說明";
+    const note = document.createElement("p");
+    note.className = "events-error-tech";
+    note.textContent = "讀取 data/changelog.json 失敗。請用 GitHub Pages 或本機 HTTP 開啟；直接雙擊 index.html（file://）時，瀏覽器通常無法讀取本地 JSON。";
+    details.append(summary, note);
+    list.append(alert, details);
+  }
+
+  changelogEntries() {
+    const entries = this.changelogPayload?.entries;
+    return Array.isArray(entries) ? entries : [];
+  }
+
+  changelogPassesFilters(entry, now = new Date()) {
+    const loggedAt = String(entry?.loggedAt || "");
+    const cutoff = changelogRangeCutoff(this.changelogDate, now);
+    if (cutoff && (!loggedAt || loggedAt < cutoff)) return false;
+    if (this.changelogDistrict !== "all") {
+      const districts = Array.isArray(entry?.districts) ? entry.districts : [];
+      if (!districts.includes(this.changelogDistrict)) return false;
+    }
+    if (!this.entryMatchesChangelogSchool(entry)) return false;
+    if (this.changelogKind === "added" && entry?.changeKind !== "added") return false;
+    if (this.changelogKind === "updated" && entry?.changeKind !== "updated") return false;
+    if (this.changelogType !== "all" && entry?.eventType !== this.changelogType) return false;
+    return true;
+  }
+
+  entryMatchesChangelogSchool(entry) {
+    const selected = this.changelogSchool;
+    if (!selected || selected === "all") return true;
+    const names = Array.isArray(entry?.schools) ? entry.schools : [];
+    if (names.includes(selected)) return true;
+    const school = this.schoolByName.get(selected);
+    const ids = (Array.isArray(entry?.schoolIds) ? entry.schoolIds : []).map(String);
+    if (school && ids.includes(String(school.id))) return true;
+    if (ids.includes(String(selected))) return true;
+    return false;
+  }
+
+  changelogActiveChips() {
+    const chips = [];
+    if (this.changelogDate === "7") chips.push({ key: "date", label: "近7日" });
+    else if (this.changelogDate === "all") chips.push({ key: "date", label: "全部日期" });
+    if (this.changelogDistrict !== "all") chips.push({ key: "district", label: this.changelogDistrict });
+    if (this.changelogSchool !== "all") chips.push({ key: "school", label: this.changelogSchool });
+    if (this.changelogKind === "added" || this.changelogKind === "updated") {
+      chips.push({ key: "kind", label: CHANGELOG_KIND_LABEL[this.changelogKind] });
+    }
+    if (this.changelogType !== "all") chips.push({ key: "type", label: this.changelogType });
+    return chips;
+  }
+
+  clearChangelogFilterKey(key) {
+    if (key === "date") this.changelogDate = "30";
+    if (key === "district") this.changelogDistrict = "all";
+    if (key === "school") this.changelogSchool = "all";
+    if (key === "kind") this.changelogKind = "all";
+    if (key === "type") this.changelogType = "all";
+    this.syncChangelogControls();
+    this.renderChangelog();
+  }
+
+  clearChangelogFilters() {
+    this.changelogDate = "30";
+    this.changelogDistrict = "all";
+    this.changelogSchool = "all";
+    this.changelogKind = "all";
+    this.changelogType = "all";
+    this.syncChangelogControls();
+    this.renderChangelog();
+  }
+
+  syncChangelogControls() {
+    this.syncChipGroup(this.els.changelogDateFilters, "changelogDate", this.changelogDate);
+    this.syncChipGroup(this.els.changelogKindFilters, "changelogKind", this.changelogKind);
+    for (const chip of this.els.changelogDateFilters?.querySelectorAll(".chip") || []) {
+      chip.setAttribute("aria-pressed", chip.classList.contains("is-active") ? "true" : "false");
+    }
+    for (const chip of this.els.changelogKindFilters?.querySelectorAll(".chip") || []) {
+      chip.setAttribute("aria-pressed", chip.classList.contains("is-active") ? "true" : "false");
+    }
+    if (this.els.changelogDistrictSelect) {
+      const allowed = new Set([...this.els.changelogDistrictSelect.options].map((opt) => opt.value));
+      if (!allowed.has(this.changelogDistrict)) this.changelogDistrict = "all";
+      this.els.changelogDistrictSelect.value = this.changelogDistrict;
+    }
+    if (this.els.changelogSchoolSelect) {
+      const allowed = new Set([...this.els.changelogSchoolSelect.options].map((opt) => opt.value));
+      if (!allowed.has(this.changelogSchool) && this.changelogSchool !== "all") {
+        this.populateChangelogSchoolFilter();
+      } else {
+        this.els.changelogSchoolSelect.value = allowed.has(this.changelogSchool) ? this.changelogSchool : "all";
+      }
+    }
+    if (this.els.changelogTypeSelect) {
+      const allowed = new Set([...this.els.changelogTypeSelect.options].map((opt) => opt.value));
+      if (!allowed.has(this.changelogType) && this.changelogType !== "all") {
+        this.populateChangelogTypeFilter();
+      } else {
+        this.els.changelogTypeSelect.value = allowed.has(this.changelogType) ? this.changelogType : "all";
+      }
+    }
+  }
+
+  changelogRangeLabel() {
+    if (this.changelogDate === "7") return "近7日";
+    if (this.changelogDate === "all") return "全部日期";
+    return "近30日";
+  }
+
+  renderChangelogActiveChips() {
+    const row = this.els.changelogActiveRow;
+    const host = this.els.changelogActiveChips;
+    const chips = this.changelogActiveChips();
+    const active = chips.length > 0;
+    this.els.changelogFilterStack?.classList.toggle("has-active-filters", active);
+    this.els.changelogFilterToggle?.classList.toggle("has-active", active);
+    if (!row || !host) return;
+    host.replaceChildren();
+    row.hidden = !active;
+    for (const item of chips) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip changelog-active-chip";
+      btn.textContent = item.label;
+      btn.setAttribute("aria-label", `移除篩選：${item.label}`);
+      btn.addEventListener("click", () => this.clearChangelogFilterKey(item.key));
+      host.append(btn);
+    }
+  }
+
+  renderChangelog() {
+    this.renderChangelogActiveChips();
+    this.syncChangelogFilterToggleLabel();
+    const list = this.els.changelogList;
+    if (!list || this.changelogError) return;
+    const total = this.changelogEntries();
+    const now = new Date();
+    const visible = total.filter((entry) => this.changelogPassesFilters(entry, now)).sort(compareChangelogEntries);
+
+    if (this.els.changelogMeta) {
+      this.els.changelogMeta.textContent = total.length
+        ? `顯示 ${visible.length} / ${total.length} 項 · ${this.changelogRangeLabel()}`
+        : "";
+    }
+
+    const empty = this.els.changelogEmpty;
+    const title = this.els.changelogEmptyTitle;
+    if (!total.length) {
+      if (title) title.textContent = "暫未有更新記錄；之後有資料變更會顯示喺呢度";
+      if (empty) empty.hidden = false;
+      list.replaceChildren();
+      return;
+    }
+    if (!visible.length) {
+      if (title) title.textContent = "目前篩選下沒有更新記錄";
+      if (empty) empty.hidden = false;
+      list.replaceChildren();
+      return;
+    }
+    if (empty) empty.hidden = true;
+
+    list.replaceChildren();
+    for (const entry of visible) {
+      list.append(this.buildChangelogRow(entry));
+    }
+  }
+
+  buildChangelogRow(entry) {
+    const article = document.createElement("article");
+    article.className = "changelog-row";
+    const entryId = String(entry?.id || "");
+    const detailId = `changelog-detail-${entryId}`;
+    const open = this.changelogExpanded.has(entryId);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "changelog-row-toggle";
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    button.setAttribute("aria-controls", detailId);
+
+    const top = document.createElement("div");
+    top.className = "changelog-row-top";
+    const date = document.createElement("time");
+    date.className = "changelog-date";
+    date.dateTime = String(entry?.loggedAt || "");
+    date.textContent = String(entry?.loggedAt || "");
+    const kind = String(entry?.changeKind || "");
+    const badge = document.createElement("span");
+    badge.className = `badge changelog-kind changelog-kind-${kind}`;
+    badge.textContent = CHANGELOG_KIND_LABEL[kind] || kind;
+    const chevron = document.createElement("span");
+    chevron.className = "changelog-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    chevron.textContent = "›";
+    top.append(date, badge, chevron);
+
+    const school = document.createElement("h3");
+    school.className = "changelog-school";
+    school.textContent = changelogSchoolHeading(entry);
+
+    const sub = document.createElement("p");
+    sub.className = "changelog-sub";
+    const eventType = String(entry?.eventType || "").trim();
+    const summary = String(entry?.summary || "").trim();
+    const titleText = String(entry?.title || "").trim();
+    const rest = summary || titleText;
+    sub.textContent = eventType && rest ? `${eventType} · ${rest}` : (eventType || rest);
+
+    button.append(top, school, sub);
+    const districts = changelogDistrictMeta(entry);
+    if (districts) {
+      const meta = document.createElement("p");
+      meta.className = "changelog-districts";
+      meta.textContent = districts;
+      button.append(meta);
+    }
+
+    const detail = document.createElement("div");
+    detail.className = "changelog-detail";
+    detail.id = detailId;
+    detail.hidden = !open;
+    if (titleText && titleText !== summary) {
+      const title = document.createElement("p");
+      title.className = "changelog-detail-title";
+      title.textContent = titleText;
+      detail.append(title);
+    }
+    const detailText = String(entry?.detail || "").trim();
+    if (detailText) {
+      const body = document.createElement("p");
+      body.className = "changelog-detail-body";
+      body.textContent = detailText;
+      detail.append(body);
+    }
+    const sourceUrl = safeHttpUrl(entry?.sourceUrl);
+    if (sourceUrl) {
+      const link = document.createElement("a");
+      link.className = "changelog-source-link";
+      link.href = sourceUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "來源";
+      detail.append(link);
+    }
+    const pr = Number(entry?.prNumber);
+    if (Number.isInteger(pr) && pr > 0) {
+      const line = document.createElement("p");
+      line.className = "changelog-pr";
+      const link = document.createElement("a");
+      link.href = `https://github.com/Mangohk/HK_Secondary_Schools/pull/${pr}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = `週掃 #${pr}`;
+      line.append(link);
+      detail.append(line);
+    }
+
+    button.addEventListener("click", () => {
+      const next = !this.changelogExpanded.has(entryId);
+      if (next) this.changelogExpanded.add(entryId);
+      else this.changelogExpanded.delete(entryId);
+      detail.hidden = !next;
+      button.setAttribute("aria-expanded", next ? "true" : "false");
+    });
+
+    article.append(button, detail);
+    return article;
+  }
+
+  bindChangelogFilters() {
+    const stack = document.getElementById("changelog-filter-stack");
+    const toggle = document.getElementById("changelog-filter-toggle");
+    const backdrop = document.getElementById("changelog-filter-backdrop");
+    this.els.changelogFilterStack = stack;
+    this.els.changelogFilterToggle = toggle;
+    this.els.changelogFilterBackdrop = backdrop;
+    this.els.changelogFilterPanel = document.getElementById("changelog-filter-panel");
+
+    toggle?.addEventListener("click", () => {
+      const open = Boolean(stack?.classList.contains("is-expanded"));
+      this.setChangelogFiltersExpanded(!open);
+    });
+    backdrop?.addEventListener("click", () => this.setChangelogFiltersExpanded(false));
+    document.getElementById("changelog-filter-done")?.addEventListener("click", () => {
+      this.setChangelogFiltersExpanded(false);
+    });
+    document.getElementById("changelog-filter-clear")?.addEventListener("click", () => {
+      this.clearChangelogFilters();
+      this.setChangelogFiltersExpanded(false);
+    });
+    document.getElementById("changelog-active-clear")?.addEventListener("click", () => {
+      this.clearChangelogFilters();
+      this.setChangelogFiltersExpanded(false);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (!stack?.classList.contains("is-expanded")) return;
+      this.setChangelogFiltersExpanded(false);
+    });
+
+    this.els.changelogDateFilters?.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-changelog-date]");
+      if (!btn) return;
+      this.changelogDate = btn.dataset.changelogDate || "30";
+      this.syncChangelogControls();
+      this.renderChangelog();
+    });
+    this.els.changelogKindFilters?.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-changelog-kind]");
+      if (!btn) return;
+      const kind = btn.dataset.changelogKind;
+      if (kind !== "all" && kind !== "added" && kind !== "updated") return;
+      this.changelogKind = kind;
+      this.syncChangelogControls();
+      this.renderChangelog();
+    });
+    this.els.changelogDistrictSelect?.addEventListener("change", () => {
+      this.changelogDistrict = this.els.changelogDistrictSelect.value || "all";
+      this.renderChangelog();
+    });
+    this.els.changelogSchoolSelect?.addEventListener("change", () => {
+      this.changelogSchool = this.els.changelogSchoolSelect.value || "all";
+      this.renderChangelog();
+    });
+    this.els.changelogTypeSelect?.addEventListener("change", () => {
+      this.changelogType = this.els.changelogTypeSelect.value || "all";
+      this.renderChangelog();
+    });
+
+    if (typeof ResizeObserver !== "undefined" && stack) {
+      this._changelogToolbarObserver = new ResizeObserver(() => this.syncChangelogStickyOffset());
+      this._changelogToolbarObserver.observe(stack);
+    }
+    window.addEventListener("resize", () => this.syncChangelogStickyOffset());
+    this.setChangelogFiltersExpanded(false);
+  }
+
+  syncChangelogFilterToggleLabel() {
+    const toggle = this.els.changelogFilterToggle;
+    if (!toggle) return;
+    const open = Boolean(this.els.changelogFilterStack?.classList.contains("is-expanded"));
+    const label = toggle.querySelector(".toolbar-filter-toggle-label");
+    if (label) label.textContent = open ? "收起" : "篩選";
+    if (open) {
+      toggle.setAttribute("aria-label", "收起篩選");
+      return;
+    }
+    const parts = this.changelogActiveChips().map((item) => item.label);
+    if (this.changelogDate === "30") parts.unshift("近30日");
+    toggle.setAttribute("aria-label", parts.length ? `展開篩選，目前：${parts.join("、")}` : "展開篩選");
+  }
+
+  changelogFiltersUseSheet() {
+    return window.matchMedia("(max-width: 390px)").matches;
+  }
+
+  syncChangelogStickyOffset() {
+    const stack = this.els.changelogFilterStack;
+    if (!stack) return;
+    const height = Math.ceil(stack.getBoundingClientRect().height);
+    if (height > 0) {
+      document.documentElement.style.setProperty("--changelog-sticky-offset", `${height}px`);
+    }
+    if (!stack.classList.contains("is-expanded")) return;
+    const backdrop = this.els.changelogFilterBackdrop;
+    const panel = this.els.changelogFilterPanel;
+    if (this.changelogFiltersUseSheet()) {
+      if (backdrop && !backdrop.hidden) backdrop.style.top = "0px";
+      if (panel) panel.style.maxHeight = "";
+      return;
+    }
+    const bottom = Math.max(0, Math.round(stack.getBoundingClientRect().bottom));
+    if (backdrop && !backdrop.hidden) backdrop.style.top = `${bottom}px`;
+    if (panel) {
+      const available = window.innerHeight - bottom - 8;
+      panel.style.maxHeight = `${Math.max(140, Math.floor(available))}px`;
+    }
+  }
+
+  setChangelogFiltersExpanded(expanded) {
+    const stack = this.els.changelogFilterStack;
+    const toggle = this.els.changelogFilterToggle;
+    const backdrop = this.els.changelogFilterBackdrop;
+    if (!stack || !toggle) return;
+    const open = Boolean(expanded);
+    const wasOpen = stack.classList.contains("is-expanded");
+    stack.classList.toggle("is-expanded", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    this.syncChangelogFilterToggleLabel();
+    const panel = this.els.changelogFilterPanel;
+    if (backdrop) {
+      backdrop.hidden = !open;
+      backdrop.classList.toggle("is-open", open);
+    }
+    if (open) {
+      if (this.changelogFiltersUseSheet()) {
+        if (backdrop) backdrop.style.top = "0px";
+        if (panel) panel.style.maxHeight = "";
+      } else {
+        const bottom = Math.max(0, Math.round(stack.getBoundingClientRect().bottom));
+        if (backdrop) backdrop.style.top = `${bottom}px`;
+        if (panel) {
+          const available = window.innerHeight - bottom - 8;
+          panel.style.maxHeight = `${Math.max(140, Math.floor(available))}px`;
+        }
+      }
+    } else if (backdrop) {
+      backdrop.style.top = "";
+      if (panel) panel.style.maxHeight = "";
+    }
+    if (wasOpen && !open) {
+      const active = document.activeElement;
+      if (panel?.contains(active) || active === backdrop || active === document.body) {
+        toggle.focus({ preventScroll: true });
+      }
+    }
   }
 }
