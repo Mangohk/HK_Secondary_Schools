@@ -1,107 +1,108 @@
 {
-  "updatedAt": "2026-10-26T04:05:00Z",
+  "updatedAt": "2026-10-28T02:48:00Z",
   "districts": {
     "沙田": {
-      "lastScannedAt": "2026-10-26T03:45:00Z",
+      "lastScannedAt": "2026-10-28T02:30:00Z",
       "lastStatus": "partial",
-      "lastError": "4校官網失敗（郭得勝 SSL；樂道／體藝／馮堯敬 timeout）"
+      "lastError": "5校官網失敗（樂道 500；崇真 SSL；體藝／基督教國際 403；馮堯敬 timeout）"
     },
     "九龍城": {
-      "lastScannedAt": "2026-10-26T03:45:00Z",
+      "lastScannedAt": "2026-10-28T02:30:00Z",
       "lastStatus": "partial",
-      "lastError": "8校官網失敗／無 website（真光／余振強／黃笏南／民生／鄧鏡波／胡兆熾 timeout；斯彼德／泰來無網站）"
+      "lastError": "6校失敗／無 website（余振強／創知／文理／德信 SSL；斯彼德／泰來無網站）"
     },
     "觀塘": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "partial",
+      "lastError": "1校官網失敗"
+    },
+    "黃大仙": {
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "partial",
+      "lastError": "3校官網失敗"
+    },
+    "深水埗": {
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "partial",
       "lastError": "2校官網失敗／無網站"
     },
-    "黃大仙": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "partial",
-      "lastError": "1校官網失敗／無網站"
-    },
-    "深水埗": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "partial",
-      "lastError": "3校官網失敗／無網站"
-    },
     "油尖旺": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "partial",
       "lastError": "2校官網失敗／無網站"
     },
     "元朗": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:24:55Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial；鄧佩瓊新場；仁濟二中／公益社日期未足；多校 timeout"
+      "lastError": "基元本輪恢復並建升中講座；翁祐／馬振玉更新確認；公益社／元天／伯特利日期未足；qos／香島／盧幹庭／安基司 fail"
     },
     "屯門": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:24:55Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial；董玉娣／梁銶琚／宣道／呂祥光新場已核；南屯門官立等 fail"
+      "lastError": "何福堂／仁濟二／譚伯羽新場；董玉娣／永隆等 pending 或 live 無變；南屯門官立／屯天／裘錦秋屯門／李琳明 fail"
     },
     "東區": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:45:00Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial／失敗較多；本輪仍有連線逾時校（如港島民生、聖馬可、顯理等），見 failures"
+      "lastError": "失敗仍多（港島民生、聖馬可、顯理、培僑、蘇浙、茵維特等）；張祝珊／漢華本輪官網確認新資訊日。"
     },
     "葵青": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:24:55Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial；本輪林護／伍若瑜有明確新場；部分校 timeout"
+      "lastError": "棉紡／燕京／荔景新場；林護／伍若瑜 pending 無變；聖若瑟／陳兆民／蔣翠琼／愛禮信 fail"
     },
     "西貢": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
-      "lastStatus": "ok",
-      "lastError": "西崇 11-07／11-22 與 live 一致；播道／萬鈞匯知 fail"
+      "lastScannedAt": "2026-10-28T02:45:00Z",
+      "lastStatus": "partial",
+      "lastError": "張沛松／真道 SSL；匯知／宣基／將官／播道已 WebFetch 補"
     },
     "大埔": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
-      "lastStatus": "ok",
-      "lastError": "上輪 partial；本輪多校無新確定日；田家炳／大光慈航／沐恩／王肇枝 timeout"
+      "lastScannedAt": "2026-10-28T02:45:00Z",
+      "lastStatus": "partial",
+      "lastError": "沐恩／王肇枝／李興貴 SSL；西班牙無網；大光慈航已 curl -k 補"
     },
     "北區": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
-      "lastStatus": "ok",
-      "lastError": "上輪已寫入多條（甲寅／鳳溪等）；本輪官網無額外可核實新場；上水官立等 fail"
+      "lastScannedAt": "2026-10-28T02:45:00Z",
+      "lastStatus": "partial",
+      "lastError": "上水官立空頁；田家炳／馬錦燦 403；鳳溪廖萬石堂 SSL／timeout"
     },
     "南區": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:42:00Z",
       "lastStatus": "partial",
-      "lastError": "嘉諾撒聖心／明愛莊月明／香港仔工業／佛教筏可 連線失敗"
+      "lastError": "香港仔工業學校 TLS／連線失敗；其餘 17 校已掃"
     },
     "灣仔": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:45:00Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial；本輪瑪利曼／聖保祿系仍 timeout"
+      "lastError": "聖保祿系／華仁／鄧肇堅維多利亞／黃鳳翎仍失敗；瑪利曼本輪官網 OK。"
     },
     "荃灣": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:42:00Z",
       "lastStatus": "partial",
-      "lastError": "王少清官網確認開放日＋簡介會細節；李城璧與 live 一致"
+      "lastError": "仁濟醫院林百欣中學 timeout；其餘 14 校已掃（含官立新資訊日、王少清／何傳耀／聖芳濟／李城璧更新）"
     },
     "中西區": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:45:00Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial；聖保羅書院仍 timeout；聖若瑟本次經深鏈核實 Admission Talk"
+      "lastError": "聖保羅男女仍 500／SSL；聖士提反女子 curl 失敗但 WebFetch admissions.php 已核 Admission Talk＋DP；聖嘉勒 detail /content/94 仍 500，靠 PDF／搜尋補。"
     },
     "離島": {
-      "lastScannedAt": "2026-10-26T03:40:00Z",
+      "lastScannedAt": "2026-10-28T02:42:00Z",
       "lastStatus": "partial",
-      "lastError": "上輪 partial；本輪智新／靈糧堂怡文等仍 timeout"
+      "lastError": "佛教筏可／靈糧堂怡文失敗；東涌天主教僅空殼；港青基信第二輪已入 newEvents"
     }
   },
   "schools": {
     "佛教孔仙洲紀念中學": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "error",
-      "lastError": "https://www.hhckla.edu.hk/ -> SSLError: HTTPSConnectionPool(host='www.hhckla.edu.hk', port=443): Max retries exceeded wi",
+      "lastError": "curl/WebFetch：HTTP 500",
       "district": "黃大仙"
     },
     "中華基督教會扶輪中學": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "error",
+      "lastError": "curl/WebFetch：HTTP 500",
       "district": "黃大仙"
     },
     "保良局何蔭棠中學": {
@@ -115,8 +116,9 @@
       "district": "黃大仙"
     },
     "中華基督教會基協中學": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "error",
+      "lastError": "curl/WebFetch：HTTP 500",
       "district": "黃大仙"
     },
     "中華基督教會協和書院": {
@@ -125,7 +127,7 @@
       "district": "黃大仙"
     },
     "聖母書院": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "ok",
       "district": "黃大仙"
     },
@@ -180,12 +182,12 @@
       "district": "黃大仙"
     },
     "救世軍卜維廉中學": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "ok",
       "district": "黃大仙"
     },
     "李求恩紀念中學": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "ok",
       "district": "黃大仙"
     },
@@ -220,9 +222,8 @@
       "district": "深水埗"
     },
     "中華基督教會銘賢書院": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "error",
-      "lastError": "https://cccmyc.edu.hk/ -> ReadTimeout: HTTPSConnectionPool(host='cccmyc.edu.hk', port=443): Read timed out. (read timeou",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "ok",
       "district": "深水埗"
     },
     "瑪利諾神父教會學校": {
@@ -231,7 +232,7 @@
       "district": "深水埗"
     },
     "中黃書院": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "error",
       "lastError": "schools.json 無 website",
       "district": "深水埗"
@@ -257,7 +258,7 @@
       "district": "深水埗"
     },
     "香島中學": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "ok",
       "district": "深水埗"
     },
@@ -287,9 +288,9 @@
       "district": "深水埗"
     },
     "聖瑪加利男女英文中小學": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "error",
-      "lastError": "https://www.smcesps.edu.hk/ -> ReadTimeout: HTTPSConnectionPool(host='www.smcesps.edu.hk', port=443): Read timed out. (r",
+      "lastError": "curl/WebFetch：403 Forbidden／連線失敗",
       "district": "深水埗"
     },
     "聖道百卉書院": {
@@ -358,7 +359,7 @@
       "district": "深水埗"
     },
     "STAMFORD AMERICAN SCHOOL HONG KONG (WEST KOWLOON)": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "error",
       "lastError": "schools.json 無 website",
       "district": "油尖旺"
@@ -404,9 +405,8 @@
       "district": "油尖旺"
     },
     "天主教新民書院": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "error",
-      "lastError": "https://www.newman.edu.hk/ -> 200 len=42; http://www.newman.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.newm",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "ok",
       "district": "油尖旺"
     },
     "CALIFORNIA SCHOOL": {
@@ -420,7 +420,7 @@
       "district": "油尖旺"
     },
     "保良局莊啓程預科書院": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "ok",
       "district": "油尖旺"
     },
@@ -450,8 +450,9 @@
       "district": "油尖旺"
     },
     "聖公會諸聖中學": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "error",
+      "lastError": "curl/WebFetch：HTTP 500",
       "district": "油尖旺"
     },
     "聖芳濟書院": {
@@ -840,34 +841,57 @@
       "district": "東區"
     },
     "福建中學": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
-      "lastStatus": "error",
-      "lastError": "https://www.fms.edu.hk/ -> ReadTimeout: HTTPSConnectionPool(host='www.fms.edu.hk', port=443): Read timed out. (read time",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "ok",
       "district": "觀塘"
     },
     "聖公會基孝中學": {
-      "lastScannedAt": "2026-10-26T04:00:00Z",
+      "lastScannedAt": "2026-10-28T02:15:00Z",
       "lastStatus": "error",
-      "lastError": "https://www.keihau.edu.hk/ -> ReadTimeout: HTTPSConnectionPool(host='www.keihau.edu.hk', port=443): Read timed out. (rea",
+      "lastError": "curl/WebFetch：504／timeout／連線失敗",
+      "district": "觀塘"
+    },
+    "聖傑靈女子中學": {
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "ok",
+      "district": "觀塘"
+    },
+    "聖公會梁季彜中學": {
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "ok",
+      "district": "觀塘"
+    },
+    "香港布廠商會朱石麟中學": {
+      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastStatus": "ok",
       "district": "觀塘"
     }
   },
   "rotation": {
     "lastDistrictBatch": [
+      "沙田",
+      "九龍城",
+      "觀塘",
+      "油尖旺",
+      "黃大仙",
+      "深水埗",
+      "元朗",
+      "屯門",
+      "葵青",
+      "北區",
+      "大埔",
+      "西貢",
       "中西區",
       "灣仔",
       "東區",
-      "葵青",
-      "屯門",
-      "元朗",
-      "北區",
-      "大埔",
-      "西貢"
+      "南區",
+      "荃灣",
+      "離島"
     ],
-    "lastRotatedAt": "2026-10-19T03:39:15Z"
+    "lastRotatedAt": "2026-10-28T02:48:00Z"
   },
   "lightScan": {
-    "lastRanAt": "2026-10-26T04:04:28Z",
+    "lastRanAt": "2026-10-28T02:48:00Z",
     "lastStatus": "ok"
   }
 }
