@@ -2,6 +2,8 @@
 
 寫給維護掃描結果的人。與 `events.json` 同在 `data/`。頁面不讀這個檔；升中項目仍只讀 `events.json`。
 
+改 `events.json` 的同一個 commit 還要 append `changelog.json`（「更新記錄」分頁讀這個檔）：一筆變更一列，欄位含 `loggedAt`（香港日）、`changeKind`、`eventId`、`eventType`、`title`、`summary`、`schools`、`schoolIds`、`districts`、`source`。不要用一行週次摘要代替逐筆記錄。
+
 某區或某校掃完並合併事件後，更新這裡對應的條目，並把根欄位 `updatedAt` 設成當時的 ISO 8601 UTC（結尾 `Z`）。
 
 ## 欄位

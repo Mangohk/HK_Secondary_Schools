@@ -13,7 +13,7 @@
     integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
     integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="" />
-  <link rel="stylesheet" href="css/styles.css?v=schoolscope-12" />
+  <link rel="stylesheet" href="css/styles.css?v=schoolscope-13" />
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true"></div>
@@ -30,6 +30,7 @@
     <nav class="tabs" role="tablist" aria-label="主要分頁">
       <button class="tab is-active" role="tab" id="tab-list" aria-selected="true" aria-controls="panel-list" data-tab="list">學校資料</button>
       <button class="tab" role="tab" id="tab-events" aria-selected="false" aria-controls="panel-events" data-tab="events">升中項目</button>
+      <button class="tab" role="tab" id="tab-changelog" aria-selected="false" aria-controls="panel-changelog" data-tab="changelog">更新記錄</button>
       <button class="tab" role="tab" id="tab-map" aria-selected="false" aria-controls="panel-map" data-tab="map">地圖與距離</button>
       <button class="tab" role="tab" id="tab-favorites" aria-selected="false" aria-controls="panel-favorites" data-tab="favorites">我的關注</button>
     </nav>
@@ -219,6 +220,91 @@
       </aside>
     </section>
 
+    <section id="panel-changelog" class="panel" role="tabpanel" aria-labelledby="tab-changelog" hidden>
+      <div class="events-intro">
+        <div>
+          <h2 class="events-title" id="changelog-title">更新記錄</h2>
+          <p class="events-explain">這裡記的是資料寫入或合併的變更，不是活動日曆。日期是香港日，不是活動日。篩選只作用於本分頁，不跟升中項目的狀態或已過條件。</p>
+          <p class="events-meta" id="changelog-meta">載入中…</p>
+        </div>
+      </div>
+      <div class="events-filter-stack changelog-filter-stack" id="changelog-filter-stack">
+        <div class="toolbar-compact">
+          <button type="button" class="btn btn-secondary toolbar-filter-toggle" id="changelog-filter-toggle" aria-expanded="false" aria-controls="changelog-filter-panel" aria-label="展開篩選">
+            <span class="toolbar-filter-toggle-label">篩選</span>
+          </button>
+        </div>
+        <div class="changelog-active-row" id="changelog-active-row" hidden>
+          <div class="changelog-active-chips" id="changelog-active-chips" role="group" aria-label="目前生效的篩選"></div>
+          <button type="button" class="btn btn-secondary toolbar-summary-clear" id="changelog-active-clear" aria-label="清除篩選，回復近30日與全部">清除</button>
+        </div>
+        <div class="toolbar-panel" id="changelog-filter-panel">
+          <div class="filter-row">
+            <span class="filter-label">日期</span>
+            <div class="events-filters changelog-date-filters" role="group" aria-label="日期">
+              <button type="button" class="chip" data-changelog-date="7" aria-pressed="false">近7日</button>
+              <button type="button" class="chip is-active" data-changelog-date="30" aria-pressed="true">近30日</button>
+              <button type="button" class="chip" data-changelog-date="all" aria-pressed="false">全部</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">分區</span>
+            <div class="events-district-filter">
+              <label class="sr-only" for="changelog-district-select">更新記錄分區篩選</label>
+              <select id="changelog-district-select" aria-label="更新記錄分區篩選">
+                <option value="all" selected>全部十八區</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">學校</span>
+            <div class="events-school-filter">
+              <label class="sr-only" for="changelog-school-select">更新記錄學校篩選</label>
+              <select id="changelog-school-select" aria-label="更新記錄學校篩選">
+                <option value="all" selected>全部</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">變更</span>
+            <div class="events-filters changelog-kind-filters" role="group" aria-label="變更性質">
+              <button type="button" class="chip is-active" data-changelog-kind="all" aria-pressed="true">全部</button>
+              <button type="button" class="chip" data-changelog-kind="added" aria-pressed="false">新</button>
+              <button type="button" class="chip" data-changelog-kind="updated" aria-pressed="false">更新</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">項目類型</span>
+            <div class="events-school-filter">
+              <label class="sr-only" for="changelog-type-select">更新記錄項目類型</label>
+              <select id="changelog-type-select" aria-label="更新記錄項目類型">
+                <option value="all" selected>全部</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" id="changelog-filter-clear">清除</button>
+          <button type="button" class="btn btn-primary changelog-sheet-done" id="changelog-filter-done">完成</button>
+        </div>
+      </div>
+      <button type="button" class="toolbar-backdrop" id="changelog-filter-backdrop" hidden tabindex="-1" aria-label="關閉篩選"></button>
+      <div id="changelog-empty" class="empty-state" hidden>
+        <p class="empty-state-title" id="changelog-empty-title">暫未有更新記錄；之後有資料變更會顯示喺呢度</p>
+      </div>
+      <div id="changelog-list" class="changelog-list" aria-labelledby="changelog-title"></div>
+      <aside class="sources">
+        <h2>更新記錄說明</h2>
+        <p>列表按寫入日由新到舊。徽章「新」「更新」「刪除」對應資料裡的新增、修改與移除。沒有相關學校的列會顯示「全港／教育局」（或教育局、全港）。</p>
+        <details class="tech-fold">
+          <summary>技術說明</summary>
+          <ul>
+            <li>本分頁讀取 <code>data/changelog.json</code>（<code>schemaVersion</code> 與 <code>entries</code>）。請以 GitHub Pages 或本機 HTTP 開啟。</li>
+            <li>任何改 <code>data/events.json</code> 的 PR（週掃或手動）必須在同一 commit append 對應列：一個 <code>eventId</code> 一列（<code>added</code>／<code>updated</code>／<code>removed</code>）。不要只寫「本週 N 項」。<code>loggedAt</code> 是合併或上線的香港日。<code>source</code> 為 <code>weekly-scan</code>、<code>manual</code> 或 <code>backfill</code>。</li>
+            <li>篩選只作用於本分頁。網址例如 <code>?tab=changelog&amp;cdate=7&amp;cdistrict=沙田區&amp;ckind=added&amp;ctype=開放日&amp;cschool=校名</code>。日期預設近 30 日。變更性質固定為全部、新、更新；「全部」仍會顯示刪除列。</li>
+          </ul>
+        </details>
+      </aside>
+    </section>
+
     <section id="panel-favorites" class="panel" role="tabpanel" aria-labelledby="tab-favorites" hidden>
       <div class="favorites-intro">
         <div>
@@ -292,6 +378,6 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"
     integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin=""></script>
   <script src="data/schools-data.js?v=schoolscope-12"></script>
-  <script type="module" src="js/main.js?v=schoolscope-12"></script>
+  <script type="module" src="js/main.js?v=schoolscope-13"></script>
 </body>
 </html>
