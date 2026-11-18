@@ -4479,6 +4479,559 @@
       "sourceUrl": "https://www.hktlc.edu.hk/news-zh/32042/",
       "prNumber": 77,
       "batchId": "weekly-2026-11-04"
+    },
+    {
+      "id": "cl-20261118-001",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2601",
+      "eventType": "開放日",
+      "title": "天主教普照中學 五十五周年校慶開放日",
+      "summary": "新增 13/12",
+      "schools": [
+        "天主教普照中學"
+      ],
+      "schoolIds": [
+        "170429000233"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5331",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-002",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2602",
+      "eventType": "資訊日",
+      "title": "聖公會聖本德中學 小六升中資訊日2026",
+      "summary": "新增 12/12",
+      "schools": [
+        "聖公會聖本德中學"
+      ],
+      "schoolIds": [
+        "513997000133"
+      ],
+      "districts": [
+        "黃大仙區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5322",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-003",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2603",
+      "eventType": "資訊日",
+      "title": "鄧鏡波學校 升中資訊日(第二場)",
+      "summary": "新增 12/12",
+      "schools": [
+        "鄧鏡波學校"
+      ],
+      "schoolIds": [
+        "132209000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5330",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-004",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2604",
+      "eventType": "其他",
+      "title": "深培中學 深培家長學堂(五) AI系列多元體驗系列 「觸動心靈:朱古力調溫體驗與建造SEN成長夢工場」工作坊",
+      "summary": "新增 12/12",
+      "schools": [
+        "深培中學"
+      ],
+      "schoolIds": [
+        "510599000133"
+      ],
+      "districts": [
+        "屯門區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5336",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-005",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2605",
+      "eventType": "資訊日",
+      "title": "循道中學 中一入學資訊日",
+      "summary": "新增 12/12",
+      "schools": [
+        "循道中學"
+      ],
+      "schoolIds": [
+        "510890000133"
+      ],
+      "districts": [
+        "油尖旺區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5338",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-006",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2606",
+      "eventType": "資訊日",
+      "title": "李求恩紀念中學 李求恩紀念中學資訊日 2026",
+      "summary": "新增 6/12",
+      "schools": [
+        "李求恩紀念中學"
+      ],
+      "schoolIds": [
+        "170143000133"
+      ],
+      "districts": [
+        "黃大仙區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5324",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-007",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2607",
+      "eventType": "資訊日",
+      "title": "中華基督教會馮梁結紀念中學 中一資訊日及學生成果展",
+      "summary": "新增 5/12",
+      "schools": [
+        "中華基督教會馮梁結紀念中學"
+      ],
+      "schoolIds": [
+        "270130000133"
+      ],
+      "districts": [
+        "大埔區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5320",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-008",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2608",
+      "eventType": "資訊日",
+      "title": "孔教學院大成何郭佩珍中學 小六升中一資訊日",
+      "summary": "新增 5/12",
+      "schools": [
+        "孔教學院大成何郭佩珍中學"
+      ],
+      "schoolIds": [
+        "190810000133"
+      ],
+      "districts": [
+        "大埔區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5339",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-009",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2609",
+      "eventType": "資訊日",
+      "title": "樂善堂顧超文中學 中一入學資訊日2026",
+      "summary": "新增 28/11",
+      "schools": [
+        "樂善堂顧超文中學"
+      ],
+      "schoolIds": [
+        "230766000133"
+      ],
+      "districts": [
+        "葵青區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5235",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-010",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2610",
+      "eventType": "開放日",
+      "title": "地利亞修女紀念學校(協和二中) 開放日 2026",
+      "summary": "新增 28/11",
+      "schools": [
+        "地利亞修女紀念學校(協和二中)"
+      ],
+      "schoolIds": [
+        "213039000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5329",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-011",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2611",
+      "eventType": "開放日",
+      "title": "明愛莊月明中學 2026/2027開放日「集愛之旅」",
+      "summary": "新增 21/11",
+      "schools": [
+        "明愛莊月明中學"
+      ],
+      "schoolIds": [
+        "282758000233"
+      ],
+      "districts": [
+        "南區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5327",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-012",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2701",
+      "eventType": "資訊日",
+      "title": "禮賢會彭學高紀念中學 第三場升中分享會暨校園遊蹤（2026 禮中資訊日）",
+      "summary": "新增 5/12",
+      "schools": [
+        "禮賢會彭學高紀念中學"
+      ],
+      "schoolIds": [
+        "170208000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.rcphkmc.edu.hk/en/latest_new/2026-禮中資訊日-–-第三場升中分享會暨校園遊蹤-2026年12月5日",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-013",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2702",
+      "eventType": "資訊日",
+      "title": "保良局胡忠中學 學習體驗日（2026）",
+      "summary": "新增 8/12–18/12",
+      "schools": [
+        "保良局胡忠中學"
+      ],
+      "schoolIds": [
+        "170755000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.plkwcc.edu.hk/f1admission-chi",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-014",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2703",
+      "eventType": "資訊日",
+      "title": "東華三院邱金元中學 升中資訊日",
+      "summary": "新增 22/11",
+      "schools": [
+        "東華三院邱金元中學"
+      ],
+      "schoolIds": [
+        "270091000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.twyky.edu.hk/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-015",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2704",
+      "eventType": "報名／申請",
+      "title": "潮州會館中學 中一自行分配學位申請（2027/28）",
+      "summary": "新增 4/1–18/1",
+      "schools": [
+        "潮州會館中學"
+      ],
+      "schoolIds": [
+        "190616000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://ccass.edu.hk/admissions/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-016",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2705",
+      "eventType": "註冊",
+      "title": "馬鞍山聖若瑟中學 中一新生註冊（2027/28）",
+      "summary": "新增 8/7–9/7",
+      "schools": [
+        "馬鞍山聖若瑟中學"
+      ],
+      "schoolIds": [
+        "518310000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.mossjss.edu.hk/tc/admission/form-one-admission-info",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-017",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2706",
+      "eventType": "其他",
+      "title": "馬鞍山聖若瑟中學 中一編班試（2027/28）",
+      "summary": "新增 13/7–14/7",
+      "schools": [
+        "馬鞍山聖若瑟中學"
+      ],
+      "schoolIds": [
+        "518310000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.mossjss.edu.hk/tc/admission/form-one-admission-info",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-018",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2851",
+      "eventType": "資訊日",
+      "title": "聖言中學 中一入學資訊日（2027/28）",
+      "summary": "新增 5/12",
+      "schools": [
+        "聖言中學"
+      ],
+      "schoolIds": [
+        "170445000233"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.singyin.edu.hk/zh/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-019",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2852",
+      "eventType": "開放日",
+      "title": "基督教聖約教會堅樂中學 學校開放日（觀塘區學校巡禮）",
+      "summary": "新增 22/11",
+      "schools": [
+        "基督教聖約教會堅樂中學"
+      ],
+      "schoolIds": [
+        "214957000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.holmglad.edu.hk/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-020",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-2853",
+      "eventType": "開放日",
+      "title": "佛教志蓮中學 2026-27年度開放日",
+      "summary": "新增 12/12",
+      "schools": [
+        "佛教志蓮中學"
+      ],
+      "schoolIds": [
+        "527467000233"
+      ],
+      "districts": [
+        "黃大仙區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.clbss.edu.hk/latest_news/2026-27年度開放日",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-021",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-3001",
+      "eventType": "開放日",
+      "title": "馬錦明慈善基金馬可賓紀念中學 三十周年校慶開放日",
+      "summary": "新增 5/12",
+      "schools": [
+        "馬錦明慈善基金馬可賓紀念中學"
+      ],
+      "schoolIds": [
+        "521981000133"
+      ],
+      "districts": [
+        "屯門區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.makopan.edu.hk/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-022",
+      "loggedAt": "2026-11-18",
+      "changeKind": "added",
+      "eventId": "ev-3151",
+      "eventType": "報名／申請",
+      "title": "明愛粉嶺陳震夏中學 升中資訊日公眾報名（2026–2027學年）",
+      "summary": "新增 2/12",
+      "schools": [
+        "明愛粉嶺陳震夏中學"
+      ],
+      "schoolIds": [
+        "270148000133"
+      ],
+      "districts": [
+        "北區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.cfs.edu.hk/tc/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-023",
+      "loggedAt": "2026-11-18",
+      "changeKind": "updated",
+      "eventId": "ev-300",
+      "eventType": "資訊日",
+      "title": "將軍澳官立中學 升中資訊日",
+      "summary": "更新 重點、備註",
+      "detail": "補上 12/12 兩場時段（09:30–12:00、13:45–16:00），來源 CHSC id=5337\n重點：日程表列 11–12/12/2026 → 12/11–12/12 校園開放日及升中資訊日；12/12 場次 09:30–12:00、13:45–16:00\n備註已更新",
+      "schools": [
+        "將軍澳官立中學"
+      ],
+      "schoolIds": [
+        "510700000133"
+      ],
+      "districts": [
+        "西貢區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.tkogss.edu.hk/sites/default/files/2728xue_nian_zhong_yi_xue_wei_shen_qing_ri_cheng_ji_ru_xue_an_pai_.pdf",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-024",
+      "loggedAt": "2026-11-18",
+      "changeKind": "updated",
+      "eventId": "ev-18",
+      "eventType": "面試",
+      "title": "聖公會曾肇添中學 中一自行分配學位面試（DP Oral Assessment）",
+      "summary": "更新 重點、備註、來源",
+      "detail": "補上面試通知（2027-02-25）及正取通知（2027-03-31、50人）安排；面試日仍為 2027-03-06\n重點：空 → 面試通知 2027-02-25 以電郵及郵遞發給所有申請人；面試 2027-03-06（六）小組中文（廣東話）及英文；正取 50 人於 2027-03-31 以郵遞及電話通知。\n來源連結已更新\n備註已更新",
+      "schools": [
+        "聖公會曾肇添中學"
+      ],
+      "schoolIds": [
+        "230790000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.skhtst.edu.hk/2026/11/application-for-secondary-one-discretionary-places-dp-september-2027-admission-申請中一自行分配學位-2027年9月/",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261118-025",
+      "loggedAt": "2026-11-18",
+      "changeKind": "updated",
+      "eventId": "ev-395",
+      "eventType": "入學講座",
+      "title": "庇理羅士女子中學 升中簡介會（2027/28）",
+      "summary": "更新 關鍵日、重點、備註",
+      "detail": "補上簡介會報名截止（2026-12-04）；簡介會仍為 2026-12-11\n關鍵日：空 → 2026-12-04\n關鍵日種類：空 → deadline\n重點：升中簡介會 2026-12-11；網上登記稍後發放 → 升中簡介會 2026-12-11；請於 2026-12-04（五）或以前填妥報名表格，名額有限、先到先得、額滿即止。同日起至 2027-01-18 派發中一自行分配學位申請表。\n備註已更新",
+      "schools": [
+        "庇理羅士女子中學"
+      ],
+      "schoolIds": [
+        "510378000133"
+      ],
+      "districts": [
+        "東區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.bps.hk/admission",
+      "prNumber": 78,
+      "batchId": "weekly-2026-11-18"
     }
   ]
 }

@@ -1,106 +1,107 @@
 {
-  "updatedAt": "2026-11-04T02:48:02Z",
+  "updatedAt": "2026-11-18T02:55:08Z",
   "districts": {
     "沙田": {
-      "lastScannedAt": "2026-11-04T02:30:00Z",
+      "lastScannedAt": "2026-11-18T02:36:07Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗（基督教國際 403；樂道 500；培英 SPA 空；馮堯敬 timeout）"
+      "lastError": "7校失敗（培僑／基督教國際 403；樂道 500；培英／青年會／德信空頁；馮堯敬 timeout／500）"
     },
     "九龍城": {
-      "lastScannedAt": "2026-11-04T02:30:00Z",
+      "lastScannedAt": "2026-11-18T02:36:07Z",
       "lastStatus": "partial",
-      "lastError": "3校失敗／無 website（斯彼德／泰來無網站；藝術與科技教育中心連線失敗）"
+      "lastError": "4校失敗／無 website（斯彼德／泰來無網站；協恩／新亞空頁）"
     },
     "觀塘": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "partial",
-      "lastError": "2校官網失敗"
+      "lastError": "6校失敗（慕光英文書院／新生命教育協會呂／聖公會基孝中學／瑪利諾中學／觀塘功樂官立中學／香港布廠商會朱石）"
     },
     "黃大仙": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
-      "lastStatus": "partial"
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "partial",
+      "lastError": "3校失敗（中華基督教會扶輪／中華基督教會基協／德望學校）"
     },
     "深水埗": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "partial",
-      "lastError": "3校官網失敗／無網站"
+      "lastError": "5校失敗（中黃書院／瑪利諾神父教會學／英華書院／中聖書院／路德會協同中學）"
     },
     "油尖旺": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "partial",
-      "lastError": "1校無網站"
+      "lastError": "5校失敗（STAMFORD／天主教新民書院／香港力邁學校／聖公會諸聖中學／華仁書院(九龍)）"
     },
     "元朗": {
-      "lastScannedAt": "2026-11-04T02:18:09Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "partial",
-      "lastError": "伯特利新建 11-24 資訊日；天水圍官立新建 12-04 體驗日；基元報名窗補至 11-06；趙聿修講座額滿＋時段更新；鄧佩瓊／陳震夏／盧幹庭／萬鈞毅智／安基司 fail"
+      "lastError": "4校失敗（安基司學校／東華三院盧幹庭紀／博愛醫院鄧佩瓊紀／明愛元朗陳震夏中）"
     },
     "屯門": {
-      "lastScannedAt": "2026-11-04T02:18:09Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "partial",
-      "lastError": "何福堂／仁濟二／譚伯羽／董玉娣等 live 無變；屯天／裘錦秋元朗／辛亥等仍舊周期或日期未足；裘錦秋屯門／劉金龍／平安福音 fail／空殼"
+      "lastError": "6校失敗（裘錦秋中學﹝屯門／妙法寺劉金龍中學／恩平工商會李琳明／新生命教育協會平／東華三院鄺錫坤伉／聖公會聖西門呂明）"
     },
     "東區": {
-      "lastScannedAt": "2026-11-04T03:00:00Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "partial",
-      "lastError": "11校失敗（伊斯蘭／嶺南衡怡／張振興／明愛柴灣／港島民生／聖馬可／茵維特429／炮台山／蘇浙CF／金文泰／張祝珊空頁）；桂華山改無www取回兩場資訊日；顯理／衞理改備援域確認無變"
+      "lastError": "10校失敗（伊斯蘭脫維善紀念中學／嶺南衡怡紀念中學／張振興伉儷書院／張祝珊英文中學…）"
     },
     "葵青": {
-      "lastScannedAt": "2026-11-04T02:18:09Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "partial",
-      "lastError": "陳兆民新建 12-05 資訊日（截止 11-23）；棉紡補時段；皇仁補 Google Form；聖若瑟／梁植偉／蔣翠琼／愛禮信／陳南昌 fail"
+      "lastError": "8校失敗（樂善堂梁植偉紀念／獅子會蔣翠琼中學／迦密愛禮信中學／中華基督教會燕京／明愛聖若瑟中學／聖公會林護紀念中…）"
     },
     "西貢": {
-      "lastScannedAt": "2026-11-04T02:35:00Z",
-      "lastStatus": "ok",
-      "lastError": "qualiedcollege 域名失敗已改 mkqc.edu.hk；播道首頁空殼改讀入學專頁"
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "partial",
+      "lastError": "5校失敗（仁濟醫院王華湘中學／寶覺中學／播道書院／萬鈞匯知中學…）"
     },
     "大埔": {
-      "lastScannedAt": "2026-11-04T02:35:00Z",
+      "lastScannedAt": "2026-11-18T02:41:57Z",
       "lastStatus": "partial",
-      "lastError": "靈風 502；沐恩 SSL／timeout；西班牙無網"
+      "lastError": "4校失敗（南亞路德會沐恩中學／王肇枝中學／聖公會莫壽增會督中學／香港西班牙學校）"
     },
     "北區": {
-      "lastScannedAt": "2026-11-04T02:35:00Z",
-      "lastStatus": "ok"
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "partial",
+      "lastError": "4校失敗（上水官立中學／新界喇沙中學／粉嶺官立中學／鳳溪第一中學）"
     },
     "南區": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:42:30Z",
       "lastStatus": "partial",
-      "lastError": "威雅 curl 403（WebFetch 補讀無新）；莊月明 503；香港仔工業連線失敗；新：嘉諾撒聖心資訊日 11-28；更新：真光 keyDateKind=deadline；呂明才書院／聖伯多祿見 CHSC light"
+      "lastError": "3校失敗（嘉諾撒聖心書院／新會商會陳白沙紀念中學／香港仔工業學校）"
     },
     "灣仔": {
-      "lastScannedAt": "2026-11-04T03:00:00Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗（瑪利曼503／聖保祿中學SSL／聖保祿學校空頁／華仁thin）；李潤田校曆新資訊日；SFCC／婦女會／嘉諾撒更新"
+      "lastError": "4校失敗（聖保祿中學／聖保祿學校／香港華仁書院／香港道爾頓學校）"
     },
     "荃灣": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:42:30Z",
       "lastStatus": "partial",
-      "lastError": "胡漢輝 HTTP 500；其餘 14 校已掃，王少清／聖芳濟／官立／李城璧／何傳耀／李炳等與 live 一致、無新條"
+      "lastError": "1校失敗（紡織學會美國商會胡漢輝中學）"
     },
     "中西區": {
-      "lastScannedAt": "2026-11-04T03:00:00Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "partial",
-      "lastError": "1校失敗（聖嘉勒空殼）；英皇新簡介會；聖保羅男女新 Briefing；聖保羅書院補簡介會日＋新申請／面試／放榜"
+      "lastError": "1校失敗（聖嘉勒女書院）"
     },
     "離島": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:42:30Z",
       "lastStatus": "partial",
-      "lastError": "智新／怡文／筏可連線失敗；其餘已掃無新 2027/28 日期變更（港青基信／黃楚標等不變）"
+      "lastError": "3校失敗（佛教筏可紀念中學／東涌天主教學校／靈糧堂怡文中學）"
     }
   },
   "schools": {
     "佛教孔仙洲紀念中學": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
-      "lastStatus": "error",
-      "lastError": "curl/WebFetch：HTTP 500",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "ok",
       "district": "黃大仙"
     },
     "中華基督教會扶輪中學": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "curl/WebFetch：HTTP 500",
+      "lastError": "未能讀取：http://www2.rotary.edu.hk/ verify=True -> 500 len=0; https://www2.rotary.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www2.rotary.edu.hk', port=443): Max retries exce",
       "district": "黃大仙"
     },
     "保良局何蔭棠中學": {
@@ -114,9 +115,9 @@
       "district": "黃大仙"
     },
     "中華基督教會基協中學": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "curl/WebFetch：HTTP 500",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "黃大仙"
     },
     "中華基督教會協和書院": {
@@ -130,8 +131,9 @@
       "district": "黃大仙"
     },
     "德望學校": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "黃大仙"
     },
     "聖公會聖本德中學": {
@@ -225,13 +227,13 @@
       "district": "深水埗"
     },
     "瑪利諾神父教會學校": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "SSL／連線失敗；curl -k 僅得空／極短頁；WebFetch 無可用 2027/28 升中內容",
+      "lastError": "未能讀取：http://www.mfs.edu.hk/ verify=True -> 500 len=0; https://www.mfs.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.mfs.edu.hk', port=443): Max retries exceeded with ur",
       "district": "深水埗"
     },
     "中黃書院": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
       "lastError": "schools.json 無 website",
       "district": "深水埗"
@@ -282,15 +284,14 @@
       "district": "深水埗"
     },
     "英華書院": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "官網回傳極短頁（~53 bytes）；curl -k／WebFetch 無可用正文",
+      "lastError": "未能讀取：http://www.yingwa.edu.hk/ verify=True -> 500 len=0; https://www.yingwa.edu.hk/ verify=True -> 200 len=53",
       "district": "深水埗"
     },
     "聖瑪加利男女英文中小學": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
-      "lastStatus": "error",
-      "lastError": "curl/WebFetch：403 Forbidden／連線失敗",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "ok",
       "district": "深水埗"
     },
     "聖道百卉書院": {
@@ -299,8 +300,9 @@
       "district": "深水埗"
     },
     "中聖書院": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "深水埗"
     },
     "九龍工業學校": {
@@ -349,8 +351,9 @@
       "district": "深水埗"
     },
     "路德會協同中學": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "深水埗"
     },
     "香港四邑商工總會黃棣珊紀念中學": {
@@ -359,7 +362,7 @@
       "district": "深水埗"
     },
     "STAMFORD AMERICAN SCHOOL HONG KONG (WEST KOWLOON)": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
       "lastError": "schools.json 無 website",
       "district": "油尖旺"
@@ -370,8 +373,9 @@
       "district": "油尖旺"
     },
     "華仁書院(九龍)": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "油尖旺"
     },
     "拔萃女書院": {
@@ -405,8 +409,9 @@
       "district": "油尖旺"
     },
     "天主教新民書院": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://www.newman.edu.hk/ verify=True -> 500 len=0; https://www.newman.edu.hk/ verify=True -> 200 len=42",
       "district": "油尖旺"
     },
     "CALIFORNIA SCHOOL": {
@@ -450,9 +455,9 @@
       "district": "油尖旺"
     },
     "聖公會諸聖中學": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "curl/WebFetch：HTTP 500",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "油尖旺"
     },
     "聖芳濟書院": {
@@ -471,8 +476,9 @@
       "district": "油尖旺"
     },
     "香港力邁學校": {
-      "lastScannedAt": "2026-10-15T02:30:07Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://limai.com.hk/ verify=True -> 500 len=0; https://limai.com.hk/ verify=True -> 404 len=9701",
       "district": "油尖旺"
     },
     "香港華德福教育基金會瑪利亞書院": {
@@ -486,63 +492,58 @@
       "district": "油尖旺"
     },
     "聖若瑟書院": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.sjc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.sjc.edu.hk', port=80): Max retries exceed",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "ok",
       "district": "中西區"
     },
     "聖保羅書院": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.spc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.spc.edu.hk', port=80): Max retries exceed",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "ok",
       "district": "中西區"
     },
     "智新書院": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "ok",
       "district": "離島"
     },
     "香港華仁書院": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "空頁／內容過少（疑封鎖或轉址失敗）",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "灣仔"
     },
     "鄧肇堅維多利亞官立中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.tskvgss.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.tskvgss.edu.hk', port=80): Max retrie",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "ok",
       "district": "灣仔"
     },
     "聖保祿學校": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.spcs.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.spcs.edu.hk', port=80): Max retries exce",
+      "lastError": "http://www.spcs.edu.hk/ verify=True -> 500 len=0; https://www.spcs.edu.hk/ verify=True -> 200 len=81",
       "district": "灣仔"
     },
     "聖保祿中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.spss.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.spss.edu.hk', port=80): Max retries exce",
+      "lastError": "http://www.spss.edu.hk/ verify=True -> 500 len=0; https://www.spss.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.spss.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_",
       "district": "灣仔"
     },
     "鐘聲慈善社胡陳金枝中學": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
-      "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "ok",
       "district": "屯門"
     },
     "裘錦秋中學﹝屯門﹞": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "未能讀取：http://www.jcctm.edu.hk/ verify=True -> 500 len=0; https://www.jcctm.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.jcctm.edu.hk', port=443): Max retries exceeded w",
       "district": "屯門"
     },
     "新生命教育協會平安福音中學": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "官網首頁未能讀取／內容過短",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "屯門"
     },
     "嘉諾撒聖方濟各書院": {
@@ -556,15 +557,15 @@
       "district": "灣仔"
     },
     "安基司學校": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "schools.json 無官網",
+      "lastError": "schools.json 無 website",
       "district": "元朗"
     },
     "香港西班牙學校": {
-      "lastScannedAt": "2026-10-19T03:24:03Z",
+      "lastScannedAt": "2026-11-18T02:41:57Z",
       "lastStatus": "error",
-      "lastError": "schools.json 無官網",
+      "lastError": "schools.json 無 website",
       "district": "大埔"
     },
     "樂善堂梁銶琚書院": {
@@ -578,8 +579,9 @@
       "district": "中西區"
     },
     "聖嘉勒女書院": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "中西區"
     },
     "聖士提反堂中學": {
@@ -663,8 +665,9 @@
       "district": "灣仔"
     },
     "香港道爾頓學校": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "灣仔"
     },
     "香港鄧鏡波書院": {
@@ -688,9 +691,9 @@
       "district": "東區"
     },
     "伊斯蘭脫維善紀念中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.iktmc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.iktmc.edu.hk', port=80): Max retries ex",
+      "lastError": "http://www.iktmc.edu.hk/ verify=True -> 500 len=0; https://www.iktmc.edu.hk/ verify=True -> 500 len=0",
       "district": "東區"
     },
     "嘉諾撒書院": {
@@ -719,9 +722,9 @@
       "district": "東區"
     },
     "嶺南衡怡紀念中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.lhymss.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.lhymss.edu.hk', port=80): Max retries ",
+      "lastError": "http://www.lhymss.edu.hk/ verify=True -> 500 len=0; https://www.lhymss.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.lhymss.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of proto",
       "district": "東區"
     },
     "庇理羅士女子中學": {
@@ -730,14 +733,15 @@
       "district": "東區"
     },
     "張振興伉儷書院": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.cghc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.cghc.edu.hk', port=80): Max retries exce",
+      "lastError": "http://www.cghc.edu.hk/ verify=True -> 500 len=0; https://www.cghc.edu.hk/ verify=True -> 200 len=122",
       "district": "東區"
     },
     "張祝珊英文中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "東區"
     },
     "慈幼英文學校": {
@@ -751,15 +755,15 @@
       "district": "東區"
     },
     "明愛柴灣馬登基金中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.ccm.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.ccm.edu.hk', port=80): Max retries exceed",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "東區"
     },
     "港島民生書院": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.imsc.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.imsc.edu.hk', port=80): Max retries exce",
+      "lastError": "http://www.imsc.edu.hk/ verify=True -> 500 len=0; https://www.imsc.edu.hk/ verify=True -> 200 len=171",
       "district": "東區"
     },
     "漢華中學": {
@@ -768,9 +772,9 @@
       "district": "東區"
     },
     "炮台山循道衛理中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "首頁內容過少／未能取得入學資訊",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "東區"
     },
     "福建中學(小西灣)": {
@@ -799,15 +803,15 @@
       "district": "東區"
     },
     "聖馬可中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "連線逾時／失敗：http://www.stmarks.edu.hk/ -> ConnectTimeout: HTTPConnectionPool(host='www.stmarks.edu.hk', port=80): Max retrie",
+      "lastError": "http://www.stmarks.edu.hk/ verify=True -> 500 len=0; https://www.stmarks.edu.hk/ verify=True -> 200 len=94",
       "district": "東區"
     },
     "茵維特學校(香港)": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
       "lastStatus": "error",
-      "lastError": "HTTP 失敗／限制：https://www.invictus.edu.hk/ -> 429 len=31431; http://www.invictus.edu.hk/ -> ConnectTimeout: HTTPConnectionP",
+      "lastError": "https://www.invictus.edu.hk/ verify=True -> 429 len=21127; http://www.invictus.edu.hk/ verify=True -> 500 len=0",
       "district": "東區"
     },
     "蘇浙公學": {
@@ -821,8 +825,9 @@
       "district": "東區"
     },
     "金文泰中學": {
-      "lastScannedAt": "2026-10-19T03:31:10Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "東區"
     },
     "閩僑中學": {
@@ -846,9 +851,9 @@
       "district": "觀塘"
     },
     "聖公會基孝中學": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "SSL EOF；curl -k 失敗；無法讀取官網",
+      "lastError": "未能讀取：http://www.keihau.edu.hk/ verify=True -> 500 len=0; https://www.keihau.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.keihau.edu.hk', port=443): Max retries exceede",
       "district": "觀塘"
     },
     "聖傑靈女子中學": {
@@ -862,15 +867,304 @@
       "district": "觀塘"
     },
     "香港布廠商會朱石麟中學": {
-      "lastScannedAt": "2026-10-28T02:15:00Z",
-      "lastStatus": "ok",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
       "district": "觀塘"
     },
     "慕光英文書院": {
-      "lastScannedAt": "2026-11-04T02:20:00Z",
+      "lastScannedAt": "2026-11-18T02:38:36Z",
       "lastStatus": "error",
-      "lastError": "SSL EOF；curl -k 失敗；無法讀取官網",
+      "lastError": "未能讀取：http://www.mukuang.edu.hk/ verify=True -> 500 len=0; https://www.mukuang.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.mukuang.edu.hk', port=443): Max retries exce",
       "district": "觀塘"
+    },
+    "培僑書院": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取（https 403／http 500）",
+      "district": "沙田"
+    },
+    "基督教國際學校": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取（https 403／http 500）",
+      "district": "沙田"
+    },
+    "樂道中學": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取（http/https 500）",
+      "district": "沙田"
+    },
+    "沙田培英中學": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "沙田"
+    },
+    "青年會書院": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "沙田"
+    },
+    "香港中國婦女會馮堯敬紀念中學": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取（http 500／https timeout）",
+      "district": "沙田"
+    },
+    "德信中學": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "沙田"
+    },
+    "協恩中學": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "九龍城"
+    },
+    "斯彼德書院": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "schools.json 無 website",
+      "district": "九龍城"
+    },
+    "新亞中學": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "九龍城"
+    },
+    "泰來書院": {
+      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastStatus": "error",
+      "lastError": "schools.json 無 website",
+      "district": "九龍城"
+    },
+    "新生命教育協會呂郭碧鳳中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://www.lkpfc.edu.hk/ verify=True -> 500 len=0; https://www.lkpfc.edu.hk/ verify=True -> ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connectio",
+      "district": "觀塘"
+    },
+    "瑪利諾中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "觀塘"
+    },
+    "觀塘功樂官立中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "觀塘"
+    },
+    "東華三院盧幹庭紀念中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://www.lktmc.edu.hk/ verify=True -> 500 len=0; https://www.lktmc.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.lktmc.edu.hk', port=443): Max retries exceeded w",
+      "district": "元朗"
+    },
+    "樂善堂梁植偉紀念中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://www.lstlcw.edu.hk/ verify=True -> 500 len=0; https://www.lstlcw.edu.hk/ verify=True -> 200 len=89",
+      "district": "葵青"
+    },
+    "獅子會蔣翠琼中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://www.lionscollege.edu.hk/ verify=True -> 500 len=0; https://www.lionscollege.edu.hk/ verify=True -> ReadTimeout: HTTPSConnectionPool(host='www.lionscollege.edu.hk', port=443)",
+      "district": "葵青"
+    },
+    "迦密愛禮信中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "未能讀取：http://www.calfss.edu.hk/ verify=True -> 500 len=0; https://www.calfss.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.calfss.edu.hk', port=443): Max retries exceede",
+      "district": "葵青"
+    },
+    "博愛醫院鄧佩瓊紀念中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "元朗"
+    },
+    "明愛元朗陳震夏中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "元朗"
+    },
+    "妙法寺劉金龍中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "屯門"
+    },
+    "恩平工商會李琳明中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "屯門"
+    },
+    "東華三院鄺錫坤伉儷中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "屯門"
+    },
+    "聖公會聖西門呂明才中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "屯門"
+    },
+    "中華基督教會燕京書院": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "葵青"
+    },
+    "明愛聖若瑟中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "葵青"
+    },
+    "聖公會林護紀念中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "葵青"
+    },
+    "順德聯誼總會李兆基中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "葵青"
+    },
+    "香港四邑商工總會陳南昌紀念中學": {
+      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "葵青"
+    },
+    "上水官立中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "北區"
+    },
+    "新界喇沙中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "北區"
+    },
+    "粉嶺官立中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "北區"
+    },
+    "鳳溪第一中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "http://www.fk1ss.edu.hk/ verify=True -> 500 len=0; https://www.fk1ss.edu.hk/ verify=True -> 429 len=2412",
+      "district": "北區"
+    },
+    "南亞路德會沐恩中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "http://www.ilc.edu.hk/ verify=True -> 500 len=0; https://www.ilc.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.ilc.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl",
+      "district": "大埔"
+    },
+    "王肇枝中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "大埔"
+    },
+    "聖公會莫壽增會督中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "大埔"
+    },
+    "仁濟醫院王華湘中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "西貢"
+    },
+    "寶覺中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "西貢"
+    },
+    "播道書院": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "http://www.evangel.edu.hk/ verify=True -> 500 len=0; https://www.evangel.edu.hk/ verify=True -> 200 len=52",
+      "district": "西貢"
+    },
+    "萬鈞匯知中學": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "http://www.qualiedcollege.edu.hk/ verify=True -> 500 len=0; https://www.qualiedcollege.edu.hk/ verify=True -> 500 len=0",
+      "district": "西貢"
+    },
+    "西貢崇真天主教學校(中學部)": {
+      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "西貢"
+    },
+    "嘉諾撒聖心書院": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "http://www.shcc.edu.hk/ verify=True -> 500 len=0; https://www.shcc.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.shcc.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hos",
+      "district": "南區"
+    },
+    "新會商會陳白沙紀念中學": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "南區"
+    },
+    "香港仔工業學校": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "http://www.ats.edu.hk/ verify=True -> 500 len=0; https://www.ats.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.ats.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl",
+      "district": "南區"
+    },
+    "紡織學會美國商會胡漢輝中學": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "荃灣"
+    },
+    "佛教筏可紀念中學": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "http://www.bfhmc.edu.hk/ verify=True -> 500 len=0; https://www.bfhmc.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.bfhmc.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol",
+      "district": "離島"
+    },
+    "東涌天主教學校": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "空頁／極短頁，未能讀取",
+      "district": "離島"
+    },
+    "靈糧堂怡文中學": {
+      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastStatus": "error",
+      "lastError": "http://www.llcew.edu.hk/ verify=True -> 500 len=0; https://www.llcew.edu.hk/ verify=True -> SSLError: HTTPSConnectionPool(host='www.llcew.edu.hk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol",
+      "district": "離島"
     }
   },
   "rotation": {
@@ -894,10 +1188,10 @@
       "荃灣",
       "離島"
     ],
-    "lastRotatedAt": "2026-11-04T02:48:02Z"
+    "lastRotatedAt": "2026-11-18T02:55:08Z"
   },
   "lightScan": {
-    "lastRanAt": "2026-11-04T02:20:00Z",
+    "lastRanAt": "2026-11-18T02:32:50Z",
     "lastStatus": "ok"
   }
 }

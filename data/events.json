@@ -1,7 +1,7 @@
 {
   "title": "升中項目清單",
   "timezone": "Asia/Hong_Kong",
-  "syncedAt": "2026-11-04T02:48:02Z",
+  "syncedAt": "2026-11-18T02:55:08Z",
   "source": {
     "notionDatabaseId": "5b4d2cb03f38489484117b425a383f1e",
     "notionDatabaseUrl": "https://app.notion.com/p/5b4d2cb03f38489484117b425a383f1e",
@@ -348,9 +348,9 @@
       "isDateTime": false,
       "keyDateStart": null,
       "keyDateIsDateTime": false,
-      "keyPoints": "",
-      "notes": "學校 2026-27 校曆（F.1 Discretionary Places (DP) Oral Assessment，星期六）。2026-10-05 監察加入。",
-      "sourceUrl": "https://www.skhtst.edu.hk/download/school_calendar/26-27/2026-2027_School-Calendar_A4.pdf"
+      "keyPoints": "面試通知 2027-02-25 以電郵及郵遞發給所有申請人；面試 2027-03-06（六）小組中文（廣東話）及英文；正取 50 人於 2027-03-31 以郵遞及電話通知。",
+      "notes": "【更新 2026-11-18】官網 2027/28 自行分配學位申請公告補上面試通知日、面試形式及正取通知安排。放榜仍由教育局 2027-07-06 公布。來源 https://www.skhtst.edu.hk/2026/11/application-for-secondary-one-discretionary-places-dp-september-2027-admission-申請中一自行分配學位-2027年9月/",
+      "sourceUrl": "https://www.skhtst.edu.hk/2026/11/application-for-secondary-one-discretionary-places-dp-september-2027-admission-申請中一自行分配學位-2027年9月/"
     },
     {
       "id": "ev-19",
@@ -5092,8 +5092,8 @@
       "dateEnd": "2026-12-12",
       "keyDateStart": null,
       "keyDateIsDateTime": false,
-      "keyPoints": "日程表列 11–12/12/2026",
-      "notes": "官立；詳見官網「2027/2028學年中一學位申請日程及入學安排」PDF。",
+      "keyPoints": "12/11–12/12 校園開放日及升中資訊日；12/12 場次 09:30–12:00、13:45–16:00",
+      "notes": "【更新 2026-11-18】補上 12/12 兩場時段（CHSC id=5337；備註確認 12/11 及 12/12）。 官立；詳見官網「2027/2028學年中一學位申請日程及入學安排」PDF。",
       "sourceUrl": "https://www.tkogss.edu.hk/sites/default/files/2728xue_nian_zhong_yi_xue_wei_shen_qing_ri_cheng_ji_ru_xue_an_pai_.pdf"
     },
     {
@@ -6711,10 +6711,11 @@
       "isDateTime": false,
       "dateStart": "2026-12-11",
       "dateEnd": null,
-      "keyDateStart": null,
+      "keyDateStart": "2026-12-04",
       "keyDateIsDateTime": false,
-      "keyPoints": "升中簡介會 2026-12-11；網上登記稍後發放",
-      "notes": "來源：https://www.bps.hk/admission （最近更新 2026-09-17）。同日起至 2027-01-18 派發中一自行分配學位申請表。",
+      "keyDateKind": "deadline",
+      "keyPoints": "升中簡介會 2026-12-11；請於 2026-12-04（五）或以前填妥報名表格，名額有限、先到先得、額滿即止。同日起至 2027-01-18 派發中一自行分配學位申請表。",
+      "notes": "【更新 2026-11-18】官網 admission 頁已公布升中簡介會報名截止 2026-12-04（五）。來源 https://www.bps.hk/admission",
       "sourceUrl": "https://www.bps.hk/admission"
     },
     {
@@ -11465,6 +11466,383 @@
       "keyPoints": "2026-11-28（六）09:00–11:30：09:00–10:00 攤位展覽；10:00–11:30 禮堂入學申請簡介會。報名截止 11-20；成功報名者 11-24 或以前收確認電郵；每家庭最多三席、額滿即止。",
       "notes": "【新 2026-11-04】官網 Admission／School Information Day 2026。live 僅有 ev-415（DP 申請資訊將於 11 月公布），本輪新增資訊日本身。來源 https://shcc.edu.hk/admission.php?cid=90 及 https://shcc.edu.hk/Admission/information_day_2026/",
       "sourceUrl": "https://shcc.edu.hk/admission.php?cid=90"
+    },
+    {
+      "id": "ev-2601",
+      "title": "天主教普照中學 五十五周年校慶開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "天主教普照中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-13T02:00:00.000Z",
+      "dateEnd": "2026-12-13T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "10:00–16:00",
+      "notes": "來源：CHSC 學校自行登記開放日（五十五周年校慶開放日）；地點：九龍油塘普照路一號；CHSC id=5331。 學校網址：https://pochiu.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5331"
+    },
+    {
+      "id": "ev-2602",
+      "title": "聖公會聖本德中學 小六升中資訊日2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖公會聖本德中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T01:30:00.000Z",
+      "dateEnd": "2026-12-12T05:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "09:30–13:00",
+      "notes": "來源：CHSC 學校自行登記開放日（小六升中資訊日2026）；地點：九龍彩虹邨藍鐘路 11 號 (本校禮堂)；CHSC id=5322。 學校網址：https://www.skhsbs.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5322"
+    },
+    {
+      "id": "ev-2603",
+      "title": "鄧鏡波學校 升中資訊日(第二場)",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "鄧鏡波學校"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T02:00:00.000Z",
+      "dateEnd": "2026-12-12T03:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "10:00–11:30",
+      "notes": "來源：CHSC 學校自行登記開放日（升中資訊日(第二場)）；地點：九龍天光道16號；CHSC id=5330。 備註：本校『升中資訊日』已於2026年10月31日圓滿結束,當日活動反應熱烈,感謝各位家長的支持! 為響應家長和學生的需求,本校現決定於2026年12月12日加開第二場『升中資訊日』,當日節目內容同樣豐富多彩,讓家長和學生能夠全方位認識本校。敬請各位家長儘快透過二維碼報名,把握最後機會,為孩子的升中路上做好準備! 學校網址：https://www.tangkingpo.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5330"
+    },
+    {
+      "id": "ev-2604",
+      "title": "深培中學 深培家長學堂(五) AI系列多元體驗系列 「觸動心靈:朱古力調溫體驗與建造SEN成長夢工場」工作坊",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "深培中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T05:15:00.000Z",
+      "dateEnd": "2026-12-12T08:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "13:15–16:30",
+      "notes": "來源：CHSC 學校自行登記開放日（深培家長學堂(五) AI系列多元體驗系列 「觸動心靈:朱古力調溫體驗與建造SEN成長夢工場」工作坊）；地點：「可可阿樂」工場 (鑽石山旺景工業大樓9A)；CHSC id=5336。 學校網址：https://www.semple.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5336"
+    },
+    {
+      "id": "ev-2605",
+      "title": "循道中學 中一入學資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "循道中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-12T05:00:00.000Z",
+      "dateEnd": "2026-12-12T08:50:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "13:00–16:50",
+      "notes": "來源：CHSC 學校自行登記開放日（中一入學資訊日）；地點：九龍加士居道50號循道中學；CHSC id=5338。 學校網址：http://www.mckln.edu.hk",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5338"
+    },
+    {
+      "id": "ev-2606",
+      "title": "李求恩紀念中學 李求恩紀念中學資訊日 2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "李求恩紀念中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-06T01:30:00.000Z",
+      "dateEnd": "2026-12-06T04:45:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "09:30–12:45",
+      "notes": "來源：CHSC 學校自行登記開放日（李求恩紀念中學資訊日 2026）；地點：九龍太子道596號；CHSC id=5324。 學校網址：https://www.lkyms.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5324"
+    },
+    {
+      "id": "ev-2607",
+      "title": "中華基督教會馮梁結紀念中學 中一資訊日及學生成果展",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "中華基督教會馮梁結紀念中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T06:00:00.000Z",
+      "dateEnd": "2026-12-05T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "14:00–17:00",
+      "notes": "來源：CHSC 學校自行登記開放日（中一資訊日及學生成果展）；地點：大埔寶湖道22號；CHSC id=5320。 備註：https://forms.cloud.microsoft/r/iLdcS8DcTi 學校網址：https://www.flk.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5320"
+    },
+    {
+      "id": "ev-2608",
+      "title": "孔教學院大成何郭佩珍中學 小六升中一資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "孔教學院大成何郭佩珍中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T01:00:00.000Z",
+      "dateEnd": "2026-12-05T05:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "09:00–13:00",
+      "notes": "來源：CHSC 學校自行登記開放日（小六升中一資訊日）；地點：本校禮堂及部分樓層；CHSC id=5339。 學校網址：https://www.ctshkpcc.edu.hk/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5339"
+    },
+    {
+      "id": "ev-2609",
+      "title": "樂善堂顧超文中學 中一入學資訊日2026",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "樂善堂顧超文中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-28T02:00:00.000Z",
+      "dateEnd": "2026-11-28T07:30:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "10:00–12:00；13:30–15:30",
+      "notes": "來源：CHSC 學校自行登記開放日（中一入學資訊日2026）；地點：新界葵盛圍301號；CHSC id=5235。 學校網址：https://www.lstkcmss.edu.hk/tc/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5235"
+    },
+    {
+      "id": "ev-2610",
+      "title": "地利亞修女紀念學校(協和二中) 開放日 2026",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "地利亞修女紀念學校(協和二中)"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-28T01:00:00.000Z",
+      "dateEnd": "2026-11-28T05:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "09:00–13:00",
+      "notes": "來源：CHSC 學校自行登記開放日（開放日 2026）；地點：九龍觀塘協和街223號；CHSC id=5329。 學校網址：https://deliahw2.edu.hk/zh/",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5329"
+    },
+    {
+      "id": "ev-2611",
+      "title": "明愛莊月明中學 2026/2027開放日「集愛之旅」",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "明愛莊月明中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-11-21T01:00:00.000Z",
+      "dateEnd": "2026-11-21T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "09:00–17:00",
+      "notes": "來源：CHSC 學校自行登記開放日（2026/2027開放日「集愛之旅」）；地點：香港薄扶林華富邨華富道53號；CHSC id=5327。 學校網址：https://www.ccym.edu.hk",
+      "sourceUrl": "https://www.chsc.hk/show_sch_open_day.php?lang_id=2&id=5327"
+    },
+    {
+      "id": "ev-2701",
+      "title": "禮賢會彭學高紀念中學 第三場升中分享會暨校園遊蹤（2026 禮中資訊日）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "禮賢會彭學高紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "官網已開放報名（Google Form）；時段未見公布。此為第三場，前場為 11/7（ev-440）。",
+      "notes": "官網最新消息「2026 禮中資訊日 – 第三場升中分享會暨校園遊蹤 (2026年12月5日) 按此連結報名」。報名 https://docs.google.com/forms/d/e/1FAIpQLSd_jHo6qSjkFRFd2cWGY-NuKbRESrveUc0WN2eBO_EU10Xliw/viewform",
+      "sourceUrl": "https://www.rcphkmc.edu.hk/en/latest_new/2026-禮中資訊日-–-第三場升中分享會暨校園遊蹤-2026年12月5日"
+    },
+    {
+      "id": "ev-2702",
+      "title": "保良局胡忠中學 學習體驗日（2026）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "保良局胡忠中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-08",
+      "dateEnd": "2026-12-18",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "內容：學校簡介、面試要求、初中課堂體驗及其他體驗活動；以學校形式報名，詳情向就讀小學查詢。",
+      "notes": "官網中一自行分配學位頁（f1admission-chi）在升中資訊日（ev-11，12/5）之後另列學習體驗日 2026年12月8日至12月18日。",
+      "sourceUrl": "https://www.plkwcc.edu.hk/f1admission-chi"
+    },
+    {
+      "id": "ev-2703",
+      "title": "東華三院邱金元中學 升中資訊日",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "東華三院邱金元中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-22",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "校曆列 11月22日升中資訊日；時段未見公布。同曆 12/13 校慶開放日已註明取消。",
+      "notes": "官網首頁校曆（同一段含 12月7日立法會選舉，可確認為 2026 年）。時段未公布。",
+      "sourceUrl": "https://www.twyky.edu.hk/"
+    },
+    {
+      "id": "ev-2704",
+      "title": "潮州會館中學 中一自行分配學位申請（2027/28）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "潮州會館中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-01-04",
+      "dateEnd": "2027-01-18",
+      "keyDateStart": "2027-01-18",
+      "keyDateIsDateTime": false,
+      "keyDateKind": "deadline",
+      "keyPoints": "申請 2027-01-04 至 01-18；可親臨校務處或經中一派位電子平台；辦公時間一至五 08:30–17:00、六 08:30–13:00。",
+      "notes": "官網入學申請頁「2027-2028年度中一自行分配學位申請須知」。",
+      "sourceUrl": "https://ccass.edu.hk/admissions/"
+    },
+    {
+      "id": "ev-2705",
+      "title": "馬鞍山聖若瑟中學 中一新生註冊（2027/28）",
+      "type": "註冊",
+      "status": "官方確認",
+      "schools": [
+        "馬鞍山聖若瑟中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2027-07-08T01:00:00.000Z",
+      "dateEnd": "2027-07-09T08:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2027-07-08（四）至 07-09（五）；每日 09:00–12:30 及 14:00–16:00；地點：本校地下禮堂。需帶入學註冊證、派位證、身份證明、證件相及住址證明。",
+      "notes": "官網中一收生事項頁。惡劣天氣若教育局宣布停課則延期。",
+      "sourceUrl": "https://www.mossjss.edu.hk/tc/admission/form-one-admission-info"
+    },
+    {
+      "id": "ev-2706",
+      "title": "馬鞍山聖若瑟中學 中一編班試（2027/28）",
+      "type": "其他",
+      "status": "官方確認",
+      "schools": [
+        "馬鞍山聖若瑟中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2027-07-13",
+      "dateEnd": "2027-07-14",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "編班試(I)（中一入學前學科測驗）2027-07-13（二），詳情按教育局；編班試(II) 2027-07-14（三）。相關資訊於中一新生註冊時派發。",
+      "notes": "官網中一收生事項頁。同頁升中銜接課程日期為暫擬，本次不另開條。",
+      "sourceUrl": "https://www.mossjss.edu.hk/tc/admission/form-one-admission-info"
+    },
+    {
+      "id": "ev-2851",
+      "title": "聖言中學 中一入學資訊日（2027/28）",
+      "type": "資訊日",
+      "status": "官方確認",
+      "schools": [
+        "聖言中學"
+      ],
+      "isDateTime": true,
+      "dateStart": "2026-12-05T06:00:00.000Z",
+      "dateEnd": "2026-12-05T09:00:00.000Z",
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "2026-12-05（六）14:00–17:00（13:00 開始入場）；入學講座及校園參觀。須於 https://sites.singyin.edu.hk/f1-info-day 報名；入場須出示確認電郵編號。",
+      "notes": "官網新聞「中一入學資訊日」（2026-11-11 發布）。",
+      "sourceUrl": "https://www.singyin.edu.hk/zh/"
+    },
+    {
+      "id": "ev-2852",
+      "title": "基督教聖約教會堅樂中學 學校開放日（觀塘區學校巡禮）",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "基督教聖約教會堅樂中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-11-22",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "11月22日學校開放日（觀塘區學校巡禮）；時段未見公布。與 12/5 學校資訊日（ev-75）不同場。",
+      "notes": "官網通告校曆：11-15 至 11-22「學校開放日 (觀塘區學校巡禮)」，正文寫明 11月22日為學校開放日。",
+      "sourceUrl": "https://www.holmglad.edu.hk/"
+    },
+    {
+      "id": "ev-2853",
+      "title": "佛教志蓮中學 2026-27年度開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "佛教志蓮中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-12",
+      "dateEnd": null,
+      "keyDateStart": null,
+      "keyDateIsDateTime": false,
+      "keyPoints": "官網最新消息頁列出日期 2026-12-12、標題「2026-27年度開放日」；時段及詳情未見公布。",
+      "notes": "來源 https://www.clbss.edu.hk/latest_news/2026-27年度開放日 ；內文幾乎只有標題與日期。",
+      "sourceUrl": "https://www.clbss.edu.hk/latest_news/2026-27年度開放日"
+    },
+    {
+      "id": "ev-3001",
+      "title": "馬錦明慈善基金馬可賓紀念中學 三十周年校慶開放日",
+      "type": "開放日",
+      "status": "官方確認",
+      "schools": [
+        "馬錦明慈善基金馬可賓紀念中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-05",
+      "dateEnd": null,
+      "keyDateStart": "2026-11-06",
+      "keyDateIsDateTime": false,
+      "keyDateKind": "registration",
+      "keyPoints": "當日有英語音樂劇表演及兩場升中家長講座；11月6日起可經 https://www.makopan.edu.hk/talk2026.html 報名。活動時間／流程官網註明請密切留意後續公布。",
+      "notes": "官網最新消息（2026-11-10）：12月5日（星期六）三十周年校慶開放日，讓學生體驗中學學習生活並為家長提供升學資訊。",
+      "sourceUrl": "https://www.makopan.edu.hk/"
+    },
+    {
+      "id": "ev-3151",
+      "title": "明愛粉嶺陳震夏中學 升中資訊日公眾報名（2026–2027學年）",
+      "type": "報名／申請",
+      "status": "官方確認",
+      "schools": [
+        "明愛粉嶺陳震夏中學"
+      ],
+      "isDateTime": false,
+      "dateStart": "2026-12-02",
+      "dateEnd": null,
+      "keyDateStart": "2026-12-02",
+      "keyDateIsDateTime": false,
+      "keyDateKind": "deadline",
+      "keyPoints": "官網緊急消息公布 2026–2027學年升中資訊日現正接受公眾報名，截止 2026-12-02（三）；活動日期／時間官網未寫明。報名表格：https://forms.cloud.microsoft/r/t5MDCt8F2M",
+      "notes": "來源：學校官網首頁彈出消息（https://www.cfs.edu.hk/tc/）。僅公布報名截止，未公布活動當日，日期欄用報名截止日。",
+      "sourceUrl": "https://www.cfs.edu.hk/tc/"
     }
   ]
 }
