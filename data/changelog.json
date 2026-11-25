@@ -5032,6 +5032,850 @@
       "sourceUrl": "https://www.bps.hk/admission",
       "prNumber": 78,
       "batchId": "weekly-2026-11-18"
+    },
+    {
+      "id": "cl-20261125-001",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3701",
+      "eventType": "資訊日",
+      "title": "何文田官立中學 中一入學簡介會及資訊日（2027/28）",
+      "summary": "新增 28/11",
+      "schools": [
+        "何文田官立中學"
+      ],
+      "schoolIds": [
+        "510394000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.hmtgss.edu.hk/Content/08_others/01_what_is_new/index.aspx?ct=latestNews&styleId=1&newsType=generalAnouncement#news999",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-002",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3702",
+      "eventType": "報名／申請",
+      "title": "何文田官立中學 中一自行分配學位申請（2027/28）",
+      "summary": "新增 2/12–18/1",
+      "schools": [
+        "何文田官立中學"
+      ],
+      "schoolIds": [
+        "510394000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.hmtgss.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=94&pageId=329&nnnid=120",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-003",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3703",
+      "eventType": "面試",
+      "title": "何文田官立中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "何文田官立中學"
+      ],
+      "schoolIds": [
+        "510394000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.hmtgss.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=94&pageId=329&nnnid=120",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-004",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3704",
+      "eventType": "報名／申請",
+      "title": "何文田官立中學 中一第二階段（叩門）申請（2027/28）",
+      "summary": "新增 6/7",
+      "schools": [
+        "何文田官立中學"
+      ],
+      "schoolIds": [
+        "510394000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.hmtgss.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=94&pageId=329&nnnid=120",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-005",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3705",
+      "eventType": "面試",
+      "title": "東華三院邱金元中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "東華三院邱金元中學"
+      ],
+      "schoolIds": [
+        "270091000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.twyky.edu.hk/zh_tw/site/view?name=%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%282027%2F28%29",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-006",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3706",
+      "eventType": "面試",
+      "title": "九龍塘學校(中學部) 中一自行分配學位面試（2027/28）",
+      "summary": "新增 27/2",
+      "schools": [
+        "九龍塘學校(中學部)"
+      ],
+      "schoolIds": [
+        "213764000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ktsss.edu.hk/tc/f1_enrol/22-23ApplicationForm",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-007",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3707",
+      "eventType": "入學講座",
+      "title": "陳瑞祺(喇沙)書院 中一自行分配學位簡介會（2027/28）",
+      "summary": "新增 5/12",
+      "schools": [
+        "陳瑞祺(喇沙)書院"
+      ],
+      "schoolIds": [
+        "170550000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www2.csklsc.edu.hk/s1",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-008",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3708",
+      "eventType": "報名／申請",
+      "title": "陳瑞祺(喇沙)書院 中一自行分配學位申請（2027/28）",
+      "summary": "新增 2/12–18/1",
+      "schools": [
+        "陳瑞祺(喇沙)書院"
+      ],
+      "schoolIds": [
+        "170550000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www2.csklsc.edu.hk/s1",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-009",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3709",
+      "eventType": "面試",
+      "title": "陳瑞祺(喇沙)書院 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "陳瑞祺(喇沙)書院"
+      ],
+      "schoolIds": [
+        "170550000133"
+      ],
+      "districts": [
+        "九龍城區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www2.csklsc.edu.hk/s1",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-010",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3710",
+      "eventType": "資訊日",
+      "title": "佛教黃允畋中學 升中資訊日（2027/28）",
+      "summary": "新增 11/12",
+      "schools": [
+        "佛教黃允畋中學"
+      ],
+      "schoolIds": [
+        "190268000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.bwwtc.edu.hk/tc/news_detail.php?wid=151&cid=1&id=699",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-011",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3711",
+      "eventType": "面試",
+      "title": "佛教黃允畋中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 5/3–6/3",
+      "schools": [
+        "佛教黃允畋中學"
+      ],
+      "schoolIds": [
+        "190268000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.bwwtc.edu.hk/tc/content.php?wid=141",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-012",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3712",
+      "eventType": "面試",
+      "title": "保良局朱敬文中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "保良局朱敬文中學"
+      ],
+      "schoolIds": [
+        "270083000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.plkcwc.edu.hk/it-school/php/webcms/public/index.php?refid=3387&mode=published&lang=zh",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-013",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3851",
+      "eventType": "資訊日",
+      "title": "香港神託會培敦中學 升中輔導日（一）（2027/28）",
+      "summary": "新增 2/12",
+      "schools": [
+        "香港神託會培敦中學"
+      ],
+      "schoolIds": [
+        "320609000133"
+      ],
+      "districts": [
+        "黃大仙區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.pooitun.edu.hk/download/Resource/2027-2028入學/2026_升中輔導日_邀請函_.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-014",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3852",
+      "eventType": "開放日",
+      "title": "九龍工業學校 體驗日（2027/28）",
+      "summary": "新增 5/12",
+      "schools": [
+        "九龍工業學校"
+      ],
+      "schoolIds": [
+        "510521000133"
+      ],
+      "districts": [
+        "深水埗區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.kts.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=70&pageId=187&nnnid=82",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-015",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3853",
+      "eventType": "資訊日",
+      "title": "藍田聖保祿中學 中一入學資訊日（2027/28）",
+      "summary": "新增 5/12",
+      "schools": [
+        "藍田聖保祿中學"
+      ],
+      "schoolIds": [
+        "170488000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.spslt.edu.hk/s1-interview-list",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-016",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3854",
+      "eventType": "資訊日",
+      "title": "香港神託會培敦中學 升中輔導日（二）（2027/28）",
+      "summary": "新增 5/12",
+      "schools": [
+        "香港神託會培敦中學"
+      ],
+      "schoolIds": [
+        "320609000133"
+      ],
+      "districts": [
+        "黃大仙區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.pooitun.edu.hk/download/Resource/2027-2028入學/2026_升中輔導日_邀請函_.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-017",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3855",
+      "eventType": "開放日",
+      "title": "觀塘官立中學 四十五周年校慶開放日暨校友重聚日",
+      "summary": "新增 11/12–12/12",
+      "schools": [
+        "觀塘官立中學"
+      ],
+      "schoolIds": [
+        "510416000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ktgss.edu.hk/Content/02_school_life/02_Activity/displaySingleActivity.aspx?activityId=660&ct=activity&styleId=1&linkFrom=latestNews",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-018",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3856",
+      "eventType": "開放日",
+      "title": "滙基書院（東九龍） 二十四周年開放日",
+      "summary": "新增 12/12",
+      "schools": [
+        "滙基書院(東九龍)"
+      ],
+      "schoolIds": [
+        "552810000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.uccke.edu.hk/2026/09/05/24th-anniversary-open-day/",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-019",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3857",
+      "eventType": "入學講座",
+      "title": "滙基書院（東九龍） 中一簡介會（五）及校園導賞（2027/28）",
+      "summary": "新增 12/12",
+      "schools": [
+        "滙基書院(東九龍)"
+      ],
+      "schoolIds": [
+        "552810000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.uccke.edu.hk/2026/11/14/2027-2028-s-1-briefing-session-5-campus-tour-anniversary-open-day/",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-020",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3858",
+      "eventType": "入學講座",
+      "title": "觀塘官立中學 中一自行分配學位講座及校園遊蹤（2027/28）",
+      "summary": "新增 12/12",
+      "schools": [
+        "觀塘官立中學"
+      ],
+      "schoolIds": [
+        "510416000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ktgss.edu.hk/Content/02_school_life/02_Activity/displaySingleActivity.aspx?activityId=659&ct=activity&styleId=1&linkFrom=latestNews",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-021",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3859",
+      "eventType": "面試",
+      "title": "港九潮州公會中學 中一自行分配學位面試（第一輪）（2027/28）",
+      "summary": "新增 27/2",
+      "schools": [
+        "港九潮州公會中學"
+      ],
+      "schoolIds": [
+        "135011000133"
+      ],
+      "districts": [
+        "油尖旺區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ccpass.edu.hk/admission/26EN-C002_2027-2028.htm",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-022",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3860",
+      "eventType": "面試",
+      "title": "官立嘉道理爵士中學(西九龍) 自行分配學位面試（2027/28）",
+      "summary": "新增 3/3",
+      "schools": [
+        "官立嘉道理爵士中學(西九龍)"
+      ],
+      "schoolIds": [
+        "536997000133"
+      ],
+      "districts": [
+        "油尖旺區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.seksswk.edu.hk/admission.php",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-023",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3861",
+      "eventType": "面試",
+      "title": "觀塘官立中學 自行分配學位面試（2027/28）",
+      "summary": "新增 6/3–13/3",
+      "schools": [
+        "觀塘官立中學"
+      ],
+      "schoolIds": [
+        "510416000133"
+      ],
+      "districts": [
+        "觀塘區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ktgss.edu.hk/CustomPage/38/1a.%20Schedule%20of%20application%20and%20admission%20for%20S1%20Discretionary%20places%202026-2027updated.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-024",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3862",
+      "eventType": "面試",
+      "title": "保良局何蔭棠中學 中一自行分配學位面試日（2027/28）",
+      "summary": "新增 7/3",
+      "schools": [
+        "保良局何蔭棠中學"
+      ],
+      "schoolIds": [
+        "541850000233"
+      ],
+      "districts": [
+        "黃大仙區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.plkchc.edu.hk/zh-HK/admission/83",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-025",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3863",
+      "eventType": "面試",
+      "title": "九龍工業學校 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "九龍工業學校"
+      ],
+      "schoolIds": [
+        "510521000133"
+      ],
+      "districts": [
+        "深水埗區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.kts.edu.hk/CustomPage/paragraphGroup.aspx?webPageId=70&pageId=187&nnnid=82",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-026",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-3864",
+      "eventType": "面試",
+      "title": "港九潮州公會中學 中一自行分配學位面試（第二輪）（2027/28）",
+      "summary": "新增 20/3",
+      "schools": [
+        "港九潮州公會中學"
+      ],
+      "schoolIds": [
+        "135011000133"
+      ],
+      "districts": [
+        "油尖旺區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ccpass.edu.hk/admission/26EN-C002_2027-2028.htm",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-027",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4001",
+      "eventType": "面試",
+      "title": "伯特利中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "伯特利中學"
+      ],
+      "schoolIds": [
+        "511170000133"
+      ],
+      "districts": [
+        "元朗區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.bethel.edu.hk/uploads/files/%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B/2027-28_%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-028",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4002",
+      "eventType": "面試",
+      "title": "路德會西門英才中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 13/3",
+      "schools": [
+        "路德會西門英才中學"
+      ],
+      "schoolIds": [
+        "170801000233"
+      ],
+      "districts": [
+        "元朗區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.gslc.edu.hk/%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-029",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4003",
+      "eventType": "面試",
+      "title": "屯門天主教中學 中一自行分配學位首輪面試（2027/28）",
+      "summary": "新增 20/2",
+      "schools": [
+        "屯門天主教中學"
+      ],
+      "schoolIds": [
+        "190624000133"
+      ],
+      "districts": [
+        "屯門區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.tmcss.edu.hk/tmcss/wp-content/uploads/2026/11/2027-2028-%E5%B9%B4%E5%BA%A6%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5-1.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-030",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4004",
+      "eventType": "面試",
+      "title": "屯門天主教中學 中一自行分配學位次輪面試（2027/28）",
+      "summary": "新增 14/3",
+      "schools": [
+        "屯門天主教中學"
+      ],
+      "schoolIds": [
+        "190624000133"
+      ],
+      "districts": [
+        "屯門區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.tmcss.edu.hk/tmcss/wp-content/uploads/2026/11/2027-2028-%E5%B9%B4%E5%BA%A6%E4%B8%AD%E4%B8%80%E8%87%AA%E8%A1%8C%E5%88%86%E9%85%8D%E5%AD%B8%E4%BD%8D%E7%94%B3%E8%AB%8B%E9%A0%88%E7%9F%A5-1.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-031",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4005",
+      "eventType": "面試",
+      "title": "東華三院邱子田紀念中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 6/3",
+      "schools": [
+        "東華三院邱子田紀念中學"
+      ],
+      "schoolIds": [
+        "190381000133"
+      ],
+      "districts": [
+        "屯門區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ytt.edu.hk/sites/default/files/files/2728_dp_procedure_chi2.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-032",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4151",
+      "eventType": "其他",
+      "title": "田家炳中學 公佈中一自行分配學位面試安排（2027/28）",
+      "summary": "新增 2/3",
+      "schools": [
+        "田家炳中學"
+      ],
+      "schoolIds": [
+        "190870000133"
+      ],
+      "districts": [
+        "北區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://web.tkpss.edu.hk/v3/00_about/s1.htm",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-033",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4152",
+      "eventType": "面試",
+      "title": "香港紅卍字會大埔卍慈中學 中一自行分配學位面試（2027/28）",
+      "summary": "新增 6/3",
+      "schools": [
+        "香港紅卍字會大埔卍慈中學"
+      ],
+      "schoolIds": [
+        "190730000133"
+      ],
+      "districts": [
+        "大埔區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.hkrsstpss.edu.hk/upload/page/7/self/6ae040f48b02a.pdf",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-034",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4301",
+      "eventType": "開放日",
+      "title": "炮台山循道衛理中學 開放日（2027/28）",
+      "summary": "新增 12/12",
+      "schools": [
+        "炮台山循道衛理中學"
+      ],
+      "schoolIds": [
+        "516961000133"
+      ],
+      "districts": [
+        "東區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.lovefhmss.org/admission",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-035",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4302",
+      "eventType": "資訊日",
+      "title": "炮台山循道衛理中學 初踏中學路（2027/28）",
+      "summary": "新增 9/1",
+      "schools": [
+        "炮台山循道衛理中學"
+      ],
+      "schoolIds": [
+        "516961000133"
+      ],
+      "districts": [
+        "東區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.lovefhmss.org/admission",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-036",
+      "loggedAt": "2026-11-25",
+      "changeKind": "added",
+      "eventId": "ev-4451",
+      "eventType": "入學講座",
+      "title": "明愛胡振中書院 中一入學講座（Admission Seminar 2／2026-12-05）",
+      "summary": "新增 5/12",
+      "schools": [
+        "明愛胡振中書院"
+      ],
+      "schoolIds": [
+        "283495000333"
+      ],
+      "districts": [
+        "離島區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.cwcc.edu.hk/en/information-day",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-037",
+      "loggedAt": "2026-11-25",
+      "changeKind": "updated",
+      "eventId": "ev-717",
+      "eventType": "開放日",
+      "title": "天主教郭得勝中學 升中家長簡介會及學習成果展示日2026（12/12）",
+      "summary": "更新 標題、關鍵日、重點、備註、來源",
+      "detail": "補上官網 12/12 兩場升中家長簡介會時段，以及 2026-12-04 登記截止\n標題：天主教郭得勝中學 學習成果展示日2026（12/12） → 天主教郭得勝中學 升中家長簡介會及學習成果展示日2026（12/12）\n關鍵日：空 → 2026-12-04\n重點：13:00-18:30 → 學習成果展示日 13:00–18:30（CHSC）；同日兩場升中家長簡介會：14:00–15:00 及 16:30–17:30，內容相同。須於 2026-12-04（五）或以前登記，每場名額有限、每個家庭最多 3 人。\n來源連結已更新\n備註已更新",
+      "schools": [
+        "天主教郭得勝中學"
+      ],
+      "schoolIds": [
+        "190667000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ktscss.edu.hk/s1-discretionary-places-allocation-2025-2027",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-038",
+      "loggedAt": "2026-11-25",
+      "changeKind": "updated",
+      "eventId": "ev-2703",
+      "eventType": "資訊日",
+      "title": "東華三院邱金元中學 升中資訊日",
+      "summary": "更新 日期、重點、備註",
+      "detail": "更正資訊日日期為 2026 校曆所載 2026-11-21（原誤記 11/22）\n日期：22/11 → 21/11\n重點：校曆列 11月22日升中資訊日；時段未見公布。同曆 12/13 校慶開放日已註明取消。 → 官網 2026 校曆列 11月21日「中一入學資訊日」；時段未見公布。同曆 12/13 校慶開放日已取消（上輪已註明）。\n備註已更新",
+      "schools": [
+        "東華三院邱金元中學"
+      ],
+      "schoolIds": [
+        "270091000133"
+      ],
+      "districts": [
+        "沙田區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.twyky.edu.hk/",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-039",
+      "loggedAt": "2026-11-25",
+      "changeKind": "updated",
+      "eventId": "ev-2608",
+      "eventType": "資訊日",
+      "title": "孔教學院大成何郭佩珍中學 小六升中一資訊日",
+      "summary": "更新 重點、備註、來源",
+      "detail": "官網公布報名已開及完整活動時間表，來源改為學校官網。\n重點：09:00–13:00 → 09:00–13:00；校園參觀及學習體驗全日進行。中一入學講座 09:30–10:30（禮堂）；專題講座：麥明詩「從會考到劍橋——十優港姐背後的高效學習法」10:30–11:30；Patrick Sir（林溥來）「如何透過親子閱讀提升學生英語能力」12:00–13:00。現正接受網上報名：https://docs.google.com/forms/d/e/1FAIpQLScKJ9teSz04Qrb8tDCsSVXevNNPj0zzX9563iLTsTSvLEwejQ/viewform ；查詢 2666 5926。\n來源連結已更新\n備註已更新",
+      "schools": [
+        "孔教學院大成何郭佩珍中學"
+      ],
+      "schoolIds": [
+        "190810000133"
+      ],
+      "districts": [
+        "大埔區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://www.ctshkpcc.edu.hk/tc/latest_new/2026-%E5%B0%8F%E5%85%AD%E5%8D%87%E4%B8%AD%E4%B8%80%E8%B3%87%E8%A8%8A%E6%97%A5-%E7%8F%BE%E5%9C%A8%E6%8E%A5%E5%8F%97%E5%A0%B1%E5%90%8D",
+      "batchId": "weekly-2026-11-25"
+    },
+    {
+      "id": "cl-20261125-040",
+      "loggedAt": "2026-11-25",
+      "changeKind": "updated",
+      "eventId": "ev-1102",
+      "eventType": "資訊日",
+      "title": "順德聯誼總會鄭裕彤中學 升中資訊日 2026",
+      "summary": "更新 重點、備註、來源",
+      "detail": "官網公布報名表格及場次時間，來源改為學校官網。\n重點：10:30 - 17:00 → 10:30–17:00；內容包括模擬面試工作坊、30項挑戰任務、升中座談會（15:30–16:10）、AI課堂體驗、工程任務比賽（13:15–14:45）。現正接受報名：https://forms.gle/uzW2FPRzgRSE7Xxr5\n來源連結已更新\n備註已更新",
+      "schools": [
+        "順德聯誼總會鄭裕彤中學"
+      ],
+      "schoolIds": [
+        "522090000133"
+      ],
+      "districts": [
+        "西貢區"
+      ],
+      "source": "weekly-scan",
+      "sourceUrl": "https://cyt.edu.hk/tc",
+      "batchId": "weekly-2026-11-25"
     }
   ]
 }
