@@ -1,95 +1,95 @@
 {
-  "updatedAt": "2026-11-18T02:55:08Z",
+  "updatedAt": "2026-11-25T03:06:48Z",
   "districts": {
     "沙田": {
-      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastScannedAt": "2026-11-25T02:48:46Z",
       "lastStatus": "partial",
-      "lastError": "7校失敗（培僑／基督教國際 403；樂道 500；培英／青年會／德信空頁；馮堯敬 timeout／500）"
+      "lastError": "3校失敗（基督教國際學校／樂道中學／香港中國婦女會馮）"
     },
     "九龍城": {
-      "lastScannedAt": "2026-11-18T02:36:07Z",
+      "lastScannedAt": "2026-11-25T02:48:46Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗／無 website（斯彼德／泰來無網站；協恩／新亞空頁）"
+      "lastError": "3校失敗（斯彼德書院／泰來書院／鄧鏡波學校）"
     },
     "觀塘": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "6校失敗（慕光英文書院／新生命教育協會呂／聖公會基孝中學／瑪利諾中學／觀塘功樂官立中學／香港布廠商會朱石）"
+      "lastError": "3校失敗（慕光英文書院／新生命教育協會呂／聖公會基孝中學）"
     },
     "黃大仙": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "3校失敗（中華基督教會扶輪／中華基督教會基協／德望學校）"
+      "lastError": "1校失敗（中華基督教會扶輪）"
     },
     "深水埗": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "5校失敗（中黃書院／瑪利諾神父教會學／英華書院／中聖書院／路德會協同中學）"
+      "lastError": "3校失敗（中黃書院／瑪利諾神父教會學／英華書院）"
     },
     "油尖旺": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "5校失敗（STAMFORD／天主教新民書院／香港力邁學校／聖公會諸聖中學／華仁書院(九龍)）"
+      "lastError": "3校失敗（STAMFORD／天主教新民書院／香港力邁學校）"
     },
     "元朗": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗（安基司學校／東華三院盧幹庭紀／博愛醫院鄧佩瓊紀／明愛元朗陳震夏中）"
+      "lastError": "2校失敗（安基司學校／東華三院盧幹庭紀）"
     },
     "屯門": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "6校失敗（裘錦秋中學﹝屯門／妙法寺劉金龍中學／恩平工商會李琳明／新生命教育協會平／東華三院鄺錫坤伉／聖公會聖西門呂明）"
+      "lastError": "1校失敗（裘錦秋中學﹝屯門）"
     },
     "東區": {
-      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "10校失敗（伊斯蘭脫維善紀念中學／嶺南衡怡紀念中學／張振興伉儷書院／張祝珊英文中學…）"
+      "lastError": "9校失敗（伊斯蘭脫維善紀念／嶺南衡怡紀念中學／張振興伉儷書院／港島民生書院／聖馬可中學／茵維特學校(香港)／張祝珊英文中學／明愛柴灣馬登基金中學／金文泰中學）"
     },
     "葵青": {
-      "lastScannedAt": "2026-11-18T02:38:36Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "8校失敗（樂善堂梁植偉紀念／獅子會蔣翠琼中學／迦密愛禮信中學／中華基督教會燕京／明愛聖若瑟中學／聖公會林護紀念中…）"
+      "lastError": "4校失敗（樂善堂梁植偉紀念／獅子會蔣翠琼中學／迦密愛禮信中學／保祿六世書院）"
     },
     "西貢": {
-      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "5校失敗（仁濟醫院王華湘中學／寶覺中學／播道書院／萬鈞匯知中學…）"
+      "lastError": "5校失敗（播道書院／萬鈞匯知中學／仁濟醫院王華湘中學／寶覺中學／西貢崇真天主教學校(中學部)）"
     },
     "大埔": {
-      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗（南亞路德會沐恩中學／王肇枝中學／聖公會莫壽增會督中學／香港西班牙學校）"
+      "lastError": "4校失敗（南亞路德會沐恩中學／香港西班牙學校／王肇枝中學／聖公會莫壽增會督中學）"
     },
     "北區": {
-      "lastScannedAt": "2026-11-18T02:41:57Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗（上水官立中學／新界喇沙中學／粉嶺官立中學／鳳溪第一中學）"
+      "lastError": "2校失敗（上水官立中學／粉嶺官立中學）"
     },
     "南區": {
-      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "3校失敗（嘉諾撒聖心書院／新會商會陳白沙紀念中學／香港仔工業學校）"
+      "lastError": "3校失敗（嘉諾撒聖心書院／香港仔工業學校／新會商會陳白沙紀念中學）"
     },
     "灣仔": {
-      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "4校失敗（聖保祿中學／聖保祿學校／香港華仁書院／香港道爾頓學校）"
+      "lastError": "2校失敗（聖保祿中學／聖保祿學校）"
     },
     "荃灣": {
-      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
       "lastError": "1校失敗（紡織學會美國商會胡漢輝中學）"
     },
     "中西區": {
-      "lastScannedAt": "2026-11-18T02:38:55Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
       "lastError": "1校失敗（聖嘉勒女書院）"
     },
     "離島": {
-      "lastScannedAt": "2026-11-18T02:42:30Z",
+      "lastScannedAt": "2026-11-25T02:38:58Z",
       "lastStatus": "partial",
-      "lastError": "3校失敗（佛教筏可紀念中學／東涌天主教學校／靈糧堂怡文中學）"
+      "lastError": "3校失敗（佛教筏可紀念中學／靈糧堂怡文中學／港青基信書院）"
     }
   },
   "schools": {
@@ -1188,10 +1188,10 @@
       "荃灣",
       "離島"
     ],
-    "lastRotatedAt": "2026-11-18T02:55:08Z"
+    "lastRotatedAt": "2026-11-25T03:06:48Z"
   },
   "lightScan": {
-    "lastRanAt": "2026-11-18T02:32:50Z",
+    "lastRanAt": "2026-11-25T02:34:09Z",
     "lastStatus": "ok"
   }
 }
